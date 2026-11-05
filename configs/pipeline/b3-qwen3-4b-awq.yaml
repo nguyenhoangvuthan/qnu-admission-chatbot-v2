@@ -1,0 +1,34 @@
+# Cấu hình THUẬT TOÁN cho laptop RTX 4050 6 GB: mọi thứ ở đây có thể đổi câu trả lời nên nằm trong
+# pipeline_config_hash. Thứ đổi theo máy (URL vLLM, thiết bị embedding) truyền lúc khởi động.
+retrieval:
+  mode: hybrid
+  top_k: 5
+  rrf_k: 60
+
+corpus:
+  max_chunk_chars: 1500
+  sources:
+    - source_id: cam-nang-2025
+      path: "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf"
+      excluded_pages: [1, 2, 3, 107, 108]
+      source_year: 2025
+
+embedding:
+  model: "BAAI/bge-m3"
+  revision: "5617a9f61b028005a4858fdac845db406aefb181"
+
+generator:
+  model: "Qwen/Qwen3-4B-AWQ"
+  revision: "74d4bd2bd4bff9cafc9345221320bffb08b406a3"
+  quantization: "awq"
+  max_tokens: 1024
+  temperature: 0
+  seed: 42
+  chat_template_kwargs: {enable_thinking: false}
+
+history:
+  max_turns: 6
+
+stages:
+  query_rewrite:
+    enabled: false

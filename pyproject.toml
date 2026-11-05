@@ -1,0 +1,80 @@
+[project]
+name = "qnuchat"
+version = "0.1.0"
+description = "Chatbot tư vấn tuyển sinh Trường Đại học Quy Nhơn"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "bm25s>=0.2",
+    "httpx>=0.27",
+    "numpy>=1.26",
+    "openai>=1.40",
+    "pydantic>=2.9",
+    "pymupdf>=1.24",
+    "pyyaml>=6.0",
+    "sentence-transformers>=3.0",
+]
+
+[dependency-groups]
+dev = ["import-linter>=2.15", "pytest>=8.0", "ruff>=0.6"]
+# Công cụ gold trong experiments/ đọc DOCX; không thuộc runtime.
+eval = ["python-docx>=1.1"]
+# Quét web: trích HTML, DOCX, XLSX, ảnh; lệnh apps.cli.crawl đọc .env và hiện tiến độ.
+ingest = [
+    "lxml>=5.0",
+    "openpyxl>=3.1",
+    "pillow>=10.0",
+    "pydantic-settings>=2.15",
+    "python-docx>=1.1",
+    "tqdm>=4.70",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/qnuchat", "apps"]
+
+[tool.uv]
+default-groups = ["dev", "eval", "ingest"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Chỉ thêm gốc repo cho experiments/; qnuchat đi qua bản đã cài để lộ lỗi đóng gói.
+pythonpath = ["."]
+addopts = "--import-mode=importlib"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+extend-select = ["E501", "I"]
+
+[tool.importlinter]
+root_packages = ["qnuchat"]
+include_external_packages = true
+
+[[tool.importlinter.contracts]]
+name = "core không import adapters, ingest hay eval"
+type = "forbidden"
+source_modules = ["qnuchat.core"]
+forbidden_modules = ["qnuchat.adapters", "qnuchat.ingest", "qnuchat.eval"]
+
+[[tool.importlinter.contracts]]
+name = "ingest không import core, adapters hay eval"
+type = "forbidden"
+source_modules = ["qnuchat.ingest"]
+forbidden_modules = ["qnuchat.core", "qnuchat.adapters", "qnuchat.eval"]
+
+[[tool.importlinter.contracts]]
+name = "adapters không import eval"
+type = "forbidden"
+source_modules = ["qnuchat.adapters"]
+forbidden_modules = ["qnuchat.eval"]
+
+[[tool.importlinter.contracts]]
+name = "qnuchat không kéo thư viện web/DB"
+type = "forbidden"
+source_modules = ["qnuchat"]
+forbidden_modules = ["fastapi", "starlette", "sqlalchemy", "psycopg"]

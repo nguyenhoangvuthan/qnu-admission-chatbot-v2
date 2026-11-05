@@ -1,0 +1,216 @@
+{
+  "checked_on": "2026-11-05",
+  "packages": {
+    "fastapi": {
+      "version": "0.162.0",
+      "python": ">=3.10",
+      "source": "https://pypi.org/pypi/fastapi/json"
+    },
+    "pydantic": {
+      "version": "2.14.3",
+      "python": ">=3.10",
+      "source": "https://pypi.org/pypi/pydantic/json"
+    },
+    "pydantic-settings": {
+      "version": "2.16.2",
+      "python": ">=3.11",
+      "source": "https://pypi.org/pypi/pydantic-settings/json"
+    },
+    "uvicorn": {
+      "version": "0.54.0",
+      "python": ">=3.10",
+      "source": "https://pypi.org/pypi/uvicorn/json"
+    },
+    "sqlalchemy": {
+      "version": "2.1.8",
+      "python": ">=3.11",
+      "source": "https://pypi.org/pypi/sqlalchemy/json"
+    },
+    "alembic": {
+      "version": "1.20.1",
+      "python": ">=3.10",
+      "source": "https://pypi.org/pypi/alembic/json"
+    },
+    "psycopg": {
+      "version": "3.3.8",
+      "python": ">=3.10",
+      "source": "https://pypi.org/pypi/psycopg/json"
+    },
+    "pgvector": {
+      "version": "0.5.1",
+      "python": ">=3.10",
+      "source": "https://pypi.org/pypi/pgvector/json"
+    },
+    "vllm": {
+      "version": "0.33.0",
+      "python": "<3.15,>=3.11",
+      "source": "https://pypi.org/pypi/vllm/json",
+      "runtime_requirements": [
+        "transformers<5.21.0,>=5.16.1",
+        "torch==2.14.0",
+        "torchaudio==2.11.0",
+        "torchvision==0.29.0",
+        "torchcodec>=0.14",
+        "zentorch==2.14.0.1; extra == \"zen\""
+      ]
+    },
+    "torch": {
+      "version": "2.15.0",
+      "python": ">=3.11",
+      "source": "https://pypi.org/pypi/torch/json"
+    },
+    "transformers": {
+      "version": "5.22.1",
+      "python": ">=3.11.0",
+      "source": "https://pypi.org/pypi/transformers/json"
+    },
+    "sentence-transformers": {
+      "version": "6.2.0",
+      "python": ">=3.10",
+      "source": "https://pypi.org/pypi/sentence-transformers/json"
+    },
+    "paddleocr": {
+      "version": "3.7.0",
+      "python": ">=3.8",
+      "source": "https://pypi.org/pypi/paddleocr/json"
+    },
+    "paddlex": {
+      "version": "3.7.2",
+      "python": ">=3.8",
+      "source": "https://pypi.org/pypi/paddlex/json"
+    },
+    "paddlepaddle-gpu": {
+      "version": "2.6.2",
+      "python": null,
+      "source": "https://pypi.org/pypi/paddlepaddle-gpu/json"
+    },
+    "vietocr": {
+      "version": "0.3.13",
+      "python": ">=3.6",
+      "source": "https://pypi.org/pypi/vietocr/json"
+    },
+    "PyMuPDF": {
+      "version": "2.1",
+      "python": ">=3.11",
+      "source": "https://pypi.org/pypi/PyMuPDF/json"
+    },
+    "httpx": {
+      "version": "0.28.1",
+      "python": ">=3.8",
+      "source": "https://pypi.org/pypi/httpx/json"
+    },
+    "openai": {
+      "version": "3.46.0",
+      "python": ">=3.10",
+      "source": "https://pypi.org/pypi/openai/json"
+    },
+    "numpy": {
+      "version": "2.5.4",
+      "python": ">=3.12",
+      "source": "https://pypi.org/pypi/numpy/json"
+    },
+    "PyYAML": {
+      "version": "6.0.3",
+      "python": ">=3.8",
+      "source": "https://pypi.org/pypi/PyYAML/json"
+    },
+    "python-docx": {
+      "version": "1.2.0",
+      "python": ">=3.9",
+      "source": "https://pypi.org/pypi/python-docx/json"
+    },
+    "pillow": {
+      "version": "13.0.0",
+      "python": ">=3.11",
+      "source": "https://pypi.org/pypi/pillow/json"
+    },
+    "opencv-python": {
+      "version": "5.0.0.93",
+      "python": ">=3.6",
+      "source": "https://pypi.org/pypi/opencv-python/json"
+    },
+    "huggingface-hub": {
+      "version": "2.4.0",
+      "python": ">=3.10.0",
+      "source": "https://pypi.org/pypi/huggingface-hub/json"
+    },
+    "uv": {
+      "version": "0.13.7",
+      "python": ">=3.8",
+      "source": "https://pypi.org/pypi/uv/json"
+    },
+    "ruff": {
+      "version": "0.17.3",
+      "python": ">=3.7",
+      "source": "https://pypi.org/pypi/ruff/json"
+    },
+    "pytest": {
+      "version": "9.2.0",
+      "python": ">=3.10",
+      "source": "https://pypi.org/pypi/pytest/json"
+    },
+    "react": {
+      "version": "19.3.1",
+      "python": null,
+      "source": "https://registry.npmjs.org/react/latest"
+    },
+    "react-dom": {
+      "version": "19.3.1",
+      "python": null,
+      "source": "https://registry.npmjs.org/react-dom/latest"
+    },
+    "vite": {
+      "version": "8.3.6",
+      "python": null,
+      "source": "https://registry.npmjs.org/vite/latest"
+    },
+    "typescript": {
+      "version": "7.0.2",
+      "python": null,
+      "source": "https://registry.npmjs.org/typescript/latest"
+    },
+    "pnpm": {
+      "version": "12.16.1",
+      "python": null,
+      "source": "https://registry.npmjs.org/pnpm/latest"
+    },
+    "pgvector-extension": {
+      "version": "v0.8.7",
+      "source": "https://api.github.com/repos/pgvector/pgvector/tags?per_page=5"
+    },
+    "bm25s": {
+      "version": "0.3.16",
+      "python": ">=3.8",
+      "source": "https://pypi.org/pypi/bm25s/json"
+    },
+    "openpyxl": {
+      "version": "3.1.5",
+      "python": ">=3.8",
+      "source": "https://pypi.org/pypi/openpyxl/json"
+    },
+    "lxml": {
+      "version": "6.1.3",
+      "python": ">=3.8",
+      "source": "https://pypi.org/pypi/lxml/json"
+    },
+    "tqdm": {
+      "version": "4.70.1",
+      "python": ">=3.8",
+      "source": "https://pypi.org/pypi/tqdm/json"
+    },
+    "import-linter": {
+      "version": "2.15",
+      "python": ">=3.10",
+      "source": "https://pypi.org/pypi/import-linter/json"
+    },
+    "pandera": {
+      "version": "0.35.0",
+      "python": ">=3.10",
+      "source": "https://pypi.org/pypi/pandera/json"
+    }
+  },
+  "observed_discrepancies": {
+    "pnpm": "npm latest API returned 12.16.1; upstream GitHub release page lists 12.18.0 on 2026-11-05. Do not equate dist-tag latest with newest published version.",
+    "frontend": "React docs show 19.3; npm latest returns 19.3.1. Vite homepage shows 8.3.4 while npm latest returns 8.3.6."
+  }
+}

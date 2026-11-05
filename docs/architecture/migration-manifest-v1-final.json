@@ -1,0 +1,329 @@
+{
+  "source_repo": "qnu-admission-chatbot",
+  "tag": "v1-final",
+  "commit": "83a8d26b1697b041dab2a00ebe691d26adf891b4",
+  "files": [
+    {
+      "source": "qnu_rag/index.py",
+      "source_sha256": "1e77df60614d6c929858354efbf710e037d27adcccc90bbdd05b89b9b9a68c85",
+      "targets": [
+        "src/qnuchat/core/retrieval/bm25.py",
+        "src/qnuchat/core/retrieval/dense.py",
+        "src/qnuchat/core/retrieval/fusion.py",
+        "src/qnuchat/core/retrieval/hybrid.py",
+        "src/qnuchat/adapters/embeddings/bge.py"
+      ],
+      "how": "tách, giữ hành vi"
+    },
+    {
+      "source": "qnu_rag/generate.py",
+      "source_sha256": "522a7fc53c18d11f0a2e3ee830d4c8e7e64d672e6ce257e59c16823d8eddb9d4",
+      "targets": [
+        "src/qnuchat/adapters/generation/generator.py",
+        "src/qnuchat/adapters/generation/prompts.py",
+        "src/qnuchat/adapters/generation/schema.py"
+      ],
+      "how": "tách và gộp với legacy_qnu_rag"
+    },
+    {
+      "source": "qnu_rag/schema.py",
+      "source_sha256": "29e808b605dbfa17ef8dc9d93ee6791134aa1280338d3504fd87abf4e90fcdef",
+      "targets": [
+        "src/qnuchat/documents.py",
+        "src/qnuchat/adapters/generation/schema.py",
+        "src/qnuchat/eval/schema.py"
+      ],
+      "how": "viết mới"
+    },
+    {
+      "source": "qnu_rag/corpus.py",
+      "source_sha256": "8808e202f928cb65619c4da67cd92a8d7d55e65f62e5b16f1e4e8070820772c7",
+      "targets": [
+        "src/qnuchat/ingest/pdf.py",
+        "src/qnuchat/eval/schema.py"
+      ],
+      "how": "viết mới"
+    },
+    {
+      "source": "qnu_rag/chunking.py",
+      "source_sha256": "0d2a038118d492ec103b12df8224c2f7e20d7380d39bfa20e2f3e1f79e62d43d",
+      "targets": [
+        "src/qnuchat/ingest/chunking.py"
+      ],
+      "how": "viết mới; tách đến khi đủ ngắn, ID theo nguồn"
+    },
+    {
+      "source": "qnu_rag/stats.py",
+      "source_sha256": "17d827cd409034ed78af090b4ca3b50742f631f13b3a6fc62adc9ec8bf919b76",
+      "targets": [
+        "src/qnuchat/eval/stats.py"
+      ],
+      "how": "giữ hành vi, thêm chặn input rỗng"
+    },
+    {
+      "source": "qnu_rag/metrics/_numbers.py",
+      "source_sha256": "4f266999824bb1e59b48c247d9e720b9538e86f6c1d673501644abef0013d996",
+      "targets": [
+        "src/qnuchat/eval/metrics/numbers.py"
+      ],
+      "how": "giữ hành vi"
+    },
+    {
+      "source": "qnu_rag/metrics/abstention.py",
+      "source_sha256": "c007e0f8f49484b9d4c2db29e5443da55aac5dd1bf54d2b1b5c4d992478bb87e",
+      "targets": [
+        "src/qnuchat/eval/metrics/abstention.py"
+      ],
+      "how": "giữ hành vi"
+    },
+    {
+      "source": "qnu_rag/metrics/retrieval.py",
+      "source_sha256": "95c48b8bfcdcfd00d72db9ace1207a1e409ae5bc3b11bf66c5037187c5403ad8",
+      "targets": [
+        "src/qnuchat/eval/metrics/retrieval.py"
+      ],
+      "how": "giữ hành vi"
+    },
+    {
+      "source": "qnu_rag/metrics/slots.py",
+      "source_sha256": "87f01b7fc997586b0c875fe8ea07113b4f4b8e9b5568f5e367ef11084ebcb255",
+      "targets": [
+        "src/qnuchat/eval/metrics/slots.py"
+      ],
+      "how": "giữ hành vi"
+    },
+    {
+      "source": "src/qnuchat/core/contracts.py",
+      "source_sha256": "63eb0714fd9619ae6b45a1cd00b0769194b6aeb25753b86e2440fd8b7a4af6f9",
+      "targets": [
+        "src/qnuchat/core/contracts.py"
+      ],
+      "how": "viết gọn"
+    },
+    {
+      "source": "src/qnuchat/core/pipeline.py",
+      "source_sha256": "bd86ab4b9b64b75878be614147d24a3d5e9f0c7a9b93c53ea2e5a5304343fdbf",
+      "targets": [
+        "src/qnuchat/core/pipeline.py"
+      ],
+      "how": "viết gọn"
+    },
+    {
+      "source": "src/qnuchat/core/ports.py",
+      "source_sha256": "143c85ae96037f9e6ced2374662457cdbd5575f102b4f283ef82bd9024291b1a",
+      "targets": [
+        "src/qnuchat/core/ports.py"
+      ],
+      "how": "gỡ phần theo đoạn, Clock"
+    },
+    {
+      "source": "src/qnuchat/core/config.py",
+      "source_sha256": "d78bd64e939688223a9f78d188e24084e401e8321bd5e0fde16977f3f7f59cb8",
+      "targets": [
+        "src/qnuchat/core/config.py"
+      ],
+      "how": "corpus nhiều nguồn, bỏ logic giữ hash cũ"
+    },
+    {
+      "source": "src/qnuchat/core/snapshot.py",
+      "source_sha256": "560c5b823e779f02aee9112bdc560f8838072fa9cdf692304c933b316cd30301",
+      "targets": [
+        "src/qnuchat/core/snapshot.py"
+      ],
+      "how": "nhiều nguồn, vector_hash"
+    },
+    {
+      "source": "src/qnuchat/core/errors.py",
+      "source_sha256": "0616a9100ba9dc912e4512c9309afcab3004ba7949f767c299a7bbe5a2da0a0a",
+      "targets": [
+        "src/qnuchat/core/errors.py"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "src/qnuchat/core/catalog.py",
+      "source_sha256": "5b717a67c31afe219a43e55341e1d9d63c7edd42b43b215662eb8080cb85adab",
+      "targets": [
+        "src/qnuchat/core/catalog.py"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "src/qnuchat/core/text.py",
+      "source_sha256": "07d78e18cc91e46e25c95277e1375b4ef8e083a2b8f80c4ba8d886ee8a66769f",
+      "targets": [
+        "src/qnuchat/core/text.py"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "src/qnuchat/core/rewrite.py",
+      "source_sha256": "0f28149e63364f0098e096a0213ae6beed3713acde19a27d1d1905ada64f956c",
+      "targets": [
+        "src/qnuchat/core/rewrite.py"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "src/qnuchat/core/stages/base.py",
+      "source_sha256": "9bb272d7dcde37de0f494e2f021d596c63ce565d2aea74866acf5c98668c2475",
+      "targets": [
+        "src/qnuchat/core/stages/base.py"
+      ],
+      "how": "bỏ DisabledStage"
+    },
+    {
+      "source": "src/qnuchat/core/stages/generation.py",
+      "source_sha256": "ae180a4038ecce239738d0efb68c269a85fd01e2e9c209b852f41eb66521678a",
+      "targets": [
+        "src/qnuchat/core/stages/generation.py"
+      ],
+      "how": "gỡ phần theo đoạn"
+    },
+    {
+      "source": "src/qnuchat/core/stages/query_rewrite.py",
+      "source_sha256": "4717d08ec130bcda06e1c6f88f4995bf533bfc424dff4c1e87c5745ef200466f",
+      "targets": [
+        "src/qnuchat/core/stages/query_rewrite.py"
+      ],
+      "how": "giữ hành vi"
+    },
+    {
+      "source": "src/qnuchat/core/stages/retrieval.py",
+      "source_sha256": "fff23c623e43696019fa16c33822915865f10a8205f33b9a49ad9572cb63664d",
+      "targets": [
+        "src/qnuchat/core/stages/retrieval.py"
+      ],
+      "how": "source_id luôn có"
+    },
+    {
+      "source": "src/qnuchat/core/adapters/legacy_qnu_rag.py",
+      "source_sha256": "a1dddb7b828d2b6e4156f302a789a13e437e190609369b8a51567528b069d1f0",
+      "targets": [
+        "src/qnuchat/core/retrieval/hybrid.py",
+        "src/qnuchat/adapters/generation/generator.py"
+      ],
+      "how": "gộp, bỏ lớp bọc"
+    },
+    {
+      "source": "src/qnuchat/core/adapters/legacy_runtime.py",
+      "source_sha256": "937fb905f8356c4d734df95b39245cf19bc73b461c7dcb09afbe3833612d24c9",
+      "targets": [
+        "src/qnuchat/adapters/runtime.py"
+      ],
+      "how": "nhiều nguồn, bỏ chọn generator theo đoạn"
+    },
+    {
+      "source": "src/qnuchat/core/adapters/digest.py",
+      "source_sha256": "e9487e30e4e2fd0eb450bb288aeb47f8e0dad646b09289f20839b0fb1b933f34",
+      "targets": [
+        "src/qnuchat/adapters/generation/digest.py"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "src/qnuchat/core/adapters/notice_writer.py",
+      "source_sha256": "4847cd0eeb00255b7b913c5729102717c5668860421d112a9eebb65f4cd5b2d6",
+      "targets": [
+        "src/qnuchat/adapters/generation/notice_writer.py"
+      ],
+      "how": "đổi import"
+    },
+    {
+      "source": "src/qnuchat/core/adapters/vllm.py",
+      "source_sha256": "ec195e94a109bb1e1ed7d2d1e80785c6956cd54e9f128d042931c2676d74e8c7",
+      "targets": [
+        "src/qnuchat/adapters/generation/vllm_checks.py"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "src/qnuchat/core/adapters/embedding_cache.py",
+      "source_sha256": "4e1ebb748668c3ca2cfeb4b1d9f13e2e11ae451d99a2f368eb5f28212ac787b2",
+      "targets": [
+        "src/qnuchat/adapters/embeddings/cache.py"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "experiments/bench_baseline_gap.py",
+      "source_sha256": "e89dea91440d645070cec12d5b0adaba27ad2fc16b06ec9f97586b8050351ae3",
+      "targets": [
+        "experiments/doc_lines.py"
+      ],
+      "how": "chỉ lấy html_lines, docx_lines"
+    },
+    {
+      "source": "experiments/prepare_gold.py",
+      "source_sha256": "a0e7ba533d265162ca5b7f4e59c17b6bdc12f1ee7a675fa84fb1d307245fd0f0",
+      "targets": [
+        "experiments/prepare_gold.py"
+      ],
+      "how": "đổi import, hằng trang pilot"
+    },
+    {
+      "source": "experiments/prepare_dialogs.py",
+      "source_sha256": "68677d94325818575ace365ed4fbf552700604b11184b7bd093f9885162a6868",
+      "targets": [
+        "experiments/prepare_dialogs.py"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "experiments/review_hub.py",
+      "source_sha256": "f3a129288e15d983224aa1cdcfb7045439dd0dbc66c25e9c9e222885cfcbd32e",
+      "targets": [
+        "experiments/review_hub.py"
+      ],
+      "how": "giữ nguyên; cần spec paper v2"
+    },
+    {
+      "source": "experiments/provenance.py",
+      "source_sha256": "ef9ae8a4bf4cd4153b89419d3f4ec1a35bcad543bb5777a5cb7f55157e28d485",
+      "targets": [
+        "experiments/provenance.py"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "experiments/sources.py",
+      "source_sha256": "72eb436d2422458fe447e86a7c3faccd500317e82f7044bc6b76020f0624f179",
+      "targets": [
+        "experiments/sources.py"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "experiments/snapshot_v2.py",
+      "source_sha256": "d80b6865ba6e9c6d46b4a951c4cb4ca1f45bf9fa646c6723d4f5af4e34127e99",
+      "targets": [
+        "experiments/snapshot_v2.py"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "configs/catalog/qnu-2025.yaml",
+      "source_sha256": "694776237bf8e1100b6631788a40de2bc58043270c396b10d897d4a1037835d4",
+      "targets": [
+        "configs/catalog/qnu-2025.yaml"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "configs/pipeline/b3-qwen3-4b-awq.yaml",
+      "source_sha256": "b89cef1d37a821d1161bf69eda9808309531a7206390c31d5835eb0fbd833191",
+      "targets": [
+        "configs/pipeline/b3-qwen3-4b-awq.yaml"
+      ],
+      "how": "corpus nhiều nguồn"
+    },
+    {
+      "source": "configs/pipeline/b3-chat.yaml",
+      "source_sha256": "eb88fdcfafde993026a569186f1cbe4aacd6b66f4f1e841683af4a0c8a0d0372",
+      "targets": [
+        "configs/pipeline/b3-chat.yaml"
+      ],
+      "how": "bỏ cờ theo đoạn"
+    }
+  ]
+}

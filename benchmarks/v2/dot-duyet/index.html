@@ -1,0 +1,113 @@
+<!doctype html><html lang='vi'><meta charset='utf-8'>
+<title>Đợt duyệt 14/10/2026</title>
+<style>body{max-width:1050px;margin:2em auto;font:17px/1.6 sans-serif}article{border-top:2px solid #999;padding:1em 0}pre{white-space:pre-wrap}blockquote{background:#f3f5f7;padding:1em}img{max-width:100%}#bar{position:sticky;top:0;background:#fff;border-bottom:1px solid #999;padding:.5em 0;display:flex;gap:1em;align-items:center;flex-wrap:wrap;z-index:1}fieldset.review{border:1px solid #bbb;border-radius:6px;margin:1em 0}fieldset.review label{margin-right:1.5em;font-weight:bold}fieldset.review textarea{width:100%;min-height:3em;margin-top:.5em}.when{color:#555;font-size:.9em}article[data-decision=approve] h2{color:#1a7f37}article[data-decision=reject] h2{color:#c62828}table{border-collapse:collapse}td,th{border:1px solid #ccc;padding:.3em .6em}</style>
+<style>.saved-review{border-left:4px solid #64748b;background:#f3f5f7;padding:1em;margin:1em 0}.saved-review p{white-space:pre-wrap;margin:.4em 0}.saved-review.reject{border-color:#c62828}.saved-review.approve{border-color:#1a7f37}nav a{display:inline-block;margin:.2em .8em .2em 0}</style>
+<div id='bar'><label>Người duyệt: <input id='reviewer' placeholder='Họ tên'></label><span id='progress'></span><button id='export' type='button'>Xuất reviews.csv</button></div>
+<h1>Đợt duyệt 14/10/2026</h1>
+<section id='review-summary'><h2>Kết quả kiểm tra đã lưu</h2>
+<p><b>4 đạt · 4 cần sửa · 0 chưa duyệt</b></p>
+<p>Kết quả dưới đây lấy từ reviews.csv; tên người duyệt ghi ở từng mục. Các ô tick bên dưới cho phép xem lại và đổi quyết định. Kết quả duyệt câu gold và hội thoại nằm trong hai hồ sơ ở mục 1.</p>
+<nav aria-label='Đi tới quyết định'><a href='#D1'>D1: Cần sửa</a> <a href='#D2'>D2: Cần sửa</a> <a href='#D3'>D3: Cần sửa</a> <a href='#D4'>D4: Cần sửa</a> <a href='#D5'>D5: Đạt</a> <a href='#D6'>D6: Đạt</a> <a href='#D7'>D7: Đạt</a> <a href='#D8'>D8: Đạt</a></nav></section>
+<p><a href='review-2026-10-16.md'>Báo cáo kiểm tra review-2026-10-16</a></p>
+<h2>1. Dữ liệu đánh giá</h2><ul>
+<li><a href='../review/index.html'>Gold đơn lượt</a> — 126/126 đã có quyết định trong reviews.csv (108 đạt, 18 cần sửa). Mỗi hồ sơ có nút <b>Xuất reviews.csv</b> riêng; lưu đè vào <code>benchmarks/v2/review/reviews.csv</code>.</li>
+<li><a href='../multiturn/review/index.html'>Hội thoại nhiều lượt</a> — 50/50 đã có quyết định trong reviews.csv (48 đạt, 2 cần sửa). Mỗi hồ sơ có nút <b>Xuất reviews.csv</b> riêng; lưu đè vào <code>benchmarks/v2/multiturn/review/reviews.csv</code>.</li>
+</ul>
+<h2>2. Quyết định</h2>
+<p>Chi tiết ở <a href='../../../docs/superpowers/specs/2026-10-14-thuc-nghiem-paper-v2-design.md'>spec thực nghiệm paper v2</a> §9. Tick <b>Đạt</b> nếu đồng ý với đề xuất của Claude; <b>Cần sửa</b> kèm ghi chú nếu chọn khác. Xuất reviews.csv của trang này lưu đè vào <code>benchmarks/v2/dot-duyet/reviews.csv</code>.</p>
+<article id='D1'><h2>D1</h2><p>Duyệt spec này (quy trình, snapshot, bảng arm, tách track)</p><p><b>Đề xuất của Claude:</b> Duyệt</p><aside class='saved-review reject'><b>Kết quả đã lưu: Cần sửa</b><p>Codex · 2026-10-16T14:02:28+07:00</p><p>Cần sửa trước khi duyệt spec: chưa tách tập chọn cấu hình và tập đánh giá cuối; chưa chốt tiêu chí chọn tốt nhất và các contrast; top-k=5 nhưng đo nDCG@10; R8 chưa quy định chia 5 kết quả cho 2/3 ngành; S0 đồng nhất B3 với b3-chat dù khác cờ rewrite, token và corpus; phạm vi generation mâu thuẫn D3. Snapshot loại 12 bản scan, không phải 13. Xem review-2026-10-16.md.</p></aside><fieldset class="review" data-item="D1" data-hash="99c039b9d49cd9132f927694780c366936310486b8439efbc6cd940a17665345"><legend>Duyệt D1</legend><label><input type="checkbox" class="ok"> Đạt</label><label><input type="checkbox" class="bad"> Cần sửa</label><span class="when"></span><textarea class="notes" placeholder="Ghi chú (bắt buộc khi Cần sửa)"></textarea></fieldset></article>
+<article id='D2'><h2>D2</h2><p>Sửa đề xuất v3 theo §8 (rồi gửi GVHD cùng v3)</p><p><b>Đề xuất của Claude:</b> Duyệt</p><aside class='saved-review reject'><b>Kết quả đã lưu: Cần sửa</b><p>Codex · 2026-10-16T14:02:28+07:00</p><p>Đồng ý hướng cập nhật v3 nhưng chưa duyệt nguyên gói §8 vì chuyển nguyên thiết kế/gold đang bị chặn ở D1 vào tài liệu cấp trên. Sửa D1, chốt cách đánh giá cuối rồi duyệt lại §8; đối chiếu Marcel cần phân biệt top-50 retrieval với top-5 generation và FAQ mapping với lọc metadata. Chưa gửi GVHD.</p></aside><fieldset class="review" data-item="D2" data-hash="c4834a8ca109ec3afe4a38c4fb2283e73bd4f001247908dd9d6b609a57dd0fa6"><legend>Duyệt D2</legend><label><input type="checkbox" class="ok"> Đạt</label><label><input type="checkbox" class="bad"> Cần sửa</label><span class="when"></span><textarea class="notes" placeholder="Ghi chú (bắt buộc khi Cần sửa)"></textarea></fieldset></article>
+<article id='D3'><h2>D3</h2><p><a href='../../../docs/superpowers/specs/2026-10-14-y-dinh-va-cau-rong-design.md'>Spec #17</a> ý định, kế thừa ngành, câu rỗng</p><p><b>Đề xuất của Claude:</b> Duyệt cho track production; arm M3 đo khi có code</p><aside class='saved-review reject'><b>Kết quả đã lưu: Cần sửa</b><p>Codex · 2026-10-16T14:02:28+07:00</p><p>Spec #17 §2.5 lấy mọi ngành CatalogMatcher nhận ra nên câu Tôi hỏi Sư phạm Tiếng Anh, không phải Nông học nhận cả hai ngành. Cần xác định ngành được chọn/loại bỏ, thay ngành/năm cũ trong câu nền và xử lý thiếu câu nền. §4 cần quy định notice lần 2 rỗng và xoá segments cũ; thống nhất ngoại lệ sửa generation với spec paper §5.</p></aside><fieldset class="review" data-item="D3" data-hash="20cf9db1d0aabde23d66dd032587215b6acd03f38d713771366f04e8737341df"><legend>Duyệt D3</legend><label><input type="checkbox" class="ok"> Đạt</label><label><input type="checkbox" class="bad"> Cần sửa</label><span class="when"></span><textarea class="notes" placeholder="Ghi chú (bắt buộc khi Cần sửa)"></textarea></fieldset></article>
+<article id='D4'><h2>D4</h2><p>Ba dòng <code># DUYỆT:</code> trong <code>configs/catalog/qnu-2025.yaml</code> (Sư phạm Địa lý trang 18; &quot;kinh tế&quot; là từ thường; &quot;luật&quot; trong &quot;pháp luật&quot;)</p><p><b>Đề xuất của Claude:</b> Giữ cả ba alias, ghi lỗi nhận nhầm vào bài học; nhóm M đo tác động</p><aside class='saved-review reject'><b>Kết quả đã lưu: Cần sửa</b><p>Codex · 2026-10-16T14:02:28+07:00</p><p>Duyệt riêng tên Sư phạm Địa lý: đã xem ảnh và text trang 18. Không duyệt nguyên gói giữ nhận nhầm: CatalogMatcher nhận pháp luật tuyển sinh thành ngành Luật, khối ngành kinh tế thành ngành Kinh tế. Giữ tên ngành chuẩn nhưng cần phân biệt ngữ cảnh hoặc hỏi lại; tách quyết định về tên đúng với lỗi matcher.</p></aside><fieldset class="review" data-item="D4" data-hash="d59aea0512457f264042b6f28f4493a92e4751774aa9d5ffcc2621494d33382f"><legend>Duyệt D4</legend><label><input type="checkbox" class="ok"> Đạt</label><label><input type="checkbox" class="bad"> Cần sửa</label><span class="when"></span><textarea class="notes" placeholder="Ghi chú (bắt buộc khi Cần sửa)"></textarea></fieldset></article>
+<article id='D5'><h2>D5</h2><p>Thứ tự hàng đợi production (<a href='../../../docs/hang_doi_cong_viec_can_xu_ly_tiep_theo.md'>hàng đợi</a> §0)</p><p><b>Đề xuất của Claude:</b> Giữ cho track production; mục 2 (SQL + router) và 3 (chunk, metadata) chuyển sang track nghiên cứu</p><aside class='saved-review approve'><b>Kết quả đã lưu: Đạt</b><p>Codex · 2026-10-16T14:02:28+07:00</p><p>Duyệt việc chuyển SQL + router và chunk/metadata sang track nghiên cứu, giữ việc ứng dụng ở production. Đây là quyết định phân công; chưa xác nhận đã triển khai hay nghiệm thu. G1 đã xong nhưng chưa đạt cổng đo, giữ cờ tắt; khi cập nhật hàng đợi cần phản ánh trạng thái hiện có.</p></aside><fieldset class="review" data-item="D5" data-hash="79d0190e05c41f0304a8d69f693c0c12fa8f4a291cc99c855376f7be38a239bf"><legend>Duyệt D5</legend><label><input type="checkbox" class="ok"> Đạt</label><label><input type="checkbox" class="bad"> Cần sửa</label><span class="when"></span><textarea class="notes" placeholder="Ghi chú (bắt buộc khi Cần sửa)"></textarea></fieldset></article>
+<article id='D6'><h2>D6</h2><p><code>max_tokens</code> của mọi arm</p><p><b>Đề xuất của Claude:</b> 2048 cho mọi arm (1024 cắt câu mô tả ngành)</p><aside class='saved-review approve'><b>Kết quả đã lưu: Đạt</b><p>Codex · 2026-10-16T14:02:28+07:00</p><p>Duyệt max_tokens=2048 cho generator của các arm mới. b3-chat.yaml và hàng đợi ghi ca mô tả cần khoảng 1101 token, 1024 bị truncated. Phải probe lại và chạy lại các arm so sánh với cùng giới hạn; không trộn run 1024 với 2048 hay áp giới hạn này cho classifier/notice.</p></aside><fieldset class="review" data-item="D6" data-hash="cbb170b632a359b546fe52c0fde516f29fce81002897de713fd8f463e55eede1"><legend>Duyệt D6</legend><label><input type="checkbox" class="ok"> Đạt</label><label><input type="checkbox" class="bad"> Cần sửa</label><span class="when"></span><textarea class="notes" placeholder="Ghi chú (bắt buộc khi Cần sửa)"></textarea></fieldset></article>
+<article id='D7'><h2>D7</h2><p>Kiểm tay M7 (<code>results/preprocess-bench/m7/</code>)</p><p><b>Đề xuất của Claude:</b> Đóng, không duyệt: M7 dùng gold nháp và kho cũ; thay bằng nhóm Q trên gold v2</p><aside class='saved-review approve'><b>Kết quả đã lưu: Đạt</b><p>Codex · 2026-10-16T14:02:28+07:00</p><p>Duyệt đóng M7 như số phát triển/lịch sử, không xác nhận kết quả M7 là số chính thức. Giữ nguyên dữ liệu, trace và ghi chú lỗi bộ chấm; thay bằng nhóm Q sau khi D1 và gold v2 được duyệt. Không xoá hồ sơ M7.</p></aside><fieldset class="review" data-item="D7" data-hash="ba9a42ce43076d61255dfef8932f8d471b7bce555eab90956df1fe5cb0a91e9d"><legend>Duyệt D7</legend><label><input type="checkbox" class="ok"> Đạt</label><label><input type="checkbox" class="bad"> Cần sửa</label><span class="when"></span><textarea class="notes" placeholder="Ghi chú (bắt buộc khi Cần sửa)"></textarea></fieldset></article>
+<article id='D8'><h2>D8</h2><p>Ghi <code>superseded_by</code> cho TB152 vào <code>data/sources.yaml</code></p><p><b>Đề xuất của Claude:</b> Ghi</p><aside class='saved-review approve'><b>Kết quả đã lưu: Đạt</b><p>Codex · 2026-10-16T14:02:28+07:00</p><p>Duyệt bổ sung superseded_by từ TB152 tới TB153: PDF TB153 trang 2 ghi rõ thay TB152 ngày 22/08/2025. Snapshot hiện đã loại TB152. Khi thực hiện cần bảo toàn file nguồn và quản lý thay đổi metadata snapshot/hash; đợt này chỉ ghi quyết định, chưa sửa sổ nguồn.</p></aside><fieldset class="review" data-item="D8" data-hash="ebaa83081acfb304248f79d4a964e7cc8b01e0e62d9e09ae60cd1cef1f0c60f4"><legend>Duyệt D8</legend><label><input type="checkbox" class="ok"> Đạt</label><label><input type="checkbox" class="bad"> Cần sửa</label><span class="when"></span><textarea class="notes" placeholder="Ghi chú (bắt buộc khi Cần sửa)"></textarea></fieldset></article>
+<script id="review-rows" type="application/json" data-storage-revision="4960fb755832515ca050b83fce842baecd85ab273d910b66ddf28214ea54d357">{"D1": {"item_id": "D1", "draft_sha256": "99c039b9d49cd9132f927694780c366936310486b8439efbc6cd940a17665345", "decision": "reject", "reviewer": "Codex", "verified_at": "2026-10-16T14:02:28+07:00", "notes": "Cần sửa trước khi duyệt spec: chưa tách tập chọn cấu hình và tập đánh giá cuối; chưa chốt tiêu chí chọn tốt nhất và các contrast; top-k=5 nhưng đo nDCG@10; R8 chưa quy định chia 5 kết quả cho 2/3 ngành; S0 đồng nhất B3 với b3-chat dù khác cờ rewrite, token và corpus; phạm vi generation mâu thuẫn D3. Snapshot loại 12 bản scan, không phải 13. Xem review-2026-10-16.md."}, "D2": {"item_id": "D2", "draft_sha256": "c4834a8ca109ec3afe4a38c4fb2283e73bd4f001247908dd9d6b609a57dd0fa6", "decision": "reject", "reviewer": "Codex", "verified_at": "2026-10-16T14:02:28+07:00", "notes": "Đồng ý hướng cập nhật v3 nhưng chưa duyệt nguyên gói §8 vì chuyển nguyên thiết kế/gold đang bị chặn ở D1 vào tài liệu cấp trên. Sửa D1, chốt cách đánh giá cuối rồi duyệt lại §8; đối chiếu Marcel cần phân biệt top-50 retrieval với top-5 generation và FAQ mapping với lọc metadata. Chưa gửi GVHD."}, "D3": {"item_id": "D3", "draft_sha256": "20cf9db1d0aabde23d66dd032587215b6acd03f38d713771366f04e8737341df", "decision": "reject", "reviewer": "Codex", "verified_at": "2026-10-16T14:02:28+07:00", "notes": "Spec #17 §2.5 lấy mọi ngành CatalogMatcher nhận ra nên câu Tôi hỏi Sư phạm Tiếng Anh, không phải Nông học nhận cả hai ngành. Cần xác định ngành được chọn/loại bỏ, thay ngành/năm cũ trong câu nền và xử lý thiếu câu nền. §4 cần quy định notice lần 2 rỗng và xoá segments cũ; thống nhất ngoại lệ sửa generation với spec paper §5."}, "D4": {"item_id": "D4", "draft_sha256": "d59aea0512457f264042b6f28f4493a92e4751774aa9d5ffcc2621494d33382f", "decision": "reject", "reviewer": "Codex", "verified_at": "2026-10-16T14:02:28+07:00", "notes": "Duyệt riêng tên Sư phạm Địa lý: đã xem ảnh và text trang 18. Không duyệt nguyên gói giữ nhận nhầm: CatalogMatcher nhận pháp luật tuyển sinh thành ngành Luật, khối ngành kinh tế thành ngành Kinh tế. Giữ tên ngành chuẩn nhưng cần phân biệt ngữ cảnh hoặc hỏi lại; tách quyết định về tên đúng với lỗi matcher."}, "D5": {"item_id": "D5", "draft_sha256": "79d0190e05c41f0304a8d69f693c0c12fa8f4a291cc99c855376f7be38a239bf", "decision": "approve", "reviewer": "Codex", "verified_at": "2026-10-16T14:02:28+07:00", "notes": "Duyệt việc chuyển SQL + router và chunk/metadata sang track nghiên cứu, giữ việc ứng dụng ở production. Đây là quyết định phân công; chưa xác nhận đã triển khai hay nghiệm thu. G1 đã xong nhưng chưa đạt cổng đo, giữ cờ tắt; khi cập nhật hàng đợi cần phản ánh trạng thái hiện có."}, "D6": {"item_id": "D6", "draft_sha256": "cbb170b632a359b546fe52c0fde516f29fce81002897de713fd8f463e55eede1", "decision": "approve", "reviewer": "Codex", "verified_at": "2026-10-16T14:02:28+07:00", "notes": "Duyệt max_tokens=2048 cho generator của các arm mới. b3-chat.yaml và hàng đợi ghi ca mô tả cần khoảng 1101 token, 1024 bị truncated. Phải probe lại và chạy lại các arm so sánh với cùng giới hạn; không trộn run 1024 với 2048 hay áp giới hạn này cho classifier/notice."}, "D7": {"item_id": "D7", "draft_sha256": "ba9a42ce43076d61255dfef8932f8d471b7bce555eab90956df1fe5cb0a91e9d", "decision": "approve", "reviewer": "Codex", "verified_at": "2026-10-16T14:02:28+07:00", "notes": "Duyệt đóng M7 như số phát triển/lịch sử, không xác nhận kết quả M7 là số chính thức. Giữ nguyên dữ liệu, trace và ghi chú lỗi bộ chấm; thay bằng nhóm Q sau khi D1 và gold v2 được duyệt. Không xoá hồ sơ M7."}, "D8": {"item_id": "D8", "draft_sha256": "ebaa83081acfb304248f79d4a964e7cc8b01e0e62d9e09ae60cd1cef1f0c60f4", "decision": "approve", "reviewer": "Codex", "verified_at": "2026-10-16T14:02:28+07:00", "notes": "Duyệt bổ sung superseded_by từ TB152 tới TB153: PDF TB153 trang 2 ghi rõ thay TB152 ngày 22/08/2025. Snapshot hiện đã loại TB152. Khi thực hiện cần bảo toàn file nguồn và quản lý thay đổi metadata snapshot/hash; đợt này chỉ ghi quyết định, chưa sửa sổ nguồn."}}</script>
+<script id="review-lib">
+const FIELDS = ["item_id", "draft_sha256", "decision", "reviewer", "verified_at", "notes"];
+function pad(n) { return String(Math.abs(n)).padStart(2, "0"); }
+function isoLocal(d) {
+  const off = -d.getTimezoneOffset();
+  return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate())
+    + "T" + pad(d.getHours()) + ":" + pad(d.getMinutes()) + ":" + pad(d.getSeconds())
+    + (off >= 0 ? "+" : "-") + pad(Math.floor(Math.abs(off) / 60)) + ":" + pad(Math.abs(off) % 60);
+}
+function csvCell(value) {
+  const text = value == null ? "" : String(value);
+  return /[",\r\n]/.test(text) ? '"' + text.replace(/"/g, '""') + '"' : text;
+}
+function toCsv(fields, rows) {
+  const lines = [fields.join(",")].concat(rows.map(r => fields.map(f => csvCell(r[f])).join(",")));
+  return lines.join("\r\n") + "\r\n";
+}
+</script>
+<script>
+(function () {
+  const saved = JSON.parse(document.getElementById("review-rows").textContent);
+  const revision = document.getElementById("review-rows").dataset.storageRevision;
+  const key = "gold-review:" + location.pathname + (revision ? ":" + revision : "");
+  let local = {};
+  try { local = JSON.parse(localStorage.getItem(key) || "{}"); } catch (e) { local = {}; }
+  const nameBox = document.getElementById("reviewer");
+  try { nameBox.value = localStorage.getItem("gold-reviewer") || ""; } catch (e) {}
+  nameBox.addEventListener("input", () => {
+    try { localStorage.setItem("gold-reviewer", nameBox.value.trim()); } catch (e) {}
+  });
+  const forms = Array.from(document.querySelectorAll("fieldset.review"));
+  const state = {};
+  function persist() {
+    try { localStorage.setItem(key, JSON.stringify(state)); } catch (e) {}
+    const done = Object.values(state).filter(r => r.decision !== "pending").length;
+    document.getElementById("progress").textContent =
+      done + "/" + forms.length + " câu đã có quyết định";
+  }
+  function show(form, row) {
+    form.querySelector(".ok").checked = row.decision === "approve";
+    form.querySelector(".bad").checked = row.decision === "reject";
+    form.querySelector(".notes").value = row.notes || "";
+    form.querySelector(".when").textContent =
+      row.decision === "pending" ? "" : (row.reviewer || "") + " · " + (row.verified_at || "");
+    form.closest("article").dataset.decision = row.decision;
+  }
+  forms.forEach(form => {
+    const id = form.dataset.item, hash = form.dataset.hash;
+    const mine = local[id] && local[id].draft_sha256 === hash ? local[id] : null;
+    // Quyết định gắn với nội dung cũ (hash khác) thì không tick sẵn: phải duyệt lại.
+    const prior = saved[id] && saved[id].draft_sha256 === hash ? saved[id] : null;
+    state[id] = Object.assign({item_id: id, draft_sha256: hash, decision: "pending",
+      reviewer: "", verified_at: "", notes: ""}, prior || {}, mine || {});
+    show(form, state[id]);
+    function decide(decision) {
+      const reviewer = nameBox.value.trim();
+      if (decision !== "pending" && !reviewer) {
+        alert("Nhập tên người duyệt ở đầu trang trước khi tick.");
+        show(form, state[id]);
+        return;
+      }
+      Object.assign(state[id], {draft_sha256: hash, decision: decision,
+        reviewer: decision === "pending" ? "" : reviewer,
+        verified_at: decision === "pending" ? "" : isoLocal(new Date())});
+      show(form, state[id]);
+      persist();
+    }
+    form.querySelector(".ok").addEventListener("change",
+      e => decide(e.target.checked ? "approve" : "pending"));
+    form.querySelector(".bad").addEventListener("change",
+      e => decide(e.target.checked ? "reject" : "pending"));
+    form.querySelector(".notes").addEventListener("input",
+      e => { state[id].notes = e.target.value; persist(); });
+  });
+  persist();
+  document.getElementById("export").addEventListener("click", () => {
+    const rows = forms.map(f => state[f.dataset.item]);
+    const blob = new Blob([toCsv(FIELDS, rows)], {type: "text/csv;charset=utf-8"});
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(blob);
+    link.download = "reviews.csv";
+    link.click();
+    URL.revokeObjectURL(link.href);
+  });
+})();
+</script>
+</html>

@@ -1,0 +1,845 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="app">
+<head id="Head1"><meta charset="utf-8" /><title>
+	TUYỂN SINH ĐẠI HỌC CHÍNH QUY
+</title><meta name="description" content="blank page" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="title" content="   " /><meta name="description" content="Trường Đại Học Quy Nhơn" /><meta name="image" content="/Temp/ArticleImage/banner.jpg" /><meta name="image:url" content="/Temp/ArticleImage/banner.jpg" /><meta property="og:image:url" content="/Temp/ArticleImage/banner.jpg" /><meta id="ogimage" property="og:image" itemprop="thumbnailUrl" content="/Temp/ArticleImage/banner.jpg" /><meta id="ogtitle" property="og:title" content="   " /><meta property="og:description" content="Trường Đại Học Quy Nhơn" /><link rel="shortcut icon" type="image/png" href="/Resources/assets/index/imgs/favicon.ico" /><link href="/App/Admin/assets/css/font-awesome.min.css" rel="stylesheet" /><link href="//use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet" />
+    <!--Fonts-->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300" rel="stylesheet" type="text/css" /><link href="/App/Admin/assets/css/typicons.min.css" rel="stylesheet" /><link href="/App/Admin/assets/css/animate.min.css" rel="stylesheet" /><link href="/CSS/SearchThumb.css" rel="stylesheet" /><link href="/CSS/zebra_dialog.css" rel="stylesheet" /><link href="/App/Admin/lib/modules/angularjs-toaster/toaster.css" rel="stylesheet" /><link href="/App/Admin/lib/WebImageMaker/jquery.fileupload.css" rel="stylesheet" />
+    
+
+      <!-- jQuery PHẢI đứng đầu -->
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" type="text/javascript"></script>
+        <script src="https://code.jquery.com/jquery-migrate-3.4.1.min.js" type="text/javascript"></script>
+
+    <!-- Moment -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+
+    <!-- Angular Core -->
+    <script src="/App/Admin/lib/angular/angular.min.js"></script>
+    <!-- Angular official modules -->
+    <script src="/App/Admin/lib/angular/angular-animate/angular-animate.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.8.3/angular-sanitize.min.js"></script>
+
+    <!-- Angular Router -->
+    <script src="/App/Admin/lib/angular/angular-ui-router/angular-ui-router.js"></script>
+    <script src="/App/Admin/lib/angular/angular-breadcrumb/angular-breadcrumb.js"></script>
+
+    <!-- Angular UI -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.6/ui-bootstrap-tpls.min.js"></script>
+    <script src="/App/Admin/lib/modules/ui-select-master/dist/select.js"></script>
+
+    <!-- Angular Extensions -->
+    <script src="/App/Admin/lib/modules/angularjs-toaster/toaster.js"></script>
+    <script src="/App/Admin/lib/angular/angular-file-upload/angular-file-upload.min.js"></script>
+    <script src="/App/Admin/lib/angular/angular-ui-utils/angular-ui-utils.js"></script>
+
+    <!-- Datetime Picker -->
+    <script src="/App/Admin/lib/angular/angular-datetimepicker/bootstrap-datetimepicker.js"></script>
+    <script src="/App/Admin/lib/angular/angular-datetimepicker/angular-eonasdan-datetimepicker.js"></script>
+
+    <!-- Utilities -->
+    <script src="/App/Admin/lib/utilities.js"></script>
+
+    <!-- App -->
+    <script src="/App/Admin/app/app.js?v=1.0"></script>
+    <script src="/App/Admin/app/config.js?v=1.0"></script>
+
+    <!-- Services -->
+    <script src="/App/Admin/app/services/ModuleService.js"></script>
+    <script src="/App/Admin/app/services/UploadImgService.js"></script>
+
+    <!-- Controllers -->
+    <script src="/App/Admin/app/controllers/ModuleController.js"></script>
+
+    <!-- Directives -->
+    <script src="/App/Admin/app/directives/UploadImgDirective.js"></script>
+
+    <style type="text/css">
+        .title_topicdisplay {
+            font-size: 17px !important;
+            font-weight: 600 !important;
+        }
+
+        .itemsearch h6 {
+            margin-top: 5px !important;
+            margin-left: 5px !important;
+        }
+
+        .itemsearch {
+            margin: 0px 0px 10px 0px;
+            float: left;
+            width: 100%;
+            border-radius: 5px;
+            background: rgba(204, 204, 204, 0.24);
+        }
+
+        .result_lucene {
+            font-family: Arial,Tahoma,sans-serif !important;
+        }
+
+        .h3_content {
+            font-size: 15px !important;
+            line-height: 1.3;
+            text-align: justify;
+            margin-top: 5px;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .result_lucene {
+            font: 600 16px arial;
+            padding: 0 10px;
+            background: rgba(204, 204, 204, 0.45);
+            color: #3e3e3e;
+            border-left: 5px solid #10a8e4;
+            float: left;
+            height: 30px;
+            padding-top: 6px;
+            width: 100%;
+            margin-bottom: 6px;
+        }
+
+        .ct_topic_r1 a {
+            font-size: 14px !important;
+            margin-right: 5px;
+            border: 1px dotted #e8e8e8;
+            border-radius: 17px;
+            background-color: rgba(204, 204, 204, 0.45);
+            padding: 4px 8px;
+            text-decoration: none !important;
+            font-weight: bold;
+        }
+
+        .ct_topic_r1 {
+            text-align: center;
+            padding-bottom: 8px;
+        }
+
+        * body #dialogButtons {
+            position: fixed !important;
+        }
+    </style>
+<link href="/WebResource.axd?d=20Ywd-wEfOSVrTPf6FaOxnDpmHt-sIAShh62J4UOW6U_VdztCFylKKvgDAfqnfapL52jcMsp81NWQ5c5oTZMZI6OWR1-N4dyhS99oBkmpEkbpPw80gItEh6Cc8JWnFydoh6QSXZa7WLF7X6laZlM_g2&amp;t=639139076983809626" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=2ia3onATU1b30eg-5vhWzlvT8Q5oJsFltdj546lBHzzmKZdu3fkowITdwcDh0PyS5Yl4Ryka0hP5AQC4LQT75qhDw0wKPHZvlZV51XrqYVMI19j26Zk6UQinyD_xleDY1DYz9ils0WsasKjG_v-3BtgSdijIgMqh0PzUJIM7xzQ1&amp;t=639139076983809626" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=Tl2QWqphe1EW3GMuqeTuwXBm40KBEQpp06xyFG2724mDY4ChVCU_f5RlUGKrs1niDf_KmRUh21BCKmGy4GHw6LPe6yJL9g2KbgN5xNiP3XwD9x0ibvIcSeneceYrpqjKJoVMceYO_q1jhHqXQNQomhuNJ9FyvPj94t_LiF8rFfw1&amp;t=639139076983809626" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /><link href="/WebResource.axd?d=ACvCMtnd3obF7Yy0WWW2wGdD2lEecSlhDteuUYkfEuUOOsCz_4IcvWf3KF-SeP9px3xvcqmt55vmlIpCmr63fyGc6hApaqCYJmAGkBW1O4vCj66wVoG5d1LC1FunD04vaeVli9j2J2C8Tyko3oDZYIxKGFZb4tzJ82IKuo6acgPWZjwiubYFBRgUq_85H8in0&amp;t=639139076983809626" type="text/css" rel="stylesheet" class="Telerik_stylesheet" /></head>
+
+<body id="bd" class="homepage home-layout1 res" onload='popunder();'>
+
+    <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+    <form name="form1" method="post" action="./tuyen-sinh-dai-hoc-chinh-quy-2027" id="form1">
+<div>
+<input type="hidden" name="RadScriptManager1_TSM" id="RadScriptManager1_TSM" value="" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPaA8FDzhkZjI4OTc4ZmFlNTQyYRgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBAURUmFkV2luZG93TWFuYWdlcjEFGGN0bDIyJGN0bDAxJFJhZExpc3RWaWV3MQUYY3RsMjIkY3RsMDEkUmFkTGlzdFZpZXcyBRdjdGwyMiRjdGwwMSRyd1VzZXJMb2dpbmGM7CdkyKDbMRt7vO6NhSXSTYUg2yQlDTEu6QhVEgfy" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=LDfTFQVq03GHpgvCJeaUq8YR9w4nBGX0f-qax-8syzw6GQxJ_mi5UhYfirwNwn07NbtDuJhlNObEUgVfWT2WhFv_hUzEmvJIOo2Y1HqMjqM1&amp;t=639191131820000000" type="text/javascript"></script>
+
+
+<script src="/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=RadScriptManager1_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3avi-VN%3a44715eca-1ae9-42ec-b817-38b6cdd5d2ea%3aea597d4b%3ab25378d2%3bTelerik.Web.UI%2c+Version%3d2024.1.131.45%2c+Culture%3dneutral%2c+PublicKeyToken%3d121fae78165ba3d4%3avi-VN%3a9948a144-ff46-44f4-9ae0-6f54d8eaff7b%3a16e4e7cd%3af7645509%3a24ee1bba%3ab2e06756%3a92fe8ea0%3afa31b949%3ac128760b%3a874f8ea2%3a4877f69a%3a33715776%3a19620875%3af46195d3%3a490a9d4e%3abd8f85e4%3addbfcb67" type="text/javascript"></script>
+<script src="../Services/CMS.asmx/js" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+</div>
+        <div id="RadWindowManager1" style="display:none;">
+	<!-- 2024.1.131.45 --><div id="RadWindowManager1_alerttemplate" style="display:none;">
+        <div class="rwDialogPopup radalert">
+            <div class="rwDialogText">
+            {1}
+            </div>
+
+            <div>
+                <a  onclick="$find('{0}').close(true);"
+                class="rwPopupButton" href="javascript:void(0);">
+                    <span class="rwOuterSpan">
+                        <span class="rwInnerSpan">##LOC[OK]##</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+        </div><div id="RadWindowManager1_prompttemplate" style="display:none;">
+         <div class="rwDialogPopup radprompt">
+                <div class="rwDialogText">
+                {1}
+                </div>
+                <div>
+                    <script type="text/javascript">
+                    function RadWindowprompt_detectenter(id, ev, input)
+                    {
+                        if (!ev) ev = window.event;
+                        if (ev.keyCode == 13)
+                        {
+                            var but = input.parentNode.parentNode.getElementsByTagName("A")[0];
+                            if (but)
+                            {
+                                if (but.click) but.click();
+                                else if (but.onclick)
+                                {
+                                    but.focus(); var click = but.onclick; but.onclick = null; if (click) click.call(but);
+                                }
+                            }
+                           return false;
+                        }
+                        else return true;
+                    }
+                    </script>
+                    <input title="Enter Value" onkeydown="return RadWindowprompt_detectenter('{0}', event, this);" type="text"  class="rwDialogInput" value="{2}" />
+                </div>
+                <div>
+                    <a onclick="$find('{0}').close(this.parentNode.parentNode.getElementsByTagName('input')[0].value);"
+                        class="rwPopupButton" href="javascript:void(0);" ><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[OK]##</span></span></a>
+                    <a onclick="$find('{0}').close(null);" class="rwPopupButton"  href="javascript:void(0);"><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[Cancel]##</span></span></a>
+                </div>
+            </div>
+        </div><div id="RadWindowManager1_confirmtemplate" style="display:none;">
+        <div class="rwDialogPopup radconfirm">
+            <div class="rwDialogText">
+            {1}
+            </div>
+            <div>
+                <a onclick="$find('{0}').close(true);"  class="rwPopupButton" href="javascript:void(0);" ><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[OK]##</span></span></a>
+                <a onclick="$find('{0}').close(false);" class="rwPopupButton"  href="javascript:void(0);"><span class="rwOuterSpan"><span class="rwInnerSpan">##LOC[Cancel]##</span></span></a>
+            </div>
+        </div>
+        </div><input id="RadWindowManager1_ClientState" name="RadWindowManager1_ClientState" type="hidden" />
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('RadScriptManager1', 'form1', [], [], [], 90, '');
+//]]>
+</script>
+
+        
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet" />
+<link href="/Resources/assets/smartmenus-1.1.1/jquery.smartmenus.bootstrap-4.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+<link href="/Resources/assets/css/tuyen-sinh.css" rel="stylesheet" />
+<link href="/Resources/assets/css/portlet-trang-tuyen-sinh.css" rel="stylesheet" />
+<link href="/Resources/assets/css/portlet-su-kien.css" rel="stylesheet" />
+
+<div id="page">
+    <div id="psc-divPanelWrapper">
+	<div id="psc-divPanelTop" style="">
+		<div id="psc-divPanelTop-Content" style="min-height: 30px;">
+			<div id="psc-divPortlet-4fde7b06-bb75-4bd4-8c23-52a8042f0eee" class="psc-divPortlet-Wrapper" style="">
+				<div class="psc-divPortlet-Content">
+					
+
+<nav id="main-menu" class="navbar navbar-light navbar-expand-lg pb-0">
+    <div class="container-fluid align-items-stretch">
+            <a class="navbar-brand pb-3" href="#">
+<img class="img-fluid" src="/Resources/assets/images/logo/logo_QNU.png" alt="logo Trường Đại Học Quy Nhơn" />
+</a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse align-items-stretch" id="navbarScroll">
+            <ul class="navbar-nav ms-auto mb-lg-0">
+                <li class='nav-item'><a  class='nav-link'  href='https://wts.qnu.edu.vn'>Home</a></li><li class='nav-item dropdown'><a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>Đại học chính quy</a><ul class='dropdown-menu' aria-labelledby='navbarDropdown'><li><a class='dropdown-item'  href='/vi/dai-hoc-chinh-quy-1764'>Thông tin tuyển sinh</a></li><li><a class='dropdown-item'  href='https://qnu.edu.vn/vi/dai-hoc-1816/nganh-tuyen-sinh'>Ngành tuyển sinh</a></li><li><a class='dropdown-item'  href='https://tuyensinh.qnu.edu.vn/vi/diem-chuan-cac-nam/diem-chuan-trung-tuyen-dai-hoc-he-chinh-quy-nam-2025'>Điểm chuẩn năm 2025</a></li></ul></li><li class='nav-item dropdown'><a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>Cao học</a><ul class='dropdown-menu' aria-labelledby='navbarDropdown'><li><a class='dropdown-item'  href='/vi/sau-dai-hoc-1765'>Thông tin tuyển sinh</a></li><li><a class='dropdown-item'  href='/vi/cao-hoc/nganh-tuyen-sinh-2505'>Ngành tuyển sinh</a></li></ul></li><li class='nav-item dropdown'><a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>Nghiên cứu sinh</a><ul class='dropdown-menu' aria-labelledby='navbarDropdown'><li><a class='dropdown-item'  href='/vi/sau-dai-hoc-1765'>Thông tin tuyển sinh</a></li><li><a class='dropdown-item'  href='/vi/nghien-cuu-sinh-1771/nganh-tuyen-sinh-1318'>Ngành tuyển sinh</a></li></ul></li><li class='nav-item dropdown'><a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>Vừa làm vừa học</a><ul class='dropdown-menu' aria-labelledby='navbarDropdown'><li><a class='dropdown-item'  href='/vi/tuyen-sinh-vua-lam-vua-hoc'>Thông tin tuyển sinh</a></li><li><a class='dropdown-item'  href='/vi/vua-lam-vua-hoc-vb2/nganh-tuyen-sinh-5918'>Ngành tuyển sinh</a></li></ul></li><li class='nav-item dropdown'><a class='nav-link dropdown-toggle' href='' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>Tại sao chọn QNU?</a><ul class='dropdown-menu' aria-labelledby='navbarDropdown'><li><a class='dropdown-item'  href='/vi/co-so-vat-chat-1457/ky-tuc-xa-dai-hoc-quy-nhon'>Ký túc xá</a></li><li><a class='dropdown-item'  href='/vi/co-so-vat-chat-1457'>Cơ sở vật chất</a></li><li><a class='dropdown-item'  href='/vi/nghe-nghiep-va-viec-lam'>Cơ hội việc làm</a></li><li><a class='dropdown-item'  href='/vi/chon-qnu-tai-sao-khong'>Tại sao chọn QNU?</a></li><li class='dropdown'><a class='dropdown-item dropdown-toggle' href='#' id='navbarDropdown-2' role='button' data-bs-toggle='dropdown' aria-expanded='false'>Thông báo - Hướng dẫn</a><ul class='dropdown-menu' aria-labelledby='navbarDropdown-2'><li><a  class='dropdown-item' title='Cẩm nang tuyển sinh' href='#'>Cẩm nang tuyển sinh</a></li></ul></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- /.navbar-->
+
+				</div>
+			</div>
+		</div>
+	</div><div id="psc-divPanelMid">
+		<div id="psc-divPanelCenter" style="">
+			<div id="psc-divPanelCenter-Content" style="min-height: 30px;">
+				
+
+
+
+<link href="/Resources/assets/css/chuyen-muc.css" rel="stylesheet" />
+<style>
+    #main-menu .nav-link {
+    color: #fff;
+}
+.bg-img--small::before {
+   background: rgb(155 28 28 / 23%);
+
+}
+</style>
+<script>
+    $(document).ready(function () {
+
+        $("#homepage-url").attr("href", "http://" + location.hostname);
+        var n = $(".topic-columns li").length;
+        if (n % 2 != 0) {
+            $(".topic-columns").append($("<li style='border:0'></li>"));
+        };
+
+    });
+</script>
+
+<!-- banner/_banner.css-->
+<section class="psc-section">
+    <div class="banner bg-img--small d-flex align-items-end pt-4">
+        <div class="container-fluid pb-3 position-relative">
+            <h6 class="edit-fs-6"><a id="homepage-url"><span class="fa fa-home"></span>Trang chủ / </a></h6>
+            <h1 class="fs-4"><a href="/vi/tuyen-sinh-dai-hoc-chinh-quy">TUYỂN SINH ĐẠI HỌC CHÍNH QUY</a></h1>
+        </div>
+    </div>
+</section>
+
+<!-- news/_lasted-news.css-->
+<div class="psc-section">
+    
+            <div class="lasted-news">
+                <img class="img-fluid" src="/Temp/ArticleImage/Capture-220346.JPG" />
+                <div class="lasted-news--content d-flex align-items-center">
+                    <div class="container-fluid">
+                        <div class="row justify-content-end">
+                            <div class="col-md-6 py-4">
+                                <h3 class="edit-fs-6 lh-base">TB 158 - Điểm chuẩn trúng tuyển vào đại học chính quy năm 2026 (Đợt bổ sung)</h3>
+                                
+                                <p>
+                                    
+                                </p>
+
+                                <a href="/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb-158-diem-chuan-trung-tuyen-vao-dai-hoc-chinh-quy-nam-2026-dot-bo-sung" class="btn btn--blue-light rounded-pill px-4 fw-bold">Xem chi tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <input id="ctl22_ctl01_RadListView1_ClientState" name="ctl22_ctl01_RadListView1_ClientState" type="hidden" /><span id="ctl22_ctl01_RadListView1" style="display:none;"></span>
+
+</div>
+
+<!-- list news -->
+<section class="psc-section">
+    <div class="container-fluid my-4 py-4">
+        <div class="row">
+            
+                    <div class="col-md-4 col-sm-6 pb-4">
+                        <div class="hvr-shine mb-4">
+                            <a href="/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb151-xet-tuyen-bo-sung-vao-dai-hoc-chinh-quy-nam-2026">
+                                <figure>
+                                    <img class="img-fluid" src="/Temp/ArticleImage/Capture-132226.JPG" />
+                                </figure>
+                            </a>
+                        </div>
+                        
+                        <h5 class="edit-fs-6 lh-base">
+                            <a href="/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb151-xet-tuyen-bo-sung-vao-dai-hoc-chinh-quy-nam-2026">TB151 - Xét tuyển bổ sung vào đại học chính quy năm 2026</a>
+                        </h5>
+                    </div>
+                    <!-- news -->
+                
+                    <div class="col-md-4 col-sm-6 pb-4">
+                        <div class="hvr-shine mb-4">
+                            <a href="/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/nhap-hoc-doi-voi-thi-sinh-trung-tuyen-dai-hoc-chinh-quy-nam-2026">
+                                <figure>
+                                    <img class="img-fluid" src="/Temp/ArticleImage/Capture-085308.JPG" />
+                                </figure>
+                            </a>
+                        </div>
+                        
+                        <h5 class="edit-fs-6 lh-base">
+                            <a href="/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/nhap-hoc-doi-voi-thi-sinh-trung-tuyen-dai-hoc-chinh-quy-nam-2026">Nhập học đối với thí sinh trúng tuyển đại học chính quy năm 2026</a>
+                        </h5>
+                    </div>
+                    <!-- news -->
+                
+                    <div class="col-md-4 col-sm-6 pb-4">
+                        <div class="hvr-shine mb-4">
+                            <a href="/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb141-diem-chuan-trung-tuyen-vao-dai-hoc-chinh-quy-nam-2026-17-58-42">
+                                <figure>
+                                    <img class="img-fluid" src="/Temp/ArticleImage/1786277720426_2940882203541640205_2940882203541640205_bd3491a5dd1a982a6102ef4f3a0c3ad4-191857.jpg" />
+                                </figure>
+                            </a>
+                        </div>
+                        
+                        <h5 class="edit-fs-6 lh-base">
+                            <a href="/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb141-diem-chuan-trung-tuyen-vao-dai-hoc-chinh-quy-nam-2026-17-58-42">TB141 - Điểm chuẩn trúng tuyển vào đại học chính quy năm 2026 17:58:42 | </a>
+                        </h5>
+                    </div>
+                    <!-- news -->
+                
+                    <div class="col-md-4 col-sm-6 pb-4">
+                        <div class="hvr-shine mb-4">
+                            <a href="/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb-1906-thong-tin-tuyen-sinh-dai-hoc-nam-2026-cap-nhat-hinh-thuc-dao-tao-chinh-quy-1208">
+                                <figure>
+                                    <img class="img-fluid" src="/Temp/ArticleImage/1-164459.png" />
+                                </figure>
+                            </a>
+                        </div>
+                        
+                        <h5 class="edit-fs-6 lh-base">
+                            <a href="/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb-1906-thong-tin-tuyen-sinh-dai-hoc-nam-2026-cap-nhat-hinh-thuc-dao-tao-chinh-quy-1208">TB 1906 - Thông tin tuyển sinh đại học năm 2026 (cập nhật) - Hình thức đào tạo: Chính quy</a>
+                        </h5>
+                    </div>
+                    <!-- news -->
+                
+                    <div class="col-md-4 col-sm-6 pb-4">
+                        <div class="hvr-shine mb-4">
+                            <a href="/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb121-nguong-bao-dam-chat-luong-dau-vao-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-0514">
+                                <figure>
+                                    <img class="img-fluid" src="/Temp/ArticleImage/1-164732.png" />
+                                </figure>
+                            </a>
+                        </div>
+                        
+                        <h5 class="edit-fs-6 lh-base">
+                            <a href="/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb121-nguong-bao-dam-chat-luong-dau-vao-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-0514">TB121 - Ngưỡng bảo đảm chất lượng đầu vào tuyển sinh đại học chính quy năm 2026</a>
+                        </h5>
+                    </div>
+                    <!-- news -->
+                
+                    <div class="col-md-4 col-sm-6 pb-4">
+                        <div class="hvr-shine mb-4">
+                            <a href="https://drive.google.com/file/d/1gVofWPdrMkT9dZ6t972n7t0j4qa2Dtgu/view?usp=sharing">
+                                <figure>
+                                    <img class="img-fluid" src="/Resources/ImagePhoto/folder.png" />
+                                </figure>
+                            </a>
+                        </div>
+                        
+                        <h5 class="edit-fs-6 lh-base">
+                            <a href="https://drive.google.com/file/d/1gVofWPdrMkT9dZ6t972n7t0j4qa2Dtgu/view?usp=sharing">TB123 - Về việc quy đổi tương đương điểm giữa các phương thức  tuyển sinh đại học chính quy năm 2026</a>
+                        </h5>
+                    </div>
+                    <!-- news -->
+                
+                    <div class="col-md-4 col-sm-6 pb-4">
+                        <div class="hvr-shine mb-4">
+                            <a href="/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb2008-huong-dan-thuc-hien-quy-dinh-thi-nang-khieu-giao-duc-the-chat-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-1910">
+                                <figure>
+                                    <img class="img-fluid" src="/Temp/ArticleImage/1-164707.png" />
+                                </figure>
+                            </a>
+                        </div>
+                        
+                        <h5 class="edit-fs-6 lh-base">
+                            <a href="/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb2008-huong-dan-thuc-hien-quy-dinh-thi-nang-khieu-giao-duc-the-chat-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-1910">TB2008 - Hướng dẫn thực hiện quy định thi năng khiếu Giáo dục thể chất, tuyển sinh đại học chính quy năm 2026</a>
+                        </h5>
+                    </div>
+                    <!-- news -->
+                
+                    <div class="col-md-4 col-sm-6 pb-4">
+                        <div class="hvr-shine mb-4">
+                            <a href="/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb2015-ve-viec-huong-dan-thuc-hien-quy-dinh-thi-nang-khieu-giao-duc-mam-non-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-2209">
+                                <figure>
+                                    <img class="img-fluid" src="/Temp/ArticleImage/1-164645.png" />
+                                </figure>
+                            </a>
+                        </div>
+                        
+                        <h5 class="edit-fs-6 lh-base">
+                            <a href="/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb2015-ve-viec-huong-dan-thuc-hien-quy-dinh-thi-nang-khieu-giao-duc-mam-non-tuyen-sinh-dai-hoc-chinh-quy-nam-2026-2209">TB2015 - Về việc hướng dẫn thực hiện quy định thi năng khiếu Giáo dục mầm non, tuyển sinh đại học chính quy năm 2026</a>
+                        </h5>
+                    </div>
+                    <!-- news -->
+                
+                    <div class="col-md-4 col-sm-6 pb-4">
+                        <div class="hvr-shine mb-4">
+                            <a href="/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb1897-cong-khai-viec-thuc-hien-chi-tieu-tuyen-sinh-nam-2025-va-xac-dinh-so-luong-tuyen-sinh-nam-2026-4108">
+                                <figure>
+                                    <img class="img-fluid" src="/Temp/ArticleImage/1-164553.png" />
+                                </figure>
+                            </a>
+                        </div>
+                        
+                        <h5 class="edit-fs-6 lh-base">
+                            <a href="/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb1897-cong-khai-viec-thuc-hien-chi-tieu-tuyen-sinh-nam-2025-va-xac-dinh-so-luong-tuyen-sinh-nam-2026-4108">TB1897 - Công khai việc thực hiện chỉ tiêu tuyển sinh năm 2025 và xác định số lượng tuyển sinh năm 2026</a>
+                        </h5>
+                    </div>
+                    <!-- news -->
+                
+                    <div class="col-md-4 col-sm-6 pb-4">
+                        <div class="hvr-shine mb-4">
+                            <a href="/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb1886-cong-khai-so-luong-chi-tieu-tuyen-sinh-trinh-do-dai-hoc-cac-nganh-dao-tao-giao-vien-nam-2026-3406">
+                                <figure>
+                                    <img class="img-fluid" src="/Temp/ArticleImage/1-164426.png" />
+                                </figure>
+                            </a>
+                        </div>
+                        
+                        <h5 class="edit-fs-6 lh-base">
+                            <a href="/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb1886-cong-khai-so-luong-chi-tieu-tuyen-sinh-trinh-do-dai-hoc-cac-nganh-dao-tao-giao-vien-nam-2026-3406">TB1886 - Công khai số lượng chỉ tiêu tuyển sinh trình độ đại học các ngành đào tạo giáo viên năm 2026</a>
+                        </h5>
+                    </div>
+                    <!-- news -->
+                <input id="ctl22_ctl01_RadListView2_ClientState" name="ctl22_ctl01_RadListView2_ClientState" type="hidden" /><span id="ctl22_ctl01_RadListView2" style="display:none;"></span>
+        </div>
+        <!-- /.row -->
+    </div>
+</section>
+
+
+<section class="psc-section">
+    <div class="container-fluid d-flex justify-content-center mb-4">
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+                
+            </ul>
+        </nav>
+    </div>
+</section>
+
+
+<div id="ctl22_ctl01_rwUserLogin" style="display:none;">
+					<div id="ctl22_ctl01_rwUserLogin_C" style="display:none;">
+
+					</div><input id="ctl22_ctl01_rwUserLogin_ClientState" name="ctl22_ctl01_rwUserLogin_ClientState" type="hidden" />
+				</div>
+<script language="javascript" type="text/javascript">
+    var dialogMethod;
+    function CallWebMethodSuccess(results, context, methodName) {
+        switch (methodName) {
+            case "AllowWatchTopic":
+                {
+                    CheckUserWatchCallback(results, context, methodName);
+                }
+                break;
+        }
+    }
+
+    function CallWebMethodFailed(results, context, methodName) {
+        alert(results._message);
+    }
+    // check user login
+    function getQuerystringNameValue(name) {
+        // For example... passing a name parameter of "name1" will return a value of "100", etc.
+        // page.htm?name1=100 or page.htm/name1/100
+        var articleId;
+        var winURL = window.location.href;
+        var index = winURL.indexOf(name);
+        if (index > -1) {
+            winURL = winURL.substr(index, winURL.length);
+            var arr = winURL.indexOf("/") > -1 ? winURL.split("/") : winURL.split("=");;
+            articleId = arr[1];
+        }
+        return articleId;
+    }
+    function CheckUserWatchTopic() {
+        var title = window.location.pathname.replace("/vi/", "");
+        PSCPortal.Services.CMS.AllowWatchTopic(title, CallWebMethodSuccess);
+    }
+    var dialogMethod;
+    function CheckUserWatchCallback(results, context, methodName) {
+        if (!results) {
+            dialogMethod = "CheckUserWatchTopic";
+            var oWnd = $find("ctl22_ctl01_rwUserLogin");
+            oWnd.setSize(380, 180);
+            oWnd.setUrl("/Modules/CMS/UserLogin.aspx");
+            oWnd.set_title("Login");
+            oWnd.show();
+        }
+    }
+    function RadCheckUserWatchClose(sender, args) {
+        switch (dialogMethod) {
+            case "CheckUserWatchTopic":
+                {
+                    PSCPortal.Services.CMS.CheckUserWatchTopic(CallCheckUserWatchWebMethodSuccess);
+                }
+                break;
+        }
+    }
+    function CallCheckUserWatchWebMethodSuccess(results, context, methodName) {
+        if (!results) {
+
+            if (history.length === 1) {
+                window.close();
+            } else {
+                window.history.back();
+            }
+        }
+    }
+    //end check user login
+    window.onload = function (e) {
+        CheckUserWatchTopic();
+    }
+</script>
+
+
+			</div>
+		</div>
+	</div><div id="psc-divPanelBottom" style="">
+		<div id="psc-divPanelBottom-Content" style="min-height: 30px;">
+			<div id="psc-divPortlet-668d582d-648b-45d2-a8ca-7c3d90efa037" class="psc-divPortlet-Wrapper" style="">
+				<div class="psc-divPortlet-Content">
+					<footer class="footer">
+<div class="text-center">
+<img class="img-fluid vertical-align-top" src="/Resources/assets/images/bg/line_top-footer.png" alt="line" />
+</div>
+<div class="body-footer container-fluid py-4">
+<div class="row">
+<div class="col-md-4 d-flex flex-column align-items-center mb-4">
+<div class="logo-footer mb-4">
+<a href="#">
+<img class="img-fluid" src="/Resources/assets/images/logo/logo_QNU_white.png" alt="logo QNU white" />
+</a>
+</div>
+<ul class="list-group list-group-horizontal">
+    <li class="list-group-item bg--transparent">
+    <a class="text--white" href="#" target="_blank"><span class="fa-fw fa-facebook-f fab"></span>
+    </a>
+    </li>
+    <li class="list-group-item bg--transparent">
+    <a class="text--white" href="#" target="_blank"><span class="fa-fw fa-twitter fab"></span>
+    </a>
+    </li>
+    <li class="list-group-item bg--transparent">
+    <a class="text--white" href="#" target="_blank"><span class="fa-fw fa-instagram fab"></span>
+    </a>
+    </li>
+    <li class="list-group-item bg--transparent">
+    <a class="text--white" href="#" target="_blank"><span class="fa-fw fa-google-plus-g fab"></span>
+    </a>
+    </li>
+    <li class="list-group-item bg--transparent">
+    <a class="text--white" href="#" target="_blank"><span class="fa-fw fa-youtube fab"></span>
+    </a>
+    </li>
+</ul>
+</div>
+<div class="col-md-4 mb-4">
+<header>
+<h5 class="text-uppercase fw-bold mb-3">Th&ocirc;ng tin li&ecirc;n hệ</h5>
+<div class="line--red w-75 mb-2">line</div>
+</header>
+<ul class="list-group">
+    <li class="list-group-item d-flex bg--transparent px-0 text--white">
+    <span><img src="/Resources/assets/images/icons/location_icon_white.png" alt="location icon" /></span>
+    <span class="ps-3">170 An Dương Vương, phường Quy Nhơn Nam, tỉnh Gia Lai</span></li>
+    <li class="list-group-item d-flex bg--transparent px-0 text--white">
+    <span><img src="/Resources/assets/images/icons/mail_icon_white.png" alt="mail icon" /></span>
+    <div class="ps-3">
+    <p class="mb-1">tuvantuyensinh@qnu.edu.vn&nbsp;</p>
+    </div>
+    </li>
+    <li class="list-group-item d-flex bg--transparent px-0 text--white">
+    <span><img src="/Resources/assets/images/icons/phone_icon_white.png" alt="phone icon" /></span>
+    <span class="ps-3">1800 55 88 49</span></li>
+    <div class="doitac" style="display: none;">
+    <a href="https://thammyviennevada.com">Kubet</a>
+    </div>
+</ul>
+</div>
+<div class="col-md-2 mb-4">
+<header>
+<h5 class="text-uppercase fw-bold mb-3">Đ&agrave;o tạo</h5>
+<div class="line--red w-50 mb-2">line</div>
+</header>
+<ul class="list-group">
+    <li class="list-group-item bg--transparent px-0"><a href="http://qnu.edu.vn/vi/dai-hoc-chinh-quy-1764/tb-1906-thong-tin-tuyen-sinh-dai-hoc-nam-2026-cap-nhat-hinh-thuc-dao-tao-chinh-quy">Đại học ch&iacute;nh quy</a></li>
+    <li class="list-group-item bg--transparent px-0"><a class="text--white" href="https://qnu.edu.vn/vi/cao-hoc/nganh-tuyen-sinh-2505" target="_blank">Cao học</a></li>
+    <li class="list-group-item bg--transparent px-0"><a class="text--white" href="https://qnu.edu.vn/vi/nghien-cuu-sinh-1771/nganh-tuyen-sinh-1318" target="_blank">Nghi&ecirc;n cứu sinh</a></li>
+    <li class="list-group-item bg--transparent px-0"><a class="text--white" href="https://qnu.edu.vn/vi/vua-lam-vua-hoc-vb2/nganh-tuyen-sinh-5918" target="_blank">Vừa l&agrave;m vừa học</a></li>
+</ul>
+</div>
+<div class="col-md-2 mb-4">
+<header>
+<h5 class="text-uppercase fw-bold mb-3">Li&ecirc;n kết</h5>
+<div class="line--red w-50 mb-2">line</div>
+</header>
+<ul class="list-group">
+    <li class="list-group-item bg--transparent px-0">
+    <a class="text--white" href="https://moet.gov.vn/Pages/home.aspx" target="_blank">Bộ Gi&aacute;o dục v&agrave; Đ&agrave;o tạo</a>
+    </li>
+    <li class="list-group-item bg--transparent px-0"><a class="text--white" href="https://qnu.edu.vn/" target="_blank">Trang chủ QNU</a></li>
+</ul>
+</div>
+</div>
+</div>
+<!-- /.body-footer -->
+<div class="py-4 text-center bg--blue">
+<div class="container">
+Copyright &copy; 2021 Đại học Quy Nhơn - Quy Nhon University
+</div>
+</div>
+</footer>
+<!-- /.footer -->
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+<script src="/Resources/assets/smartmenus-1.1.1/jquery.smartmenus.min.js"></script>
+<script src="/Resources/assets/smartmenus-1.1.1/jquery.smartmenus.bootstrap-4.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<script src="/Resources/assets/js/tuyen-sinh.js"></script>
+<script src="/Resources/assets/js/portlet-trang-tuyen-sinh.js"></script>
+        <div id="articleModal" class="modal fade" role="form">
+            <div class="modal-dialog modal-lg vertical-align-center-modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the modal.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+window.__TsmHiddenField = $get('RadScriptManager1_TSM');Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadWindowManager, {"clientStateFieldID":"RadWindowManager1_ClientState","formID":"form1","iconUrl":"","minimizeIconUrl":"","name":"RadWindowManager1","skin":"Default","windowControls":"[]"}, null, null, $get("RadWindowManager1"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadListView, {"UniqueID":"ctl22$ctl01$RadListView1","_clientSettings":{"DataBinding":{"ItemPlaceHolderID":"ctl22_ctl01_RadListView1_itemPlaceholder","DataService":{}}},"_virtualItemCount":1,"clientStateFieldID":"ctl22_ctl01_RadListView1_ClientState","renderMode":1}, null, null, $get("ctl22_ctl01_RadListView1"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadListView, {"UniqueID":"ctl22$ctl01$RadListView2","_allowPaging":true,"_clientSettings":{"DataBinding":{"ItemPlaceHolderID":"ctl22_ctl01_RadListView2_itemPlaceholder","DataService":{}}},"_pageSize":12,"_virtualItemCount":10,"clientStateFieldID":"ctl22_ctl01_RadListView2_ClientState","renderMode":1}, null, null, $get("ctl22_ctl01_RadListView2"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadWindow, {"_dockMode":false,"behaviors":36,"clientStateFieldID":"ctl22_ctl01_rwUserLogin_ClientState","formID":"form1","iconUrl":"","minimizeIconUrl":"","modal":true,"name":"rwUserLogin","skin":"Default","visibleStatusbar":false}, {"close":RadCheckUserWatchClose}, null, $get("ctl22_ctl01_rwUserLogin"));
+});
+//]]>
+</script>
+</form>
+
+    <script type="text/javascript">
+        //  var $ = jQuery.noConflict();
+
+        function SearchProcess(event, query) {
+            if (event.keyCode == 13) {
+                OnSearch(query);
+                return false;
+            }
+            return true;
+        }
+        function OnSearch(query) {
+            $.ajax({
+                type: "post",
+                url: "/Default.aspx/SearchAd",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: '{"txtSearch":"' + query + '"}',
+                success: function (result) {
+                    if (result.d) {
+                        //Redirect('/module/search');
+                        window.location.href = '/module/search';
+                    }
+                },
+                error: function (xhr, status, error) {
+                    alert(error);
+                }
+            });
+        }
+
+        function OnRedirectSuccess(results, context, methodName) {
+            Redirect('/module/search');
+        }
+        function OnRedirectFailed(results, context, methodName) {
+        }
+        //function OnSearchSuccess(results, context, methodName) {
+        //    LoadContentAndPaging(results);
+        //}
+        function OnSearchFailed(results, context, methodName) {
+        }
+        function retitleUrl(str) {
+            str = str.trim();
+            str = str.toLowerCase();
+            // remove accents, swap ñ for n, etc
+            var from = "àáảãạăằắẳẵặâầấẩẫậđèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵ·/_,:;";
+            var to = "aaaaaaaaaaaaaaaaadeeeeeeeeeeeiiiiiooooooooooooooooouuuuuuuuuuuyyyyy------";
+            for (var i = 0, l = from.length; i < l; i++) {
+                str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+            }
+            str = str.replace(/[^a-z0-9 -]/g, '') // remove invalid chars
+                .replace(/\s+/g, '-') // collapse whitespace and replace by -
+                .replace(/-+/g, '-'); // collapse dashes
+            return str;
+        };
+
+        function popunder() {
+            $('a').not('[href^="http"],[href^="https"],[href^="mailto:"],[href^="#"]').each(function () {
+                $(this).attr('href', function (index, value) {
+                    if (value != undefined) {
+                        var index = value.indexOf("Default.aspx");
+                        if (index >= 0)
+                            return value = "/" + value.substring(index, value.length);
+
+                    }
+                });
+            });
+        }
+        //popup dialog
+        function showDialogInfomation(dialogId) {
+            PSCPortal.Services.CMS.GetArticleContent(dialogId, GetArticleContentCallback);
+        }
+        function GetArticleContentCallback(result) {
+
+            $('#articleModal').find('.modal-body').html(result);
+            $('#articleModal').modal();
+
+            $('#articleModal').find('.modal-body').html(result);
+            $('#articleModal').modal();
+
+        }
+
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                $('.backtotop').fadeIn();
+                $('.backtotop').css("display", "block");
+            } else {
+                $('.backtotop').fadeOut();
+            }
+        });
+         //$.scrollSpeed(100, 800);
+
+    </script>
+
+    <!--  GO TO TOP -->
+    <script type="text/javascript">
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 50) {
+                $('.backtotop').fadeIn();
+            } else {
+                $('.backtotop').fadeOut();
+            }
+        });
+
+        $('.backtotop').click(function () {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 1200);
+            return false;
+        });
+    </script>
+
+</body>
+</html>

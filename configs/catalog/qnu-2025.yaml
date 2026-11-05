@@ -1,0 +1,72 @@
+# Danh mục cho stage query_rewrite (spec chat nhiều lượt §3). Dữ liệu do người duyệt:
+# tên ngành trong cẩm nang nằm trong ảnh tiêu đề, không trích tự động sạch được.
+# Mọi `name` phải xuất hiện trong corpus sau chuẩn hoá (tests/core/test_core_catalog_corpus.py).
+version: 1
+years: [2025]
+majors:
+  - {id: su-pham-toan-hoc, name: Sư phạm Toán học, aliases: [sư phạm toán], pages: [4, 5]}
+  - {id: su-pham-tin-hoc, name: Sư phạm Tin học, aliases: [sư phạm tin], pages: [6, 7]}
+  - {id: su-pham-vat-ly, name: Sư phạm Vật lý, aliases: [sư phạm lý], pages: [8, 9]}
+  - {id: su-pham-hoa-hoc, name: Sư phạm Hóa học, aliases: [sư phạm hoá], pages: [10, 11]}
+  - {id: su-pham-sinh-hoc, name: Sư phạm Sinh học, aliases: [sư phạm sinh], pages: [12, 13]}
+  - {id: su-pham-ngu-van, name: Sư phạm Ngữ văn, aliases: [sư phạm văn], pages: [14, 15]}
+  - {id: su-pham-lich-su, name: Sư phạm Lịch sử, aliases: [sư phạm sử], pages: [16, 17]}
+  # Trang 18 có tiêu đề "SƯ PHẠM ĐỊA LÝ"; mã 7140219 ở TB71, TB112, TB141 (kiểm 22/10/2026).
+  - {id: su-pham-dia-ly, name: Sư phạm Địa lý, aliases: [sư phạm địa], pages: [18, 19]}
+  # "tiếng Anh" khớp hai ngành → hỏi làm rõ giữa đúng hai ngành này (§4 bước 5).
+  - {id: su-pham-tieng-anh, name: Sư phạm Tiếng Anh, aliases: [tiếng Anh], pages: [20, 21]}
+  - {id: su-pham-khoa-hoc-tu-nhien, name: Sư phạm Khoa học tự nhiên, aliases: [sư phạm KHTN], pages: [22, 23]}
+  - {id: su-pham-lich-su-dia-ly, name: Sư phạm Lịch sử - Địa lý, aliases: [sư phạm sử địa], pages: [24, 25]}
+  - {id: giao-duc-mam-non, name: Giáo dục Mầm non, aliases: [mầm non], pages: [26, 27]}
+  - {id: giao-duc-tieu-hoc, name: Giáo dục Tiểu học, aliases: [tiểu học], pages: [28, 29]}
+  - {id: giao-duc-chinh-tri, name: Giáo dục Chính trị, pages: [30, 31]}
+  - {id: giao-duc-the-chat, name: Giáo dục Thể chất, aliases: [thể chất], pages: [32, 33]}
+  - {id: quan-ly-giao-duc, name: Quản lý giáo dục, pages: [34, 35]}
+  - {id: ngon-ngu-anh, name: Ngôn ngữ Anh, aliases: [tiếng Anh], pages: [36, 37]}
+  - {id: ngon-ngu-trung-quoc, name: Ngôn ngữ Trung Quốc, aliases: [tiếng Trung, ngôn ngữ Trung], pages: [38, 39]}
+  - {id: van-hoc, name: Văn học, pages: [40, 41]}
+  # "kinh tế" cũng là từ thường ("khối ngành kinh tế"); Kent 22/10/2026: để spec B xử lý, không sửa luật.
+  - {id: kinh-te, name: Kinh tế, pages: [42, 43]}
+  - {id: quan-ly-nha-nuoc, name: Quản lý nhà nước, pages: [44, 45]}
+  - {id: tam-ly-hoc, name: Tâm lý học, pages: [46, 47]}
+  - {id: dong-phuong-hoc, name: Đông phương học, pages: [48, 49]}
+  - {id: viet-nam-hoc, name: Việt Nam học, pages: [50, 51]}
+  - {id: quan-tri-kinh-doanh, name: Quản trị kinh doanh, aliases: [QTKD], pages: [52, 53]}
+  - {id: tai-chinh-ngan-hang, name: Tài chính - Ngân hàng, aliases: [TCNH], pages: [54, 55]}
+  # Trang 58 là Kế toán chương trình chất lượng cao (135 tín chỉ).
+  - {id: ke-toan, name: Kế toán, programs: [chất lượng cao], pages: [56, 57, 58, 59]}
+  - {id: kiem-toan, name: Kiểm toán, pages: [60, 61]}
+  # "luật" nằm trong "pháp luật" — câu nói "pháp luật" bị nhận là nhắc ngành Luật; Kent 22/10/2026: để spec B xử lý.
+  - {id: luat, name: Luật, pages: [62, 63]}
+  - {id: hoa-duoc, name: Hóa dược, pages: [64, 65]}
+  - {id: toan-ung-dung, name: Toán ứng dụng, pages: [66, 67]}
+  - {id: khoa-hoc-du-lieu, name: Khoa học dữ liệu, aliases: [data science], pages: [68, 69]}
+  - {id: khoa-hoc-vat-lieu, name: Khoa học vật liệu, pages: [70, 71]}
+  - {id: ky-thuat-phan-mem, name: Kỹ thuật phần mềm, aliases: [KTPM, software engineering], pages: [72, 73]}
+  - {id: cong-nghe-thong-tin, name: Công nghệ thông tin, aliases: [CNTT], pages: [74, 75]}
+  # Không dùng alias "AI": bỏ dấu thành "ai" (đại từ "ai").
+  - {id: tri-tue-nhan-tao, name: Trí tuệ nhân tạo, aliases: [TTNT], pages: [76, 77]}
+  - {id: cong-nghe-ky-thuat-o-to, name: Công nghệ kỹ thuật ô tô, aliases: [ô tô], pages: [78, 79]}
+  - {id: cong-nghe-ky-thuat-hoa-hoc, name: Công nghệ kỹ thuật hóa học, pages: [80, 81]}
+  - {id: logistics-chuoi-cung-ung, name: Logistics và Quản lý chuỗi cung ứng, aliases: [logistics], pages: [82, 83]}
+  - {id: ky-thuat-dien, name: Kỹ thuật điện, pages: [84, 85]}
+  - {id: ky-thuat-dien-tu-vien-thong, name: Kỹ thuật điện tử - viễn thông, aliases: [điện tử viễn thông], pages: [86, 87]}
+  - {id: ky-thuat-dieu-khien-tu-dong-hoa, name: Kỹ thuật điều khiển và tự động hóa, aliases: [tự động hoá], pages: [88, 89]}
+  - {id: cong-nghe-thuc-pham, name: Công nghệ thực phẩm, pages: [90, 91]}
+  - {id: ky-thuat-xay-dung, name: Kỹ thuật xây dựng, pages: [92, 93]}
+  - {id: nong-hoc, name: Nông học, pages: [94, 95]}
+  - {id: cong-tac-xa-hoi, name: Công tác xã hội, pages: [96, 97]}
+  - {id: quan-tri-du-lich-lu-hanh, name: Quản trị dịch vụ du lịch và lữ hành, aliases: [du lịch, lữ hành], pages: [98, 99]}
+  - {id: quan-tri-khach-san, name: Quản trị khách sạn, aliases: [khách sạn], pages: [100, 101]}
+  - {id: quan-ly-tai-nguyen-moi-truong, name: Quản lý tài nguyên và môi trường, pages: [102, 103]}
+  - {id: quan-ly-dat-dai, name: Quản lý đất đai, pages: [104, 105]}
+suggested: [cong-nghe-thong-tin, ky-thuat-phan-mem, tri-tue-nhan-tao, quan-tri-kinh-doanh, ngon-ngu-anh, su-pham-toan-hoc]
+major_topics: [học phí, điểm chuẩn, chỉ tiêu, học mấy năm, thời gian đào tạo, tín chỉ,
+               chuyên ngành, việc làm, ra trường, bằng tốt nghiệp, chương trình, đối tác]
+school_topics: [ký túc xá, KTX, địa chỉ, giá trị cốt lõi, sứ mạng, sứ mệnh, tầm nhìn, cơ sở vật chất]
+slots:
+  admission_method: []
+  training_mode: []
+  round: []
+  subject_group: []
+  priority: []

@@ -1,0 +1,24 @@
+# Developer knowledge graph: source, configuration and documentation.
+# Admission documents and generated datasets belong to the RAG corpus.
+.codegraph/
+graphify-out/
+.env
+.env.*
+HF_TOKEN
+codex_session.txt
+**/*.pdf
+**/*.docx
+**/*.xlsx
+**/*.png
+**/*.jpg
+**/*.jpeg
+**/*.json
+**/*.jsonl
+**/*.csv
+**/*.html
+data/ocr-data/text/
+results/
+artifacts/
+.venv*/
+node_modules/
+dist/

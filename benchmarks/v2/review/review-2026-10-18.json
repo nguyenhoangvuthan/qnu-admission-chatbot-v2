@@ -1,0 +1,2390 @@
+{
+  "reviewer": "Codex",
+  "verified_at": "2026-10-18T07:50:59+07:00",
+  "scope": "Rà soát lại 126 câu đơn lượt trên cùng snapshot; hồ sơ agent riêng, giữ nguyên xác nhận người dùng ngày 17/10.",
+  "counts": {
+    "approve": 99,
+    "reject": 27
+  },
+  "prior_human_counts": {
+    "approve": 108,
+    "reject": 18
+  },
+  "new_reject_ids": [
+    "V2-CMP-010",
+    "V2-CMP-011",
+    "V2-CMP-012",
+    "V2-CMP-013",
+    "V2-CMP-014",
+    "V2-CMP-015",
+    "V2-CMP-016",
+    "V2-CMP-018",
+    "V2-CMP-020"
+  ],
+  "corrected_reason_ids": [
+    "V2-PIL-045",
+    "V2-PIL-054",
+    "V2-PIL-061"
+  ],
+  "draft_file_sha256": {
+    "benchmarks/v2/comparison.draft.jsonl": "5ebcd997fed4bef11210544276f2c59fb6f9e90c087cd4f5bf489fafdc55fea9",
+    "benchmarks/v2/core.draft.jsonl": "14c7958551fd517d43e2c3ec0277673b2e029d3553918148e08f4b3384cdb463"
+  },
+  "snapshot_sha256": "0c2b6e0f65e64d6b62328069bec6b6904b362dbe46b426a13fa7f4db41aee0a9",
+  "human_reviews_sha256": "e4e3fc6824f11d0f3eee08075dc230bc7f773be7d16962d6b83d49d136957eba",
+  "source_checks": [
+    {
+      "file": "tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+      "sha256": "86bbba2b5e5c57b59cc7c3ee82d72fab73c54dcd778c0fc5ab95b3c1436a87e7",
+      "matches_snapshot": true
+    },
+    {
+      "file": "tuyen-sinh-dai-hoc-chinh-quy/HỆ THỐNG TIN NHẮN NHANH FANPAGE TUYỂN SINH.docx",
+      "sha256": "2fe274741e1609259d4cfbd3d13dbcefd83b5f910def5fc5d8dc38ca0e094e65",
+      "matches_snapshot": true
+    },
+    {
+      "file": "tuyen-sinh-dai-hoc-chinh-quy/TB71 - Thông tin tuyển sinh đại học chính quy năm 2025.pdf",
+      "sha256": "f427bb580ad0b2bea89b847a8ce31ffeb8611ea67fd1ba069fd7521ab7327b6b",
+      "matches_snapshot": true
+    },
+    {
+      "file": "tuyen-sinh-dai-hoc-chinh-quy/TB124 - Ngưỡng bảo đảm chất lượng đầu vào năm 2025.pdf",
+      "sha256": "4d801b0c7f585cce0a75d64fd31dd72bc84a7e9212cdda9ca7835be9861ccdc6",
+      "matches_snapshot": true
+    },
+    {
+      "file": "tuyen-sinh-dai-hoc-chinh-quy/TB153 - Điểm chuẩn trúng tuyển năm 2025 theo phương thức.pdf",
+      "sha256": "945f5d77b6d314d7599d3a935da05ea13b12a04c924db2c195c98e5a7d94b089",
+      "matches_snapshot": true
+    },
+    {
+      "file": "tuyen-sinh-dai-hoc-chinh-quy/TB112 - Chỉ tiêu các ngành đào tạo giáo viên năm 2025.pdf",
+      "sha256": "42df4ca8caa1607a91f0e09c99af7072129b2cb6df0a2fa349ce480265da27ce",
+      "matches_snapshot": true
+    },
+    {
+      "file": "tuyen-sinh-dai-hoc-chinh-quy/TB129 - Quy đổi tương đương điểm giữa các phương thức năm 2025.pdf",
+      "sha256": "79b51d5831855e332850c72d09a745d6fe141df7a8b63cf2f732c81303279311",
+      "matches_snapshot": true
+    },
+    {
+      "file": "tuyen-sinh-dai-hoc-chinh-quy/TB165 - Xét tuyển bổ sung đại học chính quy năm 2025.pdf",
+      "sha256": "7b769ab00a7b68326e44dfe16519f402b97d595c1395c7520e95f8b7ae7edb08",
+      "matches_snapshot": true
+    },
+    {
+      "file": "tuyen-sinh-dai-hoc-chinh-quy/TB175 - Điểm chuẩn trúng tuyển năm 2025 các ngành sư phạm đợt bổ sung.pdf",
+      "sha256": "a2b90e98eb70da53679bbd553799716e7c2fc41f8d6c0223f09644f37224716a",
+      "matches_snapshot": true
+    },
+    {
+      "file": "tuyen-sinh-dai-hoc-chinh-quy/TB1897 - Báo cáo thực hiện chỉ tiêu tuyển sinh năm 2025.pdf",
+      "sha256": "c9fbd86b6fbdccc44ec0d284982c1f138c09f58cef796d842ede0cae33a67f0f",
+      "matches_snapshot": true
+    },
+    {
+      "file": "tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+      "sha256": "d4b238f15f2b21367247100a145e073daefd1ba2b644da91976410989378906f",
+      "matches_snapshot": true
+    },
+    {
+      "file": "tuyen-sinh-dai-hoc-chinh-quy/Ngưỡng bảo đảm chất lượng đầu vào tuyển sinh đại học chính quy năm 2026.docx",
+      "sha256": "05bb242930563ea9095225acba9ce32e21ec4bfb4566bebfb4db0ec09cff825d",
+      "matches_snapshot": true
+    },
+    {
+      "file": "tuyen-sinh-dai-hoc-chinh-quy/TB141 - Điểm chuẩn trúng tuyển đại học chính quy năm 2026.pdf",
+      "sha256": "255535b730320efe5d718fb30f07aa3470ba8c200ed266ababbb3418e4d97b28",
+      "matches_snapshot": true
+    },
+    {
+      "file": "tuyen-sinh-dai-hoc-chinh-quy/TB1897 - Đăng ký chỉ tiêu tuyển sinh năm 2026.pdf",
+      "sha256": "1749016242fc010170f033740f2460441794627c6211a7c51ff448d18c5a5e2c",
+      "matches_snapshot": true
+    },
+    {
+      "file": "tuyen-sinh-dai-hoc-chinh-quy/QĐ1401 - Quy chế tuyển sinh trình độ đại học năm 2026.pdf",
+      "sha256": "d35927951a319cceee284e98381e25ea72674e76b09291c6267c5465d99f0ada",
+      "matches_snapshot": true
+    },
+    {
+      "file": "tuyen-sinh-dai-hoc-chinh-quy/TB151 - Xét tuyển bổ sung đại học chính quy năm 2026.html",
+      "sha256": "d56f2204e870f5fbcb067177d85f8ed4d9d16666279061d0234fcf6d82f19ca9",
+      "matches_snapshot": true
+    },
+    {
+      "file": "tuyen-sinh-dai-hoc-chinh-quy/TB158 - Điểm chuẩn trúng tuyển năm 2026 đợt bổ sung.html",
+      "sha256": "50e4c65407cc8a8edcbf4bcca6747896e2d461da99cbab33f044ef660d7f8052",
+      "matches_snapshot": true
+    },
+    {
+      "file": "hoc-phi/TB2404 - Học phí toàn khóa và học phí tín chỉ khóa 49 năm học 2026-2027.html",
+      "sha256": "e133e5211949dcdb2f83b364456f0b371fde77fb2c0a7500139b50c0d302ac92",
+      "matches_snapshot": true
+    },
+    {
+      "file": "hoc-phi/TB1661 - Thu học phí đại học chính quy học kỳ II năm học 2025-2026.html",
+      "sha256": "7881ef39dd1ed23ec0e220003b2d92645222f29651a60ce53b6da4d46d0a6f93",
+      "matches_snapshot": true
+    }
+  ],
+  "source_check_command": "uv run python -m experiments.prepare_gold check --profile v2",
+  "source_check_result": "126 drafts: source checks passed; action=check",
+  "comparison_arithmetic_checks": [
+    {
+      "item_id": "V2-CMP-002",
+      "operands": [
+        "135",
+        "150"
+      ],
+      "absolute_difference": "15",
+      "matches_slot": true
+    },
+    {
+      "item_id": "V2-CMP-004",
+      "operands": [
+        "138",
+        "135"
+      ],
+      "absolute_difference": "3",
+      "matches_slot": true
+    },
+    {
+      "item_id": "V2-CMP-006",
+      "operands": [
+        "138",
+        "135"
+      ],
+      "absolute_difference": "3",
+      "matches_slot": true
+    },
+    {
+      "item_id": "V2-CMP-009",
+      "operands": [
+        "19.5",
+        "21.5"
+      ],
+      "absolute_difference": "2.0",
+      "matches_slot": true
+    },
+    {
+      "item_id": "V2-CMP-010",
+      "operands": [
+        "25.85",
+        "20.35"
+      ],
+      "absolute_difference": "5.50",
+      "matches_slot": true
+    },
+    {
+      "item_id": "V2-CMP-011",
+      "operands": [
+        "20.60",
+        "19.00"
+      ],
+      "absolute_difference": "1.60",
+      "matches_slot": true
+    },
+    {
+      "item_id": "V2-CMP-012",
+      "operands": [
+        "21.30",
+        "19.70"
+      ],
+      "absolute_difference": "1.60",
+      "matches_slot": true
+    },
+    {
+      "item_id": "V2-CMP-013",
+      "operands": [
+        "19.5",
+        "16.00"
+      ],
+      "absolute_difference": "3.50",
+      "matches_slot": true
+    },
+    {
+      "item_id": "V2-CMP-014",
+      "operands": [
+        "21.5",
+        "18.20"
+      ],
+      "absolute_difference": "3.30",
+      "matches_slot": true
+    },
+    {
+      "item_id": "V2-CMP-015",
+      "operands": [
+        "20.35",
+        "22.75"
+      ],
+      "absolute_difference": "2.40",
+      "matches_slot": true
+    },
+    {
+      "item_id": "V2-CMP-016",
+      "operands": [
+        "17.1",
+        "17.25"
+      ],
+      "absolute_difference": "0.15",
+      "matches_slot": true
+    },
+    {
+      "item_id": "V2-CMP-019",
+      "operands": [
+        "19.5",
+        "21.5"
+      ],
+      "absolute_difference": "2.0",
+      "matches_slot": true
+    },
+    {
+      "item_id": "V2-CMP-020",
+      "operands": [
+        "19.5",
+        "16.00"
+      ],
+      "absolute_difference": "3.50",
+      "matches_slot": true
+    }
+  ],
+  "counterexamples": [
+    {
+      "item_id": "V2-PIL-045",
+      "constructed_answer": {
+        "abstain": false,
+        "answer": "Năm 2026 xét học bạ ngành Luật cần ngưỡng 22 điểm, học lực xếp loại từ giỏi trở lên cả năm lớp 12, đồng thời bắt buộc tổng 3 môn thi tốt nghiệp THPT từ 18,00 và điểm xét tốt nghiệp THPT từ 8,50.",
+        "claims": [
+          {
+            "subject": "Luật",
+            "predicate": "ngưỡng xét học bạ",
+            "value": "22",
+            "unit": "điểm",
+            "admission_year": 2026
+          },
+          {
+            "subject": "Luật",
+            "predicate": "tổng 3 môn thi tốt nghiệp THPT",
+            "value": "18,00",
+            "unit": null,
+            "admission_year": 2026
+          },
+          {
+            "subject": "Luật",
+            "predicate": "điểm xét tốt nghiệp THPT",
+            "value": "8,50",
+            "unit": null,
+            "admission_year": 2026
+          }
+        ],
+        "citation_ids": [],
+        "confidence": 1.0,
+        "abstain_reason": null
+      },
+      "T1": 1.0,
+      "T4": 1.0,
+      "T4_note": "khớp chuỗi điều kiện dù sai quan hệ và/hoặc"
+    },
+    {
+      "item_id": "V2-CMP-013",
+      "constructed_answer": {
+        "abstain": false,
+        "answer": "Điểm chuẩn THPT ngành Kỹ thuật phần mềm: năm 2025 là 19,5; năm 2026 là 16, tăng 3,5 điểm.",
+        "claims": [
+          {
+            "subject": "Kỹ thuật phần mềm",
+            "predicate": "điểm chuẩn",
+            "value": "19,5",
+            "unit": "điểm",
+            "admission_year": 2025
+          },
+          {
+            "subject": "Kỹ thuật phần mềm",
+            "predicate": "điểm chuẩn",
+            "value": "16,00",
+            "unit": "điểm",
+            "admission_year": 2026
+          },
+          {
+            "subject": "Kỹ thuật phần mềm",
+            "predicate": "chênh lệch điểm chuẩn 2025–2026",
+            "value": "3,5",
+            "unit": "điểm",
+            "admission_year": 2026
+          }
+        ],
+        "citation_ids": [],
+        "confidence": 1.0,
+        "abstain_reason": null
+      },
+      "T1": 1.0,
+      "T4": null,
+      "T4_note": "không áp dụng: required_conditions rỗng"
+    }
+  ],
+  "counterexample_limit": "Đầu ra nhân tạo với claims cố định; chỉ kiểm T1/T4 pilot, không phải run mô hình hay kết quả bộ chấm v2.",
+  "promoted": false,
+  "items": [
+    {
+      "item_id": "V2-CMP-001",
+      "draft_sha256": "6d53bdc06db5fd605cbf54586e93714fb4b1ff5e7077cb9b60f1e606c3ae736d",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          92
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          104
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-CMP-002",
+      "draft_sha256": "b2f5ff67c15b4736325baaed0cb13ed90a55916e6c13bc04d93cb4157851d843",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          72
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          76
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-CMP-003",
+      "draft_sha256": "35cf7b2b85fa5a492dc1d4f86ff16f0600b92c8438400b4ce640a3730d9bd5fb",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          86
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          88
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-CMP-004",
+      "draft_sha256": "bec910ad8702d3c199dc2de081c4cec039f325023a05bbd1e825831b61a927a9",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          6
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          74
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-CMP-005",
+      "draft_sha256": "2b63cf4e4f28ef201b695f8d17d35a8ef282c3a0af8de99c0116ac81b2d3c195",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          64
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          80
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-CMP-006",
+      "draft_sha256": "77f58405f46f9cf698508ee43afddcef37ebc697d213be4c8e43685a48d1d4c2",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          26
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          36
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-CMP-007",
+      "draft_sha256": "2c0fef5a6133abf9cc55c69ecfa156d58ee1081c669091cc67703e5dc9f345fb",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          72
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          74
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          76
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-CMP-008",
+      "draft_sha256": "1e0a5da770d5d397375bbfd6fb3f3863096a92ff45b8e7d0af86cd189e1f37e0",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          90
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          94
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          100
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-CMP-009",
+      "draft_sha256": "3672afe83e91671fbfbb4d26b97cc6c6ae8776b42fc3ac2aa6fa62ae30c3dbcd",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB153 - Điểm chuẩn trúng tuyển năm 2025 theo phương thức.pdf",
+          2
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-CMP-010",
+      "draft_sha256": "37d1a0a402f45eec25d3f4cc982c942944db91f4486ff3ce08a4df17694dd725",
+      "decision": "reject",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Thiếu đợt tuyển sinh: Sư phạm Tin học năm 2025 là 20,35 ở TB153 trang 1 nhưng 25,05 ở TB175 trang 1 (đợt bổ sung). Chênh 5,5 với Sư phạm Toán 25,85 chỉ đúng cặp số đợt 1. Ghi rõ đợt 1 trong câu hỏi và đáp án.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB153 - Điểm chuẩn trúng tuyển năm 2025 theo phương thức.pdf",
+          1
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-CMP-011",
+      "draft_sha256": "9d4632182570aba1dd37728525a9b960a45b4462225cf213d093e656aa89f896",
+      "decision": "reject",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Thiếu đợt tuyển sinh: Luật năm 2026 là 20,60 ở TB141 trang 1, đợt bổ sung là 21,31 ở TB158 dòng 40–42. Chênh 1,6 với Kiểm toán chỉ đúng cặp số đang chọn. Ghi rõ đợt 1.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB141 - Điểm chuẩn trúng tuyển đại học chính quy năm 2026.pdf",
+          1
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-CMP-012",
+      "draft_sha256": "de17b51d04fa9d35f32b16598fca4b533bf301c2e856d30a770968faf78fd3ef",
+      "decision": "reject",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Thiếu đợt tuyển sinh: Công nghệ kỹ thuật ô tô năm 2026 là 19,70 ở TB141 trang 1, đợt bổ sung là 20,25 ở TB158 dòng 58–60. Ghi rõ so sánh đợt 1 với Logistics 21,30.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB141 - Điểm chuẩn trúng tuyển đại học chính quy năm 2026.pdf",
+          1
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-CMP-013",
+      "draft_sha256": "73183e5df72895426e73830e105eebfe800973a328add93f5a0e1a7425f7b0dc",
+      "decision": "reject",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Thiếu đợt tuyển sinh: Kỹ thuật phần mềm 2026 là 16,00 ở TB141 trang 1, nhưng 20,53 ở TB158 dòng 49–51. So với 19,5 năm 2025, hai cách chọn dẫn đến giảm 3,5 hoặc tăng 1,03. Ghi rõ so sánh đợt 1; rubric cần kiểm chiều giảm, không chỉ độ lớn 3,5.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB141 - Điểm chuẩn trúng tuyển đại học chính quy năm 2026.pdf",
+          1
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB153 - Điểm chuẩn trúng tuyển năm 2025 theo phương thức.pdf",
+          2
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-CMP-014",
+      "draft_sha256": "0e8fb076413c914a52f3e32ef225a60067bbb15e147760b9b28ea61bf6bfa8de",
+      "decision": "reject",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Thiếu đợt tuyển sinh: Công nghệ thông tin 2026 là 18,20 ở TB141 trang 1, nhưng 18,44 ở TB158 dòng 55–57. So với 21,5 năm 2025, độ giảm là 3,3 hoặc 3,06. Ghi rõ so sánh đợt 1 và giữ chiều thay đổi.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB141 - Điểm chuẩn trúng tuyển đại học chính quy năm 2026.pdf",
+          1
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB153 - Điểm chuẩn trúng tuyển năm 2025 theo phương thức.pdf",
+          2
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-CMP-015",
+      "draft_sha256": "a0a0cb5e599c357587409c00cbc13409430f3b77a12488447e2787083cfda503",
+      "decision": "reject",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Thiếu đợt và phương thức. Sư phạm Tin học 2025: 20,35 ở TB153 trang 1, 25,05 ở TB175 trang 1. TB141 trang 1 ghi THPT quy đổi 22,75 nhưng điểm ĐGNL SPHN khác theo tổ hợp (ví dụ A00 21,25). Thêm xét điểm thi THPT, đợt 1 của cả hai năm; khi đó tăng 2,4 là đúng. Rubric cần kiểm chiều tăng.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB141 - Điểm chuẩn trúng tuyển đại học chính quy năm 2026.pdf",
+          1
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB153 - Điểm chuẩn trúng tuyển năm 2025 theo phương thức.pdf",
+          1
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-CMP-016",
+      "draft_sha256": "948cd08762fd08abe3b901adb9adb127a0d0abcf715e0fa5c392f935d3673dbe",
+      "decision": "reject",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Thiếu đợt tuyển sinh: Khoa học dữ liệu 2026 là 17,25 ở TB141 trang 1, đợt bổ sung là 19,21 ở TB158 dòng 46–48. So với 17,1 năm 2025, chênh 0,15 hoặc 2,11. Ghi rõ so sánh đợt 1.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB141 - Điểm chuẩn trúng tuyển đại học chính quy năm 2026.pdf",
+          1
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB153 - Điểm chuẩn trúng tuyển năm 2025 theo phương thức.pdf",
+          2
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-CMP-017",
+      "draft_sha256": "353ec1617e5cdfa3219b55d5d762f6b16a45ed1af662184edd9900f4ff28c68c",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          84
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB153 - Điểm chuẩn trúng tuyển năm 2025 theo phương thức.pdf",
+          2
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-CMP-018",
+      "draft_sha256": "7cc7689f51d44e3d35f9ab8e9875da18239b33f893489e498546f7db11c1fbe4",
+      "decision": "reject",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Phần 135 tín chỉ đúng Cẩm nang 2025 trang 76. Phần điểm chuẩn 2026 thiếu đợt: Trí tuệ nhân tạo 17,50 ở TB141 trang 1, đợt bổ sung 17,68 ở TB158 dòng 52–54. Thêm đợt 1 cho vế điểm chuẩn.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          76
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB141 - Điểm chuẩn trúng tuyển đại học chính quy năm 2026.pdf",
+          1
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-CMP-019",
+      "draft_sha256": "cd33685f52c0f2d32d7ae73b05ae852ebe0a54db3933d54875986a60db69f7b1",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB153 - Điểm chuẩn trúng tuyển năm 2025 theo phương thức.pdf",
+          2
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-CMP-020",
+      "draft_sha256": "ffc6bebaaf37fe9a33c4124e1c330897a81ff072877f1d019cf8b757d52c7cb7",
+      "decision": "reject",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Biến thể không dấu của CMP-013 cùng thiếu đợt; còn bỏ cả phương thức THPT. Ghi rõ THPT, đợt 1 hai năm và chấm chiều giảm; không chỉ nhận độ lớn 3,5.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB141 - Điểm chuẩn trúng tuyển đại học chính quy năm 2026.pdf",
+          1
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB153 - Điểm chuẩn trúng tuyển năm 2025 theo phương thức.pdf",
+          2
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-ABS-001",
+      "draft_sha256": "95716fd9caede2a1571564d855c47bcbf0451f2eabfbe38137fa3651ec497de8",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": []
+    },
+    {
+      "item_id": "V2-ABS-002",
+      "draft_sha256": "b43568e1c88064b251c12270a616adc2404ac0a012edf706765cf6b1aa2e8ad3",
+      "decision": "reject",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Nhãn must_abstain=true chưa nhất quán với đáp án có thể trả lời được: danh mục tuyển sinh 2026 không có Y khoa. Câu hỏi gồm hai ý (có ngành không, điểm bao nhiêu), còn review_note để ngỏ cách chấm từ chối một phần. Cần chốt rubric cho câu trả lời phủ định có bằng chứng, không đánh sai mọi câu answered; bổ sung bằng chứng danh mục đầy đủ, không chỉ tiêu đề dòng 26.",
+      "previous_human_decision": "reject",
+      "gold_evidence": []
+    },
+    {
+      "item_id": "V2-ABS-003",
+      "draft_sha256": "553d598205e05b04cf85030af624db96628faff375fae1f663349c7367285627",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": []
+    },
+    {
+      "item_id": "V2-ABS-004",
+      "draft_sha256": "c88fbe7b102a98cbea9a87124835868f1afe9e81df0e56c3aae61fbcc4e32d3a",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": []
+    },
+    {
+      "item_id": "V2-NEW-001",
+      "draft_sha256": "c31951627ef9ffd5ad1d9b72bb83f3117f6b66684f3477914e5720f1924f1fda",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          10
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-NEW-002",
+      "draft_sha256": "c7481c7e85cede907dd07a0785aaa851cd3d427d5a81a344ac3d1646e6bbe0c5",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          13
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-NEW-003",
+      "draft_sha256": "e8ba636cfbe6dcc2234b792b25880b1006c0c957b27758747a83e436a85a84f7",
+      "decision": "reject",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Đáp án tham chiếu khớp TB1906 dòng 19–24, nhưng expected_slots chỉ chấm mã 100/200/402A/402B/405/301, không chấm tên/nội dung phương thức mà câu hỏi cũng yêu cầu. Bổ sung ánh xạ mã ↔ phương thức; ghi rõ PT2/PT3 không áp dụng cho ngành đào tạo giáo viên.",
+      "previous_human_decision": "reject",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          19
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          20
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          21
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          22
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          23
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          24
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-NEW-004",
+      "draft_sha256": "23eb5e912822b1bc7633914b143ed27a300f3804d5e8e58edd08baf1a9c95e3a",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          27
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-NEW-005",
+      "draft_sha256": "41def97fbf83b7e1f1d46800d87bde272bf65ee645031f61d5b596fb9efc03b5",
+      "decision": "reject",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Số tiền 300.000 đúng TB1906 dòng 664, nhưng rubric để unit=null, các value_synonyms chỉ có số/đồng và không giữ mẫu số mỗi thí sinh. Cần chuẩn hóa giá trị 300000 và đơn vị đồng/thí sinh (hoặc biểu diễn tương đương đầy đủ); tránh đánh sai claim đúng tách value/unit hoặc chấp nhận mức thu chưa rõ đơn vị.",
+      "previous_human_decision": "reject",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          664
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-NEW-006",
+      "draft_sha256": "08547c83aadda22eea16623b5f7c98afa64bac60c441fbccf84de21edec9387e",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          649
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-NEW-007",
+      "draft_sha256": "3fa45210b4bd98d77b8e04d1d2c58e7665d5e689ce6f2162c5f8bf3daffc60d2",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          656
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-NEW-008",
+      "draft_sha256": "711bfcffb84880dc4b92aac86a0bcada98b5789885209738fa7078f205a708bd",
+      "decision": "reject",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "TB1906 dòng 660 giới hạn giải đạt không quá 3 năm tính đến xét tuyển; đáp án mẫu có nhắc nhưng required_conditions rỗng, slot chỉ chấm 3 điểm. Bổ sung điều kiện thời hạn giải và ngữ cảnh ưu tiên xét tuyển để không chấm đạt câu cộng điểm vô điều kiện.",
+      "previous_human_decision": "reject",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          660
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-NEW-009",
+      "draft_sha256": "3db9dc02591c0200e710170ac89084fb4ee1d142b99d2aea726253dfa45d0fdb",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          165
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          166
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          168
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          169
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-NEW-010",
+      "draft_sha256": "480cd6dec4f0d4b67a236adc1a61f7291c1db40cbdd578cbaeeb75139bf1f60c",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          652
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-NEW-011",
+      "draft_sha256": "a5c79f36fed4b0e43f23bb4508679eefe8d9212f56e0dfb10c260c96cc7819a9",
+      "decision": "reject",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "value_synonyms chứa tỉnh Gia Lai và 170 An Dương Vương như hai giá trị thay thế toàn bộ địa chỉ. Đã thử slot_matches: chỉ tỉnh Gia Lai vẫn đạt. Tách số nhà/đường, phường và tỉnh thành các slot hoặc chỉ cho phép biến thể đầy đủ; chấm được lỗi dùng địa chỉ hành chính cũ.",
+      "previous_human_decision": "reject",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          11
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-NEW-012",
+      "draft_sha256": "9fe90166af4126fd97bd8104728f683d4fb3b90a241e6cb26bf0b4848ecdfcdf",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB158 - Điểm chuẩn trúng tuyển năm 2026 đợt bổ sung.html",
+          49
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB158 - Điểm chuẩn trúng tuyển năm 2026 đợt bổ sung.html",
+          50
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB158 - Điểm chuẩn trúng tuyển năm 2026 đợt bổ sung.html",
+          51
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-NEW-013",
+      "draft_sha256": "d52a1a4da18535b78eba97f7615caacec89a11b3a1bb9cbfe03732448872f7ff",
+      "decision": "reject",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "TB151 dòng 339 là trước 17 giờ ngày 24/8/2026, nhưng value_synonyms cho phép chỉ 24/8/2026. Đã thử slot_matches: thiếu giờ vẫn đạt. Giữ cả ngày, giờ và quan hệ trước trong rubric; đồng bộ câu không dấu V2-NSY-004.",
+      "previous_human_decision": "reject",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB151 - Xét tuyển bổ sung đại học chính quy năm 2026.html",
+          339
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-NEW-014",
+      "draft_sha256": "1523e50900628a8d536e1682f3e7bfdfe7c3c56891133d123c82040a2ecdf4e5",
+      "decision": "reject",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "TB151 dòng 341–342: tối đa 3 nguyện vọng, 15.000 đồng/nguyện vọng. Slot lệ phí để unit=null và cho alias 15.000 đồng/15000 nên mất mẫu số mỗi nguyện vọng. Tách đơn vị đồng/nguyện vọng hoặc giữ đầy đủ trong mọi alias; bảo toàn ý tối đa 3.",
+      "previous_human_decision": "reject",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB151 - Xét tuyển bổ sung đại học chính quy năm 2026.html",
+          341
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB151 - Xét tuyển bổ sung đại học chính quy năm 2026.html",
+          342
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-NEW-015",
+      "draft_sha256": "cea98318adce0ff4c7fafba2270c6f0d3ed49d119ca067d440e51a1a66f47e08",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB151 - Xét tuyển bổ sung đại học chính quy năm 2026.html",
+          3
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-NEW-016",
+      "draft_sha256": "1f9786f72bb6aa18b82fabe3221dc801c2d325e1a6e58393c6c141441653f00b",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB71 - Thông tin tuyển sinh đại học chính quy năm 2025.pdf",
+          2
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-NEW-017",
+      "draft_sha256": "f832ee0bc9dbaee3c4ac5c1f5ba14488eddaae5689e3407333bda989a455bf21",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB112 - Chỉ tiêu các ngành đào tạo giáo viên năm 2025.pdf",
+          1
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-NEW-018",
+      "draft_sha256": "fbd101082f42f714ab22f229cef1cf386b081040e6a1a752741d2e96d8d539dc",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB112 - Chỉ tiêu các ngành đào tạo giáo viên năm 2025.pdf",
+          1
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-NEW-019",
+      "draft_sha256": "84455f54d8c6a98fc0f518ad886993d0ea9099739d7c17af381c70e8974a7842",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB112 - Chỉ tiêu các ngành đào tạo giáo viên năm 2025.pdf",
+          1
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-NEW-020",
+      "draft_sha256": "6b2877aa5e02104a3c90cbd4e4a4eb5d9beed5329f3f183a407d1e967f542d77",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Ngưỡng bảo đảm chất lượng đầu vào tuyển sinh đại học chính quy năm 2026.docx",
+          49
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-NEW-021",
+      "draft_sha256": "fc5ada2e785aaeeb2509fd5a2dbba5719dad9ce8988c9934a31c424dcd6067d0",
+      "decision": "reject",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "DOCX ngưỡng 2026 dòng 8 giới hạn điều kiện 15,00 cho thí sinh tốt nghiệp năm 2026; đáp án mẫu và rubric bỏ điều kiện này. Bảng còn có ngành ngưỡng 16. Cần hỏi rõ mức điều kiện chung cho người tốt nghiệp 2026, nêu ngưỡng riêng từng ngành vẫn áp dụng, không coi 15 là đủ để nộp mọi ngành ngoài sư phạm/Luật.",
+      "previous_human_decision": "reject",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Ngưỡng bảo đảm chất lượng đầu vào tuyển sinh đại học chính quy năm 2026.docx",
+          8
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-NEW-022",
+      "draft_sha256": "b97d447fd135ab87fb45a250e4b8c82bbe2b6c4ebe910f537f2ba67a291cc6e1",
+      "decision": "reject",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "TB71 trang 10 đặt mức 75–88/102 triệu trong ngữ cảnh chương trình đại trà, tách Kế toán ACCA tính theo định mức riêng. Câu hỏi và đáp án hiện bao trùm ngành cử nhân/kỹ sư nói chung. Bổ sung phạm vi đại trà vào câu hỏi/đáp án và điều kiện chấm; số tiền và thời lượng hiện đúng nguồn.",
+      "previous_human_decision": "reject",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB71 - Thông tin tuyển sinh đại học chính quy năm 2025.pdf",
+          10
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-NEW-023",
+      "draft_sha256": "b17cc29e673ec9ed0d9f1459aff290b1b0b15cb77d6c305aa31d08d16912a9ce",
+      "decision": "reject",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "TB124 trang 1 ghi 18 ở cột THPT/ĐGNL SPHN, không áp cho học bạ/ĐGNL TP.HCM, và có điều kiện tổng 2 môn văn hóa + 2/3 điểm ưu tiên >=12,00. Đáp án chỉ nêu 18, rubric không giữ phương thức/điều kiện. Bổ sung ngữ cảnh và điều kiện; phân biệt với 19 và 12,67 của năm 2026.",
+      "previous_human_decision": "reject",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB124 - Ngưỡng bảo đảm chất lượng đầu vào năm 2025.pdf",
+          1
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-NEW-024",
+      "draft_sha256": "5ef2e21939bff5c0289e2223bb4d275701aa8d17c1060edc4373a6545b9b0598",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          354
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          355
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          357
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-NEW-025",
+      "draft_sha256": "406787ae7befe21b9ff41088b06559c5edcbd88c529702d078f0dbe8496e4c80",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          234
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          235
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-NEW-026",
+      "draft_sha256": "e97d18fbf0a28a4f2e44e7cf2c90b3563aa4a6ea03465c4f629e113335094b73",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB151 - Xét tuyển bổ sung đại học chính quy năm 2026.html",
+          346
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-NSY-001",
+      "draft_sha256": "5a8e1bb8b83102ce361c03f9eae41d5f9b94ac88b18d437447ed30ee23a2168f",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          10
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-NSY-002",
+      "draft_sha256": "6cce16cc82641ec7ab2aea161dabc87b0bd0d418e03d9238143f607ea9fdb39d",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          27
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-NSY-003",
+      "draft_sha256": "4dc96c575e3918f3490d00a2d8dc27a7d33e9672eaf0e86dcbab848ed4698451",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB158 - Điểm chuẩn trúng tuyển năm 2026 đợt bổ sung.html",
+          49
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB158 - Điểm chuẩn trúng tuyển năm 2026 đợt bổ sung.html",
+          50
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB158 - Điểm chuẩn trúng tuyển năm 2026 đợt bổ sung.html",
+          51
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-NSY-004",
+      "draft_sha256": "5575e04e8b5e89566b679e6dd4b40b224fccc1b093ac22f68ddf43e77aea39fd",
+      "decision": "reject",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Biến thể không dấu của V2-NEW-013 có cùng lỗi: alias 24/8/2026 bỏ mất hạn trước 17 giờ trong TB151 dòng 339. Sửa đồng bộ rubric ngày/giờ/quan hệ trước của hai câu.",
+      "previous_human_decision": "reject",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB151 - Xét tuyển bổ sung đại học chính quy năm 2026.html",
+          339
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-NSY-005",
+      "draft_sha256": "8ea237c0cc358d4cf6b63e88e4b69722ff2385bad52255db484191bc39385a00",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Ngưỡng bảo đảm chất lượng đầu vào tuyển sinh đại học chính quy năm 2026.docx",
+          49
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-NSY-006",
+      "draft_sha256": "e1fbc258240b22163a7c531b8621616b900254eeb7de8d7d4e74828a3b995c4e",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB112 - Chỉ tiêu các ngành đào tạo giáo viên năm 2025.pdf",
+          1
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-001",
+      "draft_sha256": "837e8d7f77909b7b0fcb0d7533d6abbf14c9107421fc6ccc85e840ea9741bea4",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          4
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-002",
+      "draft_sha256": "7a6335e53136140ca046d218bad7fcb63fd17ec1a8a81a4654e4a5612d7410c7",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          36
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-003",
+      "draft_sha256": "a63deba7c709b44cb47dd58c87cca2733c037097385eb3a0c65ed5e0ae6a913e",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          72
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-004",
+      "draft_sha256": "6afc6767a535eab144f2d34fed0d0cb278c8b9697e17881d03f9ae2a5d99c9a2",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          74
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-005",
+      "draft_sha256": "693cc3338a7dd5496a224ec9430b1d8258221480a03348dc719847228d2dbb32",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          78
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-006",
+      "draft_sha256": "fd8f56eb3f4a9c0fbfa4e81e7745d298ed3abc7a26b76e8a23eb42023d42fefd",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          84
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-007",
+      "draft_sha256": "11723b0cdb772c7b9dc569d0c224df5f73a916d9be1a05c22141cfc3448b950f",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          90
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-008",
+      "draft_sha256": "8f2fc66888f160b978a282e4243e665868a09ff7c6efe64ceacc9413e4156d1a",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          94
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-009",
+      "draft_sha256": "bb4338163c93c8fc9d6cd1e88d4bbef21eb2e792663c9097359c4368548161e1",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          26
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-010",
+      "draft_sha256": "01ccf5307f3d3c693fee47da5318b8ce30e9d9c3b184cf60b5814e9bfd1d5cfa",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          68
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-011",
+      "draft_sha256": "7ebcd078cea7d23c8fcafd46d11dfdfc8f601212020dd9aa57003678b771669c",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          98
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-012",
+      "draft_sha256": "04f97be09ebc4b41641daeb089694d58b8e4ea7b3b11c33266da6610d23bd614",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          104
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-013",
+      "draft_sha256": "b5dfe742d896e404ab3f8b8e2aedb7b393250bab9f881034dbf2ec455474dd5a",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          6
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-014",
+      "draft_sha256": "f6369e7baf4013035f5233304762463fd1b9e99e0086f08886a6fb2cd1543bc3",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          38
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-015",
+      "draft_sha256": "bec5a852e38d69da6369aecbb732a4d6d0e1feb8ca0e305daf3daab87bcd66fc",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          52
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-016",
+      "draft_sha256": "042f0b9fdca13e0c7b2855d9c631beada4f4775582fced09d0b47c010f7e6c6e",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          62
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-017",
+      "draft_sha256": "af01c8836f801b4f7c0b111aaef2395ea01101f265f76b8b7578b8aa4c6f2c46",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          76
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-018",
+      "draft_sha256": "8c8851ebbf1f9de45be16279786c586a1d3e3c9ab3d271d824448a5d48607404",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          80
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-019",
+      "draft_sha256": "08d3ab593d6eb09802b885667a529bdd9e423e4c92928437a63de9e1544b28c5",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          92
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-020",
+      "draft_sha256": "5cb16c2ba98f7d7318c6e9316e1964021e9d86f5e514f002e2bfc79469eac775",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          100
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-021",
+      "draft_sha256": "5df6737d6180d5014160aa1270a1d838eb24bfa51991d099406e52abf357b841",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          72
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          74
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-022",
+      "draft_sha256": "17c2b844f7ad280499929cd3fa4b27db6b9949bda639ad8431280e6fdfb368d0",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          4
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          36
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-023",
+      "draft_sha256": "485a1504161d5180eb59c87f5d3a6e9a49952aecd822d97af8516fc88949bd20",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          78
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          82
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-024",
+      "draft_sha256": "4886e2c3be20efb157fae9b68d91237b2f67a49fa0a050250a6c46e519562acb",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          84
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          68
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-025",
+      "draft_sha256": "c6e153f069b718ded6579170730cd8885d9d588ce039909c1772e2732b958791",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          90
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          98
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-026",
+      "draft_sha256": "8e57c33ff0537421fee8cce52722fa63cf7186b2a787aa616b4989a2c61c2e19",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          94
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          104
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-027",
+      "draft_sha256": "4277be4f35d2bc22f91557c20306e0aaa05854c0fbd03b5968a7bb3f0b0720d8",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          42
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-028",
+      "draft_sha256": "f640578dff7f5130aa00e12581689d49603ed822a8d9721198c9e250a790f3f5",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          48
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-029",
+      "draft_sha256": "f8fc18486ad2a176518f6eac2c1076abab6e5c67981b645cb363d36b8c23d040",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          40
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-030",
+      "draft_sha256": "3dd644c6e69026bf9363467ac53e73083c23bf96016828ac1a5609292e8c617c",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          46
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-031",
+      "draft_sha256": "5f03569fee8e29e4efe246e6c5585718e9399eea8377f037425213d6e15c6947",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          68
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-032",
+      "draft_sha256": "f1211015646ea19a87fef7bec6bf849980756e93d46e0229636a6392a509402b",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          82
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-033",
+      "draft_sha256": "e0f6d85f4143a512647c989deeb15e8e11b11372192098737afe27be5c716f3d",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          88
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-034",
+      "draft_sha256": "a0c54e970824fb8948e0a97534af6ea69ab8edc973f352df31516d67deea0da5",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          22
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-035",
+      "draft_sha256": "36edbbf476b4b9cdbd0eaf117cdaca0840524bc35fa1bcf62683fffa89bfc900",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          50
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-036",
+      "draft_sha256": "217655859bcc7658ee27ece2ee790c373a7302fcd961b65d1fc871476c564d0f",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          106
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-037",
+      "draft_sha256": "12d276b45f54d2db2f1622d70db911d64e3f44f94732fa0acff09a4bbb78532f",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          66
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-038",
+      "draft_sha256": "5feaa0d582dcd153be1654e4c2ec13132438d81d6c97d1d7766f82674d2e0ab9",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          4
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-039",
+      "draft_sha256": "1548ca410346275d77e7734a66c4f67fc8363a5fcc7a9321e097caac148a7799",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          4
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-040",
+      "draft_sha256": "73dad11056f31d0ae680c3e5dae96eb0ce12c59b8318755a3ef662c340c32c81",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          4
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-041",
+      "draft_sha256": "89429e04527a8ac64f7b8b632861612a49881234f959e4e1d948552217b91117",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": []
+    },
+    {
+      "item_id": "V2-PIL-042",
+      "draft_sha256": "08ef631c5614f1044c76ee9ff414901634380e4408f813ae98d966504efc97d6",
+      "decision": "reject",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Câu hỏi chưa nêu đợt 1 nhưng expected_slots chỉ nhận 16; cùng snapshot có TB158 đợt bổ sung 20,53. Cần thêm đợt 1 vào câu hỏi hoặc rubric chấp nhận trả lời phân biệt cả hai đợt. Con số 16 đã đối chiếu cột Điểm chuẩn quy đổi (Điểm THPT) của TB141 trang 1; 20,53 có trong TB158.",
+      "previous_human_decision": "reject",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB141 - Điểm chuẩn trúng tuyển đại học chính quy năm 2026.pdf",
+          1
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-043",
+      "draft_sha256": "860cae1e5db9b4bc6bedc8c9c49fb7be2c47a1563e708dd6d33cebfb49cb27bc",
+      "decision": "reject",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "TB1906 dòng 650 ghi thi các ngày 19,20,21/6/2026. value_synonyms có 19/6/2026 khiến chỉ một ngày vẫn được tính là toàn bộ lịch (đã thử slot_matches). Bỏ alias thiếu ngày, chấm khoảng 19–21/6 hoặc đủ ba ngày.",
+      "previous_human_decision": "reject",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          650
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-044",
+      "draft_sha256": "f0c402fa552d7d82f70383058ffd07913580e79351d0e8798975831776c59fec",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Ngưỡng bảo đảm chất lượng đầu vào tuyển sinh đại học chính quy năm 2026.docx",
+          20
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-045",
+      "draft_sha256": "1e67bf3a16bad85c3747f6f81ce4e0cbbd9865e57dfc0122a612f3e082eb696e",
+      "decision": "reject",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Đính chính lý do 17/10: hai slot bắt nêu 18 và 8,50 không tự nó có nghĩa thí sinh phải đạt cả hai; slot đo nội dung đáp án. Vấn đề còn lại là rubric chưa kiểm quan hệ và/hoặc của DOCX ngưỡng 2026 dòng 12. Phản ví dụ đổi thành bắt buộc đồng thời 18 và 8,50 vẫn đạt T1=1, T4=1 trên bộ chấm pilot. Bổ sung cách kiểm quan hệ, giữ ngưỡng học bạ 22 ở dòng 47; không tự đặt ngoặc để diễn giải lại văn bản.",
+      "previous_human_decision": "reject",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Ngưỡng bảo đảm chất lượng đầu vào tuyển sinh đại học chính quy năm 2026.docx",
+          12
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Ngưỡng bảo đảm chất lượng đầu vào tuyển sinh đại học chính quy năm 2026.docx",
+          47
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-046",
+      "draft_sha256": "5995d7da099493e1cf8f8d653fef2518a28b4fe99c4a52d93920fddc98b445dd",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1897 - Đăng ký chỉ tiêu tuyển sinh năm 2026.pdf",
+          5
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-047",
+      "draft_sha256": "4a78d83917582ba67dfc3fbfe4f85f46966c8ad16a331c8e61c39fe63474b7f3",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": []
+    },
+    {
+      "item_id": "V2-PIL-048",
+      "draft_sha256": "7b6a7ba7b70eb3683d8746f40e2fef5f44a9003f4d23f03e564165c78078770b",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": []
+    },
+    {
+      "item_id": "V2-PIL-049",
+      "draft_sha256": "aecd856e41deb0607de44481a0b235de705c562153cbf5f2f24f115629dbc2fc",
+      "decision": "reject",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Hỏi hạn nộp hồ sơ ngành Kỹ thuật điện nhưng đáp án chỉ chọn đăng ký nguyện vọng đợt 1 trên hệ thống Bộ (02–14/7). Snapshot có hạn hồ sơ tuyển thẳng 20/6 và đợt bổ sung trước 17 giờ 24/8. Cần xác định đợt/phương thức và phân biệt nộp hồ sơ với đăng ký nguyện vọng trong câu hỏi.",
+      "previous_human_decision": "reject",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          652
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-050",
+      "draft_sha256": "1086d3093c5b58f75372b1088b5a77a8b990dd714effceb045df1db176c4fc41",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": []
+    },
+    {
+      "item_id": "V2-PIL-051",
+      "draft_sha256": "44a79f47846a528a11557ecda93530abfe1b08ea9761ea637721d2e6a0a9e5c4",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": []
+    },
+    {
+      "item_id": "V2-PIL-052",
+      "draft_sha256": "d8e71ec894b806b861077b8dd19f95aad6435b551538f41eb2e1eb3b0ec1cf0a",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Ngưỡng bảo đảm chất lượng đầu vào tuyển sinh đại học chính quy năm 2026.docx",
+          21
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-053",
+      "draft_sha256": "b76e7ad94b77626087f6737236afa50464809000b13854978a45168fe743b346",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          20
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          21
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-054",
+      "draft_sha256": "b14eb0502f0a9a18afa0ec691fdeb83198227df87c5df8a4cd295cea5c282a04",
+      "decision": "reject",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Đáp án có GDTC 19, học lực khá, 16,50 hoặc 6,50, nhưng rubric chỉ có 20/18/8,50 và điều kiện giỏi; thiếu nhánh ngoại lệ GDTC và gold_evidence dòng 20. Bổ sung đủ dữ kiện/điều kiện theo từng nhóm và kiểm quan hệ và/hoặc. Các slot phải có mặt trong đáp án không đồng nghĩa thí sinh phải đồng thời đạt các nhánh.",
+      "previous_human_decision": "reject",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Ngưỡng bảo đảm chất lượng đầu vào tuyển sinh đại học chính quy năm 2026.docx",
+          10
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Ngưỡng bảo đảm chất lượng đầu vào tuyển sinh đại học chính quy năm 2026.docx",
+          11
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Ngưỡng bảo đảm chất lượng đầu vào tuyển sinh đại học chính quy năm 2026.docx",
+          21
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-055",
+      "draft_sha256": "bd08f6ee335ff03117e87221a6ce01f3eb9e7d201e8a0890d422b9fac5c52e56",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          650
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-056",
+      "draft_sha256": "5582e66df9dfc9696578fe41297c12eca72f3df9308ac601c335b0087b9c7825",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": []
+    },
+    {
+      "item_id": "V2-PIL-057",
+      "draft_sha256": "6e935c94600e6f6d34879a37e39ce98b7ebf8160f347de8289b7d15a8362005c",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": []
+    },
+    {
+      "item_id": "V2-PIL-058",
+      "draft_sha256": "d02e4931cc2c474592f5d55ce334a477c5a639ee5c8585ce67e7931d81b4f346",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          646
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-059",
+      "draft_sha256": "f360f829bffe0bcd3170300a6c54c12b5549ce3e207071ca58eddcc2fff009c8",
+      "decision": "reject",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Bảng IELTS 5.0→8.0,5.5→8.5,6.0→9.0,6.5→9.5,>=7.0→10.0 đã đối chiếu đúng hàng/cột TB1906. Tuy nhiên required_conditions rỗng nên bỏ hiệu lực chứng chỉ và phạm vi PT1/PT2 vẫn đạt. Bổ sung hai điều kiện nêu ở dòng 620; nếu muốn chấm đủ bảng, sửa câu hỏi yêu cầu các mức quy đổi thay vì chỉ hỏi đã có chính thức chưa.",
+      "previous_human_decision": "reject",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          620
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          625
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          626
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          629
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          630
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          633
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          634
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          637
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          638
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          641
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          642
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-060",
+      "draft_sha256": "8c772bbf9d402e1c151590482cbc88c321ead226843bbfc51b3a8edfd58c92b3",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          669
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          670
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-061",
+      "draft_sha256": "cb46adf8225b09c21c0178929c91ac0e437b69105a69b97cf60dc056d443c86f",
+      "decision": "reject",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rubric thiếu giá trị thay thế điểm xét tốt nghiệp 8,50 dù câu hỏi yêu cầu điều kiện chính thức và đáp án có nêu; chỉ chấm tổng 18 cùng điều kiện học lực. Bổ sung dữ kiện nhánh thay thế và cách kiểm quan hệ và/hoặc theo DOCX dòng 12; giữ ngưỡng 22/750/20 dòng 47. Không suy từ việc nhiều slot cùng bắt buộc sang logic điều kiện của thí sinh.",
+      "previous_human_decision": "reject",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Ngưỡng bảo đảm chất lượng đầu vào tuyển sinh đại học chính quy năm 2026.docx",
+          12
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Ngưỡng bảo đảm chất lượng đầu vào tuyển sinh đại học chính quy năm 2026.docx",
+          47
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-062",
+      "draft_sha256": "37099bcadc415f268854a957a3d4a59691efaa7b2289b1917f09c1511389a337",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+          652
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-063",
+      "draft_sha256": "675f07f987df7f733d285ac1df3d70514614baa3e600fa29d3ef22614ff39331",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          4
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-064",
+      "draft_sha256": "6e12f0f1ab702aa801adb66a9d3342f1950513c16789d4337372c7d2e91fa691",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          72
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-065",
+      "draft_sha256": "04db485cedf16517b1f0a1e4e5f12b05a3bd0ec32b0ad7d5fdad39f44998b454",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          74
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-066",
+      "draft_sha256": "4aba6e672342e1135b664f81f0be47f5b435dea615cc925300830035efcff61e",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          78
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-067",
+      "draft_sha256": "36fe82c54e5702448e785ef2999d03d72fe041b99aa4a94d0cdf30fb5aeb31f5",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          52
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-068",
+      "draft_sha256": "e989da3edfe17083caa676fc2016312d16de3f4432eddb89f7deb8091db2ff16",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          76
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-069",
+      "draft_sha256": "fad9355b4a3bc6fa0d83002bbf185e729ef729f0d365768e4b96c63942246426",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          72
+        ],
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          74
+        ]
+      ]
+    },
+    {
+      "item_id": "V2-PIL-070",
+      "draft_sha256": "ef4ed2e596946d55c37ab6e26e2270eee70d0f495a8c7af6dc19b69fb26e124b",
+      "decision": "approve",
+      "reviewer": "Codex",
+      "verified_at": "2026-10-18T07:50:59+07:00",
+      "notes": "Rà soát lại: chưa phát hiện vấn đề cần sửa trong phạm vi snapshot khóa; giữ kết quả đối chiếu nội dung.",
+      "previous_human_decision": "approve",
+      "gold_evidence": [
+        [
+          "data/tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+          66
+        ]
+      ]
+    }
+  ]
+}

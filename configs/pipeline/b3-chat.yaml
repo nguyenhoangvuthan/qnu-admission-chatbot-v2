@@ -1,0 +1,20 @@
+# Cấu hình chat: B3 cộng chat nhiều lượt. Arm thí nghiệm KHÔNG dùng file này — chúng giữ
+# query_rewrite tắt để không thêm biến.
+extends: b3-qwen3-4b-awq.yaml
+
+# Câu mô tả ngành ("ngành X là ngành gì") cần ~1100 token completion (answer dài + mỗi ý
+# một claim); 1024 bị cắt (finish_reason=length), và vì temperature=0 nên Thử lại cũng cắt y
+# hệt. Prompt ~2000 token + 2048 vẫn dưới max-model-len 8192 của server; ~40 s trên 4050,
+# dưới generation_timeout_s.
+generator:
+  max_tokens: 2048
+
+stages:
+  query_rewrite:
+    enabled: true
+    catalog: ../catalog/qnu-2025.yaml   # tương đối với thư mục của file này
+
+generation:
+  # Model trả câu rỗng mà không từ chối → gọi model lần hai viết câu báo chưa có thông tin, lượt
+  # ghi từ chối EMPTY_ANSWER thay vì "đã trả lời".
+  empty_answer_notice: true

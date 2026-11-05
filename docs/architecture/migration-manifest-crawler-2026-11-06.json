@@ -1,0 +1,350 @@
+{
+  "source_repo": "qnu-admission-chatbot",
+  "tag": "v1-final",
+  "commit": "83a8d26b1697b041dab2a00ebe691d26adf891b4",
+  "note": "Chép từ working tree ngày 06/11/2026, bản 01:33. Mục committed=false có thay đổi chưa commit ở repo nguồn (topic_gate), nên sha khác tag v1-final.",
+  "files": [
+    {
+      "source": "src/qnuchat/ingest/blobs.py",
+      "source_sha256": "4b3b9180086f4d83c60d12be6b04203c9db81782eac2938fd0180e6ebf1e568e",
+      "committed": true,
+      "targets": [
+        "src/qnuchat/ingest/blobs.py"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "src/qnuchat/ingest/config.py",
+      "source_sha256": "81ade36f78fa95ab7bfbb8e39a94416739af0253743ee2c8cd9ca7c676b06b57",
+      "committed": false,
+      "targets": [
+        "src/qnuchat/ingest/config.py"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "src/qnuchat/ingest/crawl.py",
+      "source_sha256": "eb5f9602d328c2c6699fc7443d796afe49258855c1c77f033ca4d0dd8482856a",
+      "committed": false,
+      "targets": [
+        "src/qnuchat/ingest/crawl.py"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "src/qnuchat/ingest/dating.py",
+      "source_sha256": "6cb74d85455ea6424f5ee894d150a16a4e3d411f2089714fb6c287851e919c4f",
+      "committed": true,
+      "targets": [
+        "src/qnuchat/ingest/dating.py"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "src/qnuchat/ingest/drive.py",
+      "source_sha256": "7a9aa08d94072f73ff80c1dab9d90996c4f1b74d5f0ed3c74c05b12a4f93626a",
+      "committed": true,
+      "targets": [
+        "src/qnuchat/ingest/drive.py"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "src/qnuchat/ingest/extract.py",
+      "source_sha256": "2df4b2099b554ab331dcb02e15dd74dae83afc68a29b01a1a6ab17c8115e3096",
+      "committed": true,
+      "targets": [
+        "src/qnuchat/ingest/extract.py"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "src/qnuchat/ingest/favicon.py",
+      "source_sha256": "e69e1f87a47ec1f2a4649a2775d983902157cb9bd67de0e6158f27ca28d79fb6",
+      "committed": true,
+      "targets": [
+        "src/qnuchat/ingest/favicon.py"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "src/qnuchat/ingest/fetch.py",
+      "source_sha256": "5f5632429d4ac5904306c48100323165471d61353a00e7a3d157485e1d33cf20",
+      "committed": true,
+      "targets": [
+        "src/qnuchat/ingest/fetch.py"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "src/qnuchat/ingest/frontier.py",
+      "source_sha256": "9c8fe882a1c075bfc27e7cf58b53b7cac071e189a1565eed83f06a5a600c2bb3",
+      "committed": true,
+      "targets": [
+        "src/qnuchat/ingest/frontier.py"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "src/qnuchat/ingest/html_page.py",
+      "source_sha256": "75d98ccb5583224fcaf6724faf1c1b294815e4fc2b551a4149c453d7dd3f54e9",
+      "committed": true,
+      "targets": [
+        "src/qnuchat/ingest/html_page.py"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "src/qnuchat/ingest/manifest.py",
+      "source_sha256": "a58f0c2c3565e86a15bd043c5f3f087f8968742683f0a8c5c882fc504da5a352",
+      "committed": true,
+      "targets": [
+        "src/qnuchat/ingest/manifest.py"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "src/qnuchat/ingest/pii.py",
+      "source_sha256": "b92674be9a90ae887093307eb49f97d06be05aba2baef962bb0ae4a27537468c",
+      "committed": true,
+      "targets": [
+        "src/qnuchat/ingest/pii.py"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "src/qnuchat/ingest/state.py",
+      "source_sha256": "529b6e3cb23b634d0faac883083748b29e21904ed47b49707eab7960f90e1181",
+      "committed": true,
+      "targets": [
+        "src/qnuchat/ingest/state.py"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "src/qnuchat/ingest/topic.py",
+      "source_sha256": "bba84d1d5c21ea3135c9dc92590d58bef553a879712baecdf075d082dc0c0399",
+      "committed": false,
+      "targets": [
+        "src/qnuchat/ingest/topic.py"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "src/qnuchat/ingest/urls.py",
+      "source_sha256": "257ab5c0bbd3c8368101ed093e14d2406b3d08a82c43f2ff17d08762885b62b4",
+      "committed": true,
+      "targets": [
+        "src/qnuchat/ingest/urls.py"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "configs/crawl/qnu.yaml",
+      "source_sha256": "de0e36656bb6a1e9c5784f0944062075a6a811b5d37887b85411ee6e75b877cb",
+      "committed": false,
+      "targets": [
+        "configs/crawl/qnu.yaml"
+      ],
+      "how": "giữ nguyên; config_hash không đổi"
+    },
+    {
+      "source": "apps/crawler/job.py",
+      "source_sha256": "0032961afa79f6c4c50adfa4636baef36129ee45f6247d9bbbac2a20c32d815d",
+      "committed": true,
+      "targets": [
+        "src/qnuchat/ingest/crawl_job.py"
+      ],
+      "how": "dời vào library; bỏ nhánh off_topic của prune và prune_people vì hai module đó chưa chuyển"
+    },
+    {
+      "source": "apps/crawler/__main__.py",
+      "source_sha256": "62c33ac63ee2bffac4b29baf5a2e36f39befcb13f9449f7e7108161e2afecebd",
+      "committed": true,
+      "targets": [
+        "apps/cli/crawl.py"
+      ],
+      "how": "dời sang apps/cli; bỏ prune-people, dùng FileCrawlLog"
+    },
+    {
+      "source": "apps/crawler/settings.py",
+      "source_sha256": "b93b8fbf394134f3a8a87a629af3b900b60d9ed02775133f9a6769e2789aa4ae",
+      "committed": true,
+      "targets": [
+        "apps/cli/crawl.py"
+      ],
+      "how": "gộp vào CLI; bỏ database_url, topic_filter_dir, people_review"
+    },
+    {
+      "source": "apps/crawler/store.py",
+      "source_sha256": "e0532ced9ee40fa1ce58830edc9529e893f978e33a12222212333d01dfb3ef2b",
+      "committed": true,
+      "targets": [
+        "src/qnuchat/ingest/crawl_log.py"
+      ],
+      "how": "giữ Protocol CrawlLog; PostgresCrawlLog thay bằng FileCrawlLog"
+    },
+    {
+      "source": "src/qnuchat/progress.py",
+      "source_sha256": "43f40041c011367f454b2881d8d56ea80109ab2453674ba6dd1e612387838267",
+      "committed": true,
+      "targets": [
+        "apps/cli/progress.py"
+      ],
+      "how": "dời sang apps/cli; log vào artifacts/logs"
+    },
+    {
+      "source": "data/web/people.jsonl",
+      "source_sha256": "296102537339087a45de4993aba4e01da2f98084bcd8d34f73ab7e086195f297",
+      "committed": true,
+      "targets": [
+        "data/web/people.jsonl"
+      ],
+      "how": "giữ nguyên; sổ nhãn ảnh người"
+    },
+    {
+      "source": "tests/ingest/test_ingest_config.py",
+      "source_sha256": "d0671dd4563ba3bfa62a6087cb60976efd7213eeefd2464d8bfccc90875d692b",
+      "committed": true,
+      "targets": [
+        "tests/ingest/test_ingest_config.py"
+      ],
+      "how": "đổi đường import tests.support"
+    },
+    {
+      "source": "tests/ingest/test_ingest_crawl.py",
+      "source_sha256": "fea02b81b854a65e70f89bad81d0fe0e61c572cc14cca65b8847f685374d817e",
+      "committed": false,
+      "targets": [
+        "tests/ingest/test_ingest_crawl.py"
+      ],
+      "how": "đổi đường import tests.support"
+    },
+    {
+      "source": "tests/ingest/test_ingest_dating.py",
+      "source_sha256": "06b529cb50bbfae05424b1d6460bd946aa6cad4339c523e9df4ba79993e03fb4",
+      "committed": true,
+      "targets": [
+        "tests/ingest/test_ingest_dating.py"
+      ],
+      "how": "đổi đường import tests.support"
+    },
+    {
+      "source": "tests/ingest/test_ingest_drive_favicon.py",
+      "source_sha256": "105a587b32d108bba19683cd60c40b23a502f1174475a5a813b1e7f5cffd98b3",
+      "committed": true,
+      "targets": [
+        "tests/ingest/test_ingest_drive_favicon.py"
+      ],
+      "how": "đổi đường import tests.support"
+    },
+    {
+      "source": "tests/ingest/test_ingest_extract.py",
+      "source_sha256": "1df7b6878acb3a07cb43b4809baab985e3adec5ce4a961e4c60895ce3985887a",
+      "committed": true,
+      "targets": [
+        "tests/ingest/test_ingest_extract.py"
+      ],
+      "how": "đổi đường import tests.support"
+    },
+    {
+      "source": "tests/ingest/test_ingest_fetch.py",
+      "source_sha256": "a96a1b53b48d5aa493cc70212228cf8a9823e83869878a85eb34e38290b1b92d",
+      "committed": true,
+      "targets": [
+        "tests/ingest/test_ingest_fetch.py"
+      ],
+      "how": "đổi đường import tests.support"
+    },
+    {
+      "source": "tests/ingest/test_ingest_frontier.py",
+      "source_sha256": "2f6b666bf8f7d3c3b74ee838ccc7f0ffdc30526e668c31068af5f79c74104f01",
+      "committed": true,
+      "targets": [
+        "tests/ingest/test_ingest_frontier.py"
+      ],
+      "how": "đổi đường import tests.support"
+    },
+    {
+      "source": "tests/ingest/test_ingest_html_page.py",
+      "source_sha256": "d129e0f20cb7e6d61aa4eafc6a44d7ae0bbcb0b95c531b0e38dc5ae6b894f2f8",
+      "committed": true,
+      "targets": [
+        "tests/ingest/test_ingest_html_page.py"
+      ],
+      "how": "đổi đường import tests.support"
+    },
+    {
+      "source": "tests/ingest/test_ingest_pii.py",
+      "source_sha256": "d22a1af5a903d91d794fb92924fa37761a81acf7bfda4d4f2e15af0dbc3f15e0",
+      "committed": true,
+      "targets": [
+        "tests/ingest/test_ingest_pii.py"
+      ],
+      "how": "đổi đường import tests.support"
+    },
+    {
+      "source": "tests/ingest/test_ingest_store.py",
+      "source_sha256": "b4ae74ddc72df45cb3bf26e928d10baa912129d1b29b2317efd1fd1f509c0524",
+      "committed": true,
+      "targets": [
+        "tests/ingest/test_ingest_store.py"
+      ],
+      "how": "đổi đường import tests.support"
+    },
+    {
+      "source": "tests/ingest/test_ingest_topic.py",
+      "source_sha256": "dd3c4c73de5952366b45bba8fa03862e3be646a201d1914da3200bce6477b3e2",
+      "committed": false,
+      "targets": [
+        "tests/ingest/test_ingest_topic.py"
+      ],
+      "how": "đổi đường import tests.support"
+    },
+    {
+      "source": "tests/ingest/test_ingest_urls.py",
+      "source_sha256": "8cc1bd29c7fca2ee980b38c7fbee717ff631a0a23e77cb026fa7a8cb83943498",
+      "committed": true,
+      "targets": [
+        "tests/ingest/test_ingest_urls.py"
+      ],
+      "how": "đổi đường import tests.support"
+    },
+    {
+      "source": "tests/apps/test_crawler_job.py",
+      "source_sha256": "3a295a2ee983ce67b2887b76378b33187857eb90d94d4ae95f1edb972f315f8e",
+      "committed": true,
+      "targets": [
+        "tests/ingest/test_crawl_job.py"
+      ],
+      "how": "bỏ ca off_topic, prune-people, database_url"
+    },
+    {
+      "source": "tests/test_progress.py",
+      "source_sha256": "ac27d6a06e6722aa9047dbf59752904345b524de5003831c1192c1d1a12649d8",
+      "committed": true,
+      "targets": [
+        "tests/apps/test_progress.py"
+      ],
+      "how": "đổi đường import"
+    },
+    {
+      "source": "tests/support/crawllog.py",
+      "source_sha256": "92dc86d6e7db759c436490f5179af7332b58c18ae14418860406823ada1baecd",
+      "committed": true,
+      "targets": [
+        "tests/support/crawllog.py"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "tests/support/qnu_site.py",
+      "source_sha256": "3018db5719de4a6e98fea96777acc76d4a438cb0d175f681c3a9552e687311e1",
+      "committed": true,
+      "targets": [
+        "tests/support/qnu_site.py"
+      ],
+      "how": "giữ nguyên"
+    }
+  ]
+}

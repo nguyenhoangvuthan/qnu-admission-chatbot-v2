@@ -1,0 +1,170 @@
+# Cấu hình crawler web trường (spec nguồn web và trích dẫn §6.1). Đổi file này là đổi
+# config_hash ghi vào manifest và crawl_runs. Email liên hệ thay {contact} lấy từ
+# QNUCHAT_CRAWL_CONTACT_EMAIL (không commit).
+#
+# Phạm vi (spec W2): mọi trang *.qnu.edu.vn truy cập được không qua đăng nhập. Hạt giống
+# chỉ là điểm bắt đầu; crawler đi theo link sang mọi host cùng đuôi. Danh sách subdomain
+# thấy được ngày 12/10/2026 từ link nội bộ.
+seeds:
+  - https://tuyensinh.qnu.edu.vn/
+  - https://tuyensinh.qnu.edu.vn/vi/tuyen-sinh-dai-hoc-chinh-quy-2027
+  - https://tuyensinh.qnu.edu.vn/vi/tong-hop-nganh-dao-tao
+  - https://www.qnu.edu.vn/vi/dai-hoc-chinh-quy-1764
+  - https://www.qnu.edu.vn/vi/tuyen-sinh-1763
+  - https://www.qnu.edu.vn/vi/hoc-phi-quy-dinh
+  - https://hotrosinhvien.qnu.edu.vn/
+  - https://pctsv.qnu.edu.vn/
+  - https://pdt.qnu.edu.vn/
+  - https://kcntt.qnu.edu.vn/
+  - https://ksp.qnu.edu.vn/
+  - https://knn.qnu.edu.vn/
+  - https://kktcn.qnu.edu.vn/
+  - https://khxhnv.qnu.edu.vn/
+  - https://kgdthmn.qnu.edu.vn/
+  - https://kgdtcqp.qnu.edu.vn/
+  - https://kgdctqlnn.qnu.edu.vn/
+  - https://ktot.qnu.edu.vn/
+  - https://math.qnu.edu.vn/
+  - https://fea.qnu.edu.vn/
+  - https://fba.qnu.edu.vn/
+  - https://ns.qnu.edu.vn/
+host_suffix: .qnu.edu.vn
+host_aliases:
+  qnu.edu.vn: www.qnu.edu.vn          # cả hai cùng phục vụ một site; gộp để không quét hai lần
+  wts.qnu.edu.vn: tuyensinh.qnu.edu.vn  # bản sao của tuyensinh (đo 06/11/2026)
+blocklist_hosts:
+  - eoffice.qnu.edu.vn                # văn phòng điện tử, phải đăng nhập
+  - services.qnu.edu.vn
+  - en.qnu.edu.vn                     # site tiếng Anh: ngoài phạm vi (spec §23)
+  - qes.qnu.edu.vn                    # Moodle: lịch /calendar/view.php vô tận × 4 ngôn ngữ, phần lớn cần đăng nhập (13/10/2026)
+  # 22/10/2026, Kent duyệt: kho chỉ giữ tài liệu tư vấn tuyển sinh đại học chính quy cho học sinh THPT.
+  # Các host dưới đây không có nội dung đó (đoàn thể, hành chính, thư viện, nghiên cứu, hợp tác quốc tế,
+  # bồi dưỡng/VLVH/khoá ngắn hạn, site tiếng Anh). Giữ old.qnu.edu.vn (có tin tuyển sinh 2026, trang ngành)
+  # và phcth (danh mục ngành ĐHCQ). Lọc theo chủ đề trong host lẫn lộn còn chờ thiết kế.
+  - lib.qnu.edu.vn
+  - iuc.qnu.edu.vn
+  - ies.qnu.edu.vn
+  - danguy.qnu.edu.vn
+  - doanthanhnien.qnu.edu.vn
+  - ptcns.qnu.edu.vn
+  - fba-en.qnu.edu.vn
+  - kktcn-en.qnu.edu.vn
+  - fea-en.qnu.edu.vn
+  - partner.qnu.edu.vn
+  - pthanhtra.qnu.edu.vn
+  - csdlkh.qnu.edu.vn
+  - hdt.qnu.edu.vn
+  - congdoan.qnu.edu.vn
+  - tttinhoc.qnu.edu.vn
+  - vnukc.qnu.edu.vn
+  - hsv.qnu.edu.vn
+  - rims.qnu.edu.vn
+  - hrm.qnu.edu.vn
+  - tss.qnu.edu.vn
+  - 360.qnu.edu.vn
+  - vlvh.qnu.edu.vn
+  - staff.qnu.edu.vn
+  - japancenter.qnu.edu.vn
+  - pqlkh-htqt.qnu.edu.vn
+blocklist_url_patterns:
+  - /tim-kiem
+  - '[?&](sort|keyword|search|q)='
+  - /GenericErrorPage
+  - /WebResource\.axd
+  - /ScriptResource\.axd
+  # Kent 04/11/2026: chỉ giữ từ 01/01/2024. Mục con của các chuyên mục dưới đây không có ngày đăng và
+  # `infer_year` không xét đoạn cha của URL (số ở đó hay là ID), nên phải nêu tên chuyên mục (spec §6.5).
+  - /(?:nganh-dao-tao-dai-hoc|de-an-tuyen-sinh|huong-dan-tuyen-sinh|vua-lam-vua-hoc)-20(?:0\d|1\d|2[0-3])(?!\d)
+  - /CONG(?:%20| |\+)KHAI(?:%20| |\+)CTDT(?:%20| |\+)20(?:0\d|1\d|2[0-3])
+  - /wp-content/uploads/20(?:0\d|1\d|2[0-3])/
+  - /Resources/(?:Images|Docs)/SubDomain/[^/]+/20(?:0\d|1\d|2[0-3])(?:[/_]|%20)
+# Chỉ GẮN NHÃN tầng A; chốt thêm KTX, giới thiệu ngành sau lần quét đầu.
+# Chỉ giữ trang/tài liệu từ năm này (ngày đăng; không có thì năm trong URL/tiêu đề; ảnh, file theo
+# trang chứa nó). Không suy được năm thì giữ. Quyết định 23/10/2026: loại cả năm 2023,
+# giữ từ 2024; spec nguồn web §6.5.
+min_year: 2024
+# Kent 06/11/2026: chỉ lấy thông báo, tiêu chí, thông tin tuyển sinh đại học chính quy (chữ trên web,
+# file, ảnh chứa thông tin đó); chặt để không quét thừa. Mẫu so trên chuỗi đã bỏ dấu, xem ingest/topic.py.
+topic_gate:
+  include:
+    - tuyen-?sinh
+    - xet-tuyen
+    - diem-chuan
+    - trung-tuyen
+    - chi-tieu
+    - nguong-(bao|dam)-(dam|bao)
+    - to-hop-(mon|xet)
+    - nhap-hoc
+    - nang-khieu
+    # Kent 06/11/2026: lấy cả học phí, KTX, học bổng và trang giới thiệu ngành của khoa.
+    - hoc-phi
+    - mien-giam
+    - hoc-bong
+    - ky-tuc-xa
+    - ktx
+    - gioi-thieu-nganh
+    - nganh-dao-tao
+    - ^nganh-
+  exclude:
+    - sau-dai-hoc
+    - thac-si
+    - tien-si
+    - nghien-cuu-sinh
+    - vua-lam-vua-hoc
+    - vlvh
+    - vb2
+    - van-bang-2
+    - lien-thong
+    - (^|-)tu-xa(-|$)
+    - ngan-han
+    - boi-duong
+    - hoc-vien
+    - chieu-sinh
+    - phong-tuyen-sinh               # tên đơn vị, không phải chủ đề
+    - co-cau-to-chuc
+    - chi-tieu-noi-bo
+    - tuyen-dung
+    - ^(vi-)?tags-                   # trang thẻ: gom slider, logo, không phải bài
+    - chuong-trinh-dao-tao           # RUNBOOK 4.3: PDF CTĐT không đưa vào
+    - ctdt
+    - tan-sinh-vien                  # tin sự kiện đón sinh viên, toàn ảnh người
+    - cau-noi
+    - chuan-dau-ra
+    - ma-qr                          # mã QR thu tiền: ảnh không có thông tin đọc được
+    - qr-code
+    - (^|-)0?logo
+    # Quyết định từng học kỳ kèm danh sách sinh viên, thường là PDF scan nên lọc người không đọc được.
+    - mien-giam-hoc-phi-(hoc-ky|hk)
+    - (hb|hoc-bong)-kkht
+    - hoc-bong-khuyen-khich-hoc-tap-hoc-ky
+    # Tin lễ trao học bổng: toàn ảnh người, không có điều kiện xét.
+    - nhan-hoc-bong
+    - trao-hoc-bong
+    - le-cong-bo
+  trusted:
+    - https://tuyensinh.qnu.edu.vn/vi/tuyen-sinh-dai-hoc-chinh-quy-2027
+    - https://tuyensinh.qnu.edu.vn/vi/dai-hoc-chinh-quy-1764
+    - https://www.qnu.edu.vn/vi/dai-hoc-chinh-quy-1764
+    - https://tuyensinh.qnu.edu.vn/vi/diem-chuan-cac-nam
+    - https://tuyensinh.qnu.edu.vn/vi/tong-hop-nganh-dao-tao
+    - https://www.qnu.edu.vn/vi/hoc-phi-quy-dinh
+tier_a:
+  - https://tuyensinh.qnu.edu.vn/vi/tuyen-sinh-dai-hoc-chinh-quy-2027
+  - https://tuyensinh.qnu.edu.vn/vi/tong-hop-nganh-dao-tao
+  - https://www.qnu.edu.vn/vi/dai-hoc-chinh-quy-1764
+  - https://www.qnu.edu.vn/vi/tuyen-sinh-1763
+  - https://www.qnu.edu.vn/vi/hoc-phi-quy-dinh
+# Tiêu đề khớp → bỏ, không tải (spec §6.2 bước 4).
+pii_title_skip:
+  - danh sách (sinh viên|thí sinh|học viên)
+  - khen thưởng
+  - công nhận tốt nghiệp
+limits:
+  rps_per_host: 1
+  hosts_parallel: 4
+  max_file_mb: 50
+  timeout_s: 30
+  recheck_days: 30
+  max_listing_pages: 200
+  retries: 2
+user_agent: "QNU-admission-chatbot/0.1 (do an tot nghiep; lien he {contact})"
