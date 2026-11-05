@@ -1,0 +1,41 @@
+{
+  "source_directory": "/home/kent/KentProject/qnu-admission-chatbot/results",
+  "destination": "/home/kent/KentProject/qnu-admission-chatbot-v2/data/ocr-data",
+  "source_file_count": 2336,
+  "file_status_counts": {
+    "excluded": 671,
+    "converted_table": 1,
+    "reference": 1574,
+    "review_only": 1,
+    "selected": 89
+  },
+  "excluded_reason_counts": {
+    "report_log_metadata_or_evaluation": 123,
+    "empty_text": 54,
+    "synthetic_degraded_benchmark": 253,
+    "empty_text;synthetic_degraded_benchmark": 9,
+    "execution_error;invalid_lines_schema": 61,
+    "execution_error;invalid_lines_schema;synthetic_degraded_benchmark": 29,
+    "incomplete_generation:length": 114,
+    "incomplete_generation:length;synthetic_degraded_benchmark": 28
+  },
+  "complete_ocr_candidates": 1663,
+  "selected_pages": 89,
+  "selected_lines": 11918,
+  "documents": 24,
+  "selected_engines": {
+    "paddle_vietocr": 1,
+    "cur_rotgate": 88
+  },
+  "admission_records": 503,
+  "handbook_rows_for_review": 52,
+  "selected_without_available_source": 0,
+  "selection": "cur_rotgate then M1 paddle_vietocr; first run; one result per source SHA-256/page",
+  "limitations": [
+    "OCR text is not manually fact-verified",
+    "Only pages present in results are exported",
+    "No benchmark labels, generated answers or synthetic degraded images enter the corpus",
+    "Admission method is unspecified in inventory records; method=null",
+    "Existing ocr_results.json is a separate earlier export, not merged into corpus"
+  ]
+}

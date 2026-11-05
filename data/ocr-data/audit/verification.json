@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "verified_source_files": 2336,
+  "verified_candidates": 1663,
+  "verified_selected_pages": 89,
+  "verified_documents": 24,
+  "verified_table_records": 503,
+  "verified_review_rows": 52,
+  "checks": [
+    "source SHA-256 and inventory completeness",
+    "raw OCR and text preservation",
+    "no synthetic, empty, failed or truncated candidates",
+    "preferred page coverage and deduplication",
+    "original document SHA-256",
+    "CSV and TXT roundtrip",
+    "table fields and review validation"
+  ],
+  "scope": "Export integrity; not manual verification of OCR facts"
+}

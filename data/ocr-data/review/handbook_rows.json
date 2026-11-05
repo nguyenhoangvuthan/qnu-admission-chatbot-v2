@@ -1,0 +1,2146 @@
+{
+  "source_file": "ocr/p0-01/rows.json",
+  "source": {
+    "pdf": "docs/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf",
+    "pdf_sha256": "86bbba2b5e5c57b59cc7c3ee82d72fab73c54dcd778c0fc5ab95b3c1436a87e7",
+    "page": 2,
+    "xref": 123,
+    "width": 1754,
+    "height": 1241,
+    "content_key": "04b5f602faf51d4e6529cc4e6707a993f2958497830b92ff9df0d61404798d73"
+  },
+  "quality_status": "needs_review_known_errors",
+  "rows": [
+    {
+      "stt": 1,
+      "stt_text": "1",
+      "ma_nganh": "7140209",
+      "ma_suffix": null,
+      "ma_text": "7140209",
+      "ten_nganh": "Sư phạm Toán học",
+      "ten_digits": "Sư phm Toán hc",
+      "box": [
+        50,
+        147,
+        64,
+        164
+      ]
+    },
+    {
+      "stt": 2,
+      "stt_text": "2",
+      "ma_nganh": "7140210",
+      "ma_suffix": null,
+      "ma_text": "7140210",
+      "ten_nganh": "Sư phạm Tin học",
+      "ten_digits": "Sư phm Tin hc",
+      "box": [
+        49,
+        185,
+        66,
+        204
+      ]
+    },
+    {
+      "stt": 3,
+      "stt_text": "5",
+      "ma_nganh": "7140211",
+      "ma_suffix": null,
+      "ma_text": "714O",
+      "ten_nganh": "Sư phạm Vật lý",
+      "ten_digits": "Sư phm Vt lý",
+      "box": [
+        49,
+        218,
+        66,
+        237
+      ]
+    },
+    {
+      "stt": 4,
+      "stt_text": "4",
+      "ma_nganh": "7140212",
+      "ma_suffix": null,
+      "ma_text": "7140212",
+      "ten_nganh": "Sư phạm Hóa học",
+      "ten_digits": "Sư phm Hóa hc",
+      "box": [
+        49,
+        243,
+        66,
+        263
+      ]
+    },
+    {
+      "stt": 5,
+      "stt_text": "5",
+      "ma_nganh": "7140213",
+      "ma_suffix": null,
+      "ma_text": "7140215",
+      "ten_nganh": "Sư phạm Sinh học",
+      "ten_digits": "Sư phm Sinh hc",
+      "box": [
+        49,
+        267,
+        66,
+        287
+      ]
+    },
+    {
+      "stt": 6,
+      "stt_text": "6",
+      "ma_nganh": "7140217",
+      "ma_suffix": null,
+      "ma_text": "7140217",
+      "ten_nganh": "Sư phạm Ngữ văn",
+      "ten_digits": "Sư phm Ng văn",
+      "box": [
+        50,
+        293,
+        67,
+        312
+      ]
+    },
+    {
+      "stt": 7,
+      "stt_text": "7",
+      "ma_nganh": "7140218",
+      "ma_suffix": null,
+      "ma_text": "7140218",
+      "ten_nganh": "Sư phạm Lịch sử",
+      "ten_digits": "Su phm Lch s",
+      "box": [
+        49,
+        323,
+        66,
+        342
+      ]
+    },
+    {
+      "stt": 8,
+      "stt_text": "8",
+      "ma_nganh": "7140219",
+      "ma_suffix": null,
+      "ma_text": "7140219",
+      "ten_nganh": "Sư phạm Địa lý",
+      "ten_digits": "Sư phm Đa lý",
+      "box": [
+        49,
+        365,
+        66,
+        384
+      ]
+    },
+    {
+      "stt": 9,
+      "stt_text": "9",
+      "ma_nganh": "7140231",
+      "ma_suffix": null,
+      "ma_text": "7140251",
+      "ten_nganh": "Sư phạm Tiếng Anh",
+      "ten_digits": "Su phm Ting Anh",
+      "box": [
+        49,
+        402,
+        66,
+        421
+      ]
+    },
+    {
+      "stt": 10,
+      "stt_text": "10",
+      "ma_nganh": "7140247",
+      "ma_suffix": null,
+      "ma_text": "7140247",
+      "ten_nganh": "Sư phạm Khoa học tự nhiên.",
+      "ten_digits": "Sư pham Khoa hoc t nhiên",
+      "box": [
+        45,
+        442,
+        69,
+        462
+      ]
+    },
+    {
+      "stt": 11,
+      "stt_text": "T",
+      "ma_nganh": "7140249",
+      "ma_suffix": null,
+      "ma_text": "7140249",
+      "ten_nganh": "Sư phạm Lịch sử - Địa lý",
+      "ten_digits": "Su phm Lich s - Đia lý",
+      "box": [
+        47,
+        486,
+        67,
+        504
+      ]
+    },
+    {
+      "stt": 12,
+      "stt_text": "12",
+      "ma_nganh": "7140201",
+      "ma_suffix": null,
+      "ma_text": "7140201",
+      "ten_nganh": "Giáo dục Mầm non",
+      "ten_digits": "Giáo dc Mm non",
+      "box": [
+        47,
+        519,
+        68,
+        538
+      ]
+    },
+    {
+      "stt": 13,
+      "stt_text": "15",
+      "ma_nganh": "7140202",
+      "ma_suffix": null,
+      "ma_text": "7140202",
+      "ten_nganh": "Giáo dục Tiểu học",
+      "ten_digits": "Giáo dc Tiu hc",
+      "box": [
+        47,
+        545,
+        68,
+        563
+      ]
+    },
+    {
+      "stt": 14,
+      "stt_text": "14",
+      "ma_nganh": "7140205",
+      "ma_suffix": null,
+      "ma_text": "7140205",
+      "ten_nganh": "Giáo dục Chính trị",
+      "ten_digits": "Giáo dc Chính tr",
+      "box": [
+        44,
+        590,
+        70,
+        611
+      ]
+    },
+    {
+      "stt": 15,
+      "stt_text": "15",
+      "ma_nganh": "7140206",
+      "ma_suffix": null,
+      "ma_text": "7140206",
+      "ten_nganh": "Giáo dục Thể chất",
+      "ten_digits": "Giáo duc Th chát",
+      "box": [
+        46,
+        644,
+        68,
+        662
+      ]
+    },
+    {
+      "stt": 16,
+      "stt_text": "16",
+      "ma_nganh": "7140114",
+      "ma_suffix": null,
+      "ma_text": "7140114",
+      "ten_nganh": "Quản lý Giáo dục",
+      "ten_digits": "Qun lý Giáo dc",
+      "box": [
+        46,
+        679,
+        70,
+        698
+      ]
+    },
+    {
+      "stt": 17,
+      "stt_text": "17",
+      "ma_nganh": "7220201",
+      "ma_suffix": null,
+      "ma_text": "7220201",
+      "ten_nganh": "Ngôn ngữAnh",
+      "ten_digits": "Ngôn ng Anh",
+      "box": [
+        46,
+        704,
+        68,
+        722
+      ]
+    },
+    {
+      "stt": 18,
+      "stt_text": "18",
+      "ma_nganh": "7220204",
+      "ma_suffix": null,
+      "ma_text": "7220204",
+      "ten_nganh": "Ngôn ngữ Trung Quốc",
+      "ten_digits": "Ngôn ng Trung Quc",
+      "box": [
+        45,
+        739,
+        69,
+        760
+      ]
+    },
+    {
+      "stt": 19,
+      "stt_text": "19",
+      "ma_nganh": "7229030",
+      "ma_suffix": null,
+      "ma_text": "7229050",
+      "ten_nganh": "Văn học",
+      "ten_digits": "Văn hc",
+      "box": [
+        45,
+        773,
+        70,
+        794
+      ]
+    },
+    {
+      "stt": 20,
+      "stt_text": "2O",
+      "ma_nganh": "7310101",
+      "ma_suffix": null,
+      "ma_text": "7510101",
+      "ten_nganh": "Kinh tế",
+      "ten_digits": "Kinh t",
+      "box": [
+        44,
+        810,
+        71,
+        831
+      ]
+    },
+    {
+      "stt": 21,
+      "stt_text": "21",
+      "ma_nganh": "7310205",
+      "ma_suffix": null,
+      "ma_text": "7510205",
+      "ten_nganh": "Quản lý nhà nước",
+      "ten_digits": "Qun lý nhà nưc",
+      "box": [
+        46,
+        860,
+        68,
+        878
+      ]
+    },
+    {
+      "stt": 22,
+      "stt_text": "22",
+      "ma_nganh": "7310403",
+      "ma_suffix": null,
+      "ma_text": "7510405",
+      "ten_nganh": "Tâm lý học giáo dục",
+      "ten_digits": "Tâm lý hc giáo dc",
+      "box": [
+        44,
+        910,
+        70,
+        930
+      ]
+    },
+    {
+      "stt": 23,
+      "stt_text": "25",
+      "ma_nganh": "7310608",
+      "ma_suffix": null,
+      "ma_text": "7510608",
+      "ten_nganh": "Đông phương học",
+      "ten_digits": "Đông phương hc",
+      "box": [
+        44,
+        956,
+        70,
+        976
+      ]
+    },
+    {
+      "stt": 24,
+      "stt_text": "24",
+      "ma_nganh": "7310630",
+      "ma_suffix": null,
+      "ma_text": "7510650",
+      "ten_nganh": "Việt Nam học",
+      "ten_digits": "Vit Nam hc",
+      "box": [
+        44,
+        1002,
+        71,
+        1022
+      ]
+    },
+    {
+      "stt": 25,
+      "stt_text": "25",
+      "ma_nganh": "7340101",
+      "ma_suffix": null,
+      "ma_text": "7540101",
+      "ten_nganh": "Quản trị kinh doanh",
+      "ten_digits": "Qun tr kinh doanh",
+      "box": [
+        44,
+        1050,
+        70,
+        1070
+      ]
+    },
+    {
+      "stt": 26,
+      "stt_text": "26",
+      "ma_nganh": "7340201",
+      "ma_suffix": null,
+      "ma_text": "7540201",
+      "ten_nganh": "Tài chính - Ngân hàng",
+      "ten_digits": "Tài chính - Ngân hàng",
+      "box": [
+        44,
+        1099,
+        71,
+        1120
+      ]
+    },
+    {
+      "stt": 27,
+      "stt_text": "27",
+      "ma_nganh": "7340301",
+      "ma_suffix": null,
+      "ma_text": "7540501",
+      "ten_nganh": "Kế toán",
+      "ten_digits": "K toán",
+      "box": [
+        44,
+        1138,
+        70,
+        1158
+      ]
+    },
+    {
+      "stt": 28,
+      "stt_text": "28",
+      "ma_nganh": "7340301",
+      "ma_suffix": "ACCA",
+      "ma_text": "7540501 ACCA",
+      "ten_nganh": "Kế toán (Định hướng ACCA)",
+      "ten_digits": "K toán (Đnh hưng ACCA)",
+      "box": [
+        44,
+        1180,
+        71,
+        1200
+      ]
+    },
+    {
+      "stt": 29,
+      "stt_text": "29",
+      "ma_nganh": "7340302",
+      "ma_suffix": null,
+      "ma_text": "7540502",
+      "ten_nganh": "Kiểm toán",
+      "ten_digits": "Kim toán",
+      "box": [
+        920,
+        151,
+        946,
+        171
+      ]
+    },
+    {
+      "stt": 30,
+      "stt_text": "5o",
+      "ma_nganh": "7380101",
+      "ma_suffix": null,
+      "ma_text": "7580101",
+      "ten_nganh": "Luật",
+      "ten_digits": "Lut",
+      "box": [
+        919,
+        207,
+        947,
+        227
+      ]
+    },
+    {
+      "stt": 31,
+      "stt_text": "5",
+      "ma_nganh": "7440112",
+      "ma_suffix": null,
+      "ma_text": "7440112",
+      "ten_nganh": " (Hóa dược, Hóa mỹ phẩm)",
+      "ten_digits": "Hóa hoc (Hóa duc, Hóa m phm)",
+      "box": [
+        922,
+        267,
+        946,
+        286
+      ]
+    },
+    {
+      "stt": 32,
+      "stt_text": "52",
+      "ma_nganh": "7460112",
+      "ma_suffix": null,
+      "ma_text": "7460112",
+      "ten_nganh": "Toán ứng dung",
+      "ten_digits": "Toán ng dng",
+      "box": [
+        920,
+        306,
+        946,
+        326
+      ]
+    },
+    {
+      "stt": 33,
+      "stt_text": "55",
+      "ma_nganh": "7480109",
+      "ma_suffix": null,
+      "ma_text": "7480109",
+      "ten_nganh": "Khoa học dữ liệu",
+      "ten_digits": "Khoa hc d liu",
+      "box": [
+        920,
+        330,
+        946,
+        350
+      ]
+    },
+    {
+      "stt": 34,
+      "stt_text": "54",
+      "ma_nganh": "7480103",
+      "ma_suffix": null,
+      "ma_text": "7480105",
+      "ten_nganh": "Kỹ thuật phần mềm",
+      "ten_digits": "K thut phn mm",
+      "box": [
+        920,
+        355,
+        947,
+        375
+      ]
+    },
+    {
+      "stt": 35,
+      "stt_text": "55",
+      "ma_nganh": "7480201",
+      "ma_suffix": null,
+      "ma_text": "7480201",
+      "ten_nganh": "Công nghệ thông tin",
+      "ten_digits": "Công ngh thông tin",
+      "box": [
+        920,
+        380,
+        946,
+        400
+      ]
+    },
+    {
+      "stt": 36,
+      "stt_text": "56",
+      "ma_nganh": "7480207",
+      "ma_suffix": null,
+      "ma_text": "7480207",
+      "ten_nganh": "Trí tuệ nhân tao",
+      "ten_digits": "Trí tuê nhân tao",
+      "box": [
+        920,
+        402,
+        947,
+        422
+      ]
+    },
+    {
+      "stt": 37,
+      "stt_text": "57",
+      "ma_nganh": "7510205",
+      "ma_suffix": null,
+      "ma_text": "7510205",
+      "ten_nganh": "Công nghệ kỹ thuật ô tô",
+      "ten_digits": "Công nghê k thuât ô tô",
+      "box": [
+        920,
+        433,
+        946,
+        452
+      ]
+    },
+    {
+      "stt": 38,
+      "stt_text": "58",
+      "ma_nganh": "7510401",
+      "ma_suffix": null,
+      "ma_text": "7510401",
+      "ten_nganh": "Công nghệ kỹ thuật hóa học",
+      "ten_digits": "Công ngh k thut hóa hoc",
+      "box": [
+        920,
+        483,
+        947,
+        503
+      ]
+    },
+    {
+      "stt": 39,
+      "stt_text": "59",
+      "ma_nganh": "7510605",
+      "ma_suffix": null,
+      "ma_text": "7510605",
+      "ten_nganh": "Logistics và Quản lý chuỗi cung ứng.",
+      "ten_digits": "Logistics và Qun lý chui cung ng",
+      "box": [
+        920,
+        541,
+        946,
+        561
+      ]
+    },
+    {
+      "stt": 40,
+      "stt_text": "40.",
+      "ma_nganh": "7520116",
+      "ma_suffix": null,
+      "ma_text": "7520116",
+      "ten_nganh": "Kỹ thuật cơ khí động lực",
+      "ten_digits": "Ký thut cơ khí đng lc",
+      "box": [
+        920,
+        583,
+        947,
+        603
+      ]
+    },
+    {
+      "stt": 41,
+      "stt_text": "4",
+      "ma_nganh": "7520201",
+      "ma_suffix": null,
+      "ma_text": "7520201",
+      "ten_nganh": "Kỹ thuật điện",
+      "ten_digits": "K thut đin",
+      "box": [
+        923,
+        606,
+        945,
+        623
+      ]
+    },
+    {
+      "stt": 42,
+      "stt_text": "42",
+      "ma_nganh": "7520207",
+      "ma_suffix": null,
+      "ma_text": "7520207",
+      "ten_nganh": " ",
+      "ten_digits": "Ký thuât điên t - vin thông (Thit kvi mch)",
+      "box": [
+        920,
+        630,
+        947,
+        651
+      ]
+    },
+    {
+      "stt": 43,
+      "stt_text": "4+5",
+      "ma_nganh": "7520216",
+      "ma_suffix": null,
+      "ma_text": "7520216",
+      "ten_nganh": "Kỹ thuật điều khiến và Tư động hóa",
+      "ten_digits": "K thut điu khin và T đng hóa",
+      "box": [
+        920,
+        667,
+        947,
+        687
+      ]
+    },
+    {
+      "stt": 44,
+      "stt_text": "44",
+      "ma_nganh": "7520401",
+      "ma_suffix": null,
+      "ma_text": "7520401",
+      "ten_nganh": "Vật lý kỹ thuật (Chuyên ngành Bán dẫn)",
+      "ten_digits": "Vt lý ký thut (Chuyên ngành Bán dn)",
+      "box": [
+        921,
+        717,
+        948,
+        735
+      ]
+    },
+    {
+      "stt": 45,
+      "stt_text": "45",
+      "ma_nganh": "7540101",
+      "ma_suffix": null,
+      "ma_text": "7540101",
+      "ten_nganh": "Công nghệ thực phẩm",
+      "ten_digits": "Công ngh thc phm",
+      "box": [
+        920,
+        783,
+        947,
+        802
+      ]
+    },
+    {
+      "stt": 46,
+      "stt_text": "46",
+      "ma_nganh": "7580201",
+      "ma_suffix": null,
+      "ma_text": "7580201",
+      "ten_nganh": "Kỹ thuật xây dưng",
+      "ten_digits": "K thut xây dng",
+      "box": [
+        920,
+        842,
+        947,
+        862
+      ]
+    },
+    {
+      "stt": 47,
+      "stt_text": "47",
+      "ma_nganh": "7620109",
+      "ma_suffix": null,
+      "ma_text": "7620109",
+      "ten_nganh": "Nông học",
+      "ten_digits": "Nông hc",
+      "box": [
+        920,
+        892,
+        946,
+        912
+      ]
+    },
+    {
+      "stt": 48,
+      "stt_text": "48",
+      "ma_nganh": "7760101",
+      "ma_suffix": null,
+      "ma_text": "7760101",
+      "ten_nganh": "Công tác xã hội",
+      "ten_digits": "Công tác xã hi",
+      "box": [
+        920,
+        935,
+        947,
+        955
+      ]
+    },
+    {
+      "stt": 49,
+      "stt_text": "49",
+      "ma_nganh": "7810103",
+      "ma_suffix": null,
+      "ma_text": "7810105",
+      "ten_nganh": "Quản trị dịch vụ du lịch và lữ hành",
+      "ten_digits": "Qun tri dich vu du lich và l hành",
+      "box": [
+        920,
+        967,
+        947,
+        987
+      ]
+    },
+    {
+      "stt": 50,
+      "stt_text": "5o",
+      "ma_nganh": "7810201",
+      "ma_suffix": null,
+      "ma_text": "7810201",
+      "ten_nganh": "Quản trị khách san",
+      "ten_digits": "Qun tr khách sn",
+      "box": [
+        920,
+        1007,
+        947,
+        1027
+      ]
+    },
+    {
+      "stt": 51,
+      "stt_text": "51",
+      "ma_nganh": "7850101",
+      "ma_suffix": null,
+      "ma_text": "7850101",
+      "ten_nganh": "Quản lý tài nguyên và môi trường",
+      "ten_digits": "Qun lý tài nguyên và môi trưng",
+      "box": [
+        923,
+        1080,
+        945,
+        1098
+      ]
+    },
+    {
+      "stt": 52,
+      "stt_text": "52",
+      "ma_nganh": "7850103",
+      "ma_suffix": null,
+      "ma_text": "7850105",
+      "ten_nganh": "Quản lý đất đai",
+      "ten_digits": "Qun lý đt đai",
+      "box": [
+        920,
+        1166,
+        946,
+        1186
+      ]
+    }
+  ],
+  "validation": {
+    "stability": {
+      "in_process_hashes": [
+        "9f445444bb41f59c683eea834b5bc04f19b5232427e98eb92fd12fb99795cf29",
+        "9f445444bb41f59c683eea834b5bc04f19b5232427e98eb92fd12fb99795cf29"
+      ],
+      "in_process_stable": true,
+      "previous_run_hash": "9f445444bb41f59c683eea834b5bc04f19b5232427e98eb92fd12fb99795cf29",
+      "matches_previous_run": true
+    },
+    "structure": {
+      "errors": [
+        "STT 42: tên ngành rỗng"
+      ],
+      "warnings": [
+        "Mã 7340301 xuất hiện ở STT [27, 28]"
+      ]
+    },
+    "cross_engine": [
+      {
+        "stt": 3,
+        "field": "stt",
+        "paddle": "3",
+        "tesseract": "5"
+      },
+      {
+        "stt": 3,
+        "field": "ma_nganh",
+        "paddle": "7140211",
+        "tesseract": "714O"
+      },
+      {
+        "stt": 5,
+        "field": "ma_nganh",
+        "paddle": "7140213",
+        "tesseract": "7140215"
+      },
+      {
+        "stt": 7,
+        "field": "ten_nganh",
+        "paddle": "Su phm Lch s",
+        "tesseract": "Sư phạm Lịch sử"
+      },
+      {
+        "stt": 9,
+        "field": "ma_nganh",
+        "paddle": "7140231",
+        "tesseract": "7140251"
+      },
+      {
+        "stt": 9,
+        "field": "ten_nganh",
+        "paddle": "Su phm Ting Anh",
+        "tesseract": "Sư phạm Tiếng Anh"
+      },
+      {
+        "stt": 10,
+        "field": "ten_nganh",
+        "paddle": "Sư pham Khoa hoc t nhiên",
+        "tesseract": "Sư phạm Khoa học tự nhiên."
+      },
+      {
+        "stt": 11,
+        "field": "stt",
+        "paddle": "11",
+        "tesseract": "T"
+      },
+      {
+        "stt": 11,
+        "field": "ten_nganh",
+        "paddle": "Su phm Lich s - Đia lý",
+        "tesseract": "Sư phạm Lịch sử - Địa lý"
+      },
+      {
+        "stt": 13,
+        "field": "stt",
+        "paddle": "13",
+        "tesseract": "15"
+      },
+      {
+        "stt": 15,
+        "field": "ten_nganh",
+        "paddle": "Giáo duc Th chát",
+        "tesseract": "Giáo dục Thể chất"
+      },
+      {
+        "stt": 19,
+        "field": "ma_nganh",
+        "paddle": "7229030",
+        "tesseract": "7229050"
+      },
+      {
+        "stt": 20,
+        "field": "stt",
+        "paddle": "20",
+        "tesseract": "2O"
+      },
+      {
+        "stt": 20,
+        "field": "ma_nganh",
+        "paddle": "7310101",
+        "tesseract": "7510101"
+      },
+      {
+        "stt": 21,
+        "field": "ma_nganh",
+        "paddle": "7310205",
+        "tesseract": "7510205"
+      },
+      {
+        "stt": 22,
+        "field": "ma_nganh",
+        "paddle": "7310403",
+        "tesseract": "7510405"
+      },
+      {
+        "stt": 23,
+        "field": "stt",
+        "paddle": "23",
+        "tesseract": "25"
+      },
+      {
+        "stt": 23,
+        "field": "ma_nganh",
+        "paddle": "7310608",
+        "tesseract": "7510608"
+      },
+      {
+        "stt": 24,
+        "field": "ma_nganh",
+        "paddle": "7310630",
+        "tesseract": "7510650"
+      },
+      {
+        "stt": 25,
+        "field": "ma_nganh",
+        "paddle": "7340101",
+        "tesseract": "7540101"
+      },
+      {
+        "stt": 26,
+        "field": "ma_nganh",
+        "paddle": "7340201",
+        "tesseract": "7540201"
+      },
+      {
+        "stt": 27,
+        "field": "ma_nganh",
+        "paddle": "7340301",
+        "tesseract": "7540501"
+      },
+      {
+        "stt": 28,
+        "field": "ma_nganh",
+        "paddle": "7340301ACCA",
+        "tesseract": "7540501 ACCA"
+      },
+      {
+        "stt": 29,
+        "field": "ma_nganh",
+        "paddle": "7340302",
+        "tesseract": "7540502"
+      },
+      {
+        "stt": 30,
+        "field": "stt",
+        "paddle": "30",
+        "tesseract": "5o"
+      },
+      {
+        "stt": 30,
+        "field": "ma_nganh",
+        "paddle": "7380101",
+        "tesseract": "7580101"
+      },
+      {
+        "stt": 31,
+        "field": "stt",
+        "paddle": "31",
+        "tesseract": "5"
+      },
+      {
+        "stt": 31,
+        "field": "ten_nganh",
+        "paddle": "Hóa hoc (Hóa duc, Hóa m phm)",
+        "tesseract": " (Hóa dược, Hóa mỹ phẩm)"
+      },
+      {
+        "stt": 32,
+        "field": "stt",
+        "paddle": "32",
+        "tesseract": "52"
+      },
+      {
+        "stt": 32,
+        "field": "ten_nganh",
+        "paddle": "Toán ng dng",
+        "tesseract": "Toán ứng dung"
+      },
+      {
+        "stt": 33,
+        "field": "stt",
+        "paddle": "33",
+        "tesseract": "55"
+      },
+      {
+        "stt": 34,
+        "field": "stt",
+        "paddle": "34",
+        "tesseract": "54"
+      },
+      {
+        "stt": 34,
+        "field": "ma_nganh",
+        "paddle": "7480103",
+        "tesseract": "7480105"
+      },
+      {
+        "stt": 35,
+        "field": "stt",
+        "paddle": "35",
+        "tesseract": "55"
+      },
+      {
+        "stt": 36,
+        "field": "stt",
+        "paddle": "36",
+        "tesseract": "56"
+      },
+      {
+        "stt": 36,
+        "field": "ten_nganh",
+        "paddle": "Trí tuê nhân tao",
+        "tesseract": "Trí tuệ nhân tao"
+      },
+      {
+        "stt": 37,
+        "field": "stt",
+        "paddle": "37",
+        "tesseract": "57"
+      },
+      {
+        "stt": 37,
+        "field": "ten_nganh",
+        "paddle": "Công nghê k thuât ô tô",
+        "tesseract": "Công nghệ kỹ thuật ô tô"
+      },
+      {
+        "stt": 38,
+        "field": "stt",
+        "paddle": "38",
+        "tesseract": "58"
+      },
+      {
+        "stt": 38,
+        "field": "ten_nganh",
+        "paddle": "Công ngh k thut hóa hoc",
+        "tesseract": "Công nghệ kỹ thuật hóa học"
+      },
+      {
+        "stt": 39,
+        "field": "stt",
+        "paddle": "39",
+        "tesseract": "59"
+      },
+      {
+        "stt": 39,
+        "field": "ten_nganh",
+        "paddle": "Logistics và Qun lý chui cung ng",
+        "tesseract": "Logistics và Quản lý chuỗi cung ứng."
+      },
+      {
+        "stt": 40,
+        "field": "stt",
+        "paddle": "40",
+        "tesseract": "40."
+      },
+      {
+        "stt": 40,
+        "field": "ten_nganh",
+        "paddle": "Ký thut cơ khí đng lc",
+        "tesseract": "Kỹ thuật cơ khí động lực"
+      },
+      {
+        "stt": 41,
+        "field": "stt",
+        "paddle": "41",
+        "tesseract": "4"
+      },
+      {
+        "stt": 42,
+        "field": "ten_nganh",
+        "paddle": "Ký thuât điên t - vin thông (Thit kvi mch)",
+        "tesseract": " "
+      },
+      {
+        "stt": 43,
+        "field": "stt",
+        "paddle": "43",
+        "tesseract": "4+5"
+      },
+      {
+        "stt": 43,
+        "field": "ten_nganh",
+        "paddle": "K thut điu khin và T đng hóa",
+        "tesseract": "Kỹ thuật điều khiến và Tư động hóa"
+      },
+      {
+        "stt": 44,
+        "field": "ten_nganh",
+        "paddle": "Vt lý ký thut (Chuyên ngành Bán dn)",
+        "tesseract": "Vật lý kỹ thuật (Chuyên ngành Bán dẫn)"
+      },
+      {
+        "stt": 46,
+        "field": "ten_nganh",
+        "paddle": "K thut xây dng",
+        "tesseract": "Kỹ thuật xây dưng"
+      },
+      {
+        "stt": 49,
+        "field": "ma_nganh",
+        "paddle": "7810103",
+        "tesseract": "7810105"
+      },
+      {
+        "stt": 49,
+        "field": "ten_nganh",
+        "paddle": "Qun tri dich vu du lich và l hành",
+        "tesseract": "Quản trị dịch vụ du lịch và lữ hành"
+      },
+      {
+        "stt": 50,
+        "field": "stt",
+        "paddle": "50",
+        "tesseract": "5o"
+      },
+      {
+        "stt": 50,
+        "field": "ten_nganh",
+        "paddle": "Qun tr khách sn",
+        "tesseract": "Quản trị khách san"
+      },
+      {
+        "stt": 52,
+        "field": "ma_nganh",
+        "paddle": "7850103",
+        "tesseract": "7850105"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          407,
+          221,
+          824,
+          235
+        ],
+        "paddle": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Sinh); (Toán, Lý, Giáo duc KT& PL)",
+        "tesseract": "(Toán, Lý, Hóa) (Toán, Lý, Anh), (Toán, Lý, Sinh); (Toán, Lý, GiáoducKT& PL)"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          407,
+          317,
+          824,
+          331
+        ],
+        "paddle": "(Văn, S, Đa); (Văn, Sr, Giáo dc KT&PL); (Văn, Sr, Anh); (Văn, Toán, S);",
+        "tesseract": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT&P! ); (Văn, Sử, Anh); (Văn, Toán, Sử),"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          406,
+          332,
+          748,
+          349
+        ],
+        "paddle": "(Toán, S, Giáo dc KT&PL); (Toán, S, Đa); (Toán, S, Anh)",
+        "tesseract": ""
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          406,
+          359,
+          826,
+          376
+        ],
+        "paddle": "(Vn, S, Đa); (Vn, Đa, Giáo dc KT&PL); (Vn, Ton, Đa); (Vn, Đa, Anh);",
+        "tesseract": "(Văn, Sử, Địa); (Văn, Địa, Giáo dục KT&P!); (Văn, Toán, Địa); (Văn, Địa, Anh),"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          407,
+          377,
+          747,
+          391
+        ],
+        "paddle": "(Toán, Đa, Anh); (Toán, S, Đa); (Toán, Đa, Giáo dc KT&PL)",
+        "tesseract": "(Toán, Địa, Anh); (Toán, Sử, Địa); (Toán, Địa, Giáo dục KT&P!)"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          407,
+          478,
+          799,
+          492
+        ],
+        "paddle": "(Toán, S, Đia); (Văn, S, Đia); (Văn, S, Giáo duc KT&PL);",
+        "tesseract": "(Toán, Sử, Địa); (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT&PL);"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          406,
+          519,
+          550,
+          536
+        ],
+        "paddle": "(Toán, Văn, NK GDMN)",
+        "tesseract": "(Toán, Văn, NKGDMN)."
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          406,
+          572,
+          662,
+          589
+        ],
+        "paddle": "(Văn, S, Đa); (Văn, Sr, Giáo dc KT&PL);",
+        "tesseract": "(Văn, Sử, Địa); (Văn, Sử, Giáo dụcKT&P! );"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          407,
+          593,
+          774,
+          607
+        ],
+        "paddle": "(Văn, Đa, Giáo dc KT&PL); (Toán, Văn, Anh); (Văn, S, Anh);",
+        "tesseract": "(Văn, Địa, Giáo dục KT&P! ); (Toán, Văn, Anh); (Văn, Sử,Anh);"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          406,
+          609,
+          761,
+          625
+        ],
+        "paddle": "(Văn, Toán, Giáo duc KT&PL); (Toán, Anh, Giáo dc KT&PL)",
+        "tesseract": "(Văn, Toán, Giáo dụcKT8P! }; (Toán, Anh, Giáo dục KT&P!)"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          404,
+          730,
+          798,
+          751
+        ],
+        "paddle": "(Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Văn, Ting Trung);",
+        "tesseract": "(L oán, Lý, Anh); (Toán, Văn, Anh); (Toán, Văn, Tiếng Trung);"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          406,
+          775,
+          823,
+          792
+        ],
+        "paddle": "(Văn, S, Đa); (Văn, S, Giáo dc KT&PL); (Vn, S, Anh); (Văn, Đa, Anh)",
+        "tesseract": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT&PL }; (Văn, Sử, Anh); (Văn, Địa, Anh)"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          406,
+          799,
+          851,
+          816
+        ],
+        "paddle": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Hóa, Anh)",
+        "tesseract": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Hóa, Anh);"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          407,
+          844,
+          702,
+          858
+        ],
+        "paddle": "(Văn, S, Đia):; (Văn, Toán, Giáo duc KT&PL);",
+        "tesseract": "(Văn, Sử, Địa); (Văn, Toán, Giáo dục KI&PL);"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          406,
+          878,
+          599,
+          895
+        ],
+        "paddle": "(Toán, Anh, Giáo duc KT&PL)",
+        "tesseract": "(Toán, Anh, Giáo dục KT&PL)"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          406,
+          904,
+          796,
+          921
+        ],
+        "paddle": "(Toán, L, Hóa); (Văn, S, Đa); (Văn, S, Giáo dc KT&PL);",
+        "tesseract": "(Toán, Lý, Hóa); (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT&PL);"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          407,
+          1037,
+          848,
+          1051
+        ],
+        "paddle": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Văn, Toán, Giáo duc KT&PL);",
+        "tesseract": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Văn, Toán, Giáo dục KT&PL},"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          405,
+          1052,
+          811,
+          1069
+        ],
+        "paddle": "(Văn, Toán, Anh); (Văn, Toán, Ting Trung); (Toán, Anh, Giáo dc KT&PL);",
+        "tesseract": ""
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          406,
+          1069,
+          656,
+          1086
+        ],
+        "paddle": "(Văn, Anh, Giáo duc KT&PL); (Toán, Anh, Tin)",
+        "tesseract": "(Văn, Anh, GiáodụcKT&P!). (Toán, Anh, Tin)"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          406,
+          1179,
+          712,
+          1196
+        ],
+        "paddle": "(Toán, Anh, Tin); (Toán, Anh, Giáo duc KT&PL)",
+        "tesseract": "(Toán, Anh, Tin); (Toán, Anh, Giáo dục KT&PL)"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          1280,
+          162,
+          1586,
+          179
+        ],
+        "paddle": "(Toán, Anh, Giáo duc KT&PL); (Toán, Anh, Tin)",
+        "tesseract": "(Toán, Anh, Giáo dục KT&PL); (Toán, Anh, Tin)"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          1281,
+          270,
+          1709,
+          284
+        ],
+        "paddle": "(Toán, Hóa, Đia); (Toán, Hóa, Giáo duc KT&PL); (Văn, Toán, Hóa);",
+        "tesseract": "(Toán, Hóa, Địa); (Toán, Hóa, Giáo dục KT&PL); (Văn, Toán, Hóa);"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          1280,
+          285,
+          1718,
+          302
+        ],
+        "paddle": "(Văn, Lý, Hóa); (Văn, Hóa, Sinh); (Toán, Hóa, Anh); (Văn, Hóa, Anh)",
+        "tesseract": ""
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          1280,
+          562,
+          1586,
+          579
+        ],
+        "paddle": "(Toán, Giáo dc KT&PL, Anh); (Toán, Anh, Tin)",
+        "tesseract": "(Toán, Giáo dục KT&PL, Anh); (Toán, Anh, Tin)."
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          1281,
+          702,
+          1671,
+          716
+        ],
+        "paddle": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Sinh); (Toán, Lý, Sr);",
+        "tesseract": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Sinh); (Toán, Lý, Sử);"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          1279,
+          732,
+          1638,
+          750
+        ],
+        "paddle": "(Văn, Lý, Sinh); (Văn, Lý, Anh); (Toán, Lý, Giáo duc KT&PL)",
+        "tesseract": "(Văn, Lý, Sinh); (Văn, Lý, Anh); (Toán, Lý, Giáo dục KT&PL)."
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          1280,
+          776,
+          1682,
+          793
+        ],
+        "paddle": "(Toán, Hóa, Đa); (Toán, Hóa, Giáo dc KT&PL); (Toán, Hóa, Sinh);",
+        "tesseract": ""
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          1280,
+          877,
+          1609,
+          894
+        ],
+        "paddle": "(Toán, Hóa, Sinh); (Toán, Sr, Sinh); (Toán, Sinh, Văn);",
+        "tesseract": "(Toán, Hóa, Sinh); (Toán, Sử, Sinh); (Toán, Sinh, Văn);"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          1280,
+          937,
+          1695,
+          954
+        ],
+        "paddle": "(Văn, Sr, Đa); (Toán, Văn, Anh); (Vn, S, Anh); (Văn, Sr, Giáo dc KT&PL)",
+        "tesseract": "(Văn, Sử, Địa); (Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Sử, Giáo dụcKT&P! )"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          1280,
+          965,
+          1653,
+          981
+        ],
+        "paddle": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Sr, Giáo dc KT&PL);",
+        "tesseract": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Sử, Giáo dục KT&PL),"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          1280,
+          998,
+          1616,
+          1012
+        ],
+        "paddle": "(Văn, Toán, Giáo dc KT&PL); (Văn, Toán, Ting Trung);",
+        "tesseract": "(Văn, Toán, Giáo dục KT&PL), (Văn, Toán, Tiêng Trung);"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          1279,
+          1078,
+          1679,
+          1095
+        ],
+        "paddle": "(Toán, Đa, Giáo duc KT&PL); (Toán, Hóa, Sinh); (Toán, Sinh, Đa);",
+        "tesseract": "(Toán, Địa, Giáo dục KT&PL); (Toán, Hóa, Sinh); (Toán, Sinh, Địa);"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          1281,
+          1097,
+          1658,
+          1111
+        ],
+        "paddle": "(Văn, Toán, Đa); (Văn, Sinh, Đa); (Văn, Đa, Giáo duc KT&PL);",
+        "tesseract": "(Văn, Toán, Địa); (Văn, Sinh, Địa); (Văn, Địa, Giáo dục KT&PL);"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          1280,
+          1189,
+          1569,
+          1203
+        ],
+        "paddle": "(Toán, Hóa, Giáo duc KT&PL); (Toán, Hóa, Anh)",
+        "tesseract": "(Toán, Hóa, Giáo dục KT&PL); (Toán, Hóa, Anh)"
+      }
+    ],
+    "combos": {
+      "raw_ocr": [
+        {
+          "box": [
+            407,
+            221,
+            824,
+            235
+          ],
+          "reason": "subjects",
+          "group": "Toán, Lý, GiáoducKT& PL",
+          "unknown": [
+            "GiáoducKT& PL"
+          ],
+          "n_subjects": 3
+        },
+        {
+          "box": [
+            407,
+            317,
+            824,
+            331
+          ],
+          "reason": "subjects",
+          "group": "Văn, Sử, Giáo dục KT&P! ",
+          "unknown": [
+            "Giáo dục KT&P!"
+          ],
+          "n_subjects": 3
+        },
+        {
+          "box": [
+            406,
+            332,
+            748,
+            349
+          ],
+          "reason": "no_group",
+          "text": ""
+        },
+        {
+          "box": [
+            406,
+            359,
+            826,
+            376
+          ],
+          "reason": "subjects",
+          "group": "Văn, Địa, Giáo dục KT&P!",
+          "unknown": [
+            "Giáo dục KT&P!"
+          ],
+          "n_subjects": 3
+        },
+        {
+          "box": [
+            407,
+            377,
+            747,
+            391
+          ],
+          "reason": "subjects",
+          "group": "Toán, Địa, Giáo dục KT&P!",
+          "unknown": [
+            "Giáo dục KT&P!"
+          ],
+          "n_subjects": 3
+        },
+        {
+          "box": [
+            406,
+            519,
+            550,
+            536
+          ],
+          "reason": "subjects",
+          "group": "Toán, Văn, NKGDMN",
+          "unknown": [
+            "NKGDMN"
+          ],
+          "n_subjects": 3
+        },
+        {
+          "box": [
+            406,
+            572,
+            662,
+            589
+          ],
+          "reason": "subjects",
+          "group": "Văn, Sử, Giáo dụcKT&P! ",
+          "unknown": [
+            "Giáo dụcKT&P!"
+          ],
+          "n_subjects": 3
+        },
+        {
+          "box": [
+            407,
+            593,
+            774,
+            607
+          ],
+          "reason": "subjects",
+          "group": "Văn, Địa, Giáo dục KT&P! ",
+          "unknown": [
+            "Giáo dục KT&P!"
+          ],
+          "n_subjects": 3
+        },
+        {
+          "box": [
+            406,
+            609,
+            761,
+            625
+          ],
+          "reason": "unbalanced",
+          "text": "(Văn, Toán, Giáo dụcKT8P! }; (Toán, Anh, Giáo dục KT&P!)"
+        },
+        {
+          "box": [
+            404,
+            730,
+            798,
+            751
+          ],
+          "reason": "subjects",
+          "group": "L oán, Lý, Anh",
+          "unknown": [
+            "L oán"
+          ],
+          "n_subjects": 3
+        },
+        {
+          "box": [
+            406,
+            775,
+            823,
+            792
+          ],
+          "reason": "unbalanced",
+          "text": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT&PL }; (Văn, Sử, Anh); (Văn, Địa, Anh)"
+        },
+        {
+          "box": [
+            407,
+            844,
+            702,
+            858
+          ],
+          "reason": "subjects",
+          "group": "Văn, Toán, Giáo dục KI&PL",
+          "unknown": [
+            "Giáo dục KI&PL"
+          ],
+          "n_subjects": 3
+        },
+        {
+          "box": [
+            407,
+            1037,
+            848,
+            1051
+          ],
+          "reason": "unbalanced",
+          "text": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Văn, Toán, Giáo dục KT&PL},"
+        },
+        {
+          "box": [
+            405,
+            1052,
+            811,
+            1069
+          ],
+          "reason": "no_group",
+          "text": ""
+        },
+        {
+          "box": [
+            406,
+            1069,
+            656,
+            1086
+          ],
+          "reason": "subjects",
+          "group": "Văn, Anh, GiáodụcKT&P!",
+          "unknown": [
+            "GiáodụcKT&P!"
+          ],
+          "n_subjects": 3
+        },
+        {
+          "box": [
+            1280,
+            285,
+            1718,
+            302
+          ],
+          "reason": "no_group",
+          "text": ""
+        },
+        {
+          "box": [
+            1280,
+            626,
+            1509,
+            643
+          ],
+          "reason": "subjects",
+          "group": "T oán, Hóa, Anh",
+          "unknown": [
+            "T oán"
+          ],
+          "n_subjects": 3
+        },
+        {
+          "box": [
+            1280,
+            626,
+            1509,
+            643
+          ],
+          "reason": "subjects",
+          "group": "T oán, Anh, Tin",
+          "unknown": [
+            "T oán"
+          ],
+          "n_subjects": 3
+        },
+        {
+          "box": [
+            1280,
+            776,
+            1682,
+            793
+          ],
+          "reason": "no_group",
+          "text": ""
+        },
+        {
+          "box": [
+            1280,
+            937,
+            1695,
+            954
+          ],
+          "reason": "subjects",
+          "group": "Văn, Sử, Giáo dụcKT&P! ",
+          "unknown": [
+            "Giáo dụcKT&P!"
+          ],
+          "n_subjects": 3
+        },
+        {
+          "box": [
+            1280,
+            998,
+            1616,
+            1012
+          ],
+          "reason": "subjects",
+          "group": "Văn, Toán, Tiêng Trung",
+          "unknown": [
+            "Tiêng Trung"
+          ],
+          "n_subjects": 3
+        }
+      ],
+      "after_corrections": [
+        {
+          "box": [
+            406,
+            332,
+            748,
+            349
+          ],
+          "reason": "no_group",
+          "text": ""
+        },
+        {
+          "box": [
+            406,
+            609,
+            761,
+            625
+          ],
+          "reason": "unbalanced",
+          "text": "(Văn, Toán, Giáo dụcKT8P! }; (Toán, Anh, Giáo dục kinh tế và pháp luật)"
+        },
+        {
+          "box": [
+            406,
+            775,
+            823,
+            792
+          ],
+          "reason": "unbalanced",
+          "text": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT&PL }; (Văn, Sử, Anh); (Văn, Địa, Anh)"
+        },
+        {
+          "box": [
+            407,
+            1037,
+            848,
+            1051
+          ],
+          "reason": "unbalanced",
+          "text": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Văn, Toán, Giáo dục KT&PL},"
+        },
+        {
+          "box": [
+            405,
+            1052,
+            811,
+            1069
+          ],
+          "reason": "no_group",
+          "text": ""
+        },
+        {
+          "box": [
+            1280,
+            285,
+            1718,
+            302
+          ],
+          "reason": "no_group",
+          "text": ""
+        },
+        {
+          "box": [
+            1280,
+            776,
+            1682,
+            793
+          ],
+          "reason": "no_group",
+          "text": ""
+        }
+      ],
+      "corrections_applied": [
+        {
+          "box": [
+            407,
+            221,
+            824,
+            235
+          ],
+          "raw": "GiáoducKT&PL",
+          "corrected": "Giáo dục kinh tế và pháp luật"
+        },
+        {
+          "box": [
+            407,
+            317,
+            824,
+            331
+          ],
+          "raw": "Giáo dục KT&P!",
+          "corrected": "Giáo dục kinh tế và pháp luật"
+        },
+        {
+          "box": [
+            406,
+            359,
+            826,
+            376
+          ],
+          "raw": "Giáo dục KT&P!",
+          "corrected": "Giáo dục kinh tế và pháp luật"
+        },
+        {
+          "box": [
+            407,
+            377,
+            747,
+            391
+          ],
+          "raw": "Giáo dục KT&P!",
+          "corrected": "Giáo dục kinh tế và pháp luật"
+        },
+        {
+          "box": [
+            406,
+            519,
+            550,
+            536
+          ],
+          "raw": "NKGDMN",
+          "corrected": "Năng khiếu Giáo dục mầm non"
+        },
+        {
+          "box": [
+            406,
+            572,
+            662,
+            589
+          ],
+          "raw": "Giáo dụcKT&P!",
+          "corrected": "Giáo dục kinh tế và pháp luật"
+        },
+        {
+          "box": [
+            407,
+            593,
+            774,
+            607
+          ],
+          "raw": "Giáo dục KT&P!",
+          "corrected": "Giáo dục kinh tế và pháp luật"
+        },
+        {
+          "box": [
+            406,
+            609,
+            761,
+            625
+          ],
+          "raw": "Giáo dục KT&P!",
+          "corrected": "Giáo dục kinh tế và pháp luật"
+        },
+        {
+          "box": [
+            404,
+            730,
+            798,
+            751
+          ],
+          "raw": "L oán",
+          "corrected": "Toán"
+        },
+        {
+          "box": [
+            407,
+            844,
+            702,
+            858
+          ],
+          "raw": "Giáo dục KI&PL",
+          "corrected": "Giáo dục kinh tế và pháp luật"
+        },
+        {
+          "box": [
+            406,
+            1069,
+            656,
+            1086
+          ],
+          "raw": "GiáodụcKT&P!",
+          "corrected": "Giáo dục kinh tế và pháp luật"
+        },
+        {
+          "box": [
+            1280,
+            626,
+            1509,
+            643
+          ],
+          "raw": "T oán",
+          "corrected": "Toán"
+        },
+        {
+          "box": [
+            1280,
+            626,
+            1509,
+            643
+          ],
+          "raw": "T oán",
+          "corrected": "Toán"
+        },
+        {
+          "box": [
+            1280,
+            937,
+            1695,
+            954
+          ],
+          "raw": "Giáo dụcKT&P!",
+          "corrected": "Giáo dục kinh tế và pháp luật"
+        },
+        {
+          "box": [
+            1280,
+            998,
+            1616,
+            1012
+          ],
+          "raw": "Tiêng Trung",
+          "corrected": "Tiếng Trung"
+        }
+      ],
+      "corrected_lines": [
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Anh, Tin)",
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh);",
+        "(Toán, Văn, Anh); (Toán, Văn, Tin)",
+        "(Toán, Lý, Hóa) (Toán, Lý, Anh), (Toán, Lý, Sinh); (Toán, Lý, Giáo dục kinh tế và pháp luật)",
+        "(Toán, Lý, Hóa); (Toán, Hóa, Sinh); (Toán, Hóa, Anh); (Toán, Văn, Hóa)",
+        "(Toán, Hóa, Sinh); (Toán, Sinh, Anh); (Toán, Lý, Sinh)",
+        "(Văn, Sử, Địa); (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Toán, Anh)",
+        "(Văn, Sử, Địa); (Văn, Sử, Giáo dục kinh tế và pháp luật); (Văn, Sử, Anh); (Văn, Toán, Sử),",
+        "",
+        "(Văn, Sử, Địa); (Văn, Địa, Giáo dục kinh tế và pháp luật); (Văn, Toán, Địa); (Văn, Địa, Anh),",
+        "(Toán, Địa, Anh); (Toán, Sử, Địa); (Toán, Địa, Giáo dục kinh tế và pháp luật)",
+        "(Toán, Văn, Anh)",
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Sinh);",
+        "(Toán, Hóa, Sinh); (Toán, Sinh, Anh)",
+        "(Toán, Sử, Địa); (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT&PL);",
+        "(Văn, Địa, Giáo dục KT&PL); (Văn, Sử, Anh); (Văn, Địa, Anh)",
+        "(Toán, Văn, Năng khiếu Giáo dục mầm non).",
+        "(Toán, Lý, Hóa); (Văn, Sử, Địa); (Toán, Văn, Anh)",
+        "(Văn, Sử, Địa); (Văn, Sử, Giáo dục kinh tế và pháp luật);",
+        "(Văn, Địa, Giáo dục kinh tế và pháp luật); (Toán, Văn, Anh); (Văn, Sử, Anh);",
+        "(Văn, Toán, Giáo dụcKT8P! }; (Toán, Anh, Giáo dục kinh tế và pháp luật)",
+        "(Toán, Sinh, NK TDTT); (Toán, Văn, NK TDTT); (Văn, Sinh, NK TDTT);",
+        "(Toán, Lý, NK TDTT); (Văn, Giáo dục KT&PL, NK TDTT)",
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Văn, Sử, Địa); (Toán, Văn, Anh)",
+        "(Toán, Lý, Anh); (Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Địa, Anh)",
+        "(Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Văn, Tiếng Trung);",
+        "(Văn, Địa, Anh)",
+        "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT&PL }; (Văn, Sử, Anh); (Văn, Địa, Anh)",
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Hóa, Anh);",
+        "(Toán, Anh, Giáo dục KT&PL); (Toán, Anh, Tin)",
+        "(Văn, Sử, Địa); (Văn, Toán, Giáo dục kinh tế và pháp luật);",
+        "(Văn, Sử, Giáo dục KT&PL); (Toán, Văn, Anh); (Văn, Sử, Anh);",
+        "(Toán, Anh, Giáo dục KT&PL)",
+        "(Toán, Lý, Hóa); (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT&PL);",
+        "(Toán, Văn, Anh)",
+        "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT&PL); (Văn, Sử, Anh);",
+        "(Văn, Địa, Anh)",
+        "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT&PL);",
+        "(Toán, Văn, Anh); (Văn, Địa, Anh)",
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Văn, Toán, Giáo dục KT&PL},",
+        "",
+        "(Văn, Anh, Giáo dục kinh tế và pháp luật). (Toán, Anh, Tin)",
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Văn, Anh);",
+        "(Văn, Toán, Giáo dục KT và PL); (Toán, Giáo dục KT&PL, Anh)",
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh);",
+        "(Toán, Văn, Anh); (Toán, Hóa, Anh);",
+        "(Toán, Anh, Tin); (Toán, Anh, Giáo dục KT&PL)",
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Hóa, Anh);",
+        "(Toán, Anh, Giáo dục KT&PL); (Toán, Anh, Tin)",
+        "(Toán, Lý, Anh); (Văn, Sử, Địa); (Văn, Toán, Giáo dục KT&PL);",
+        "(Văn, Sử, Giáo dục KT&PL); (Toán, Văn, Anh);",
+        "(Văn, Sử, Anh); (Toán, Anh, Giáo dục KT&PL)",
+        "(Toán, Lý, Hóa); (Toán, Hóa, Sinh); (Toán, Hóa, Sử);",
+        "(Toán, Hóa, Địa); (Toán, Hóa, Giáo dục KT&PL); (Văn, Toán, Hóa);",
+        "",
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Văn, Anh);",
+        "(Toán, Hóa, Anh); (Toán, Anh, Tin)",
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh);",
+        "(Toán, Anh, Tin); (Toán, Văn, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn)",
+        "(Toán, Lý, Hóa); (Toán, Hóa, Sinh); (Toán, Lý, Anh); (Toán, Hóa, Sử);",
+        "(Toán, Hóa, Địa); (Toán, Hóa, Giáo dục KT&PL); (Văn, Toán, Hóa);",
+        "(Văn, Hóa, Sinh); (Văn, Toán, Anh); (Toán, Hóa, Anh); (Văn, Hóa, Anh)",
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Địa, Giáo dục KT&PL);",
+        "(Văn, Toán, Giáo dục KT&PL); (Văn, Toán, Anh); (Toán, Địa, Anh);",
+        "(Toán, Giáo dục KT&PL, Anh); (Toán, Anh, Tin).",
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh);",
+        "(Toán, Hóa, Anh); (Toán, Anh, Tin);",
+        "(Toán, Văn, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn)",
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Sinh); (Toán, Lý, Sử);",
+        "(Văn, Toán, Lý); (Toán, Hóa, Sinh); (Toán, Lý, Địa); (Văn, Lý, Hóa);",
+        "(Văn, Lý, Sinh); (Văn, Lý, Anh); (Toán, Lý, Giáo dục KT&PL).",
+        "(Toán, Lý, Hóa); (Toán, Lý, Sinh)",
+        "",
+        "(Toán, Sinh, Anh); (Văn, Toán, Hóa); (Văn, Lý, Hóa); (Văn, Hóa, Sinh);",
+        "(Văn, Toán, Tiếng Nhật); (Toán, Hóa, Anh); (Văn, Hóa, Anh)",
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Anh, Tin);",
+        "(Toán, Văn, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn)",
+        "(Toán, Hóa, Sinh); (Toán, Sử, Sinh); (Toán, Sinh, Văn);",
+        "(Toán, Sinh, Giáo dục KT&PL); (Toán, Sinh, Anh); (Toán, Lý, Sinh);",
+        "(Văn, Sinh, Anh); (Văn, Hóa, Sinh); (Văn, Sử, Sinh)",
+        "(Văn, Sử, Địa); (Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Sử, Giáo dục kinh tế và pháp luật)",
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Sử, Giáo dục KT&PL),",
+        "(Toán, Địa, Giáo dục KT&PL); (Toán, Sử, Anh); (Văn, Toán, Anh);",
+        "(Văn, Toán, Giáo dục KT&PL), (Văn, Toán, Tiếng Trung);",
+        "(Văn, Anh, Giáo dục KT&PL); (Toán, Anh, Giáo dục KT&PL)",
+        "(Toán, Vật lý, Hóa); (Toán, Lý, Sinh); (Toán, Lý, Sử); (Toán, Lý, Địa);",
+        "(Toán, Hóa, Sử); (Toán, Hóa, Địa); (Toán, Sử, Địa);",
+        "(Toán, Địa, Giáo dục KT&PL); (Toán, Hóa, Sinh); (Toán, Sinh, Địa);",
+        "(Văn, Toán, Địa); (Văn, Sinh, Địa); (Văn, Địa, Giáo dục KT&PL);",
+        "(Văn, Toán, Anh); (Toán, Địa, Anh); (Văn, Địa, Anh)",
+        "(Toán, Lý, Hóa); (Toán, Hóa, Sinh); (Toán, Lý, Anh); (Toán, Lý, Sinh);",
+        "(Toán, Lý, Sử); (Toán, Lý, Địa); (Toán, Hóa, Địa);",
+        "(Toán, Địa, Giáo dục KT&PL); (Toán, Địa lý, Anh);",
+        "(Toán, Hóa, Giáo dục KT&PL); (Toán, Hóa, Anh)"
+      ]
+    },
+    "unassigned": [],
+    "reference": null
+  }
+}

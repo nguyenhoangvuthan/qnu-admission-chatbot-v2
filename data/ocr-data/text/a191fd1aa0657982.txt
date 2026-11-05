@@ -1,0 +1,113 @@
+--- Trang 1 ---
+29
+7340301
+Kế toán
+20.2
+30
+7340301AC
+Kế toán ACCA
+15
+31
+7340302
+Kiểm toán
+19
+32
+7380101
+Luật
+20.6
+33
+7440112
+Hóa học
+22.65
+34
+7460108
+Khoa học dữ liệu
+17.25
+35
+7460112
+Toán ứng dung
+22.6
+36
+7480103
+Kỹ thuật phần mềm
+16
+37
+7480107
+Trí tuệ nhân tạo
+17.5
+38
+7480201
+Công nghệ thông tin
+18.2
+39
+7480201TA
+Công nghệ thông tin (giảng dạy bằng tiếng Anh)
+18.2
+40
+7510205
+Công nghệ kỹ thuật ô tô
+19.7
+11
+7510401
+Công nghệ kỹ thuật hóa học
+21.05
+12
+7510605
+Logistics và quản lý chuỗi cung ứng
+21.3
+43
+7520116
+Kỹ thuật cơ khí động lực
+19.51
+44
+7520201
+Kỹ thuật diện
+20.3
+45
+7520201TA
+Kỹ thuật diện (giảng dạy bằng tiếng Anh)
+20.3
+16
+7520207
+Kỹ thuật điện tử - viễn thông
+16.7
+17
+7520216
+Kỹ thuật điều khiển và Tự động hóa
+21.35
+48
+7520401
+Vật lý kỹ thuật
+16
+49
+7540101
+Công nghệ thực phẩm
+18.8
+50
+7580201
+Kỹ thuật xây dựng
+15.7
+51
+7620109
+Nông học
+15.45
+52
+7760101
+Công tác xã hội
+22
+53
+7810103
+Quản trị dịch vụ du lịch và lữ hành
+20.65
+54
+7810201
+Quản trị khách sạn
+20.3
+55
+7850101
+Quản lý tài nguyên và môi trường
+15
+56
+7850103
+Quản lý đất đai
+15.8

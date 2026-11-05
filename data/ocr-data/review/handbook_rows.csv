@@ -1,0 +1,53 @@
+﻿stt,stt_text,ma_nganh,ma_suffix,ma_text,ten_nganh,ten_digits,box,quality_status
+1,1,7140209,,7140209,Sư phạm Toán học,Sư phm Toán hc,"[50, 147, 64, 164]",needs_review_known_errors
+2,2,7140210,,7140210,Sư phạm Tin học,Sư phm Tin hc,"[49, 185, 66, 204]",needs_review_known_errors
+3,5,7140211,,714O,Sư phạm Vật lý,Sư phm Vt lý,"[49, 218, 66, 237]",needs_review_known_errors
+4,4,7140212,,7140212,Sư phạm Hóa học,Sư phm Hóa hc,"[49, 243, 66, 263]",needs_review_known_errors
+5,5,7140213,,7140215,Sư phạm Sinh học,Sư phm Sinh hc,"[49, 267, 66, 287]",needs_review_known_errors
+6,6,7140217,,7140217,Sư phạm Ngữ văn,Sư phm Ng văn,"[50, 293, 67, 312]",needs_review_known_errors
+7,7,7140218,,7140218,Sư phạm Lịch sử,Su phm Lch s,"[49, 323, 66, 342]",needs_review_known_errors
+8,8,7140219,,7140219,Sư phạm Địa lý,Sư phm Đa lý,"[49, 365, 66, 384]",needs_review_known_errors
+9,9,7140231,,7140251,Sư phạm Tiếng Anh,Su phm Ting Anh,"[49, 402, 66, 421]",needs_review_known_errors
+10,10,7140247,,7140247,Sư phạm Khoa học tự nhiên.,Sư pham Khoa hoc t nhiên,"[45, 442, 69, 462]",needs_review_known_errors
+11,T,7140249,,7140249,Sư phạm Lịch sử - Địa lý,Su phm Lich s - Đia lý,"[47, 486, 67, 504]",needs_review_known_errors
+12,12,7140201,,7140201,Giáo dục Mầm non,Giáo dc Mm non,"[47, 519, 68, 538]",needs_review_known_errors
+13,15,7140202,,7140202,Giáo dục Tiểu học,Giáo dc Tiu hc,"[47, 545, 68, 563]",needs_review_known_errors
+14,14,7140205,,7140205,Giáo dục Chính trị,Giáo dc Chính tr,"[44, 590, 70, 611]",needs_review_known_errors
+15,15,7140206,,7140206,Giáo dục Thể chất,Giáo duc Th chát,"[46, 644, 68, 662]",needs_review_known_errors
+16,16,7140114,,7140114,Quản lý Giáo dục,Qun lý Giáo dc,"[46, 679, 70, 698]",needs_review_known_errors
+17,17,7220201,,7220201,Ngôn ngữAnh,Ngôn ng Anh,"[46, 704, 68, 722]",needs_review_known_errors
+18,18,7220204,,7220204,Ngôn ngữ Trung Quốc,Ngôn ng Trung Quc,"[45, 739, 69, 760]",needs_review_known_errors
+19,19,7229030,,7229050,Văn học,Văn hc,"[45, 773, 70, 794]",needs_review_known_errors
+20,2O,7310101,,7510101,Kinh tế,Kinh t,"[44, 810, 71, 831]",needs_review_known_errors
+21,21,7310205,,7510205,Quản lý nhà nước,Qun lý nhà nưc,"[46, 860, 68, 878]",needs_review_known_errors
+22,22,7310403,,7510405,Tâm lý học giáo dục,Tâm lý hc giáo dc,"[44, 910, 70, 930]",needs_review_known_errors
+23,25,7310608,,7510608,Đông phương học,Đông phương hc,"[44, 956, 70, 976]",needs_review_known_errors
+24,24,7310630,,7510650,Việt Nam học,Vit Nam hc,"[44, 1002, 71, 1022]",needs_review_known_errors
+25,25,7340101,,7540101,Quản trị kinh doanh,Qun tr kinh doanh,"[44, 1050, 70, 1070]",needs_review_known_errors
+26,26,7340201,,7540201,Tài chính - Ngân hàng,Tài chính - Ngân hàng,"[44, 1099, 71, 1120]",needs_review_known_errors
+27,27,7340301,,7540501,Kế toán,K toán,"[44, 1138, 70, 1158]",needs_review_known_errors
+28,28,7340301,ACCA,7540501 ACCA,Kế toán (Định hướng ACCA),K toán (Đnh hưng ACCA),"[44, 1180, 71, 1200]",needs_review_known_errors
+29,29,7340302,,7540502,Kiểm toán,Kim toán,"[920, 151, 946, 171]",needs_review_known_errors
+30,5o,7380101,,7580101,Luật,Lut,"[919, 207, 947, 227]",needs_review_known_errors
+31,5,7440112,,7440112," (Hóa dược, Hóa mỹ phẩm)","Hóa hoc (Hóa duc, Hóa m phm)","[922, 267, 946, 286]",needs_review_known_errors
+32,52,7460112,,7460112,Toán ứng dung,Toán ng dng,"[920, 306, 946, 326]",needs_review_known_errors
+33,55,7480109,,7480109,Khoa học dữ liệu,Khoa hc d liu,"[920, 330, 946, 350]",needs_review_known_errors
+34,54,7480103,,7480105,Kỹ thuật phần mềm,K thut phn mm,"[920, 355, 947, 375]",needs_review_known_errors
+35,55,7480201,,7480201,Công nghệ thông tin,Công ngh thông tin,"[920, 380, 946, 400]",needs_review_known_errors
+36,56,7480207,,7480207,Trí tuệ nhân tao,Trí tuê nhân tao,"[920, 402, 947, 422]",needs_review_known_errors
+37,57,7510205,,7510205,Công nghệ kỹ thuật ô tô,Công nghê k thuât ô tô,"[920, 433, 946, 452]",needs_review_known_errors
+38,58,7510401,,7510401,Công nghệ kỹ thuật hóa học,Công ngh k thut hóa hoc,"[920, 483, 947, 503]",needs_review_known_errors
+39,59,7510605,,7510605,Logistics và Quản lý chuỗi cung ứng.,Logistics và Qun lý chui cung ng,"[920, 541, 946, 561]",needs_review_known_errors
+40,40.,7520116,,7520116,Kỹ thuật cơ khí động lực,Ký thut cơ khí đng lc,"[920, 583, 947, 603]",needs_review_known_errors
+41,4,7520201,,7520201,Kỹ thuật điện,K thut đin,"[923, 606, 945, 623]",needs_review_known_errors
+42,42,7520207,,7520207, ,Ký thuât điên t - vin thông (Thit kvi mch),"[920, 630, 947, 651]",needs_review_known_errors
+43,4+5,7520216,,7520216,Kỹ thuật điều khiến và Tư động hóa,K thut điu khin và T đng hóa,"[920, 667, 947, 687]",needs_review_known_errors
+44,44,7520401,,7520401,Vật lý kỹ thuật (Chuyên ngành Bán dẫn),Vt lý ký thut (Chuyên ngành Bán dn),"[921, 717, 948, 735]",needs_review_known_errors
+45,45,7540101,,7540101,Công nghệ thực phẩm,Công ngh thc phm,"[920, 783, 947, 802]",needs_review_known_errors
+46,46,7580201,,7580201,Kỹ thuật xây dưng,K thut xây dng,"[920, 842, 947, 862]",needs_review_known_errors
+47,47,7620109,,7620109,Nông học,Nông hc,"[920, 892, 946, 912]",needs_review_known_errors
+48,48,7760101,,7760101,Công tác xã hội,Công tác xã hi,"[920, 935, 947, 955]",needs_review_known_errors
+49,49,7810103,,7810105,Quản trị dịch vụ du lịch và lữ hành,Qun tri dich vu du lich và l hành,"[920, 967, 947, 987]",needs_review_known_errors
+50,5o,7810201,,7810201,Quản trị khách san,Qun tr khách sn,"[920, 1007, 947, 1027]",needs_review_known_errors
+51,51,7850101,,7850101,Quản lý tài nguyên và môi trường,Qun lý tài nguyên và môi trưng,"[923, 1080, 945, 1098]",needs_review_known_errors
+52,52,7850103,,7850105,Quản lý đất đai,Qun lý đt đai,"[920, 1166, 946, 1186]",needs_review_known_errors

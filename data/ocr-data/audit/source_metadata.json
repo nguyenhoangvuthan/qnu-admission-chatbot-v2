@@ -1,0 +1,6159 @@
+{
+  "preprocess-bench/m1/raw/paddle/environment.json": {
+    "engine": "paddle",
+    "python": "3.12.14",
+    "device": "gpu",
+    "paddleocr": "3.7.0",
+    "paddle_det_model": {
+      "PP-OCRv6_medium_det": {
+        "inference.json": "0f1a7ec35da36173529c7a60238b7f7919e3831929c3f700ad90ad4896adecd5",
+        "inference.pdiparams": "85218d2e3d98f5a21c58b4220627be923a97aee5db3cc71f39536ab31ac53960",
+        "inference.yml": "7298d5ead546584af2504d03355f881ac7a7bc0eb1e282d3e159277c1d0af871"
+      }
+    },
+    "paddle_rec_model": {
+      "PP-OCRv6_medium_rec": {
+        "inference.json": "0b2e25e990bd072f1bf77d59d67d508bce6c4bd44af6624e0fb27d6da2cd00e8",
+        "inference.pdiparams": "1b01c79a914587933f615569e75de54f2e638ebb5d3f3b3c1b38c24ede8c7319",
+        "inference.yml": "991b700facf5b50a7de193468207d5f4255b538dde0d312ae3b7c7a9b6873129"
+      }
+    }
+  },
+  "preprocess-bench/m1/raw/paddle_tess/environment.json": {
+    "engine": "paddle_tess",
+    "python": "3.12.14",
+    "device": "gpu",
+    "tesseract": "tesseract 5.5.0",
+    "vie_traineddata_sha256": "b6b49293d95d0b6dbd8780174627e82c75be957b6f4ed9862155540d6b00bb45",
+    "paddle_det_model": {
+      "PP-OCRv6_medium_det": {
+        "inference.json": "0f1a7ec35da36173529c7a60238b7f7919e3831929c3f700ad90ad4896adecd5",
+        "inference.pdiparams": "85218d2e3d98f5a21c58b4220627be923a97aee5db3cc71f39536ab31ac53960",
+        "inference.yml": "7298d5ead546584af2504d03355f881ac7a7bc0eb1e282d3e159277c1d0af871"
+      }
+    }
+  },
+  "preprocess-bench/m1/raw/paddle_vietocr/environment.json": {
+    "engine": "paddle_vietocr",
+    "python": "3.12.14",
+    "device": "gpu",
+    "torch": "2.14.1+cu132",
+    "vietocr_config": "vgg_transformer",
+    "torch_device": "cuda:0",
+    "weights_url": "https://vocr.vn/data/vietocr/vgg_transformer.pth",
+    "weights_sha256": "380512193a8b6cbf6fad80deacdc9b6939d10d473d199892fc6408d13775ea59",
+    "paddle_det_model": {
+      "PP-OCRv6_medium_det": {
+        "inference.json": "0f1a7ec35da36173529c7a60238b7f7919e3831929c3f700ad90ad4896adecd5",
+        "inference.pdiparams": "85218d2e3d98f5a21c58b4220627be923a97aee5db3cc71f39536ab31ac53960",
+        "inference.yml": "7298d5ead546584af2504d03355f881ac7a7bc0eb1e282d3e159277c1d0af871"
+      }
+    }
+  },
+  "preprocess-bench/m1/raw/paddle_vl/environment.json": {
+    "engine": "paddle_vl",
+    "python": "3.12.14",
+    "device": "gpu",
+    "paddleocr": "3.7.0",
+    "vl_model": "PaddleOCR-VL-1.6",
+    "vl_backend": "vllm-server",
+    "vl_server": "http://127.0.0.1:8118/v1",
+    "vl_weights_sha256": "85a479d506a11e724e7285d395c551be69f41dbc16b6342d3cacfb189aed71db",
+    "vl_server_max_model_len": 16384,
+    "vl_server_gpu_memory_utilization": 0.55,
+    "vllm": "0.30.0",
+    "note": "Lượt 8192 token cho kết quả gần như y hệt (camnang 39/51 so với 37/51): VL không tất định giữa hai lượt."
+  },
+  "preprocess-bench/m1/raw/tess_psm11/environment.json": {
+    "engine": "tess_psm11",
+    "python": "3.12.14",
+    "device": "gpu",
+    "tesseract": "tesseract 5.5.0",
+    "vie_traineddata_sha256": "b6b49293d95d0b6dbd8780174627e82c75be957b6f4ed9862155540d6b00bb45"
+  },
+  "preprocess-bench/m1/raw/tess_psm6/environment.json": {
+    "engine": "tess_psm6",
+    "python": "3.12.14",
+    "device": "gpu",
+    "tesseract": "tesseract 5.5.0",
+    "vie_traineddata_sha256": "b6b49293d95d0b6dbd8780174627e82c75be957b6f4ed9862155540d6b00bb45"
+  },
+  "preprocess-bench/m8/raw/cur/run1/environment.json": {
+    "spec": {
+      "name": "cur",
+      "venv": ".venv-ocr",
+      "engine": "det_vietocr",
+      "det_model": "PP-OCRv6_medium_det",
+      "rec_model": "vgg_transformer",
+      "dpi": 300,
+      "orient": false,
+      "server": null,
+      "prompt": null,
+      "max_tokens": 4096,
+      "params": {}
+    },
+    "python": "3.12.15",
+    "code": {
+      "experiments/ocr_selection/worker.py": "2c03ba8137c690961accd4a9284f00e5283e9f0146c591ab662f948a2b78d54d",
+      "experiments/bench_ocr.py": "8fc0c80a532c9784405731f10ac38ccedb78e3d14f538f74a7b6237279b9bc9d"
+    },
+    "packages": {
+      "paddleocr": "3.7.0",
+      "paddlex": "3.7.2",
+      "paddlepaddle-gpu": "3.2.0",
+      "vietocr": "0.3.13",
+      "torch": "2.14.1+cu132",
+      "vllm": null
+    },
+    "paddle_models": {
+      "PP-OCRv6_medium_det": {
+        "inference.json": "0f1a7ec35da36173529c7a60238b7f7919e3831929c3f700ad90ad4896adecd5",
+        "inference.pdiparams": "85218d2e3d98f5a21c58b4220627be923a97aee5db3cc71f39536ab31ac53960",
+        "inference.yml": "7298d5ead546584af2504d03355f881ac7a7bc0eb1e282d3e159277c1d0af871"
+      }
+    },
+    "det_params": {
+      "limit_side_len": 64,
+      "limit_type": "min",
+      "thresh": 0.3,
+      "box_thresh": 0.6,
+      "unclip_ratio": 1.5,
+      "max_side_limit": 4000
+    },
+    "vietocr_weights": {
+      "file": "vgg_transformer.pth",
+      "sha256": "380512193a8b6cbf6fad80deacdc9b6939d10d473d199892fc6408d13775ea59"
+    },
+    "vietocr_configs": {
+      "base.yml": "9c8283fadb950f06f5d3400475f80d5355700ff315c9c48b7875e6ea66647d1c",
+      "vgg_transformer.yml": "0df9feee197754c7381871e5dfd07c6f3e292a4853eece6f1af240923e57c907"
+    },
+    "gpu": {
+      "gpus": [
+        {
+          "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+          "driver": "615.78.08"
+        }
+      ]
+    }
+  },
+  "preprocess-bench/m8/raw/cur/run1/spec.json": {
+    "name": "cur",
+    "venv": ".venv-ocr",
+    "engine": "det_vietocr",
+    "det_model": "PP-OCRv6_medium_det",
+    "rec_model": "vgg_transformer",
+    "dpi": 300,
+    "orient": false,
+    "server": null,
+    "prompt": null,
+    "max_tokens": 4096,
+    "params": {}
+  },
+  "preprocess-bench/m8/raw/cur/run2/environment.json": {
+    "spec": {
+      "name": "cur",
+      "venv": ".venv-ocr",
+      "engine": "det_vietocr",
+      "det_model": "PP-OCRv6_medium_det",
+      "rec_model": "vgg_transformer",
+      "dpi": 300,
+      "orient": false,
+      "server": null,
+      "prompt": null,
+      "max_tokens": 4096,
+      "params": {}
+    },
+    "python": "3.12.15",
+    "code": {
+      "experiments/ocr_selection/worker.py": "2c03ba8137c690961accd4a9284f00e5283e9f0146c591ab662f948a2b78d54d",
+      "experiments/bench_ocr.py": "8fc0c80a532c9784405731f10ac38ccedb78e3d14f538f74a7b6237279b9bc9d"
+    },
+    "packages": {
+      "paddleocr": "3.7.0",
+      "paddlex": "3.7.2",
+      "paddlepaddle-gpu": "3.2.0",
+      "vietocr": "0.3.13",
+      "torch": "2.14.1+cu132",
+      "vllm": null
+    },
+    "paddle_models": {
+      "PP-OCRv6_medium_det": {
+        "inference.json": "0f1a7ec35da36173529c7a60238b7f7919e3831929c3f700ad90ad4896adecd5",
+        "inference.pdiparams": "85218d2e3d98f5a21c58b4220627be923a97aee5db3cc71f39536ab31ac53960",
+        "inference.yml": "7298d5ead546584af2504d03355f881ac7a7bc0eb1e282d3e159277c1d0af871"
+      }
+    },
+    "det_params": {
+      "limit_side_len": 64,
+      "limit_type": "min",
+      "thresh": 0.3,
+      "box_thresh": 0.6,
+      "unclip_ratio": 1.5,
+      "max_side_limit": 4000
+    },
+    "vietocr_weights": {
+      "file": "vgg_transformer.pth",
+      "sha256": "380512193a8b6cbf6fad80deacdc9b6939d10d473d199892fc6408d13775ea59"
+    },
+    "vietocr_configs": {
+      "base.yml": "9c8283fadb950f06f5d3400475f80d5355700ff315c9c48b7875e6ea66647d1c",
+      "vgg_transformer.yml": "0df9feee197754c7381871e5dfd07c6f3e292a4853eece6f1af240923e57c907"
+    },
+    "gpu": {
+      "gpus": [
+        {
+          "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+          "driver": "615.78.08"
+        }
+      ]
+    }
+  },
+  "preprocess-bench/m8/raw/cur/run2/spec.json": {
+    "name": "cur",
+    "venv": ".venv-ocr",
+    "engine": "det_vietocr",
+    "det_model": "PP-OCRv6_medium_det",
+    "rec_model": "vgg_transformer",
+    "dpi": 300,
+    "orient": false,
+    "server": null,
+    "prompt": null,
+    "max_tokens": 4096,
+    "params": {}
+  },
+  "preprocess-bench/m8/raw/cur_det_server/run1/environment.json": {
+    "spec": {
+      "name": "cur_det_server",
+      "venv": ".venv-ocr",
+      "engine": "det_vietocr",
+      "det_model": "PP-OCRv5_server_det",
+      "rec_model": "vgg_transformer",
+      "dpi": 300,
+      "orient": false,
+      "server": null,
+      "prompt": null,
+      "max_tokens": 4096,
+      "params": {}
+    },
+    "python": "3.12.15",
+    "code": {
+      "experiments/ocr_selection/worker.py": "2c03ba8137c690961accd4a9284f00e5283e9f0146c591ab662f948a2b78d54d",
+      "experiments/bench_ocr.py": "8fc0c80a532c9784405731f10ac38ccedb78e3d14f538f74a7b6237279b9bc9d"
+    },
+    "packages": {
+      "paddleocr": "3.7.0",
+      "paddlex": "3.7.2",
+      "paddlepaddle-gpu": "3.2.0",
+      "vietocr": "0.3.13",
+      "torch": "2.14.1+cu132",
+      "vllm": null
+    },
+    "paddle_models": {
+      "PP-OCRv5_server_det": {
+        "inference.json": "af5876933d8806a1b50d895867e0781e135cd92ff37381992828fc8d1b842d28",
+        "inference.pdiparams": "183146fe9d9910352f68482f623bcbbb9fa7b9e8fa1463b9ad288cef00524d2d",
+        "inference.yml": "28fb721efc3634fc8aa677e474b9602cb815a91cf569ef357a7a553d7b3ce685"
+      }
+    },
+    "det_params": {
+      "limit_side_len": 64,
+      "limit_type": "min",
+      "thresh": 0.3,
+      "box_thresh": 0.6,
+      "unclip_ratio": 1.5,
+      "max_side_limit": 4000
+    },
+    "vietocr_weights": {
+      "file": "vgg_transformer.pth",
+      "sha256": "380512193a8b6cbf6fad80deacdc9b6939d10d473d199892fc6408d13775ea59"
+    },
+    "vietocr_configs": {
+      "base.yml": "9c8283fadb950f06f5d3400475f80d5355700ff315c9c48b7875e6ea66647d1c",
+      "vgg_transformer.yml": "0df9feee197754c7381871e5dfd07c6f3e292a4853eece6f1af240923e57c907"
+    },
+    "gpu": {
+      "gpus": [
+        {
+          "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+          "driver": "615.78.08"
+        }
+      ]
+    }
+  },
+  "preprocess-bench/m8/raw/cur_det_server/run1/spec.json": {
+    "name": "cur_det_server",
+    "venv": ".venv-ocr",
+    "engine": "det_vietocr",
+    "det_model": "PP-OCRv5_server_det",
+    "rec_model": "vgg_transformer",
+    "dpi": 300,
+    "orient": false,
+    "server": null,
+    "prompt": null,
+    "max_tokens": 4096,
+    "params": {}
+  },
+  "preprocess-bench/m8/raw/cur_det_server/run2/environment.json": {
+    "spec": {
+      "name": "cur_det_server",
+      "venv": ".venv-ocr",
+      "engine": "det_vietocr",
+      "det_model": "PP-OCRv5_server_det",
+      "rec_model": "vgg_transformer",
+      "dpi": 300,
+      "orient": false,
+      "server": null,
+      "prompt": null,
+      "max_tokens": 4096,
+      "params": {}
+    },
+    "python": "3.12.15",
+    "code": {
+      "experiments/ocr_selection/worker.py": "2c03ba8137c690961accd4a9284f00e5283e9f0146c591ab662f948a2b78d54d",
+      "experiments/bench_ocr.py": "8fc0c80a532c9784405731f10ac38ccedb78e3d14f538f74a7b6237279b9bc9d"
+    },
+    "packages": {
+      "paddleocr": "3.7.0",
+      "paddlex": "3.7.2",
+      "paddlepaddle-gpu": "3.2.0",
+      "vietocr": "0.3.13",
+      "torch": "2.14.1+cu132",
+      "vllm": null
+    },
+    "paddle_models": {
+      "PP-OCRv5_server_det": {
+        "inference.json": "af5876933d8806a1b50d895867e0781e135cd92ff37381992828fc8d1b842d28",
+        "inference.pdiparams": "183146fe9d9910352f68482f623bcbbb9fa7b9e8fa1463b9ad288cef00524d2d",
+        "inference.yml": "28fb721efc3634fc8aa677e474b9602cb815a91cf569ef357a7a553d7b3ce685"
+      }
+    },
+    "det_params": {
+      "limit_side_len": 64,
+      "limit_type": "min",
+      "thresh": 0.3,
+      "box_thresh": 0.6,
+      "unclip_ratio": 1.5,
+      "max_side_limit": 4000
+    },
+    "vietocr_weights": {
+      "file": "vgg_transformer.pth",
+      "sha256": "380512193a8b6cbf6fad80deacdc9b6939d10d473d199892fc6408d13775ea59"
+    },
+    "vietocr_configs": {
+      "base.yml": "9c8283fadb950f06f5d3400475f80d5355700ff315c9c48b7875e6ea66647d1c",
+      "vgg_transformer.yml": "0df9feee197754c7381871e5dfd07c6f3e292a4853eece6f1af240923e57c907"
+    },
+    "gpu": {
+      "gpus": [
+        {
+          "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+          "driver": "615.78.08"
+        }
+      ]
+    }
+  },
+  "preprocess-bench/m8/raw/cur_det_server/run2/spec.json": {
+    "name": "cur_det_server",
+    "venv": ".venv-ocr",
+    "engine": "det_vietocr",
+    "det_model": "PP-OCRv5_server_det",
+    "rec_model": "vgg_transformer",
+    "dpi": 300,
+    "orient": false,
+    "server": null,
+    "prompt": null,
+    "max_tokens": 4096,
+    "params": {}
+  },
+  "preprocess-bench/m8/raw/cur_dpi400/run1/environment.json": {
+    "spec": {
+      "name": "cur_dpi400",
+      "venv": ".venv-ocr",
+      "engine": "det_vietocr",
+      "det_model": "PP-OCRv6_medium_det",
+      "rec_model": "vgg_transformer",
+      "dpi": 400,
+      "orient": false,
+      "server": null,
+      "prompt": null,
+      "max_tokens": 4096,
+      "params": {}
+    },
+    "python": "3.12.15",
+    "code": {
+      "experiments/ocr_selection/worker.py": "2c03ba8137c690961accd4a9284f00e5283e9f0146c591ab662f948a2b78d54d",
+      "experiments/bench_ocr.py": "8fc0c80a532c9784405731f10ac38ccedb78e3d14f538f74a7b6237279b9bc9d"
+    },
+    "packages": {
+      "paddleocr": "3.7.0",
+      "paddlex": "3.7.2",
+      "paddlepaddle-gpu": "3.2.0",
+      "vietocr": "0.3.13",
+      "torch": "2.14.1+cu132",
+      "vllm": null
+    },
+    "paddle_models": {
+      "PP-OCRv6_medium_det": {
+        "inference.json": "0f1a7ec35da36173529c7a60238b7f7919e3831929c3f700ad90ad4896adecd5",
+        "inference.pdiparams": "85218d2e3d98f5a21c58b4220627be923a97aee5db3cc71f39536ab31ac53960",
+        "inference.yml": "7298d5ead546584af2504d03355f881ac7a7bc0eb1e282d3e159277c1d0af871"
+      }
+    },
+    "det_params": {
+      "limit_side_len": 64,
+      "limit_type": "min",
+      "thresh": 0.3,
+      "box_thresh": 0.6,
+      "unclip_ratio": 1.5,
+      "max_side_limit": 4000
+    },
+    "vietocr_weights": {
+      "file": "vgg_transformer.pth",
+      "sha256": "380512193a8b6cbf6fad80deacdc9b6939d10d473d199892fc6408d13775ea59"
+    },
+    "vietocr_configs": {
+      "base.yml": "9c8283fadb950f06f5d3400475f80d5355700ff315c9c48b7875e6ea66647d1c",
+      "vgg_transformer.yml": "0df9feee197754c7381871e5dfd07c6f3e292a4853eece6f1af240923e57c907"
+    },
+    "gpu": {
+      "gpus": [
+        {
+          "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+          "driver": "615.78.08"
+        }
+      ]
+    }
+  },
+  "preprocess-bench/m8/raw/cur_dpi400/run1/spec.json": {
+    "name": "cur_dpi400",
+    "venv": ".venv-ocr",
+    "engine": "det_vietocr",
+    "det_model": "PP-OCRv6_medium_det",
+    "rec_model": "vgg_transformer",
+    "dpi": 400,
+    "orient": false,
+    "server": null,
+    "prompt": null,
+    "max_tokens": 4096,
+    "params": {}
+  },
+  "preprocess-bench/m8/raw/cur_dpi400/run2/environment.json": {
+    "spec": {
+      "name": "cur_dpi400",
+      "venv": ".venv-ocr",
+      "engine": "det_vietocr",
+      "det_model": "PP-OCRv6_medium_det",
+      "rec_model": "vgg_transformer",
+      "dpi": 400,
+      "orient": false,
+      "server": null,
+      "prompt": null,
+      "max_tokens": 4096,
+      "params": {}
+    },
+    "python": "3.12.15",
+    "code": {
+      "experiments/ocr_selection/worker.py": "2c03ba8137c690961accd4a9284f00e5283e9f0146c591ab662f948a2b78d54d",
+      "experiments/bench_ocr.py": "8fc0c80a532c9784405731f10ac38ccedb78e3d14f538f74a7b6237279b9bc9d"
+    },
+    "packages": {
+      "paddleocr": "3.7.0",
+      "paddlex": "3.7.2",
+      "paddlepaddle-gpu": "3.2.0",
+      "vietocr": "0.3.13",
+      "torch": "2.14.1+cu132",
+      "vllm": null
+    },
+    "paddle_models": {
+      "PP-OCRv6_medium_det": {
+        "inference.json": "0f1a7ec35da36173529c7a60238b7f7919e3831929c3f700ad90ad4896adecd5",
+        "inference.pdiparams": "85218d2e3d98f5a21c58b4220627be923a97aee5db3cc71f39536ab31ac53960",
+        "inference.yml": "7298d5ead546584af2504d03355f881ac7a7bc0eb1e282d3e159277c1d0af871"
+      }
+    },
+    "det_params": {
+      "limit_side_len": 64,
+      "limit_type": "min",
+      "thresh": 0.3,
+      "box_thresh": 0.6,
+      "unclip_ratio": 1.5,
+      "max_side_limit": 4000
+    },
+    "vietocr_weights": {
+      "file": "vgg_transformer.pth",
+      "sha256": "380512193a8b6cbf6fad80deacdc9b6939d10d473d199892fc6408d13775ea59"
+    },
+    "vietocr_configs": {
+      "base.yml": "9c8283fadb950f06f5d3400475f80d5355700ff315c9c48b7875e6ea66647d1c",
+      "vgg_transformer.yml": "0df9feee197754c7381871e5dfd07c6f3e292a4853eece6f1af240923e57c907"
+    },
+    "gpu": {
+      "gpus": [
+        {
+          "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+          "driver": "615.78.08"
+        }
+      ]
+    }
+  },
+  "preprocess-bench/m8/raw/cur_dpi400/run2/spec.json": {
+    "name": "cur_dpi400",
+    "venv": ".venv-ocr",
+    "engine": "det_vietocr",
+    "det_model": "PP-OCRv6_medium_det",
+    "rec_model": "vgg_transformer",
+    "dpi": 400,
+    "orient": false,
+    "server": null,
+    "prompt": null,
+    "max_tokens": 4096,
+    "params": {}
+  },
+  "preprocess-bench/m8/raw/cur_orient/run1/environment.json": {
+    "spec": {
+      "name": "cur_orient",
+      "venv": ".venv-ocr",
+      "engine": "det_vietocr",
+      "det_model": "PP-OCRv6_medium_det",
+      "rec_model": "vgg_transformer",
+      "dpi": 300,
+      "orient": true,
+      "server": null,
+      "prompt": null,
+      "max_tokens": 4096,
+      "params": {}
+    },
+    "python": "3.12.15",
+    "code": {
+      "experiments/ocr_selection/worker.py": "2c03ba8137c690961accd4a9284f00e5283e9f0146c591ab662f948a2b78d54d",
+      "experiments/bench_ocr.py": "8fc0c80a532c9784405731f10ac38ccedb78e3d14f538f74a7b6237279b9bc9d"
+    },
+    "packages": {
+      "paddleocr": "3.7.0",
+      "paddlex": "3.7.2",
+      "paddlepaddle-gpu": "3.2.0",
+      "vietocr": "0.3.13",
+      "torch": "2.14.1+cu132",
+      "vllm": null
+    },
+    "paddle_models": {
+      "PP-OCRv6_medium_det": {
+        "inference.json": "0f1a7ec35da36173529c7a60238b7f7919e3831929c3f700ad90ad4896adecd5",
+        "inference.pdiparams": "85218d2e3d98f5a21c58b4220627be923a97aee5db3cc71f39536ab31ac53960",
+        "inference.yml": "7298d5ead546584af2504d03355f881ac7a7bc0eb1e282d3e159277c1d0af871"
+      },
+      "PP-LCNet_x1_0_doc_ori": {
+        "inference.json": "3580978602f309c3554508dd85d4fe09b73a7e0d80d7f9e63258f5b72c390c69",
+        "inference.pdiparams": "e8d6e7c5d264507e40e58a655779059d616b20d7441ea22047d829eb3931989c",
+        "inference.yml": "9e195eb729a8173588cd0e8a852c8b373aa606e79e77b4ac7d8346f5426caf26"
+      },
+      "PP-LCNet_x1_0_textline_ori": {
+        "inference.json": "b81929eeaff8e52db0fafb49c9fbfc5bc0572f81641fe0179cc52096323fb4d4",
+        "inference.pdiparams": "0de2bcf996cf553e2b848dd7b1769dafffc6917b1ccdf55c1d8efe7909fbf743",
+        "inference.yml": "8d5120d0e1a30a9df7ed46aa9119da3796ed066777089d1c1d705f132d5e90f9"
+      }
+    },
+    "det_params": {
+      "limit_side_len": 64,
+      "limit_type": "min",
+      "thresh": 0.3,
+      "box_thresh": 0.6,
+      "unclip_ratio": 1.5,
+      "max_side_limit": 4000
+    },
+    "vietocr_weights": {
+      "file": "vgg_transformer.pth",
+      "sha256": "380512193a8b6cbf6fad80deacdc9b6939d10d473d199892fc6408d13775ea59"
+    },
+    "vietocr_configs": {
+      "base.yml": "9c8283fadb950f06f5d3400475f80d5355700ff315c9c48b7875e6ea66647d1c",
+      "vgg_transformer.yml": "0df9feee197754c7381871e5dfd07c6f3e292a4853eece6f1af240923e57c907"
+    },
+    "gpu": {
+      "gpus": [
+        {
+          "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+          "driver": "615.78.08"
+        }
+      ]
+    }
+  },
+  "preprocess-bench/m8/raw/cur_orient/run1/spec.json": {
+    "name": "cur_orient",
+    "venv": ".venv-ocr",
+    "engine": "det_vietocr",
+    "det_model": "PP-OCRv6_medium_det",
+    "rec_model": "vgg_transformer",
+    "dpi": 300,
+    "orient": true,
+    "server": null,
+    "prompt": null,
+    "max_tokens": 4096,
+    "params": {}
+  },
+  "preprocess-bench/m8/raw/cur_orient/run2/environment.json": {
+    "spec": {
+      "name": "cur_orient",
+      "venv": ".venv-ocr",
+      "engine": "det_vietocr",
+      "det_model": "PP-OCRv6_medium_det",
+      "rec_model": "vgg_transformer",
+      "dpi": 300,
+      "orient": true,
+      "server": null,
+      "prompt": null,
+      "max_tokens": 4096,
+      "params": {}
+    },
+    "python": "3.12.15",
+    "code": {
+      "experiments/ocr_selection/worker.py": "2c03ba8137c690961accd4a9284f00e5283e9f0146c591ab662f948a2b78d54d",
+      "experiments/bench_ocr.py": "8fc0c80a532c9784405731f10ac38ccedb78e3d14f538f74a7b6237279b9bc9d"
+    },
+    "packages": {
+      "paddleocr": "3.7.0",
+      "paddlex": "3.7.2",
+      "paddlepaddle-gpu": "3.2.0",
+      "vietocr": "0.3.13",
+      "torch": "2.14.1+cu132",
+      "vllm": null
+    },
+    "paddle_models": {
+      "PP-OCRv6_medium_det": {
+        "inference.json": "0f1a7ec35da36173529c7a60238b7f7919e3831929c3f700ad90ad4896adecd5",
+        "inference.pdiparams": "85218d2e3d98f5a21c58b4220627be923a97aee5db3cc71f39536ab31ac53960",
+        "inference.yml": "7298d5ead546584af2504d03355f881ac7a7bc0eb1e282d3e159277c1d0af871"
+      },
+      "PP-LCNet_x1_0_doc_ori": {
+        "inference.json": "3580978602f309c3554508dd85d4fe09b73a7e0d80d7f9e63258f5b72c390c69",
+        "inference.pdiparams": "e8d6e7c5d264507e40e58a655779059d616b20d7441ea22047d829eb3931989c",
+        "inference.yml": "9e195eb729a8173588cd0e8a852c8b373aa606e79e77b4ac7d8346f5426caf26"
+      },
+      "PP-LCNet_x1_0_textline_ori": {
+        "inference.json": "b81929eeaff8e52db0fafb49c9fbfc5bc0572f81641fe0179cc52096323fb4d4",
+        "inference.pdiparams": "0de2bcf996cf553e2b848dd7b1769dafffc6917b1ccdf55c1d8efe7909fbf743",
+        "inference.yml": "8d5120d0e1a30a9df7ed46aa9119da3796ed066777089d1c1d705f132d5e90f9"
+      }
+    },
+    "det_params": {
+      "limit_side_len": 64,
+      "limit_type": "min",
+      "thresh": 0.3,
+      "box_thresh": 0.6,
+      "unclip_ratio": 1.5,
+      "max_side_limit": 4000
+    },
+    "vietocr_weights": {
+      "file": "vgg_transformer.pth",
+      "sha256": "380512193a8b6cbf6fad80deacdc9b6939d10d473d199892fc6408d13775ea59"
+    },
+    "vietocr_configs": {
+      "base.yml": "9c8283fadb950f06f5d3400475f80d5355700ff315c9c48b7875e6ea66647d1c",
+      "vgg_transformer.yml": "0df9feee197754c7381871e5dfd07c6f3e292a4853eece6f1af240923e57c907"
+    },
+    "gpu": {
+      "gpus": [
+        {
+          "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+          "driver": "615.78.08"
+        }
+      ]
+    }
+  },
+  "preprocess-bench/m8/raw/cur_orient/run2/spec.json": {
+    "name": "cur_orient",
+    "venv": ".venv-ocr",
+    "engine": "det_vietocr",
+    "det_model": "PP-OCRv6_medium_det",
+    "rec_model": "vgg_transformer",
+    "dpi": 300,
+    "orient": true,
+    "server": null,
+    "prompt": null,
+    "max_tokens": 4096,
+    "params": {}
+  },
+  "preprocess-bench/m8/raw/cur_rotgate/run1/environment.json": {
+    "spec": {
+      "name": "cur_rotgate",
+      "venv": ".venv-ocr",
+      "engine": "det_vietocr",
+      "det_model": "PP-OCRv6_medium_det",
+      "rec_model": "vgg_transformer",
+      "dpi": 300,
+      "orient": false,
+      "rotate_gate": true,
+      "server": null,
+      "prompt": null,
+      "max_tokens": 4096,
+      "params": {}
+    },
+    "python": "3.12.15",
+    "code": {
+      "experiments/ocr_selection/worker.py": "ee6983cdbd04a0c79e0c9bc79db7dfde4bf48f97fdc6d9962080180175f66bca",
+      "experiments/bench_ocr.py": "8fc0c80a532c9784405731f10ac38ccedb78e3d14f538f74a7b6237279b9bc9d"
+    },
+    "packages": {
+      "paddleocr": "3.7.0",
+      "paddlex": "3.7.2",
+      "paddlepaddle-gpu": "3.2.0",
+      "vietocr": "0.3.13",
+      "torch": "2.14.1+cu132",
+      "vllm": null
+    },
+    "paddle_models": {
+      "PP-OCRv6_medium_det": {
+        "inference.json": "0f1a7ec35da36173529c7a60238b7f7919e3831929c3f700ad90ad4896adecd5",
+        "inference.pdiparams": "85218d2e3d98f5a21c58b4220627be923a97aee5db3cc71f39536ab31ac53960",
+        "inference.yml": "7298d5ead546584af2504d03355f881ac7a7bc0eb1e282d3e159277c1d0af871"
+      },
+      "PP-LCNet_x1_0_doc_ori": {
+        "inference.json": "3580978602f309c3554508dd85d4fe09b73a7e0d80d7f9e63258f5b72c390c69",
+        "inference.pdiparams": "e8d6e7c5d264507e40e58a655779059d616b20d7441ea22047d829eb3931989c",
+        "inference.yml": "9e195eb729a8173588cd0e8a852c8b373aa606e79e77b4ac7d8346f5426caf26"
+      }
+    },
+    "det_params": {
+      "limit_side_len": 64,
+      "limit_type": "min",
+      "thresh": 0.3,
+      "box_thresh": 0.6,
+      "unclip_ratio": 1.5,
+      "max_side_limit": 4000
+    },
+    "vietocr_weights": {
+      "file": "vgg_transformer.pth",
+      "sha256": "380512193a8b6cbf6fad80deacdc9b6939d10d473d199892fc6408d13775ea59"
+    },
+    "vietocr_configs": {
+      "base.yml": "9c8283fadb950f06f5d3400475f80d5355700ff315c9c48b7875e6ea66647d1c",
+      "vgg_transformer.yml": "0df9feee197754c7381871e5dfd07c6f3e292a4853eece6f1af240923e57c907"
+    },
+    "gpu": {
+      "gpus": [
+        {
+          "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+          "driver": "615.78.08"
+        }
+      ]
+    }
+  },
+  "preprocess-bench/m8/raw/cur_rotgate/run1/spec.json": {
+    "name": "cur_rotgate",
+    "venv": ".venv-ocr",
+    "engine": "det_vietocr",
+    "det_model": "PP-OCRv6_medium_det",
+    "rec_model": "vgg_transformer",
+    "dpi": 300,
+    "orient": false,
+    "rotate_gate": true,
+    "server": null,
+    "prompt": null,
+    "max_tokens": 4096,
+    "params": {}
+  },
+  "preprocess-bench/m8/raw/cur_rotgate/run2/environment.json": {
+    "spec": {
+      "name": "cur_rotgate",
+      "venv": ".venv-ocr",
+      "engine": "det_vietocr",
+      "det_model": "PP-OCRv6_medium_det",
+      "rec_model": "vgg_transformer",
+      "dpi": 300,
+      "orient": false,
+      "rotate_gate": true,
+      "server": null,
+      "prompt": null,
+      "max_tokens": 4096,
+      "params": {}
+    },
+    "python": "3.12.15",
+    "code": {
+      "experiments/ocr_selection/worker.py": "ee6983cdbd04a0c79e0c9bc79db7dfde4bf48f97fdc6d9962080180175f66bca",
+      "experiments/bench_ocr.py": "8fc0c80a532c9784405731f10ac38ccedb78e3d14f538f74a7b6237279b9bc9d"
+    },
+    "packages": {
+      "paddleocr": "3.7.0",
+      "paddlex": "3.7.2",
+      "paddlepaddle-gpu": "3.2.0",
+      "vietocr": "0.3.13",
+      "torch": "2.14.1+cu132",
+      "vllm": null
+    },
+    "paddle_models": {
+      "PP-OCRv6_medium_det": {
+        "inference.json": "0f1a7ec35da36173529c7a60238b7f7919e3831929c3f700ad90ad4896adecd5",
+        "inference.pdiparams": "85218d2e3d98f5a21c58b4220627be923a97aee5db3cc71f39536ab31ac53960",
+        "inference.yml": "7298d5ead546584af2504d03355f881ac7a7bc0eb1e282d3e159277c1d0af871"
+      },
+      "PP-LCNet_x1_0_doc_ori": {
+        "inference.json": "3580978602f309c3554508dd85d4fe09b73a7e0d80d7f9e63258f5b72c390c69",
+        "inference.pdiparams": "e8d6e7c5d264507e40e58a655779059d616b20d7441ea22047d829eb3931989c",
+        "inference.yml": "9e195eb729a8173588cd0e8a852c8b373aa606e79e77b4ac7d8346f5426caf26"
+      }
+    },
+    "det_params": {
+      "limit_side_len": 64,
+      "limit_type": "min",
+      "thresh": 0.3,
+      "box_thresh": 0.6,
+      "unclip_ratio": 1.5,
+      "max_side_limit": 4000
+    },
+    "vietocr_weights": {
+      "file": "vgg_transformer.pth",
+      "sha256": "380512193a8b6cbf6fad80deacdc9b6939d10d473d199892fc6408d13775ea59"
+    },
+    "vietocr_configs": {
+      "base.yml": "9c8283fadb950f06f5d3400475f80d5355700ff315c9c48b7875e6ea66647d1c",
+      "vgg_transformer.yml": "0df9feee197754c7381871e5dfd07c6f3e292a4853eece6f1af240923e57c907"
+    },
+    "gpu": {
+      "gpus": [
+        {
+          "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+          "driver": "615.78.08"
+        }
+      ]
+    }
+  },
+  "preprocess-bench/m8/raw/cur_rotgate/run2/spec.json": {
+    "name": "cur_rotgate",
+    "venv": ".venv-ocr",
+    "engine": "det_vietocr",
+    "det_model": "PP-OCRv6_medium_det",
+    "rec_model": "vgg_transformer",
+    "dpi": 300,
+    "orient": false,
+    "rotate_gate": true,
+    "server": null,
+    "prompt": null,
+    "max_tokens": 4096,
+    "params": {}
+  },
+  "preprocess-bench/m8/raw/cur_seq2seq/run1/environment.json": {
+    "spec": {
+      "name": "cur_seq2seq",
+      "venv": ".venv-ocr",
+      "engine": "det_vietocr",
+      "det_model": "PP-OCRv6_medium_det",
+      "rec_model": "vgg_seq2seq",
+      "dpi": 300,
+      "orient": false,
+      "server": null,
+      "prompt": null,
+      "max_tokens": 4096,
+      "params": {}
+    },
+    "python": "3.12.15",
+    "code": {
+      "experiments/ocr_selection/worker.py": "2c03ba8137c690961accd4a9284f00e5283e9f0146c591ab662f948a2b78d54d",
+      "experiments/bench_ocr.py": "8fc0c80a532c9784405731f10ac38ccedb78e3d14f538f74a7b6237279b9bc9d"
+    },
+    "packages": {
+      "paddleocr": "3.7.0",
+      "paddlex": "3.7.2",
+      "paddlepaddle-gpu": "3.2.0",
+      "vietocr": "0.3.13",
+      "torch": "2.14.1+cu132",
+      "vllm": null
+    },
+    "paddle_models": {
+      "PP-OCRv6_medium_det": {
+        "inference.json": "0f1a7ec35da36173529c7a60238b7f7919e3831929c3f700ad90ad4896adecd5",
+        "inference.pdiparams": "85218d2e3d98f5a21c58b4220627be923a97aee5db3cc71f39536ab31ac53960",
+        "inference.yml": "7298d5ead546584af2504d03355f881ac7a7bc0eb1e282d3e159277c1d0af871"
+      }
+    },
+    "det_params": {
+      "limit_side_len": 64,
+      "limit_type": "min",
+      "thresh": 0.3,
+      "box_thresh": 0.6,
+      "unclip_ratio": 1.5,
+      "max_side_limit": 4000
+    },
+    "vietocr_weights": {
+      "file": "vgg_seq2seq.pth",
+      "sha256": "0921503a41375a0584268e23ef3d414ea478a8fe8777865c7745d38f2d0bc5db"
+    },
+    "vietocr_configs": {
+      "base.yml": "9c8283fadb950f06f5d3400475f80d5355700ff315c9c48b7875e6ea66647d1c",
+      "vgg_seq2seq.yml": "0160ba8d442ae96f4c6095b92ac3521c59b83ce6eda9fd5459e8628a5586c3e8"
+    },
+    "gpu": {
+      "gpus": [
+        {
+          "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+          "driver": "615.78.08"
+        }
+      ]
+    }
+  },
+  "preprocess-bench/m8/raw/cur_seq2seq/run1/spec.json": {
+    "name": "cur_seq2seq",
+    "venv": ".venv-ocr",
+    "engine": "det_vietocr",
+    "det_model": "PP-OCRv6_medium_det",
+    "rec_model": "vgg_seq2seq",
+    "dpi": 300,
+    "orient": false,
+    "server": null,
+    "prompt": null,
+    "max_tokens": 4096,
+    "params": {}
+  },
+  "preprocess-bench/m8/raw/cur_seq2seq/run2/environment.json": {
+    "spec": {
+      "name": "cur_seq2seq",
+      "venv": ".venv-ocr",
+      "engine": "det_vietocr",
+      "det_model": "PP-OCRv6_medium_det",
+      "rec_model": "vgg_seq2seq",
+      "dpi": 300,
+      "orient": false,
+      "server": null,
+      "prompt": null,
+      "max_tokens": 4096,
+      "params": {}
+    },
+    "python": "3.12.15",
+    "code": {
+      "experiments/ocr_selection/worker.py": "2c03ba8137c690961accd4a9284f00e5283e9f0146c591ab662f948a2b78d54d",
+      "experiments/bench_ocr.py": "8fc0c80a532c9784405731f10ac38ccedb78e3d14f538f74a7b6237279b9bc9d"
+    },
+    "packages": {
+      "paddleocr": "3.7.0",
+      "paddlex": "3.7.2",
+      "paddlepaddle-gpu": "3.2.0",
+      "vietocr": "0.3.13",
+      "torch": "2.14.1+cu132",
+      "vllm": null
+    },
+    "paddle_models": {
+      "PP-OCRv6_medium_det": {
+        "inference.json": "0f1a7ec35da36173529c7a60238b7f7919e3831929c3f700ad90ad4896adecd5",
+        "inference.pdiparams": "85218d2e3d98f5a21c58b4220627be923a97aee5db3cc71f39536ab31ac53960",
+        "inference.yml": "7298d5ead546584af2504d03355f881ac7a7bc0eb1e282d3e159277c1d0af871"
+      }
+    },
+    "det_params": {
+      "limit_side_len": 64,
+      "limit_type": "min",
+      "thresh": 0.3,
+      "box_thresh": 0.6,
+      "unclip_ratio": 1.5,
+      "max_side_limit": 4000
+    },
+    "vietocr_weights": {
+      "file": "vgg_seq2seq.pth",
+      "sha256": "0921503a41375a0584268e23ef3d414ea478a8fe8777865c7745d38f2d0bc5db"
+    },
+    "vietocr_configs": {
+      "base.yml": "9c8283fadb950f06f5d3400475f80d5355700ff315c9c48b7875e6ea66647d1c",
+      "vgg_seq2seq.yml": "0160ba8d442ae96f4c6095b92ac3521c59b83ce6eda9fd5459e8628a5586c3e8"
+    },
+    "gpu": {
+      "gpus": [
+        {
+          "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+          "driver": "615.78.08"
+        }
+      ]
+    }
+  },
+  "preprocess-bench/m8/raw/cur_seq2seq/run2/spec.json": {
+    "name": "cur_seq2seq",
+    "venv": ".venv-ocr",
+    "engine": "det_vietocr",
+    "det_model": "PP-OCRv6_medium_det",
+    "rec_model": "vgg_seq2seq",
+    "dpi": 300,
+    "orient": false,
+    "server": null,
+    "prompt": null,
+    "max_tokens": 4096,
+    "params": {}
+  },
+  "preprocess-bench/m8/raw/paddle/run1/environment.json": {
+    "spec": {
+      "name": "paddle",
+      "venv": ".venv-ocr",
+      "engine": "paddle",
+      "det_model": "PP-OCRv6_medium_det",
+      "rec_model": "PP-OCRv6_medium_rec",
+      "dpi": 300,
+      "orient": false,
+      "server": null,
+      "prompt": null,
+      "max_tokens": 4096,
+      "params": {}
+    },
+    "python": "3.12.15",
+    "code": {
+      "experiments/ocr_selection/worker.py": "2c03ba8137c690961accd4a9284f00e5283e9f0146c591ab662f948a2b78d54d",
+      "experiments/bench_ocr.py": "8fc0c80a532c9784405731f10ac38ccedb78e3d14f538f74a7b6237279b9bc9d"
+    },
+    "packages": {
+      "paddleocr": "3.7.0",
+      "paddlex": "3.7.2",
+      "paddlepaddle-gpu": "3.2.0",
+      "vietocr": "0.3.13",
+      "torch": "2.14.1+cu132",
+      "vllm": null
+    },
+    "paddle_models": {
+      "PP-OCRv6_medium_det": {
+        "inference.json": "0f1a7ec35da36173529c7a60238b7f7919e3831929c3f700ad90ad4896adecd5",
+        "inference.pdiparams": "85218d2e3d98f5a21c58b4220627be923a97aee5db3cc71f39536ab31ac53960",
+        "inference.yml": "7298d5ead546584af2504d03355f881ac7a7bc0eb1e282d3e159277c1d0af871"
+      },
+      "PP-OCRv6_medium_rec": {
+        "inference.json": "0b2e25e990bd072f1bf77d59d67d508bce6c4bd44af6624e0fb27d6da2cd00e8",
+        "inference.pdiparams": "1b01c79a914587933f615569e75de54f2e638ebb5d3f3b3c1b38c24ede8c7319",
+        "inference.yml": "991b700facf5b50a7de193468207d5f4255b538dde0d312ae3b7c7a9b6873129"
+      }
+    },
+    "gpu": {
+      "gpus": [
+        {
+          "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+          "driver": "615.78.08"
+        }
+      ]
+    }
+  },
+  "preprocess-bench/m8/raw/paddle/run1/spec.json": {
+    "name": "paddle",
+    "venv": ".venv-ocr",
+    "engine": "paddle",
+    "det_model": "PP-OCRv6_medium_det",
+    "rec_model": "PP-OCRv6_medium_rec",
+    "dpi": 300,
+    "orient": false,
+    "server": null,
+    "prompt": null,
+    "max_tokens": 4096,
+    "params": {}
+  },
+  "preprocess-bench/m8/raw/paddle/run2/environment.json": {
+    "spec": {
+      "name": "paddle",
+      "venv": ".venv-ocr",
+      "engine": "paddle",
+      "det_model": "PP-OCRv6_medium_det",
+      "rec_model": "PP-OCRv6_medium_rec",
+      "dpi": 300,
+      "orient": false,
+      "server": null,
+      "prompt": null,
+      "max_tokens": 4096,
+      "params": {}
+    },
+    "python": "3.12.15",
+    "code": {
+      "experiments/ocr_selection/worker.py": "2c03ba8137c690961accd4a9284f00e5283e9f0146c591ab662f948a2b78d54d",
+      "experiments/bench_ocr.py": "8fc0c80a532c9784405731f10ac38ccedb78e3d14f538f74a7b6237279b9bc9d"
+    },
+    "packages": {
+      "paddleocr": "3.7.0",
+      "paddlex": "3.7.2",
+      "paddlepaddle-gpu": "3.2.0",
+      "vietocr": "0.3.13",
+      "torch": "2.14.1+cu132",
+      "vllm": null
+    },
+    "paddle_models": {
+      "PP-OCRv6_medium_det": {
+        "inference.json": "0f1a7ec35da36173529c7a60238b7f7919e3831929c3f700ad90ad4896adecd5",
+        "inference.pdiparams": "85218d2e3d98f5a21c58b4220627be923a97aee5db3cc71f39536ab31ac53960",
+        "inference.yml": "7298d5ead546584af2504d03355f881ac7a7bc0eb1e282d3e159277c1d0af871"
+      },
+      "PP-OCRv6_medium_rec": {
+        "inference.json": "0b2e25e990bd072f1bf77d59d67d508bce6c4bd44af6624e0fb27d6da2cd00e8",
+        "inference.pdiparams": "1b01c79a914587933f615569e75de54f2e638ebb5d3f3b3c1b38c24ede8c7319",
+        "inference.yml": "991b700facf5b50a7de193468207d5f4255b538dde0d312ae3b7c7a9b6873129"
+      }
+    },
+    "gpu": {
+      "gpus": [
+        {
+          "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+          "driver": "615.78.08"
+        }
+      ]
+    }
+  },
+  "preprocess-bench/m8/raw/paddle/run2/spec.json": {
+    "name": "paddle",
+    "venv": ".venv-ocr",
+    "engine": "paddle",
+    "det_model": "PP-OCRv6_medium_det",
+    "rec_model": "PP-OCRv6_medium_rec",
+    "dpi": 300,
+    "orient": false,
+    "server": null,
+    "prompt": null,
+    "max_tokens": 4096,
+    "params": {}
+  },
+  "preprocess-bench/m8/raw/paddle_vl/run1/environment.json": {
+    "spec": {
+      "name": "paddle_vl",
+      "venv": ".venv-paddlevl",
+      "engine": "paddle_vl",
+      "det_model": null,
+      "rec_model": null,
+      "dpi": 300,
+      "orient": false,
+      "server": {
+        "model": "~/.paddlex/official_models/PaddleOCR-VL-1.6",
+        "served_name": "PaddleOCR-VL-1.6",
+        "port": 8118,
+        "args": [
+          "--max-model-len",
+          "16384",
+          "--gpu-memory-utilization",
+          "0.55",
+          "--trust-remote-code"
+        ]
+      },
+      "prompt": null,
+      "max_tokens": 4096,
+      "params": {}
+    },
+    "python": "3.12.15",
+    "code": {
+      "experiments/ocr_selection/worker.py": "2c03ba8137c690961accd4a9284f00e5283e9f0146c591ab662f948a2b78d54d",
+      "experiments/bench_ocr.py": "8fc0c80a532c9784405731f10ac38ccedb78e3d14f538f74a7b6237279b9bc9d"
+    },
+    "packages": {
+      "paddleocr": "3.7.0",
+      "paddlex": "3.7.2",
+      "paddlepaddle-gpu": "3.2.0",
+      "vietocr": "0.3.13",
+      "torch": "2.14.1+cu132",
+      "vllm": null
+    },
+    "paddle_models": {
+      "PP-DocLayoutV3": {
+        "inference.json": "2b68367c5b312a03de5a6e1642c597c8f95165a7e40cd59c6700cf4a5042f4fd",
+        "inference.pdiparams": "70bd316b0582769ec968829fd1feb1a6a58b7c941b938327e551b6b12b45c137",
+        "inference.yml": "506fcfac13b3b546ae40d7886b44126420f392adb694e3f8bb6a6286a1f90fdc"
+      }
+    },
+    "server": {
+      "vllm": "0.30.0",
+      "model_files": {
+        "LICENSE": "b8c4d7deccd236af023af1c88c4d4e8f0fc2f41914e0fb23a3ec9678fb5a8456",
+        "README.md": "d6c5b77a660577f6e18021defccd835bdc93a8c6538f5a479d597f3e94288abf",
+        "added_tokens.json": "f59f889088e0fe21c523e7cf121bb6dca3b0bb148cb7159fbb4572c74dfc5644",
+        "chat_template.jinja": "2f27812dab7f333e471884e0c803d807f11953d5453140dfb1aaba234f872bc8",
+        "config.json": "ce7f4565f8b1db78532ad5d1b9ebe55c2139d49bd4cb04778b580a08a598f171",
+        "configuration_paddleocr_vl.py": "753dd93654c3a9c8c85a3eaee1e3092dd12591b0f2dce0305e1abfb7a41ff160",
+        "generation_config.json": "a6701d78ab3b4d972307cdec3b69d4c13f46e0d5140514f50ab7d84259324b94",
+        "image_processing_paddleocr_vl.py": "a4fa521b9cb16e207f94b7f2d16427771776dfc634420d319fc4916ee58049ec",
+        "inference.yml": "1587aece2d6442366efce34161d5f7d5f67f09ebfbf043168e5fade892c2780e",
+        "model.safetensors": "85a479d506a11e724e7285d395c551be69f41dbc16b6342d3cacfb189aed71db",
+        "modeling_paddleocr_vl.py": "c5013dff57ca8b87dc1de64d0fd839a44313de09d230a4fb2d08289d2cad5111",
+        "preprocessor_config.json": "111872ab1e8bb7fd040ac5087bfced7ab8f011f02139b088cba294964c3b1d0e",
+        "processing_paddleocr_vl.py": "e29cb1e5f275f2bd3ce051bd5c9983a33894e693b2823a0e13d4c07c8c4f9e13",
+        "processor_config.json": "1568858960a9760c54431dae693a6152e601ff55cdf6d2eab97a4a99958faea0",
+        "special_tokens_map.json": "d3a125c03103deb2acaf7730791bdbbf196f620e5a2213b664511ff9b4b25bab",
+        "tokenizer.json": "c8a215a59183d0d0781adc33bacd3ce6162716f7fd568fb30234a74d69803a7d",
+        "tokenizer.model": "34ef7db83df785924fb83d7b887b6e822a031c56e15cff40aaf9b982988180df",
+        "tokenizer_config.json": "1f979337347cc0cb72a6282d8a23ed183539aa81a87a906f022aee2bab83c7c5"
+      },
+      "revision": null
+    },
+    "gpu": {
+      "gpus": [
+        {
+          "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+          "driver": "615.78.08"
+        }
+      ]
+    }
+  },
+  "preprocess-bench/m8/raw/paddle_vl/run1/spec.json": {
+    "name": "paddle_vl",
+    "venv": ".venv-paddlevl",
+    "engine": "paddle_vl",
+    "det_model": null,
+    "rec_model": null,
+    "dpi": 300,
+    "orient": false,
+    "server": {
+      "model": "~/.paddlex/official_models/PaddleOCR-VL-1.6",
+      "served_name": "PaddleOCR-VL-1.6",
+      "port": 8118,
+      "args": [
+        "--max-model-len",
+        "16384",
+        "--gpu-memory-utilization",
+        "0.55",
+        "--trust-remote-code"
+      ]
+    },
+    "prompt": null,
+    "max_tokens": 4096,
+    "params": {}
+  },
+  "preprocess-bench/m8/raw/paddle_vl/run2/environment.json": {
+    "spec": {
+      "name": "paddle_vl",
+      "venv": ".venv-paddlevl",
+      "engine": "paddle_vl",
+      "det_model": null,
+      "rec_model": null,
+      "dpi": 300,
+      "orient": false,
+      "server": {
+        "model": "~/.paddlex/official_models/PaddleOCR-VL-1.6",
+        "served_name": "PaddleOCR-VL-1.6",
+        "port": 8118,
+        "args": [
+          "--max-model-len",
+          "16384",
+          "--gpu-memory-utilization",
+          "0.55",
+          "--trust-remote-code"
+        ]
+      },
+      "prompt": null,
+      "max_tokens": 4096,
+      "params": {}
+    },
+    "python": "3.12.15",
+    "code": {
+      "experiments/ocr_selection/worker.py": "2c03ba8137c690961accd4a9284f00e5283e9f0146c591ab662f948a2b78d54d",
+      "experiments/bench_ocr.py": "8fc0c80a532c9784405731f10ac38ccedb78e3d14f538f74a7b6237279b9bc9d"
+    },
+    "packages": {
+      "paddleocr": "3.7.0",
+      "paddlex": "3.7.2",
+      "paddlepaddle-gpu": "3.2.0",
+      "vietocr": "0.3.13",
+      "torch": "2.14.1+cu132",
+      "vllm": null
+    },
+    "paddle_models": {
+      "PP-DocLayoutV3": {
+        "inference.json": "2b68367c5b312a03de5a6e1642c597c8f95165a7e40cd59c6700cf4a5042f4fd",
+        "inference.pdiparams": "70bd316b0582769ec968829fd1feb1a6a58b7c941b938327e551b6b12b45c137",
+        "inference.yml": "506fcfac13b3b546ae40d7886b44126420f392adb694e3f8bb6a6286a1f90fdc"
+      }
+    },
+    "server": {
+      "vllm": "0.30.0",
+      "model_files": {
+        "LICENSE": "b8c4d7deccd236af023af1c88c4d4e8f0fc2f41914e0fb23a3ec9678fb5a8456",
+        "README.md": "d6c5b77a660577f6e18021defccd835bdc93a8c6538f5a479d597f3e94288abf",
+        "added_tokens.json": "f59f889088e0fe21c523e7cf121bb6dca3b0bb148cb7159fbb4572c74dfc5644",
+        "chat_template.jinja": "2f27812dab7f333e471884e0c803d807f11953d5453140dfb1aaba234f872bc8",
+        "config.json": "ce7f4565f8b1db78532ad5d1b9ebe55c2139d49bd4cb04778b580a08a598f171",
+        "configuration_paddleocr_vl.py": "753dd93654c3a9c8c85a3eaee1e3092dd12591b0f2dce0305e1abfb7a41ff160",
+        "generation_config.json": "a6701d78ab3b4d972307cdec3b69d4c13f46e0d5140514f50ab7d84259324b94",
+        "image_processing_paddleocr_vl.py": "a4fa521b9cb16e207f94b7f2d16427771776dfc634420d319fc4916ee58049ec",
+        "inference.yml": "1587aece2d6442366efce34161d5f7d5f67f09ebfbf043168e5fade892c2780e",
+        "model.safetensors": "85a479d506a11e724e7285d395c551be69f41dbc16b6342d3cacfb189aed71db",
+        "modeling_paddleocr_vl.py": "c5013dff57ca8b87dc1de64d0fd839a44313de09d230a4fb2d08289d2cad5111",
+        "preprocessor_config.json": "111872ab1e8bb7fd040ac5087bfced7ab8f011f02139b088cba294964c3b1d0e",
+        "processing_paddleocr_vl.py": "e29cb1e5f275f2bd3ce051bd5c9983a33894e693b2823a0e13d4c07c8c4f9e13",
+        "processor_config.json": "1568858960a9760c54431dae693a6152e601ff55cdf6d2eab97a4a99958faea0",
+        "special_tokens_map.json": "d3a125c03103deb2acaf7730791bdbbf196f620e5a2213b664511ff9b4b25bab",
+        "tokenizer.json": "c8a215a59183d0d0781adc33bacd3ce6162716f7fd568fb30234a74d69803a7d",
+        "tokenizer.model": "34ef7db83df785924fb83d7b887b6e822a031c56e15cff40aaf9b982988180df",
+        "tokenizer_config.json": "1f979337347cc0cb72a6282d8a23ed183539aa81a87a906f022aee2bab83c7c5"
+      },
+      "revision": null
+    },
+    "gpu": {
+      "gpus": [
+        {
+          "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+          "driver": "615.78.08"
+        }
+      ]
+    }
+  },
+  "preprocess-bench/m8/raw/paddle_vl/run2/spec.json": {
+    "name": "paddle_vl",
+    "venv": ".venv-paddlevl",
+    "engine": "paddle_vl",
+    "det_model": null,
+    "rec_model": null,
+    "dpi": 300,
+    "orient": false,
+    "server": {
+      "model": "~/.paddlex/official_models/PaddleOCR-VL-1.6",
+      "served_name": "PaddleOCR-VL-1.6",
+      "port": 8118,
+      "args": [
+        "--max-model-len",
+        "16384",
+        "--gpu-memory-utilization",
+        "0.55",
+        "--trust-remote-code"
+      ]
+    },
+    "prompt": null,
+    "max_tokens": 4096,
+    "params": {}
+  },
+  "preprocess-bench/m8/raw/vlm_dotsocr/run1/environment.json": {
+    "spec": {
+      "name": "vlm_dotsocr",
+      "venv": ".venv-vllm",
+      "engine": "vlm_chat",
+      "det_model": null,
+      "rec_model": null,
+      "dpi": 300,
+      "orient": false,
+      "server": {
+        "model": "rednote-hilab/dots.ocr",
+        "revision": "c0111ce6bc07803dbc267932ffef0ae3a51dc951",
+        "port": 8119,
+        "args": [
+          "--gpu-memory-utilization",
+          "0.85",
+          "--max-model-len",
+          "8192",
+          "--limit-mm-per-prompt",
+          "{\"image\":1}",
+          "--mm-processor-kwargs",
+          "{\"max_pixels\": 1048576}",
+          "--trust-remote-code",
+          "--chat-template-content-format",
+          "string",
+          "--quantization",
+          "fp8"
+        ],
+        "served_name": null
+      },
+      "prompt": "Extract the text content from this image.",
+      "max_tokens": 4096,
+      "params": {}
+    },
+    "python": "3.12.15",
+    "code": {
+      "experiments/ocr_selection/worker.py": "2c03ba8137c690961accd4a9284f00e5283e9f0146c591ab662f948a2b78d54d",
+      "experiments/bench_ocr.py": "8fc0c80a532c9784405731f10ac38ccedb78e3d14f538f74a7b6237279b9bc9d"
+    },
+    "packages": {
+      "paddleocr": null,
+      "paddlex": null,
+      "paddlepaddle-gpu": null,
+      "vietocr": null,
+      "torch": "2.13.0+cu132",
+      "vllm": "0.30.0"
+    },
+    "paddle_models": {},
+    "server": {
+      "vllm": "0.30.0",
+      "model_files": null,
+      "revision": "c0111ce6bc07803dbc267932ffef0ae3a51dc951"
+    },
+    "vlm_request": {
+      "seed": 42,
+      "temperature": 0,
+      "max_tokens": 4096
+    },
+    "gpu": {
+      "gpus": [
+        {
+          "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+          "driver": "615.78.08"
+        }
+      ]
+    }
+  },
+  "preprocess-bench/m8/raw/vlm_dotsocr/run1/spec.json": {
+    "name": "vlm_dotsocr",
+    "venv": ".venv-vllm",
+    "engine": "vlm_chat",
+    "det_model": null,
+    "rec_model": null,
+    "dpi": 300,
+    "orient": false,
+    "server": {
+      "model": "rednote-hilab/dots.ocr",
+      "revision": "c0111ce6bc07803dbc267932ffef0ae3a51dc951",
+      "port": 8119,
+      "args": [
+        "--gpu-memory-utilization",
+        "0.85",
+        "--max-model-len",
+        "8192",
+        "--limit-mm-per-prompt",
+        "{\"image\":1}",
+        "--mm-processor-kwargs",
+        "{\"max_pixels\": 1048576}",
+        "--trust-remote-code",
+        "--chat-template-content-format",
+        "string",
+        "--quantization",
+        "fp8"
+      ],
+      "served_name": null
+    },
+    "prompt": "Extract the text content from this image.",
+    "max_tokens": 4096,
+    "params": {}
+  },
+  "preprocess-bench/m8/raw/vlm_dotsocr/run2/environment.json": {
+    "spec": {
+      "name": "vlm_dotsocr",
+      "venv": ".venv-vllm",
+      "engine": "vlm_chat",
+      "det_model": null,
+      "rec_model": null,
+      "dpi": 300,
+      "orient": false,
+      "server": {
+        "model": "rednote-hilab/dots.ocr",
+        "revision": "c0111ce6bc07803dbc267932ffef0ae3a51dc951",
+        "port": 8119,
+        "args": [
+          "--gpu-memory-utilization",
+          "0.85",
+          "--max-model-len",
+          "8192",
+          "--limit-mm-per-prompt",
+          "{\"image\":1}",
+          "--mm-processor-kwargs",
+          "{\"max_pixels\": 1048576}",
+          "--trust-remote-code",
+          "--chat-template-content-format",
+          "string",
+          "--quantization",
+          "fp8"
+        ],
+        "served_name": null
+      },
+      "prompt": "Extract the text content from this image.",
+      "max_tokens": 4096,
+      "params": {}
+    },
+    "python": "3.12.15",
+    "code": {
+      "experiments/ocr_selection/worker.py": "2c03ba8137c690961accd4a9284f00e5283e9f0146c591ab662f948a2b78d54d",
+      "experiments/bench_ocr.py": "8fc0c80a532c9784405731f10ac38ccedb78e3d14f538f74a7b6237279b9bc9d"
+    },
+    "packages": {
+      "paddleocr": null,
+      "paddlex": null,
+      "paddlepaddle-gpu": null,
+      "vietocr": null,
+      "torch": "2.13.0+cu132",
+      "vllm": "0.30.0"
+    },
+    "paddle_models": {},
+    "server": {
+      "vllm": "0.30.0",
+      "model_files": null,
+      "revision": "c0111ce6bc07803dbc267932ffef0ae3a51dc951"
+    },
+    "vlm_request": {
+      "seed": 42,
+      "temperature": 0,
+      "max_tokens": 4096
+    },
+    "gpu": {
+      "gpus": [
+        {
+          "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+          "driver": "615.78.08"
+        }
+      ]
+    }
+  },
+  "preprocess-bench/m8/raw/vlm_dotsocr/run2/spec.json": {
+    "name": "vlm_dotsocr",
+    "venv": ".venv-vllm",
+    "engine": "vlm_chat",
+    "det_model": null,
+    "rec_model": null,
+    "dpi": 300,
+    "orient": false,
+    "server": {
+      "model": "rednote-hilab/dots.ocr",
+      "revision": "c0111ce6bc07803dbc267932ffef0ae3a51dc951",
+      "port": 8119,
+      "args": [
+        "--gpu-memory-utilization",
+        "0.85",
+        "--max-model-len",
+        "8192",
+        "--limit-mm-per-prompt",
+        "{\"image\":1}",
+        "--mm-processor-kwargs",
+        "{\"max_pixels\": 1048576}",
+        "--trust-remote-code",
+        "--chat-template-content-format",
+        "string",
+        "--quantization",
+        "fp8"
+      ],
+      "served_name": null
+    },
+    "prompt": "Extract the text content from this image.",
+    "max_tokens": 4096,
+    "params": {}
+  },
+  "preprocess-bench/m8/raw/vlm_mineru25/run1/environment.json": {
+    "spec": {
+      "name": "vlm_mineru25",
+      "venv": ".venv-vllm",
+      "engine": "vlm_chat",
+      "det_model": null,
+      "rec_model": null,
+      "dpi": 300,
+      "orient": false,
+      "server": {
+        "model": "opendatalab/MinerU2.5-2509-1.2B",
+        "revision": "1aa090b41282e64fadd79c10572221f91ec21924",
+        "port": 8119,
+        "args": [
+          "--gpu-memory-utilization",
+          "0.85",
+          "--max-model-len",
+          "8192",
+          "--limit-mm-per-prompt",
+          "{\"image\":1}"
+        ],
+        "served_name": null
+      },
+      "prompt": "\nText Recognition:",
+      "max_tokens": 4096,
+      "params": {}
+    },
+    "python": "3.12.15",
+    "code": {
+      "experiments/ocr_selection/worker.py": "2c03ba8137c690961accd4a9284f00e5283e9f0146c591ab662f948a2b78d54d",
+      "experiments/bench_ocr.py": "8fc0c80a532c9784405731f10ac38ccedb78e3d14f538f74a7b6237279b9bc9d"
+    },
+    "packages": {
+      "paddleocr": null,
+      "paddlex": null,
+      "paddlepaddle-gpu": null,
+      "vietocr": null,
+      "torch": "2.13.0+cu132",
+      "vllm": "0.30.0"
+    },
+    "paddle_models": {},
+    "server": {
+      "vllm": "0.30.0",
+      "model_files": null,
+      "revision": "1aa090b41282e64fadd79c10572221f91ec21924"
+    },
+    "vlm_request": {
+      "seed": 42,
+      "temperature": 0,
+      "max_tokens": 4096
+    },
+    "gpu": {
+      "gpus": [
+        {
+          "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+          "driver": "615.78.08"
+        }
+      ]
+    }
+  },
+  "preprocess-bench/m8/raw/vlm_mineru25/run1/spec.json": {
+    "name": "vlm_mineru25",
+    "venv": ".venv-vllm",
+    "engine": "vlm_chat",
+    "det_model": null,
+    "rec_model": null,
+    "dpi": 300,
+    "orient": false,
+    "server": {
+      "model": "opendatalab/MinerU2.5-2509-1.2B",
+      "revision": "1aa090b41282e64fadd79c10572221f91ec21924",
+      "port": 8119,
+      "args": [
+        "--gpu-memory-utilization",
+        "0.85",
+        "--max-model-len",
+        "8192",
+        "--limit-mm-per-prompt",
+        "{\"image\":1}"
+      ],
+      "served_name": null
+    },
+    "prompt": "\nText Recognition:",
+    "max_tokens": 4096,
+    "params": {}
+  },
+  "preprocess-bench/m8/raw/vlm_mineru25/run2/environment.json": {
+    "spec": {
+      "name": "vlm_mineru25",
+      "venv": ".venv-vllm",
+      "engine": "vlm_chat",
+      "det_model": null,
+      "rec_model": null,
+      "dpi": 300,
+      "orient": false,
+      "server": {
+        "model": "opendatalab/MinerU2.5-2509-1.2B",
+        "revision": "1aa090b41282e64fadd79c10572221f91ec21924",
+        "port": 8119,
+        "args": [
+          "--gpu-memory-utilization",
+          "0.85",
+          "--max-model-len",
+          "8192",
+          "--limit-mm-per-prompt",
+          "{\"image\":1}"
+        ],
+        "served_name": null
+      },
+      "prompt": "\nText Recognition:",
+      "max_tokens": 4096,
+      "params": {}
+    },
+    "python": "3.12.15",
+    "code": {
+      "experiments/ocr_selection/worker.py": "2c03ba8137c690961accd4a9284f00e5283e9f0146c591ab662f948a2b78d54d",
+      "experiments/bench_ocr.py": "8fc0c80a532c9784405731f10ac38ccedb78e3d14f538f74a7b6237279b9bc9d"
+    },
+    "packages": {
+      "paddleocr": null,
+      "paddlex": null,
+      "paddlepaddle-gpu": null,
+      "vietocr": null,
+      "torch": "2.13.0+cu132",
+      "vllm": "0.30.0"
+    },
+    "paddle_models": {},
+    "server": {
+      "vllm": "0.30.0",
+      "model_files": null,
+      "revision": "1aa090b41282e64fadd79c10572221f91ec21924"
+    },
+    "vlm_request": {
+      "seed": 42,
+      "temperature": 0,
+      "max_tokens": 4096
+    },
+    "gpu": {
+      "gpus": [
+        {
+          "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+          "driver": "615.78.08"
+        }
+      ]
+    }
+  },
+  "preprocess-bench/m8/raw/vlm_mineru25/run2/spec.json": {
+    "name": "vlm_mineru25",
+    "venv": ".venv-vllm",
+    "engine": "vlm_chat",
+    "det_model": null,
+    "rec_model": null,
+    "dpi": 300,
+    "orient": false,
+    "server": {
+      "model": "opendatalab/MinerU2.5-2509-1.2B",
+      "revision": "1aa090b41282e64fadd79c10572221f91ec21924",
+      "port": 8119,
+      "args": [
+        "--gpu-memory-utilization",
+        "0.85",
+        "--max-model-len",
+        "8192",
+        "--limit-mm-per-prompt",
+        "{\"image\":1}"
+      ],
+      "served_name": null
+    },
+    "prompt": "\nText Recognition:",
+    "max_tokens": 4096,
+    "params": {}
+  },
+  "preprocess-bench/m8/raw/vlm_qwen3vl2b/run1/environment.json": {
+    "spec": {
+      "name": "vlm_qwen3vl2b",
+      "venv": ".venv-vllm",
+      "engine": "vlm_chat",
+      "det_model": null,
+      "rec_model": null,
+      "dpi": 300,
+      "orient": false,
+      "server": {
+        "model": "Qwen/Qwen3-VL-2B-Instruct",
+        "revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+        "port": 8119,
+        "args": [
+          "--gpu-memory-utilization",
+          "0.85",
+          "--max-model-len",
+          "8192",
+          "--limit-mm-per-prompt",
+          "{\"image\":1}",
+          "--mm-processor-kwargs",
+          "{\"max_pixels\": 1048576}",
+          "--quantization",
+          "fp8"
+        ],
+        "served_name": null
+      },
+      "prompt": "Read all the text in the image.\nPlease output only the text content from the image without any additional descriptions or formatting.",
+      "max_tokens": 4096,
+      "params": {}
+    },
+    "python": "3.12.15",
+    "code": {
+      "experiments/ocr_selection/worker.py": "2c03ba8137c690961accd4a9284f00e5283e9f0146c591ab662f948a2b78d54d",
+      "experiments/bench_ocr.py": "8fc0c80a532c9784405731f10ac38ccedb78e3d14f538f74a7b6237279b9bc9d"
+    },
+    "packages": {
+      "paddleocr": null,
+      "paddlex": null,
+      "paddlepaddle-gpu": null,
+      "vietocr": null,
+      "torch": "2.13.0+cu132",
+      "vllm": "0.30.0"
+    },
+    "paddle_models": {},
+    "server": {
+      "vllm": "0.30.0",
+      "model_files": null,
+      "revision": "89644892e4d85e24eaac8bacfd4f463576704203"
+    },
+    "vlm_request": {
+      "seed": 42,
+      "temperature": 0,
+      "max_tokens": 4096
+    },
+    "gpu": {
+      "gpus": [
+        {
+          "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+          "driver": "615.78.08"
+        }
+      ]
+    }
+  },
+  "preprocess-bench/m8/raw/vlm_qwen3vl2b/run1/spec.json": {
+    "name": "vlm_qwen3vl2b",
+    "venv": ".venv-vllm",
+    "engine": "vlm_chat",
+    "det_model": null,
+    "rec_model": null,
+    "dpi": 300,
+    "orient": false,
+    "server": {
+      "model": "Qwen/Qwen3-VL-2B-Instruct",
+      "revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+      "port": 8119,
+      "args": [
+        "--gpu-memory-utilization",
+        "0.85",
+        "--max-model-len",
+        "8192",
+        "--limit-mm-per-prompt",
+        "{\"image\":1}",
+        "--mm-processor-kwargs",
+        "{\"max_pixels\": 1048576}",
+        "--quantization",
+        "fp8"
+      ],
+      "served_name": null
+    },
+    "prompt": "Read all the text in the image.\nPlease output only the text content from the image without any additional descriptions or formatting.",
+    "max_tokens": 4096,
+    "params": {}
+  },
+  "preprocess-bench/m8/raw/vlm_qwen3vl2b/run2/environment.json": {
+    "spec": {
+      "name": "vlm_qwen3vl2b",
+      "venv": ".venv-vllm",
+      "engine": "vlm_chat",
+      "det_model": null,
+      "rec_model": null,
+      "dpi": 300,
+      "orient": false,
+      "server": {
+        "model": "Qwen/Qwen3-VL-2B-Instruct",
+        "revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+        "port": 8119,
+        "args": [
+          "--gpu-memory-utilization",
+          "0.85",
+          "--max-model-len",
+          "8192",
+          "--limit-mm-per-prompt",
+          "{\"image\":1}",
+          "--mm-processor-kwargs",
+          "{\"max_pixels\": 1048576}",
+          "--quantization",
+          "fp8"
+        ],
+        "served_name": null
+      },
+      "prompt": "Read all the text in the image.\nPlease output only the text content from the image without any additional descriptions or formatting.",
+      "max_tokens": 4096,
+      "params": {}
+    },
+    "python": "3.12.15",
+    "code": {
+      "experiments/ocr_selection/worker.py": "2c03ba8137c690961accd4a9284f00e5283e9f0146c591ab662f948a2b78d54d",
+      "experiments/bench_ocr.py": "8fc0c80a532c9784405731f10ac38ccedb78e3d14f538f74a7b6237279b9bc9d"
+    },
+    "packages": {
+      "paddleocr": null,
+      "paddlex": null,
+      "paddlepaddle-gpu": null,
+      "vietocr": null,
+      "torch": "2.13.0+cu132",
+      "vllm": "0.30.0"
+    },
+    "paddle_models": {},
+    "server": {
+      "vllm": "0.30.0",
+      "model_files": null,
+      "revision": "89644892e4d85e24eaac8bacfd4f463576704203"
+    },
+    "vlm_request": {
+      "seed": 42,
+      "temperature": 0,
+      "max_tokens": 4096
+    },
+    "gpu": {
+      "gpus": [
+        {
+          "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+          "driver": "615.78.08"
+        }
+      ]
+    }
+  },
+  "preprocess-bench/m8/raw/vlm_qwen3vl2b/run2/spec.json": {
+    "name": "vlm_qwen3vl2b",
+    "venv": ".venv-vllm",
+    "engine": "vlm_chat",
+    "det_model": null,
+    "rec_model": null,
+    "dpi": 300,
+    "orient": false,
+    "server": {
+      "model": "Qwen/Qwen3-VL-2B-Instruct",
+      "revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+      "port": 8119,
+      "args": [
+        "--gpu-memory-utilization",
+        "0.85",
+        "--max-model-len",
+        "8192",
+        "--limit-mm-per-prompt",
+        "{\"image\":1}",
+        "--mm-processor-kwargs",
+        "{\"max_pixels\": 1048576}",
+        "--quantization",
+        "fp8"
+      ],
+      "served_name": null
+    },
+    "prompt": "Read all the text in the image.\nPlease output only the text content from the image without any additional descriptions or formatting.",
+    "max_tokens": 4096,
+    "params": {}
+  },
+  "preprocess-bench/m8/scores.json": {
+    "generated_at": "2026-10-21T10:00:53+00:00",
+    "configs": [
+      "cur",
+      "paddle",
+      "cur_orient",
+      "cur_det_server",
+      "cur_seq2seq",
+      "cur_dpi400",
+      "cur_rotgate",
+      "paddle_vl",
+      "vlm_mineru25",
+      "vlm_dotsocr",
+      "vlm_qwen3vl2b"
+    ],
+    "reviews_missing": [],
+    "cur_gaps": [],
+    "incomplete": {},
+    "cur_nondeterministic_pages": 0,
+    "state": {
+      "cur": {
+        "run1": "done",
+        "run2": "done"
+      },
+      "paddle": {
+        "run1": "done",
+        "run2": "done"
+      },
+      "cur_orient": {
+        "run1": "done",
+        "run2": "done"
+      },
+      "cur_det_server": {
+        "run1": "done",
+        "run2": "done"
+      },
+      "cur_seq2seq": {
+        "run1": "done",
+        "run2": "done"
+      },
+      "cur_dpi400": {
+        "run1": "done",
+        "run2": "done"
+      },
+      "cur_rotgate": {
+        "run1": "done",
+        "run2": "done"
+      },
+      "paddle_vl": {
+        "run1": "done",
+        "run2": "done"
+      },
+      "vlm_mineru25": {
+        "run1": "done",
+        "run2": "done"
+      },
+      "vlm_dotsocr": {
+        "run1": "done",
+        "run2": "done"
+      },
+      "vlm_qwen3vl2b": {
+        "run1": "done",
+        "run2": "done"
+      }
+    },
+    "vram_peak_mib": {
+      "cur": 5728,
+      "paddle": 4248,
+      "cur_orient": 5586,
+      "cur_det_server": 5722,
+      "cur_seq2seq": 5668,
+      "cur_dpi400": 5788,
+      "cur_rotgate": 5590,
+      "paddle_vl": 4184,
+      "vlm_mineru25": 4762,
+      "vlm_dotsocr": 5344,
+      "vlm_qwen3vl2b": 5152
+    },
+    "load_s": {
+      "cur": {
+        "run1": 9.402,
+        "run2": 11.112
+      },
+      "paddle": {
+        "run1": 7.049,
+        "run2": 3.767
+      },
+      "cur_orient": {
+        "run1": 6.228,
+        "run2": 5.444
+      },
+      "cur_det_server": {
+        "run1": 5.78,
+        "run2": 5.929
+      },
+      "cur_seq2seq": {
+        "run1": 4.979,
+        "run2": 5.364
+      },
+      "cur_dpi400": {
+        "run1": 5.109,
+        "run2": 5.574
+      },
+      "cur_rotgate": {
+        "run1": 5.816,
+        "run2": 7.713
+      },
+      "paddle_vl": {
+        "run1": 10.192,
+        "run2": 8.763
+      },
+      "vlm_mineru25": {
+        "run1": 0.0,
+        "run2": 0.0
+      },
+      "vlm_dotsocr": {
+        "run1": 0.0,
+        "run2": 0.0
+      },
+      "vlm_qwen3vl2b": {
+        "run1": 0.0,
+        "run2": 0.0
+      }
+    },
+    "metrics": {
+      "cur": {
+        "s1": {
+          "numbers": {
+            "tp": 3595,
+            "n_gt": 3600,
+            "n_pred": 3608,
+            "recall": 0.9986,
+            "precision": 0.9964
+          },
+          "words": {
+            "tp": 7549,
+            "n_gt": 7624,
+            "n_pred": 7634,
+            "recall": 0.9902,
+            "precision": 0.9889
+          },
+          "diacritic_words": {
+            "tp": 5772,
+            "n_gt": 5830,
+            "n_pred": 5832,
+            "recall": 0.9901,
+            "precision": 0.9897
+          }
+        },
+        "s2": {
+          "numbers": {
+            "tp": 3559,
+            "n_gt": 3600,
+            "n_pred": 3586,
+            "recall": 0.9886,
+            "precision": 0.9925
+          },
+          "words": {
+            "tp": 7413,
+            "n_gt": 7624,
+            "n_pred": 7663,
+            "recall": 0.9723,
+            "precision": 0.9674
+          },
+          "diacritic_words": {
+            "tp": 5662,
+            "n_gt": 5830,
+            "n_pred": 5815,
+            "recall": 0.9712,
+            "precision": 0.9737
+          }
+        },
+        "s3": {
+          "rows_gt": 56,
+          "codes_found": 56,
+          "scores_correct": 56,
+          "spurious_codes": 0
+        },
+        "s4_sample": {
+          "missing": 366,
+          "invented": 382,
+          "n_gt": 1807,
+          "rate": 0.2025,
+          "errors": 0,
+          "per_page": {
+            "s4-b51474f1-p02": {
+              "missing": 0,
+              "invented": 1,
+              "n_gt": 172
+            },
+            "s4-b51474f1-p03": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 249
+            },
+            "s4-b51474f1-p10": {
+              "missing": 143,
+              "invented": 131,
+              "n_gt": 146
+            },
+            "s4-b51474f1-p12": {
+              "missing": 69,
+              "invented": 63,
+              "n_gt": 70
+            },
+            "s4-b51474f1-p14": {
+              "missing": 21,
+              "invented": 37,
+              "n_gt": 22
+            },
+            "s4-b51474f1-p17": {
+              "missing": 28,
+              "invented": 11,
+              "n_gt": 30
+            },
+            "s4-b51474f1-p19": {
+              "missing": 75,
+              "invented": 72,
+              "n_gt": 84
+            },
+            "s4-b51474f1-p22": {
+              "missing": 29,
+              "invented": 42,
+              "n_gt": 32
+            },
+            "s4-2df82718-p01": {
+              "missing": 0,
+              "invented": 4,
+              "n_gt": 85
+            },
+            "s4-808e12ca-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 83
+            },
+            "s4-6f4ec683-p01": {
+              "missing": 1,
+              "invented": 0,
+              "n_gt": 161
+            },
+            "s4-2fe26a47-p01": {
+              "missing": 0,
+              "invented": 1,
+              "n_gt": 132
+            },
+            "s4-fb93a47b-p01": {
+              "missing": 0,
+              "invented": 3,
+              "n_gt": 96
+            },
+            "s4-e1e83981-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 84
+            },
+            "s4-aa2a82aa-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 75
+            },
+            "s4-340bbb96-p01": {
+              "missing": 0,
+              "invented": 5,
+              "n_gt": 51
+            },
+            "s4-340bbb96-p02": {
+              "missing": 0,
+              "invented": 12,
+              "n_gt": 23
+            },
+            "s4-340bbb96-p04": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 0
+            },
+            "s4-eb269be3-p02": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 35
+            },
+            "s4-eb269be3-p03": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 4
+            },
+            "s4-7edc1c67-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 42
+            },
+            "s4-89e49d58-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 60
+            },
+            "s4-e58ae59b-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 32
+            },
+            "s4-aabe28da-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 39
+            }
+          }
+        },
+        "invented_total": 472,
+        "silent_omissions": 1,
+        "silent_omission_ids": [
+          "s4-b51474f1-p17"
+        ],
+        "suspect_omissions": 0,
+        "nondeterministic_pages": 0,
+        "nondeterministic_ids": [],
+        "errors": 0,
+        "errors_run2": 0,
+        "truncated_pages": 0,
+        "truncated_ids": [],
+        "truncated_run2": 0,
+        "s_per_page": 1.8729
+      },
+      "paddle": {
+        "s1": {
+          "numbers": {
+            "tp": 3549,
+            "n_gt": 3600,
+            "n_pred": 3557,
+            "recall": 0.9858,
+            "precision": 0.9978
+          },
+          "words": {
+            "tp": 4655,
+            "n_gt": 7624,
+            "n_pred": 7630,
+            "recall": 0.6106,
+            "precision": 0.6101
+          },
+          "diacritic_words": {
+            "tp": 2867,
+            "n_gt": 5830,
+            "n_pred": 3550,
+            "recall": 0.4918,
+            "precision": 0.8076
+          }
+        },
+        "s2": {
+          "numbers": {
+            "tp": 3579,
+            "n_gt": 3600,
+            "n_pred": 3584,
+            "recall": 0.9942,
+            "precision": 0.9986
+          },
+          "words": {
+            "tp": 4581,
+            "n_gt": 7624,
+            "n_pred": 7625,
+            "recall": 0.6009,
+            "precision": 0.6008
+          },
+          "diacritic_words": {
+            "tp": 2795,
+            "n_gt": 5830,
+            "n_pred": 3603,
+            "recall": 0.4794,
+            "precision": 0.7757
+          }
+        },
+        "s3": {
+          "rows_gt": 56,
+          "codes_found": 56,
+          "scores_correct": 56,
+          "spurious_codes": 0
+        },
+        "s4_sample": {
+          "missing": 218,
+          "invented": 118,
+          "n_gt": 1807,
+          "rate": 0.1206,
+          "errors": 0,
+          "per_page": {
+            "s4-b51474f1-p02": {
+              "missing": 1,
+              "invented": 1,
+              "n_gt": 172
+            },
+            "s4-b51474f1-p03": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 249
+            },
+            "s4-b51474f1-p10": {
+              "missing": 90,
+              "invented": 33,
+              "n_gt": 146
+            },
+            "s4-b51474f1-p12": {
+              "missing": 40,
+              "invented": 13,
+              "n_gt": 70
+            },
+            "s4-b51474f1-p14": {
+              "missing": 9,
+              "invented": 5,
+              "n_gt": 22
+            },
+            "s4-b51474f1-p17": {
+              "missing": 25,
+              "invented": 4,
+              "n_gt": 30
+            },
+            "s4-b51474f1-p19": {
+              "missing": 35,
+              "invented": 28,
+              "n_gt": 84
+            },
+            "s4-b51474f1-p22": {
+              "missing": 17,
+              "invented": 12,
+              "n_gt": 32
+            },
+            "s4-2df82718-p01": {
+              "missing": 0,
+              "invented": 4,
+              "n_gt": 85
+            },
+            "s4-808e12ca-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 83
+            },
+            "s4-6f4ec683-p01": {
+              "missing": 1,
+              "invented": 0,
+              "n_gt": 161
+            },
+            "s4-2fe26a47-p01": {
+              "missing": 0,
+              "invented": 1,
+              "n_gt": 132
+            },
+            "s4-fb93a47b-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 96
+            },
+            "s4-e1e83981-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 84
+            },
+            "s4-aa2a82aa-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 75
+            },
+            "s4-340bbb96-p01": {
+              "missing": 0,
+              "invented": 5,
+              "n_gt": 51
+            },
+            "s4-340bbb96-p02": {
+              "missing": 0,
+              "invented": 12,
+              "n_gt": 23
+            },
+            "s4-340bbb96-p04": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 0
+            },
+            "s4-eb269be3-p02": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 35
+            },
+            "s4-eb269be3-p03": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 4
+            },
+            "s4-7edc1c67-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 42
+            },
+            "s4-89e49d58-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 60
+            },
+            "s4-e58ae59b-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 32
+            },
+            "s4-aabe28da-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 39
+            }
+          }
+        },
+        "invented_total": 216,
+        "silent_omissions": 1,
+        "silent_omission_ids": [
+          "s4-b51474f1-p17"
+        ],
+        "suspect_omissions": 3,
+        "nondeterministic_pages": 0,
+        "nondeterministic_ids": [],
+        "errors": 0,
+        "errors_run2": 0,
+        "truncated_pages": 0,
+        "truncated_ids": [],
+        "truncated_run2": 0,
+        "s_per_page": 1.2674
+      },
+      "cur_orient": {
+        "s1": {
+          "numbers": {
+            "tp": 3238,
+            "n_gt": 3600,
+            "n_pred": 3622,
+            "recall": 0.8994,
+            "precision": 0.894
+          },
+          "words": {
+            "tp": 7235,
+            "n_gt": 7624,
+            "n_pred": 7444,
+            "recall": 0.949,
+            "precision": 0.9719
+          },
+          "diacritic_words": {
+            "tp": 5569,
+            "n_gt": 5830,
+            "n_pred": 5641,
+            "recall": 0.9552,
+            "precision": 0.9872
+          }
+        },
+        "s2": {
+          "numbers": {
+            "tp": 2660,
+            "n_gt": 3600,
+            "n_pred": 3286,
+            "recall": 0.7389,
+            "precision": 0.8095
+          },
+          "words": {
+            "tp": 6843,
+            "n_gt": 7624,
+            "n_pred": 7472,
+            "recall": 0.8976,
+            "precision": 0.9158
+          },
+          "diacritic_words": {
+            "tp": 5340,
+            "n_gt": 5830,
+            "n_pred": 5430,
+            "recall": 0.916,
+            "precision": 0.9834
+          }
+        },
+        "s3": {
+          "rows_gt": 56,
+          "codes_found": 56,
+          "scores_correct": 56,
+          "spurious_codes": 0
+        },
+        "s4_sample": {
+          "missing": 37,
+          "invented": 65,
+          "n_gt": 1807,
+          "rate": 0.0205,
+          "errors": 0,
+          "per_page": {
+            "s4-b51474f1-p02": {
+              "missing": 1,
+              "invented": 3,
+              "n_gt": 172
+            },
+            "s4-b51474f1-p03": {
+              "missing": 6,
+              "invented": 5,
+              "n_gt": 249
+            },
+            "s4-b51474f1-p10": {
+              "missing": 0,
+              "invented": 2,
+              "n_gt": 146
+            },
+            "s4-b51474f1-p12": {
+              "missing": 0,
+              "invented": 3,
+              "n_gt": 70
+            },
+            "s4-b51474f1-p14": {
+              "missing": 2,
+              "invented": 0,
+              "n_gt": 22
+            },
+            "s4-b51474f1-p17": {
+              "missing": 2,
+              "invented": 7,
+              "n_gt": 30
+            },
+            "s4-b51474f1-p19": {
+              "missing": 1,
+              "invented": 2,
+              "n_gt": 84
+            },
+            "s4-b51474f1-p22": {
+              "missing": 0,
+              "invented": 1,
+              "n_gt": 32
+            },
+            "s4-2df82718-p01": {
+              "missing": 1,
+              "invented": 5,
+              "n_gt": 85
+            },
+            "s4-808e12ca-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 83
+            },
+            "s4-6f4ec683-p01": {
+              "missing": 7,
+              "invented": 3,
+              "n_gt": 161
+            },
+            "s4-2fe26a47-p01": {
+              "missing": 2,
+              "invented": 5,
+              "n_gt": 132
+            },
+            "s4-fb93a47b-p01": {
+              "missing": 0,
+              "invented": 3,
+              "n_gt": 96
+            },
+            "s4-e1e83981-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 84
+            },
+            "s4-aa2a82aa-p01": {
+              "missing": 1,
+              "invented": 1,
+              "n_gt": 75
+            },
+            "s4-340bbb96-p01": {
+              "missing": 3,
+              "invented": 6,
+              "n_gt": 51
+            },
+            "s4-340bbb96-p02": {
+              "missing": 0,
+              "invented": 12,
+              "n_gt": 23
+            },
+            "s4-340bbb96-p04": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 0
+            },
+            "s4-eb269be3-p02": {
+              "missing": 3,
+              "invented": 2,
+              "n_gt": 35
+            },
+            "s4-eb269be3-p03": {
+              "missing": 0,
+              "invented": 1,
+              "n_gt": 4
+            },
+            "s4-7edc1c67-p01": {
+              "missing": 3,
+              "invented": 1,
+              "n_gt": 42
+            },
+            "s4-89e49d58-p01": {
+              "missing": 4,
+              "invented": 2,
+              "n_gt": 60
+            },
+            "s4-e58ae59b-p01": {
+              "missing": 1,
+              "invented": 1,
+              "n_gt": 32
+            },
+            "s4-aabe28da-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 39
+            }
+          }
+        },
+        "invented_total": 1110,
+        "silent_omissions": 0,
+        "silent_omission_ids": [],
+        "suspect_omissions": 0,
+        "nondeterministic_pages": 0,
+        "nondeterministic_ids": [],
+        "errors": 0,
+        "errors_run2": 0,
+        "truncated_pages": 0,
+        "truncated_ids": [],
+        "truncated_run2": 0,
+        "s_per_page": 2.2767
+      },
+      "cur_det_server": {
+        "s1": {
+          "numbers": {
+            "tp": 1537,
+            "n_gt": 1541,
+            "n_pred": 1556,
+            "recall": 0.9974,
+            "precision": 0.9878
+          },
+          "words": {
+            "tp": 6027,
+            "n_gt": 6109,
+            "n_pred": 6144,
+            "recall": 0.9866,
+            "precision": 0.981
+          },
+          "diacritic_words": {
+            "tp": 4788,
+            "n_gt": 4857,
+            "n_pred": 4863,
+            "recall": 0.9858,
+            "precision": 0.9846
+          }
+        },
+        "s2": {},
+        "s3": {
+          "rows_gt": 56,
+          "codes_found": 56,
+          "scores_correct": 56,
+          "spurious_codes": 0
+        },
+        "s4_sample": {
+          "missing": 1,
+          "invented": 1,
+          "n_gt": 263,
+          "rate": 0.0038,
+          "errors": 21,
+          "per_page": {
+            "s4-808e12ca-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 83
+            },
+            "s4-fb93a47b-p01": {
+              "missing": 1,
+              "invented": 1,
+              "n_gt": 96
+            },
+            "s4-e1e83981-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 84
+            }
+          }
+        },
+        "invented_total": 43,
+        "silent_omissions": 0,
+        "silent_omission_ids": [],
+        "suspect_omissions": 0,
+        "nondeterministic_pages": 0,
+        "nondeterministic_ids": [],
+        "errors": 90,
+        "errors_run2": 0,
+        "truncated_pages": 0,
+        "truncated_ids": [],
+        "truncated_run2": 0,
+        "s_per_page": 2.2894
+      },
+      "cur_seq2seq": {
+        "s1": {
+          "numbers": {
+            "tp": 3545,
+            "n_gt": 3600,
+            "n_pred": 3630,
+            "recall": 0.9847,
+            "precision": 0.9766
+          },
+          "words": {
+            "tp": 7396,
+            "n_gt": 7624,
+            "n_pred": 7627,
+            "recall": 0.9701,
+            "precision": 0.9697
+          },
+          "diacritic_words": {
+            "tp": 5627,
+            "n_gt": 5830,
+            "n_pred": 5784,
+            "recall": 0.9652,
+            "precision": 0.9729
+          }
+        },
+        "s2": {
+          "numbers": {
+            "tp": 3579,
+            "n_gt": 3600,
+            "n_pred": 3589,
+            "recall": 0.9942,
+            "precision": 0.9972
+          },
+          "words": {
+            "tp": 7334,
+            "n_gt": 7624,
+            "n_pred": 7661,
+            "recall": 0.962,
+            "precision": 0.9573
+          },
+          "diacritic_words": {
+            "tp": 5575,
+            "n_gt": 5830,
+            "n_pred": 5788,
+            "recall": 0.9563,
+            "precision": 0.9632
+          }
+        },
+        "s3": {
+          "rows_gt": 56,
+          "codes_found": 54,
+          "scores_correct": 54,
+          "spurious_codes": 0
+        },
+        "s4_sample": {
+          "missing": 376,
+          "invented": 222,
+          "n_gt": 1807,
+          "rate": 0.2081,
+          "errors": 0,
+          "per_page": {
+            "s4-b51474f1-p02": {
+              "missing": 0,
+              "invented": 1,
+              "n_gt": 172
+            },
+            "s4-b51474f1-p03": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 249
+            },
+            "s4-b51474f1-p10": {
+              "missing": 146,
+              "invented": 66,
+              "n_gt": 146
+            },
+            "s4-b51474f1-p12": {
+              "missing": 69,
+              "invented": 29,
+              "n_gt": 70
+            },
+            "s4-b51474f1-p14": {
+              "missing": 22,
+              "invented": 20,
+              "n_gt": 22
+            },
+            "s4-b51474f1-p17": {
+              "missing": 28,
+              "invented": 4,
+              "n_gt": 30
+            },
+            "s4-b51474f1-p19": {
+              "missing": 77,
+              "invented": 33,
+              "n_gt": 84
+            },
+            "s4-b51474f1-p22": {
+              "missing": 29,
+              "invented": 19,
+              "n_gt": 32
+            },
+            "s4-2df82718-p01": {
+              "missing": 0,
+              "invented": 26,
+              "n_gt": 85
+            },
+            "s4-808e12ca-p01": {
+              "missing": 1,
+              "invented": 1,
+              "n_gt": 83
+            },
+            "s4-6f4ec683-p01": {
+              "missing": 1,
+              "invented": 0,
+              "n_gt": 161
+            },
+            "s4-2fe26a47-p01": {
+              "missing": 0,
+              "invented": 1,
+              "n_gt": 132
+            },
+            "s4-fb93a47b-p01": {
+              "missing": 0,
+              "invented": 2,
+              "n_gt": 96
+            },
+            "s4-e1e83981-p01": {
+              "missing": 0,
+              "invented": 1,
+              "n_gt": 84
+            },
+            "s4-aa2a82aa-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 75
+            },
+            "s4-340bbb96-p01": {
+              "missing": 1,
+              "invented": 5,
+              "n_gt": 51
+            },
+            "s4-340bbb96-p02": {
+              "missing": 0,
+              "invented": 11,
+              "n_gt": 23
+            },
+            "s4-340bbb96-p04": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 0
+            },
+            "s4-eb269be3-p02": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 35
+            },
+            "s4-eb269be3-p03": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 4
+            },
+            "s4-7edc1c67-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 42
+            },
+            "s4-89e49d58-p01": {
+              "missing": 1,
+              "invented": 2,
+              "n_gt": 60
+            },
+            "s4-e58ae59b-p01": {
+              "missing": 1,
+              "invented": 1,
+              "n_gt": 32
+            },
+            "s4-aabe28da-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 39
+            }
+          }
+        },
+        "invented_total": 318,
+        "silent_omissions": 4,
+        "silent_omission_ids": [
+          "s4-b51474f1-p10",
+          "s4-b51474f1-p12",
+          "s4-b51474f1-p17",
+          "s4-b51474f1-p19"
+        ],
+        "suspect_omissions": 8,
+        "nondeterministic_pages": 0,
+        "nondeterministic_ids": [],
+        "errors": 0,
+        "errors_run2": 0,
+        "truncated_pages": 0,
+        "truncated_ids": [],
+        "truncated_run2": 0,
+        "s_per_page": 1.0786
+      },
+      "cur_dpi400": {
+        "s1": {
+          "numbers": {
+            "tp": 3595,
+            "n_gt": 3600,
+            "n_pred": 3607,
+            "recall": 0.9986,
+            "precision": 0.9967
+          },
+          "words": {
+            "tp": 7550,
+            "n_gt": 7624,
+            "n_pred": 7634,
+            "recall": 0.9903,
+            "precision": 0.989
+          },
+          "diacritic_words": {
+            "tp": 5770,
+            "n_gt": 5830,
+            "n_pred": 5836,
+            "recall": 0.9897,
+            "precision": 0.9887
+          }
+        },
+        "s2": {
+          "numbers": {
+            "tp": 3568,
+            "n_gt": 3600,
+            "n_pred": 3594,
+            "recall": 0.9911,
+            "precision": 0.9928
+          },
+          "words": {
+            "tp": 7376,
+            "n_gt": 7624,
+            "n_pred": 7663,
+            "recall": 0.9675,
+            "precision": 0.9625
+          },
+          "diacritic_words": {
+            "tp": 5626,
+            "n_gt": 5830,
+            "n_pred": 5817,
+            "recall": 0.965,
+            "precision": 0.9672
+          }
+        },
+        "s3": {
+          "rows_gt": 56,
+          "codes_found": 56,
+          "scores_correct": 56,
+          "spurious_codes": 0
+        },
+        "s4_sample": {
+          "missing": 366,
+          "invented": 383,
+          "n_gt": 1807,
+          "rate": 0.2025,
+          "errors": 0,
+          "per_page": {
+            "s4-b51474f1-p02": {
+              "missing": 0,
+              "invented": 1,
+              "n_gt": 172
+            },
+            "s4-b51474f1-p03": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 249
+            },
+            "s4-b51474f1-p10": {
+              "missing": 142,
+              "invented": 126,
+              "n_gt": 146
+            },
+            "s4-b51474f1-p12": {
+              "missing": 69,
+              "invented": 62,
+              "n_gt": 70
+            },
+            "s4-b51474f1-p14": {
+              "missing": 22,
+              "invented": 38,
+              "n_gt": 22
+            },
+            "s4-b51474f1-p17": {
+              "missing": 28,
+              "invented": 14,
+              "n_gt": 30
+            },
+            "s4-b51474f1-p19": {
+              "missing": 75,
+              "invented": 75,
+              "n_gt": 84
+            },
+            "s4-b51474f1-p22": {
+              "missing": 29,
+              "invented": 40,
+              "n_gt": 32
+            },
+            "s4-2df82718-p01": {
+              "missing": 0,
+              "invented": 4,
+              "n_gt": 85
+            },
+            "s4-808e12ca-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 83
+            },
+            "s4-6f4ec683-p01": {
+              "missing": 1,
+              "invented": 0,
+              "n_gt": 161
+            },
+            "s4-2fe26a47-p01": {
+              "missing": 0,
+              "invented": 1,
+              "n_gt": 132
+            },
+            "s4-fb93a47b-p01": {
+              "missing": 0,
+              "invented": 3,
+              "n_gt": 96
+            },
+            "s4-e1e83981-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 84
+            },
+            "s4-aa2a82aa-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 75
+            },
+            "s4-340bbb96-p01": {
+              "missing": 0,
+              "invented": 5,
+              "n_gt": 51
+            },
+            "s4-340bbb96-p02": {
+              "missing": 0,
+              "invented": 12,
+              "n_gt": 23
+            },
+            "s4-340bbb96-p04": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 0
+            },
+            "s4-eb269be3-p02": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 35
+            },
+            "s4-eb269be3-p03": {
+              "missing": 0,
+              "invented": 1,
+              "n_gt": 4
+            },
+            "s4-7edc1c67-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 42
+            },
+            "s4-89e49d58-p01": {
+              "missing": 0,
+              "invented": 1,
+              "n_gt": 60
+            },
+            "s4-e58ae59b-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 32
+            },
+            "s4-aabe28da-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 39
+            }
+          }
+        },
+        "invented_total": 469,
+        "silent_omissions": 0,
+        "silent_omission_ids": [],
+        "suspect_omissions": 0,
+        "nondeterministic_pages": 0,
+        "nondeterministic_ids": [],
+        "errors": 0,
+        "errors_run2": 0,
+        "truncated_pages": 0,
+        "truncated_ids": [],
+        "truncated_run2": 0,
+        "s_per_page": 2.165
+      },
+      "cur_rotgate": {
+        "s1": {
+          "numbers": {
+            "tp": 3595,
+            "n_gt": 3600,
+            "n_pred": 3608,
+            "recall": 0.9986,
+            "precision": 0.9964
+          },
+          "words": {
+            "tp": 7549,
+            "n_gt": 7624,
+            "n_pred": 7634,
+            "recall": 0.9902,
+            "precision": 0.9889
+          },
+          "diacritic_words": {
+            "tp": 5772,
+            "n_gt": 5830,
+            "n_pred": 5832,
+            "recall": 0.9901,
+            "precision": 0.9897
+          }
+        },
+        "s2": {
+          "numbers": {
+            "tp": 3559,
+            "n_gt": 3600,
+            "n_pred": 3586,
+            "recall": 0.9886,
+            "precision": 0.9925
+          },
+          "words": {
+            "tp": 7413,
+            "n_gt": 7624,
+            "n_pred": 7663,
+            "recall": 0.9723,
+            "precision": 0.9674
+          },
+          "diacritic_words": {
+            "tp": 5662,
+            "n_gt": 5830,
+            "n_pred": 5815,
+            "recall": 0.9712,
+            "precision": 0.9737
+          }
+        },
+        "s3": {
+          "rows_gt": 56,
+          "codes_found": 56,
+          "scores_correct": 56,
+          "spurious_codes": 0
+        },
+        "s4_sample": {
+          "missing": 5,
+          "invented": 37,
+          "n_gt": 1807,
+          "rate": 0.0028,
+          "errors": 0,
+          "per_page": {
+            "s4-b51474f1-p02": {
+              "missing": 0,
+              "invented": 1,
+              "n_gt": 172
+            },
+            "s4-b51474f1-p03": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 249
+            },
+            "s4-b51474f1-p10": {
+              "missing": 0,
+              "invented": 2,
+              "n_gt": 146
+            },
+            "s4-b51474f1-p12": {
+              "missing": 0,
+              "invented": 3,
+              "n_gt": 70
+            },
+            "s4-b51474f1-p14": {
+              "missing": 2,
+              "invented": 0,
+              "n_gt": 22
+            },
+            "s4-b51474f1-p17": {
+              "missing": 2,
+              "invented": 5,
+              "n_gt": 30
+            },
+            "s4-b51474f1-p19": {
+              "missing": 0,
+              "invented": 1,
+              "n_gt": 84
+            },
+            "s4-b51474f1-p22": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 32
+            },
+            "s4-2df82718-p01": {
+              "missing": 0,
+              "invented": 4,
+              "n_gt": 85
+            },
+            "s4-808e12ca-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 83
+            },
+            "s4-6f4ec683-p01": {
+              "missing": 1,
+              "invented": 0,
+              "n_gt": 161
+            },
+            "s4-2fe26a47-p01": {
+              "missing": 0,
+              "invented": 1,
+              "n_gt": 132
+            },
+            "s4-fb93a47b-p01": {
+              "missing": 0,
+              "invented": 3,
+              "n_gt": 96
+            },
+            "s4-e1e83981-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 84
+            },
+            "s4-aa2a82aa-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 75
+            },
+            "s4-340bbb96-p01": {
+              "missing": 0,
+              "invented": 5,
+              "n_gt": 51
+            },
+            "s4-340bbb96-p02": {
+              "missing": 0,
+              "invented": 12,
+              "n_gt": 23
+            },
+            "s4-340bbb96-p04": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 0
+            },
+            "s4-eb269be3-p02": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 35
+            },
+            "s4-eb269be3-p03": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 4
+            },
+            "s4-7edc1c67-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 42
+            },
+            "s4-89e49d58-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 60
+            },
+            "s4-e58ae59b-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 32
+            },
+            "s4-aabe28da-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 39
+            }
+          }
+        },
+        "invented_total": 127,
+        "silent_omissions": 0,
+        "silent_omission_ids": [],
+        "suspect_omissions": 0,
+        "nondeterministic_pages": 0,
+        "nondeterministic_ids": [],
+        "errors": 0,
+        "errors_run2": 0,
+        "truncated_pages": 0,
+        "truncated_ids": [],
+        "truncated_run2": 0,
+        "s_per_page": 2.2259
+      },
+      "paddle_vl": {
+        "s1": {
+          "numbers": {
+            "tp": 2208,
+            "n_gt": 3600,
+            "n_pred": 2215,
+            "recall": 0.6133,
+            "precision": 0.9968
+          },
+          "words": {
+            "tp": 6240,
+            "n_gt": 7624,
+            "n_pred": 6998,
+            "recall": 0.8185,
+            "precision": 0.8917
+          },
+          "diacritic_words": {
+            "tp": 4888,
+            "n_gt": 5830,
+            "n_pred": 5073,
+            "recall": 0.8384,
+            "precision": 0.9635
+          }
+        },
+        "s2": {
+          "numbers": {
+            "tp": 2238,
+            "n_gt": 3600,
+            "n_pred": 2351,
+            "recall": 0.6217,
+            "precision": 0.9519
+          },
+          "words": {
+            "tp": 6261,
+            "n_gt": 7624,
+            "n_pred": 7463,
+            "recall": 0.8212,
+            "precision": 0.8389
+          },
+          "diacritic_words": {
+            "tp": 4912,
+            "n_gt": 5830,
+            "n_pred": 5805,
+            "recall": 0.8425,
+            "precision": 0.8462
+          }
+        },
+        "s3": {
+          "rows_gt": 56,
+          "codes_found": 56,
+          "scores_correct": 56,
+          "spurious_codes": 0
+        },
+        "s4_sample": {
+          "missing": 15,
+          "invented": 34,
+          "n_gt": 1807,
+          "rate": 0.0083,
+          "errors": 0,
+          "per_page": {
+            "s4-b51474f1-p02": {
+              "missing": 1,
+              "invented": 1,
+              "n_gt": 172
+            },
+            "s4-b51474f1-p03": {
+              "missing": 1,
+              "invented": 0,
+              "n_gt": 249
+            },
+            "s4-b51474f1-p10": {
+              "missing": 1,
+              "invented": 2,
+              "n_gt": 146
+            },
+            "s4-b51474f1-p12": {
+              "missing": 1,
+              "invented": 3,
+              "n_gt": 70
+            },
+            "s4-b51474f1-p14": {
+              "missing": 3,
+              "invented": 0,
+              "n_gt": 22
+            },
+            "s4-b51474f1-p17": {
+              "missing": 2,
+              "invented": 5,
+              "n_gt": 30
+            },
+            "s4-b51474f1-p19": {
+              "missing": 1,
+              "invented": 1,
+              "n_gt": 84
+            },
+            "s4-b51474f1-p22": {
+              "missing": 1,
+              "invented": 0,
+              "n_gt": 32
+            },
+            "s4-2df82718-p01": {
+              "missing": 0,
+              "invented": 5,
+              "n_gt": 85
+            },
+            "s4-808e12ca-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 83
+            },
+            "s4-6f4ec683-p01": {
+              "missing": 2,
+              "invented": 0,
+              "n_gt": 161
+            },
+            "s4-2fe26a47-p01": {
+              "missing": 0,
+              "invented": 1,
+              "n_gt": 132
+            },
+            "s4-fb93a47b-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 96
+            },
+            "s4-e1e83981-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 84
+            },
+            "s4-aa2a82aa-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 75
+            },
+            "s4-340bbb96-p01": {
+              "missing": 0,
+              "invented": 4,
+              "n_gt": 51
+            },
+            "s4-340bbb96-p02": {
+              "missing": 0,
+              "invented": 11,
+              "n_gt": 23
+            },
+            "s4-340bbb96-p04": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 0
+            },
+            "s4-eb269be3-p02": {
+              "missing": 1,
+              "invented": 0,
+              "n_gt": 35
+            },
+            "s4-eb269be3-p03": {
+              "missing": 1,
+              "invented": 0,
+              "n_gt": 4
+            },
+            "s4-7edc1c67-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 42
+            },
+            "s4-89e49d58-p01": {
+              "missing": 0,
+              "invented": 1,
+              "n_gt": 60
+            },
+            "s4-e58ae59b-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 32
+            },
+            "s4-aabe28da-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 39
+            }
+          }
+        },
+        "invented_total": 154,
+        "silent_omissions": 6,
+        "silent_omission_ids": [
+          "s1-tb153-p03",
+          "s1-tb141-p01",
+          "s1-tb141-p02",
+          "s2-tb153-p03",
+          "s2-tb141-p01",
+          "s2-tb141-p02"
+        ],
+        "suspect_omissions": 0,
+        "nondeterministic_pages": 0,
+        "nondeterministic_ids": [],
+        "errors": 0,
+        "errors_run2": 0,
+        "truncated_pages": 0,
+        "truncated_ids": [],
+        "truncated_run2": 0,
+        "s_per_page": 5.8314
+      },
+      "vlm_mineru25": {
+        "s1": {
+          "numbers": {
+            "tp": 945,
+            "n_gt": 3600,
+            "n_pred": 2164,
+            "recall": 0.2625,
+            "precision": 0.4367
+          },
+          "words": {
+            "tp": 1630,
+            "n_gt": 7624,
+            "n_pred": 13532,
+            "recall": 0.2138,
+            "precision": 0.1205
+          },
+          "diacritic_words": {
+            "tp": 771,
+            "n_gt": 5830,
+            "n_pred": 6853,
+            "recall": 0.1322,
+            "precision": 0.1125
+          }
+        },
+        "s2": {
+          "numbers": {
+            "tp": 891,
+            "n_gt": 3600,
+            "n_pred": 4647,
+            "recall": 0.2475,
+            "precision": 0.1917
+          },
+          "words": {
+            "tp": 1604,
+            "n_gt": 7624,
+            "n_pred": 6320,
+            "recall": 0.2104,
+            "precision": 0.2538
+          },
+          "diacritic_words": {
+            "tp": 898,
+            "n_gt": 5830,
+            "n_pred": 2851,
+            "recall": 0.154,
+            "precision": 0.315
+          }
+        },
+        "s3": {
+          "rows_gt": 56,
+          "codes_found": 56,
+          "scores_correct": 56,
+          "spurious_codes": 0
+        },
+        "s4_sample": {
+          "missing": 1005,
+          "invented": 1133,
+          "n_gt": 1807,
+          "rate": 0.5562,
+          "errors": 0,
+          "per_page": {
+            "s4-b51474f1-p02": {
+              "missing": 7,
+              "invented": 2,
+              "n_gt": 172
+            },
+            "s4-b51474f1-p03": {
+              "missing": 248,
+              "invented": 0,
+              "n_gt": 249
+            },
+            "s4-b51474f1-p10": {
+              "missing": 141,
+              "invented": 676,
+              "n_gt": 146
+            },
+            "s4-b51474f1-p12": {
+              "missing": 69,
+              "invented": 0,
+              "n_gt": 70
+            },
+            "s4-b51474f1-p14": {
+              "missing": 21,
+              "invented": 0,
+              "n_gt": 22
+            },
+            "s4-b51474f1-p17": {
+              "missing": 29,
+              "invented": 0,
+              "n_gt": 30
+            },
+            "s4-b51474f1-p19": {
+              "missing": 83,
+              "invented": 0,
+              "n_gt": 84
+            },
+            "s4-b51474f1-p22": {
+              "missing": 30,
+              "invented": 0,
+              "n_gt": 32
+            },
+            "s4-2df82718-p01": {
+              "missing": 13,
+              "invented": 2,
+              "n_gt": 85
+            },
+            "s4-808e12ca-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 83
+            },
+            "s4-6f4ec683-p01": {
+              "missing": 9,
+              "invented": 0,
+              "n_gt": 161
+            },
+            "s4-2fe26a47-p01": {
+              "missing": 100,
+              "invented": 303,
+              "n_gt": 132
+            },
+            "s4-fb93a47b-p01": {
+              "missing": 96,
+              "invented": 0,
+              "n_gt": 96
+            },
+            "s4-e1e83981-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 84
+            },
+            "s4-aa2a82aa-p01": {
+              "missing": 12,
+              "invented": 0,
+              "n_gt": 75
+            },
+            "s4-340bbb96-p01": {
+              "missing": 3,
+              "invented": 4,
+              "n_gt": 51
+            },
+            "s4-340bbb96-p02": {
+              "missing": 4,
+              "invented": 6,
+              "n_gt": 23
+            },
+            "s4-340bbb96-p04": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 0
+            },
+            "s4-eb269be3-p02": {
+              "missing": 6,
+              "invented": 0,
+              "n_gt": 35
+            },
+            "s4-eb269be3-p03": {
+              "missing": 4,
+              "invented": 0,
+              "n_gt": 4
+            },
+            "s4-7edc1c67-p01": {
+              "missing": 36,
+              "invented": 0,
+              "n_gt": 42
+            },
+            "s4-89e49d58-p01": {
+              "missing": 59,
+              "invented": 140,
+              "n_gt": 60
+            },
+            "s4-e58ae59b-p01": {
+              "missing": 26,
+              "invented": 0,
+              "n_gt": 32
+            },
+            "s4-aabe28da-p01": {
+              "missing": 9,
+              "invented": 0,
+              "n_gt": 39
+            }
+          }
+        },
+        "invented_total": 6415,
+        "silent_omissions": 30,
+        "silent_omission_ids": [
+          "s1-tb71-p04",
+          "s1-tb71-p11",
+          "s1-tb71-p13",
+          "s1-tb124-p03",
+          "s1-tb124-p06",
+          "s1-tb153-p01",
+          "s1-tb153-p03",
+          "s1-tb153-p04",
+          "s1-tb141-p01",
+          "s1-tb141-p02",
+          "s1-tb141-p03",
+          "s2-tb71-p11",
+          "s2-tb71-p13",
+          "s2-tb124-p04",
+          "s2-tb124-p06",
+          "s2-tb153-p03",
+          "s2-tb153-p04",
+          "s2-tb141-p01",
+          "s2-tb141-p02",
+          "s2-tb141-p03",
+          "s4-b51474f1-p03",
+          "s4-b51474f1-p12",
+          "s4-b51474f1-p14",
+          "s4-b51474f1-p17",
+          "s4-b51474f1-p19",
+          "s4-b51474f1-p22",
+          "s4-fb93a47b-p01",
+          "s4-eb269be3-p03",
+          "s4-7edc1c67-p01",
+          "s4-e58ae59b-p01"
+        ],
+        "suspect_omissions": 14,
+        "nondeterministic_pages": 0,
+        "nondeterministic_ids": [],
+        "errors": 0,
+        "errors_run2": 0,
+        "truncated_pages": 48,
+        "truncated_ids": [
+          "s1-tb71-p04",
+          "s1-tb71-p06",
+          "s1-tb71-p08",
+          "s1-tb71-p12",
+          "s1-tb71-p13",
+          "s1-tb124-p03",
+          "s1-tb152-p02",
+          "s1-tb153-p01",
+          "s1-tb153-p02",
+          "s1-tb153-p03",
+          "s1-tb153-p04",
+          "s1-tb141-p01",
+          "s1-tb141-p02",
+          "s1-tb141-p03",
+          "s2-tb71-p03",
+          "s2-tb71-p06",
+          "s2-tb71-p08",
+          "s2-tb71-p09",
+          "s2-tb71-p12",
+          "s2-tb124-p02",
+          "s2-tb124-p04",
+          "s2-tb152-p02",
+          "s2-tb153-p03",
+          "s2-tb153-p04",
+          "s2-tb141-p01",
+          "s2-tb141-p02",
+          "s2-tb141-p03",
+          "s4-b51474f1-p01",
+          "s4-b51474f1-p04",
+          "s4-b51474f1-p06",
+          "s4-b51474f1-p09",
+          "s4-b51474f1-p10",
+          "s4-b51474f1-p11",
+          "s4-b51474f1-p20",
+          "s4-b51474f1-p22",
+          "s4-b51474f1-p24",
+          "s4-b51474f1-p25",
+          "s4-b51474f1-p27",
+          "s4-2fe26a47-p01",
+          "s4-fb93a47b-p01",
+          "s4-aa2a82aa-p02",
+          "s4-aa2a82aa-p03",
+          "s4-eb269be3-p01",
+          "s4-eb269be3-p03",
+          "s4-10414f97-p01",
+          "s4-10414f97-p03",
+          "s4-89e49d58-p01",
+          "s4-89e49d58-p02"
+        ],
+        "truncated_run2": 21,
+        "s_per_page": 14.198
+      },
+      "vlm_dotsocr": {
+        "s1": {
+          "numbers": {
+            "tp": 1610,
+            "n_gt": 3600,
+            "n_pred": 2163,
+            "recall": 0.4472,
+            "precision": 0.7443
+          },
+          "words": {
+            "tp": 5775,
+            "n_gt": 7624,
+            "n_pred": 6896,
+            "recall": 0.7575,
+            "precision": 0.8374
+          },
+          "diacritic_words": {
+            "tp": 4386,
+            "n_gt": 5830,
+            "n_pred": 5173,
+            "recall": 0.7523,
+            "precision": 0.8479
+          }
+        },
+        "s2": {
+          "numbers": {
+            "tp": 1664,
+            "n_gt": 3600,
+            "n_pred": 2124,
+            "recall": 0.4622,
+            "precision": 0.7834
+          },
+          "words": {
+            "tp": 6002,
+            "n_gt": 7624,
+            "n_pred": 6898,
+            "recall": 0.7873,
+            "precision": 0.8701
+          },
+          "diacritic_words": {
+            "tp": 4486,
+            "n_gt": 5830,
+            "n_pred": 4835,
+            "recall": 0.7695,
+            "precision": 0.9278
+          }
+        },
+        "s3": {
+          "rows_gt": 56,
+          "codes_found": 56,
+          "scores_correct": 56,
+          "spurious_codes": 0
+        },
+        "s4_sample": {
+          "missing": 48,
+          "invented": 34,
+          "n_gt": 1807,
+          "rate": 0.0266,
+          "errors": 0,
+          "per_page": {
+            "s4-b51474f1-p02": {
+              "missing": 2,
+              "invented": 1,
+              "n_gt": 172
+            },
+            "s4-b51474f1-p03": {
+              "missing": 1,
+              "invented": 0,
+              "n_gt": 249
+            },
+            "s4-b51474f1-p10": {
+              "missing": 1,
+              "invented": 2,
+              "n_gt": 146
+            },
+            "s4-b51474f1-p12": {
+              "missing": 22,
+              "invented": 2,
+              "n_gt": 70
+            },
+            "s4-b51474f1-p14": {
+              "missing": 3,
+              "invented": 1,
+              "n_gt": 22
+            },
+            "s4-b51474f1-p17": {
+              "missing": 1,
+              "invented": 4,
+              "n_gt": 30
+            },
+            "s4-b51474f1-p19": {
+              "missing": 1,
+              "invented": 1,
+              "n_gt": 84
+            },
+            "s4-b51474f1-p22": {
+              "missing": 1,
+              "invented": 0,
+              "n_gt": 32
+            },
+            "s4-2df82718-p01": {
+              "missing": 0,
+              "invented": 5,
+              "n_gt": 85
+            },
+            "s4-808e12ca-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 83
+            },
+            "s4-6f4ec683-p01": {
+              "missing": 2,
+              "invented": 0,
+              "n_gt": 161
+            },
+            "s4-2fe26a47-p01": {
+              "missing": 5,
+              "invented": 1,
+              "n_gt": 132
+            },
+            "s4-fb93a47b-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 96
+            },
+            "s4-e1e83981-p01": {
+              "missing": 2,
+              "invented": 2,
+              "n_gt": 84
+            },
+            "s4-aa2a82aa-p01": {
+              "missing": 4,
+              "invented": 0,
+              "n_gt": 75
+            },
+            "s4-340bbb96-p01": {
+              "missing": 0,
+              "invented": 4,
+              "n_gt": 51
+            },
+            "s4-340bbb96-p02": {
+              "missing": 0,
+              "invented": 11,
+              "n_gt": 23
+            },
+            "s4-340bbb96-p04": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 0
+            },
+            "s4-eb269be3-p02": {
+              "missing": 1,
+              "invented": 0,
+              "n_gt": 35
+            },
+            "s4-eb269be3-p03": {
+              "missing": 1,
+              "invented": 0,
+              "n_gt": 4
+            },
+            "s4-7edc1c67-p01": {
+              "missing": 1,
+              "invented": 0,
+              "n_gt": 42
+            },
+            "s4-89e49d58-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 60
+            },
+            "s4-e58ae59b-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 32
+            },
+            "s4-aabe28da-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 39
+            }
+          }
+        },
+        "invented_total": 1047,
+        "silent_omissions": 8,
+        "silent_omission_ids": [
+          "s1-tb153-p03",
+          "s1-tb153-p04",
+          "s1-tb141-p01",
+          "s1-tb141-p02",
+          "s2-tb153-p03",
+          "s2-tb153-p04",
+          "s2-tb141-p02",
+          "s2-tb141-p03"
+        ],
+        "suspect_omissions": 1,
+        "nondeterministic_pages": 6,
+        "nondeterministic_ids": [
+          "s4-b51474f1-p12",
+          "s4-b51474f1-p15",
+          "s4-b51474f1-p27",
+          "s4-b51474f1-p28",
+          "s4-2fe26a47-p01",
+          "s4-89e49d58-p01"
+        ],
+        "errors": 0,
+        "errors_run2": 0,
+        "truncated_pages": 11,
+        "truncated_ids": [
+          "s1-tb153-p03",
+          "s1-tb153-p04",
+          "s1-tb141-p01",
+          "s1-tb141-p02",
+          "s1-tb141-p03",
+          "s2-tb153-p03",
+          "s2-tb153-p04",
+          "s2-tb141-p01",
+          "s2-tb141-p02",
+          "s2-tb141-p03",
+          "s4-b51474f1-p11"
+        ],
+        "truncated_run2": 1,
+        "s_per_page": 19.9137
+      },
+      "vlm_qwen3vl2b": {
+        "s1": {
+          "numbers": {
+            "tp": 1825,
+            "n_gt": 3600,
+            "n_pred": 4412,
+            "recall": 0.5069,
+            "precision": 0.4136
+          },
+          "words": {
+            "tp": 6077,
+            "n_gt": 7624,
+            "n_pred": 14842,
+            "recall": 0.7971,
+            "precision": 0.4094
+          },
+          "diacritic_words": {
+            "tp": 4709,
+            "n_gt": 5830,
+            "n_pred": 8295,
+            "recall": 0.8077,
+            "precision": 0.5677
+          }
+        },
+        "s2": {
+          "numbers": {
+            "tp": 1573,
+            "n_gt": 3600,
+            "n_pred": 6673,
+            "recall": 0.4369,
+            "precision": 0.2357
+          },
+          "words": {
+            "tp": 5638,
+            "n_gt": 7624,
+            "n_pred": 15946,
+            "recall": 0.7395,
+            "precision": 0.3536
+          },
+          "diacritic_words": {
+            "tp": 4320,
+            "n_gt": 5830,
+            "n_pred": 11123,
+            "recall": 0.741,
+            "precision": 0.3884
+          }
+        },
+        "s3": {
+          "rows_gt": 56,
+          "codes_found": 56,
+          "scores_correct": 56,
+          "spurious_codes": 0
+        },
+        "s4_sample": {
+          "missing": 174,
+          "invented": 4605,
+          "n_gt": 1807,
+          "rate": 0.0963,
+          "errors": 0,
+          "per_page": {
+            "s4-b51474f1-p02": {
+              "missing": 0,
+              "invented": 1,
+              "n_gt": 172
+            },
+            "s4-b51474f1-p03": {
+              "missing": 1,
+              "invented": 0,
+              "n_gt": 249
+            },
+            "s4-b51474f1-p10": {
+              "missing": 12,
+              "invented": 670,
+              "n_gt": 146
+            },
+            "s4-b51474f1-p12": {
+              "missing": 55,
+              "invented": 468,
+              "n_gt": 70
+            },
+            "s4-b51474f1-p14": {
+              "missing": 4,
+              "invented": 4,
+              "n_gt": 22
+            },
+            "s4-b51474f1-p17": {
+              "missing": 4,
+              "invented": 269,
+              "n_gt": 30
+            },
+            "s4-b51474f1-p19": {
+              "missing": 42,
+              "invented": 795,
+              "n_gt": 84
+            },
+            "s4-b51474f1-p22": {
+              "missing": 27,
+              "invented": 998,
+              "n_gt": 32
+            },
+            "s4-2df82718-p01": {
+              "missing": 0,
+              "invented": 5,
+              "n_gt": 85
+            },
+            "s4-808e12ca-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 83
+            },
+            "s4-6f4ec683-p01": {
+              "missing": 3,
+              "invented": 1,
+              "n_gt": 161
+            },
+            "s4-2fe26a47-p01": {
+              "missing": 1,
+              "invented": 2,
+              "n_gt": 132
+            },
+            "s4-fb93a47b-p01": {
+              "missing": 16,
+              "invented": 0,
+              "n_gt": 96
+            },
+            "s4-e1e83981-p01": {
+              "missing": 1,
+              "invented": 1,
+              "n_gt": 84
+            },
+            "s4-aa2a82aa-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 75
+            },
+            "s4-340bbb96-p01": {
+              "missing": 1,
+              "invented": 5,
+              "n_gt": 51
+            },
+            "s4-340bbb96-p02": {
+              "missing": 0,
+              "invented": 11,
+              "n_gt": 23
+            },
+            "s4-340bbb96-p04": {
+              "missing": 0,
+              "invented": 1366,
+              "n_gt": 0
+            },
+            "s4-eb269be3-p02": {
+              "missing": 2,
+              "invented": 1,
+              "n_gt": 35
+            },
+            "s4-eb269be3-p03": {
+              "missing": 1,
+              "invented": 0,
+              "n_gt": 4
+            },
+            "s4-7edc1c67-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 42
+            },
+            "s4-89e49d58-p01": {
+              "missing": 0,
+              "invented": 8,
+              "n_gt": 60
+            },
+            "s4-e58ae59b-p01": {
+              "missing": 0,
+              "invented": 0,
+              "n_gt": 32
+            },
+            "s4-aabe28da-p01": {
+              "missing": 4,
+              "invented": 0,
+              "n_gt": 39
+            }
+          }
+        },
+        "invented_total": 12292,
+        "silent_omissions": 8,
+        "silent_omission_ids": [
+          "s1-tb71-p08",
+          "s1-tb153-p04",
+          "s1-tb141-p01",
+          "s1-tb141-p03",
+          "s2-tb124-p03",
+          "s2-tb153-p03",
+          "s2-tb153-p04",
+          "s2-tb141-p02"
+        ],
+        "suspect_omissions": 5,
+        "nondeterministic_pages": 27,
+        "nondeterministic_ids": [
+          "s4-b51474f1-p01",
+          "s4-b51474f1-p03",
+          "s4-b51474f1-p06",
+          "s4-b51474f1-p07",
+          "s4-b51474f1-p09",
+          "s4-b51474f1-p10",
+          "s4-b51474f1-p11",
+          "s4-b51474f1-p12",
+          "s4-b51474f1-p13",
+          "s4-b51474f1-p14",
+          "s4-b51474f1-p15",
+          "s4-b51474f1-p17",
+          "s4-b51474f1-p18",
+          "s4-b51474f1-p20",
+          "s4-b51474f1-p21",
+          "s4-b51474f1-p22",
+          "s4-b51474f1-p24",
+          "s4-b51474f1-p25",
+          "s4-b51474f1-p26",
+          "s4-b51474f1-p27",
+          "s4-b51474f1-p28",
+          "s4-6f4ec683-p02",
+          "s4-2fe26a47-p02",
+          "s4-ecec39a6-p01",
+          "s4-eb269be3-p02",
+          "s4-eb269be3-p03",
+          "s4-89e49d58-p02"
+        ],
+        "errors": 0,
+        "errors_run2": 0,
+        "truncated_pages": 39,
+        "truncated_ids": [
+          "s1-tb71-p02",
+          "s1-tb71-p08",
+          "s1-tb124-p03",
+          "s1-tb152-p03",
+          "s1-tb153-p03",
+          "s1-tb153-p04",
+          "s1-tb141-p01",
+          "s1-tb141-p02",
+          "s1-tb141-p03",
+          "s2-tb124-p03",
+          "s2-tb124-p05",
+          "s2-tb124-p06",
+          "s2-tb152-p03",
+          "s2-tb153-p02",
+          "s2-tb153-p03",
+          "s2-tb153-p04",
+          "s2-tb141-p01",
+          "s2-tb141-p02",
+          "s2-tb141-p03",
+          "s4-b51474f1-p05",
+          "s4-b51474f1-p06",
+          "s4-b51474f1-p08",
+          "s4-b51474f1-p09",
+          "s4-b51474f1-p10",
+          "s4-b51474f1-p11",
+          "s4-b51474f1-p12",
+          "s4-b51474f1-p15",
+          "s4-b51474f1-p16",
+          "s4-b51474f1-p17",
+          "s4-b51474f1-p19",
+          "s4-b51474f1-p20",
+          "s4-b51474f1-p21",
+          "s4-b51474f1-p22",
+          "s4-b51474f1-p23",
+          "s4-b51474f1-p24",
+          "s4-b51474f1-p25",
+          "s4-b51474f1-p26",
+          "s4-b51474f1-p27",
+          "s4-340bbb96-p04"
+        ],
+        "truncated_run2": 22,
+        "s_per_page": 26.2076
+      }
+    },
+    "decision": {
+      "winner": "cur_rotgate",
+      "passed": [
+        "cur_rotgate"
+      ],
+      "passed_variants": [],
+      "reasons": {
+        "paddle": [
+          "Đ3 có 1 trang bỏ sót im lặng"
+        ],
+        "cur_orient": [
+          "Đ2 số bịa 1110 > cur 472"
+        ],
+        "cur_det_server": [
+          "Đ1 có 21 trang mẫu S4 lỗi thực thi",
+          "Đ1 tỷ lệ lỗi số không thấp hơn cur (hiệu +0.0038)",
+          "Đ1 khoảng tin cậy hiệu [+0.0000, +0.0104] chứa 0"
+        ],
+        "cur_seq2seq": [
+          "Đ1 tỷ lệ lỗi số không thấp hơn cur (hiệu +0.0055)",
+          "Đ2 dòng đúng S3 54 < cur 56",
+          "Đ3 có 4 trang bỏ sót im lặng"
+        ],
+        "cur_dpi400": [
+          "Đ1 tỷ lệ lỗi số không thấp hơn cur (hiệu +0.0000)",
+          "Đ1 khoảng tin cậy hiệu [-0.0015, +0.0018] chứa 0"
+        ],
+        "cur_rotgate": [],
+        "paddle_vl": [
+          "Đ3 có 6 trang bỏ sót im lặng",
+          "Đ5 5.8314 s/trang > 3 × cur (1.8729)"
+        ],
+        "vlm_mineru25": [
+          "Đ1 tỷ lệ lỗi số không thấp hơn cur (hiệu +0.3536)",
+          "Đ2 số bịa 6415 > cur 472",
+          "Đ3 có 30 trang bỏ sót im lặng",
+          "Đ5 14.198 s/trang > 3 × cur (1.8729)"
+        ],
+        "vlm_dotsocr": [
+          "Đ2 số bịa 1047 > cur 472",
+          "Đ3 có 8 trang bỏ sót im lặng",
+          "Đ4 6 trang không tất định",
+          "Đ5 19.9137 s/trang > 3 × cur (1.8729)"
+        ],
+        "vlm_qwen3vl2b": [
+          "Đ1 khoảng tin cậy hiệu [-0.2705, +0.0025] chứa 0",
+          "Đ2 số bịa 12292 > cur 472",
+          "Đ3 có 8 trang bỏ sót im lặng",
+          "Đ4 27 trang không tất định",
+          "Đ5 26.2076 s/trang > 3 × cur (1.8729)"
+        ]
+      },
+      "ci": {
+        "paddle": [
+          -0.16943331425300515,
+          -0.01764705882352941
+        ],
+        "cur_orient": [
+          -0.39535901926444833,
+          -0.026378896882494004
+        ],
+        "cur_det_server": [
+          0.0,
+          0.010416666666666666
+        ],
+        "cur_seq2seq": [
+          0.00186219739292365,
+          0.01044841097083152
+        ],
+        "cur_dpi400": [
+          -0.0014619883040935672,
+          0.0017889087656529517
+        ],
+        "cur_rotgate": [
+          -0.40779702970297027,
+          -0.04743083003952569
+        ],
+        "paddle_vl": [
+          -0.4010462074978204,
+          -0.04292929292929293
+        ],
+        "vlm_mineru25": [
+          0.1318181818181818,
+          0.5818467995802729
+        ],
+        "vlm_dotsocr": [
+          -0.37713139418254765,
+          -0.03010890454836643
+        ],
+        "vlm_qwen3vl2b": [
+          -0.2705286839145107,
+          0.002540650406504065
+        ]
+      }
+    }
+  },
+  "ocr/p0-01/validation.json": {
+    "stability": {
+      "in_process_hashes": [
+        "9f445444bb41f59c683eea834b5bc04f19b5232427e98eb92fd12fb99795cf29",
+        "9f445444bb41f59c683eea834b5bc04f19b5232427e98eb92fd12fb99795cf29"
+      ],
+      "in_process_stable": true,
+      "previous_run_hash": "9f445444bb41f59c683eea834b5bc04f19b5232427e98eb92fd12fb99795cf29",
+      "matches_previous_run": true
+    },
+    "structure": {
+      "errors": [
+        "STT 42: tên ngành rỗng"
+      ],
+      "warnings": [
+        "Mã 7340301 xuất hiện ở STT [27, 28]"
+      ]
+    },
+    "cross_engine": [
+      {
+        "stt": 3,
+        "field": "stt",
+        "paddle": "3",
+        "tesseract": "5"
+      },
+      {
+        "stt": 3,
+        "field": "ma_nganh",
+        "paddle": "7140211",
+        "tesseract": "714O"
+      },
+      {
+        "stt": 5,
+        "field": "ma_nganh",
+        "paddle": "7140213",
+        "tesseract": "7140215"
+      },
+      {
+        "stt": 7,
+        "field": "ten_nganh",
+        "paddle": "Su phm Lch s",
+        "tesseract": "Sư phạm Lịch sử"
+      },
+      {
+        "stt": 9,
+        "field": "ma_nganh",
+        "paddle": "7140231",
+        "tesseract": "7140251"
+      },
+      {
+        "stt": 9,
+        "field": "ten_nganh",
+        "paddle": "Su phm Ting Anh",
+        "tesseract": "Sư phạm Tiếng Anh"
+      },
+      {
+        "stt": 10,
+        "field": "ten_nganh",
+        "paddle": "Sư pham Khoa hoc t nhiên",
+        "tesseract": "Sư phạm Khoa học tự nhiên."
+      },
+      {
+        "stt": 11,
+        "field": "stt",
+        "paddle": "11",
+        "tesseract": "T"
+      },
+      {
+        "stt": 11,
+        "field": "ten_nganh",
+        "paddle": "Su phm Lich s - Đia lý",
+        "tesseract": "Sư phạm Lịch sử - Địa lý"
+      },
+      {
+        "stt": 13,
+        "field": "stt",
+        "paddle": "13",
+        "tesseract": "15"
+      },
+      {
+        "stt": 15,
+        "field": "ten_nganh",
+        "paddle": "Giáo duc Th chát",
+        "tesseract": "Giáo dục Thể chất"
+      },
+      {
+        "stt": 19,
+        "field": "ma_nganh",
+        "paddle": "7229030",
+        "tesseract": "7229050"
+      },
+      {
+        "stt": 20,
+        "field": "stt",
+        "paddle": "20",
+        "tesseract": "2O"
+      },
+      {
+        "stt": 20,
+        "field": "ma_nganh",
+        "paddle": "7310101",
+        "tesseract": "7510101"
+      },
+      {
+        "stt": 21,
+        "field": "ma_nganh",
+        "paddle": "7310205",
+        "tesseract": "7510205"
+      },
+      {
+        "stt": 22,
+        "field": "ma_nganh",
+        "paddle": "7310403",
+        "tesseract": "7510405"
+      },
+      {
+        "stt": 23,
+        "field": "stt",
+        "paddle": "23",
+        "tesseract": "25"
+      },
+      {
+        "stt": 23,
+        "field": "ma_nganh",
+        "paddle": "7310608",
+        "tesseract": "7510608"
+      },
+      {
+        "stt": 24,
+        "field": "ma_nganh",
+        "paddle": "7310630",
+        "tesseract": "7510650"
+      },
+      {
+        "stt": 25,
+        "field": "ma_nganh",
+        "paddle": "7340101",
+        "tesseract": "7540101"
+      },
+      {
+        "stt": 26,
+        "field": "ma_nganh",
+        "paddle": "7340201",
+        "tesseract": "7540201"
+      },
+      {
+        "stt": 27,
+        "field": "ma_nganh",
+        "paddle": "7340301",
+        "tesseract": "7540501"
+      },
+      {
+        "stt": 28,
+        "field": "ma_nganh",
+        "paddle": "7340301ACCA",
+        "tesseract": "7540501 ACCA"
+      },
+      {
+        "stt": 29,
+        "field": "ma_nganh",
+        "paddle": "7340302",
+        "tesseract": "7540502"
+      },
+      {
+        "stt": 30,
+        "field": "stt",
+        "paddle": "30",
+        "tesseract": "5o"
+      },
+      {
+        "stt": 30,
+        "field": "ma_nganh",
+        "paddle": "7380101",
+        "tesseract": "7580101"
+      },
+      {
+        "stt": 31,
+        "field": "stt",
+        "paddle": "31",
+        "tesseract": "5"
+      },
+      {
+        "stt": 31,
+        "field": "ten_nganh",
+        "paddle": "Hóa hoc (Hóa duc, Hóa m phm)",
+        "tesseract": " (Hóa dược, Hóa mỹ phẩm)"
+      },
+      {
+        "stt": 32,
+        "field": "stt",
+        "paddle": "32",
+        "tesseract": "52"
+      },
+      {
+        "stt": 32,
+        "field": "ten_nganh",
+        "paddle": "Toán ng dng",
+        "tesseract": "Toán ứng dung"
+      },
+      {
+        "stt": 33,
+        "field": "stt",
+        "paddle": "33",
+        "tesseract": "55"
+      },
+      {
+        "stt": 34,
+        "field": "stt",
+        "paddle": "34",
+        "tesseract": "54"
+      },
+      {
+        "stt": 34,
+        "field": "ma_nganh",
+        "paddle": "7480103",
+        "tesseract": "7480105"
+      },
+      {
+        "stt": 35,
+        "field": "stt",
+        "paddle": "35",
+        "tesseract": "55"
+      },
+      {
+        "stt": 36,
+        "field": "stt",
+        "paddle": "36",
+        "tesseract": "56"
+      },
+      {
+        "stt": 36,
+        "field": "ten_nganh",
+        "paddle": "Trí tuê nhân tao",
+        "tesseract": "Trí tuệ nhân tao"
+      },
+      {
+        "stt": 37,
+        "field": "stt",
+        "paddle": "37",
+        "tesseract": "57"
+      },
+      {
+        "stt": 37,
+        "field": "ten_nganh",
+        "paddle": "Công nghê k thuât ô tô",
+        "tesseract": "Công nghệ kỹ thuật ô tô"
+      },
+      {
+        "stt": 38,
+        "field": "stt",
+        "paddle": "38",
+        "tesseract": "58"
+      },
+      {
+        "stt": 38,
+        "field": "ten_nganh",
+        "paddle": "Công ngh k thut hóa hoc",
+        "tesseract": "Công nghệ kỹ thuật hóa học"
+      },
+      {
+        "stt": 39,
+        "field": "stt",
+        "paddle": "39",
+        "tesseract": "59"
+      },
+      {
+        "stt": 39,
+        "field": "ten_nganh",
+        "paddle": "Logistics và Qun lý chui cung ng",
+        "tesseract": "Logistics và Quản lý chuỗi cung ứng."
+      },
+      {
+        "stt": 40,
+        "field": "stt",
+        "paddle": "40",
+        "tesseract": "40."
+      },
+      {
+        "stt": 40,
+        "field": "ten_nganh",
+        "paddle": "Ký thut cơ khí đng lc",
+        "tesseract": "Kỹ thuật cơ khí động lực"
+      },
+      {
+        "stt": 41,
+        "field": "stt",
+        "paddle": "41",
+        "tesseract": "4"
+      },
+      {
+        "stt": 42,
+        "field": "ten_nganh",
+        "paddle": "Ký thuât điên t - vin thông (Thit kvi mch)",
+        "tesseract": " "
+      },
+      {
+        "stt": 43,
+        "field": "stt",
+        "paddle": "43",
+        "tesseract": "4+5"
+      },
+      {
+        "stt": 43,
+        "field": "ten_nganh",
+        "paddle": "K thut điu khin và T đng hóa",
+        "tesseract": "Kỹ thuật điều khiến và Tư động hóa"
+      },
+      {
+        "stt": 44,
+        "field": "ten_nganh",
+        "paddle": "Vt lý ký thut (Chuyên ngành Bán dn)",
+        "tesseract": "Vật lý kỹ thuật (Chuyên ngành Bán dẫn)"
+      },
+      {
+        "stt": 46,
+        "field": "ten_nganh",
+        "paddle": "K thut xây dng",
+        "tesseract": "Kỹ thuật xây dưng"
+      },
+      {
+        "stt": 49,
+        "field": "ma_nganh",
+        "paddle": "7810103",
+        "tesseract": "7810105"
+      },
+      {
+        "stt": 49,
+        "field": "ten_nganh",
+        "paddle": "Qun tri dich vu du lich và l hành",
+        "tesseract": "Quản trị dịch vụ du lịch và lữ hành"
+      },
+      {
+        "stt": 50,
+        "field": "stt",
+        "paddle": "50",
+        "tesseract": "5o"
+      },
+      {
+        "stt": 50,
+        "field": "ten_nganh",
+        "paddle": "Qun tr khách sn",
+        "tesseract": "Quản trị khách san"
+      },
+      {
+        "stt": 52,
+        "field": "ma_nganh",
+        "paddle": "7850103",
+        "tesseract": "7850105"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          407,
+          221,
+          824,
+          235
+        ],
+        "paddle": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Sinh); (Toán, Lý, Giáo duc KT& PL)",
+        "tesseract": "(Toán, Lý, Hóa) (Toán, Lý, Anh), (Toán, Lý, Sinh); (Toán, Lý, GiáoducKT& PL)"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          407,
+          317,
+          824,
+          331
+        ],
+        "paddle": "(Văn, S, Đa); (Văn, Sr, Giáo dc KT&PL); (Văn, Sr, Anh); (Văn, Toán, S);",
+        "tesseract": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT&P! ); (Văn, Sử, Anh); (Văn, Toán, Sử),"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          406,
+          332,
+          748,
+          349
+        ],
+        "paddle": "(Toán, S, Giáo dc KT&PL); (Toán, S, Đa); (Toán, S, Anh)",
+        "tesseract": ""
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          406,
+          359,
+          826,
+          376
+        ],
+        "paddle": "(Vn, S, Đa); (Vn, Đa, Giáo dc KT&PL); (Vn, Ton, Đa); (Vn, Đa, Anh);",
+        "tesseract": "(Văn, Sử, Địa); (Văn, Địa, Giáo dục KT&P!); (Văn, Toán, Địa); (Văn, Địa, Anh),"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          407,
+          377,
+          747,
+          391
+        ],
+        "paddle": "(Toán, Đa, Anh); (Toán, S, Đa); (Toán, Đa, Giáo dc KT&PL)",
+        "tesseract": "(Toán, Địa, Anh); (Toán, Sử, Địa); (Toán, Địa, Giáo dục KT&P!)"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          407,
+          478,
+          799,
+          492
+        ],
+        "paddle": "(Toán, S, Đia); (Văn, S, Đia); (Văn, S, Giáo duc KT&PL);",
+        "tesseract": "(Toán, Sử, Địa); (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT&PL);"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          406,
+          519,
+          550,
+          536
+        ],
+        "paddle": "(Toán, Văn, NK GDMN)",
+        "tesseract": "(Toán, Văn, NKGDMN)."
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          406,
+          572,
+          662,
+          589
+        ],
+        "paddle": "(Văn, S, Đa); (Văn, Sr, Giáo dc KT&PL);",
+        "tesseract": "(Văn, Sử, Địa); (Văn, Sử, Giáo dụcKT&P! );"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          407,
+          593,
+          774,
+          607
+        ],
+        "paddle": "(Văn, Đa, Giáo dc KT&PL); (Toán, Văn, Anh); (Văn, S, Anh);",
+        "tesseract": "(Văn, Địa, Giáo dục KT&P! ); (Toán, Văn, Anh); (Văn, Sử,Anh);"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          406,
+          609,
+          761,
+          625
+        ],
+        "paddle": "(Văn, Toán, Giáo duc KT&PL); (Toán, Anh, Giáo dc KT&PL)",
+        "tesseract": "(Văn, Toán, Giáo dụcKT8P! }; (Toán, Anh, Giáo dục KT&P!)"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          404,
+          730,
+          798,
+          751
+        ],
+        "paddle": "(Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Văn, Ting Trung);",
+        "tesseract": "(L oán, Lý, Anh); (Toán, Văn, Anh); (Toán, Văn, Tiếng Trung);"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          406,
+          775,
+          823,
+          792
+        ],
+        "paddle": "(Văn, S, Đa); (Văn, S, Giáo dc KT&PL); (Vn, S, Anh); (Văn, Đa, Anh)",
+        "tesseract": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT&PL }; (Văn, Sử, Anh); (Văn, Địa, Anh)"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          406,
+          799,
+          851,
+          816
+        ],
+        "paddle": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Hóa, Anh)",
+        "tesseract": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Hóa, Anh);"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          407,
+          844,
+          702,
+          858
+        ],
+        "paddle": "(Văn, S, Đia):; (Văn, Toán, Giáo duc KT&PL);",
+        "tesseract": "(Văn, Sử, Địa); (Văn, Toán, Giáo dục KI&PL);"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          406,
+          878,
+          599,
+          895
+        ],
+        "paddle": "(Toán, Anh, Giáo duc KT&PL)",
+        "tesseract": "(Toán, Anh, Giáo dục KT&PL)"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          406,
+          904,
+          796,
+          921
+        ],
+        "paddle": "(Toán, L, Hóa); (Văn, S, Đa); (Văn, S, Giáo dc KT&PL);",
+        "tesseract": "(Toán, Lý, Hóa); (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT&PL);"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          407,
+          1037,
+          848,
+          1051
+        ],
+        "paddle": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Văn, Toán, Giáo duc KT&PL);",
+        "tesseract": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Văn, Toán, Giáo dục KT&PL},"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          405,
+          1052,
+          811,
+          1069
+        ],
+        "paddle": "(Văn, Toán, Anh); (Văn, Toán, Ting Trung); (Toán, Anh, Giáo dc KT&PL);",
+        "tesseract": ""
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          406,
+          1069,
+          656,
+          1086
+        ],
+        "paddle": "(Văn, Anh, Giáo duc KT&PL); (Toán, Anh, Tin)",
+        "tesseract": "(Văn, Anh, GiáodụcKT&P!). (Toán, Anh, Tin)"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          406,
+          1179,
+          712,
+          1196
+        ],
+        "paddle": "(Toán, Anh, Tin); (Toán, Anh, Giáo duc KT&PL)",
+        "tesseract": "(Toán, Anh, Tin); (Toán, Anh, Giáo dục KT&PL)"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          1280,
+          162,
+          1586,
+          179
+        ],
+        "paddle": "(Toán, Anh, Giáo duc KT&PL); (Toán, Anh, Tin)",
+        "tesseract": "(Toán, Anh, Giáo dục KT&PL); (Toán, Anh, Tin)"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          1281,
+          270,
+          1709,
+          284
+        ],
+        "paddle": "(Toán, Hóa, Đia); (Toán, Hóa, Giáo duc KT&PL); (Văn, Toán, Hóa);",
+        "tesseract": "(Toán, Hóa, Địa); (Toán, Hóa, Giáo dục KT&PL); (Văn, Toán, Hóa);"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          1280,
+          285,
+          1718,
+          302
+        ],
+        "paddle": "(Văn, Lý, Hóa); (Văn, Hóa, Sinh); (Toán, Hóa, Anh); (Văn, Hóa, Anh)",
+        "tesseract": ""
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          1280,
+          562,
+          1586,
+          579
+        ],
+        "paddle": "(Toán, Giáo dc KT&PL, Anh); (Toán, Anh, Tin)",
+        "tesseract": "(Toán, Giáo dục KT&PL, Anh); (Toán, Anh, Tin)."
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          1281,
+          702,
+          1671,
+          716
+        ],
+        "paddle": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Sinh); (Toán, Lý, Sr);",
+        "tesseract": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Sinh); (Toán, Lý, Sử);"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          1279,
+          732,
+          1638,
+          750
+        ],
+        "paddle": "(Văn, Lý, Sinh); (Văn, Lý, Anh); (Toán, Lý, Giáo duc KT&PL)",
+        "tesseract": "(Văn, Lý, Sinh); (Văn, Lý, Anh); (Toán, Lý, Giáo dục KT&PL)."
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          1280,
+          776,
+          1682,
+          793
+        ],
+        "paddle": "(Toán, Hóa, Đa); (Toán, Hóa, Giáo dc KT&PL); (Toán, Hóa, Sinh);",
+        "tesseract": ""
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          1280,
+          877,
+          1609,
+          894
+        ],
+        "paddle": "(Toán, Hóa, Sinh); (Toán, Sr, Sinh); (Toán, Sinh, Văn);",
+        "tesseract": "(Toán, Hóa, Sinh); (Toán, Sử, Sinh); (Toán, Sinh, Văn);"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          1280,
+          937,
+          1695,
+          954
+        ],
+        "paddle": "(Văn, Sr, Đa); (Toán, Văn, Anh); (Vn, S, Anh); (Văn, Sr, Giáo dc KT&PL)",
+        "tesseract": "(Văn, Sử, Địa); (Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Sử, Giáo dụcKT&P! )"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          1280,
+          965,
+          1653,
+          981
+        ],
+        "paddle": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Sr, Giáo dc KT&PL);",
+        "tesseract": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Sử, Giáo dục KT&PL),"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          1280,
+          998,
+          1616,
+          1012
+        ],
+        "paddle": "(Văn, Toán, Giáo dc KT&PL); (Văn, Toán, Ting Trung);",
+        "tesseract": "(Văn, Toán, Giáo dục KT&PL), (Văn, Toán, Tiêng Trung);"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          1279,
+          1078,
+          1679,
+          1095
+        ],
+        "paddle": "(Toán, Đa, Giáo duc KT&PL); (Toán, Hóa, Sinh); (Toán, Sinh, Đa);",
+        "tesseract": "(Toán, Địa, Giáo dục KT&PL); (Toán, Hóa, Sinh); (Toán, Sinh, Địa);"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          1281,
+          1097,
+          1658,
+          1111
+        ],
+        "paddle": "(Văn, Toán, Đa); (Văn, Sinh, Đa); (Văn, Đa, Giáo duc KT&PL);",
+        "tesseract": "(Văn, Toán, Địa); (Văn, Sinh, Địa); (Văn, Địa, Giáo dục KT&PL);"
+      },
+      {
+        "stt": null,
+        "field": "to_hop_line",
+        "box": [
+          1280,
+          1189,
+          1569,
+          1203
+        ],
+        "paddle": "(Toán, Hóa, Giáo duc KT&PL); (Toán, Hóa, Anh)",
+        "tesseract": "(Toán, Hóa, Giáo dục KT&PL); (Toán, Hóa, Anh)"
+      }
+    ],
+    "combos": {
+      "raw_ocr": [
+        {
+          "box": [
+            407,
+            221,
+            824,
+            235
+          ],
+          "reason": "subjects",
+          "group": "Toán, Lý, GiáoducKT& PL",
+          "unknown": [
+            "GiáoducKT& PL"
+          ],
+          "n_subjects": 3
+        },
+        {
+          "box": [
+            407,
+            317,
+            824,
+            331
+          ],
+          "reason": "subjects",
+          "group": "Văn, Sử, Giáo dục KT&P! ",
+          "unknown": [
+            "Giáo dục KT&P!"
+          ],
+          "n_subjects": 3
+        },
+        {
+          "box": [
+            406,
+            332,
+            748,
+            349
+          ],
+          "reason": "no_group",
+          "text": ""
+        },
+        {
+          "box": [
+            406,
+            359,
+            826,
+            376
+          ],
+          "reason": "subjects",
+          "group": "Văn, Địa, Giáo dục KT&P!",
+          "unknown": [
+            "Giáo dục KT&P!"
+          ],
+          "n_subjects": 3
+        },
+        {
+          "box": [
+            407,
+            377,
+            747,
+            391
+          ],
+          "reason": "subjects",
+          "group": "Toán, Địa, Giáo dục KT&P!",
+          "unknown": [
+            "Giáo dục KT&P!"
+          ],
+          "n_subjects": 3
+        },
+        {
+          "box": [
+            406,
+            519,
+            550,
+            536
+          ],
+          "reason": "subjects",
+          "group": "Toán, Văn, NKGDMN",
+          "unknown": [
+            "NKGDMN"
+          ],
+          "n_subjects": 3
+        },
+        {
+          "box": [
+            406,
+            572,
+            662,
+            589
+          ],
+          "reason": "subjects",
+          "group": "Văn, Sử, Giáo dụcKT&P! ",
+          "unknown": [
+            "Giáo dụcKT&P!"
+          ],
+          "n_subjects": 3
+        },
+        {
+          "box": [
+            407,
+            593,
+            774,
+            607
+          ],
+          "reason": "subjects",
+          "group": "Văn, Địa, Giáo dục KT&P! ",
+          "unknown": [
+            "Giáo dục KT&P!"
+          ],
+          "n_subjects": 3
+        },
+        {
+          "box": [
+            406,
+            609,
+            761,
+            625
+          ],
+          "reason": "unbalanced",
+          "text": "(Văn, Toán, Giáo dụcKT8P! }; (Toán, Anh, Giáo dục KT&P!)"
+        },
+        {
+          "box": [
+            404,
+            730,
+            798,
+            751
+          ],
+          "reason": "subjects",
+          "group": "L oán, Lý, Anh",
+          "unknown": [
+            "L oán"
+          ],
+          "n_subjects": 3
+        },
+        {
+          "box": [
+            406,
+            775,
+            823,
+            792
+          ],
+          "reason": "unbalanced",
+          "text": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT&PL }; (Văn, Sử, Anh); (Văn, Địa, Anh)"
+        },
+        {
+          "box": [
+            407,
+            844,
+            702,
+            858
+          ],
+          "reason": "subjects",
+          "group": "Văn, Toán, Giáo dục KI&PL",
+          "unknown": [
+            "Giáo dục KI&PL"
+          ],
+          "n_subjects": 3
+        },
+        {
+          "box": [
+            407,
+            1037,
+            848,
+            1051
+          ],
+          "reason": "unbalanced",
+          "text": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Văn, Toán, Giáo dục KT&PL},"
+        },
+        {
+          "box": [
+            405,
+            1052,
+            811,
+            1069
+          ],
+          "reason": "no_group",
+          "text": ""
+        },
+        {
+          "box": [
+            406,
+            1069,
+            656,
+            1086
+          ],
+          "reason": "subjects",
+          "group": "Văn, Anh, GiáodụcKT&P!",
+          "unknown": [
+            "GiáodụcKT&P!"
+          ],
+          "n_subjects": 3
+        },
+        {
+          "box": [
+            1280,
+            285,
+            1718,
+            302
+          ],
+          "reason": "no_group",
+          "text": ""
+        },
+        {
+          "box": [
+            1280,
+            626,
+            1509,
+            643
+          ],
+          "reason": "subjects",
+          "group": "T oán, Hóa, Anh",
+          "unknown": [
+            "T oán"
+          ],
+          "n_subjects": 3
+        },
+        {
+          "box": [
+            1280,
+            626,
+            1509,
+            643
+          ],
+          "reason": "subjects",
+          "group": "T oán, Anh, Tin",
+          "unknown": [
+            "T oán"
+          ],
+          "n_subjects": 3
+        },
+        {
+          "box": [
+            1280,
+            776,
+            1682,
+            793
+          ],
+          "reason": "no_group",
+          "text": ""
+        },
+        {
+          "box": [
+            1280,
+            937,
+            1695,
+            954
+          ],
+          "reason": "subjects",
+          "group": "Văn, Sử, Giáo dụcKT&P! ",
+          "unknown": [
+            "Giáo dụcKT&P!"
+          ],
+          "n_subjects": 3
+        },
+        {
+          "box": [
+            1280,
+            998,
+            1616,
+            1012
+          ],
+          "reason": "subjects",
+          "group": "Văn, Toán, Tiêng Trung",
+          "unknown": [
+            "Tiêng Trung"
+          ],
+          "n_subjects": 3
+        }
+      ],
+      "after_corrections": [
+        {
+          "box": [
+            406,
+            332,
+            748,
+            349
+          ],
+          "reason": "no_group",
+          "text": ""
+        },
+        {
+          "box": [
+            406,
+            609,
+            761,
+            625
+          ],
+          "reason": "unbalanced",
+          "text": "(Văn, Toán, Giáo dụcKT8P! }; (Toán, Anh, Giáo dục kinh tế và pháp luật)"
+        },
+        {
+          "box": [
+            406,
+            775,
+            823,
+            792
+          ],
+          "reason": "unbalanced",
+          "text": "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT&PL }; (Văn, Sử, Anh); (Văn, Địa, Anh)"
+        },
+        {
+          "box": [
+            407,
+            1037,
+            848,
+            1051
+          ],
+          "reason": "unbalanced",
+          "text": "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Văn, Toán, Giáo dục KT&PL},"
+        },
+        {
+          "box": [
+            405,
+            1052,
+            811,
+            1069
+          ],
+          "reason": "no_group",
+          "text": ""
+        },
+        {
+          "box": [
+            1280,
+            285,
+            1718,
+            302
+          ],
+          "reason": "no_group",
+          "text": ""
+        },
+        {
+          "box": [
+            1280,
+            776,
+            1682,
+            793
+          ],
+          "reason": "no_group",
+          "text": ""
+        }
+      ],
+      "corrections_applied": [
+        {
+          "box": [
+            407,
+            221,
+            824,
+            235
+          ],
+          "raw": "GiáoducKT&PL",
+          "corrected": "Giáo dục kinh tế và pháp luật"
+        },
+        {
+          "box": [
+            407,
+            317,
+            824,
+            331
+          ],
+          "raw": "Giáo dục KT&P!",
+          "corrected": "Giáo dục kinh tế và pháp luật"
+        },
+        {
+          "box": [
+            406,
+            359,
+            826,
+            376
+          ],
+          "raw": "Giáo dục KT&P!",
+          "corrected": "Giáo dục kinh tế và pháp luật"
+        },
+        {
+          "box": [
+            407,
+            377,
+            747,
+            391
+          ],
+          "raw": "Giáo dục KT&P!",
+          "corrected": "Giáo dục kinh tế và pháp luật"
+        },
+        {
+          "box": [
+            406,
+            519,
+            550,
+            536
+          ],
+          "raw": "NKGDMN",
+          "corrected": "Năng khiếu Giáo dục mầm non"
+        },
+        {
+          "box": [
+            406,
+            572,
+            662,
+            589
+          ],
+          "raw": "Giáo dụcKT&P!",
+          "corrected": "Giáo dục kinh tế và pháp luật"
+        },
+        {
+          "box": [
+            407,
+            593,
+            774,
+            607
+          ],
+          "raw": "Giáo dục KT&P!",
+          "corrected": "Giáo dục kinh tế và pháp luật"
+        },
+        {
+          "box": [
+            406,
+            609,
+            761,
+            625
+          ],
+          "raw": "Giáo dục KT&P!",
+          "corrected": "Giáo dục kinh tế và pháp luật"
+        },
+        {
+          "box": [
+            404,
+            730,
+            798,
+            751
+          ],
+          "raw": "L oán",
+          "corrected": "Toán"
+        },
+        {
+          "box": [
+            407,
+            844,
+            702,
+            858
+          ],
+          "raw": "Giáo dục KI&PL",
+          "corrected": "Giáo dục kinh tế và pháp luật"
+        },
+        {
+          "box": [
+            406,
+            1069,
+            656,
+            1086
+          ],
+          "raw": "GiáodụcKT&P!",
+          "corrected": "Giáo dục kinh tế và pháp luật"
+        },
+        {
+          "box": [
+            1280,
+            626,
+            1509,
+            643
+          ],
+          "raw": "T oán",
+          "corrected": "Toán"
+        },
+        {
+          "box": [
+            1280,
+            626,
+            1509,
+            643
+          ],
+          "raw": "T oán",
+          "corrected": "Toán"
+        },
+        {
+          "box": [
+            1280,
+            937,
+            1695,
+            954
+          ],
+          "raw": "Giáo dụcKT&P!",
+          "corrected": "Giáo dục kinh tế và pháp luật"
+        },
+        {
+          "box": [
+            1280,
+            998,
+            1616,
+            1012
+          ],
+          "raw": "Tiêng Trung",
+          "corrected": "Tiếng Trung"
+        }
+      ],
+      "corrected_lines": [
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Anh, Tin)",
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh);",
+        "(Toán, Văn, Anh); (Toán, Văn, Tin)",
+        "(Toán, Lý, Hóa) (Toán, Lý, Anh), (Toán, Lý, Sinh); (Toán, Lý, Giáo dục kinh tế và pháp luật)",
+        "(Toán, Lý, Hóa); (Toán, Hóa, Sinh); (Toán, Hóa, Anh); (Toán, Văn, Hóa)",
+        "(Toán, Hóa, Sinh); (Toán, Sinh, Anh); (Toán, Lý, Sinh)",
+        "(Văn, Sử, Địa); (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Toán, Anh)",
+        "(Văn, Sử, Địa); (Văn, Sử, Giáo dục kinh tế và pháp luật); (Văn, Sử, Anh); (Văn, Toán, Sử),",
+        "",
+        "(Văn, Sử, Địa); (Văn, Địa, Giáo dục kinh tế và pháp luật); (Văn, Toán, Địa); (Văn, Địa, Anh),",
+        "(Toán, Địa, Anh); (Toán, Sử, Địa); (Toán, Địa, Giáo dục kinh tế và pháp luật)",
+        "(Toán, Văn, Anh)",
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Sinh);",
+        "(Toán, Hóa, Sinh); (Toán, Sinh, Anh)",
+        "(Toán, Sử, Địa); (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT&PL);",
+        "(Văn, Địa, Giáo dục KT&PL); (Văn, Sử, Anh); (Văn, Địa, Anh)",
+        "(Toán, Văn, Năng khiếu Giáo dục mầm non).",
+        "(Toán, Lý, Hóa); (Văn, Sử, Địa); (Toán, Văn, Anh)",
+        "(Văn, Sử, Địa); (Văn, Sử, Giáo dục kinh tế và pháp luật);",
+        "(Văn, Địa, Giáo dục kinh tế và pháp luật); (Toán, Văn, Anh); (Văn, Sử, Anh);",
+        "(Văn, Toán, Giáo dụcKT8P! }; (Toán, Anh, Giáo dục kinh tế và pháp luật)",
+        "(Toán, Sinh, NK TDTT); (Toán, Văn, NK TDTT); (Văn, Sinh, NK TDTT);",
+        "(Toán, Lý, NK TDTT); (Văn, Giáo dục KT&PL, NK TDTT)",
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Văn, Sử, Địa); (Toán, Văn, Anh)",
+        "(Toán, Lý, Anh); (Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Địa, Anh)",
+        "(Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Văn, Tiếng Trung);",
+        "(Văn, Địa, Anh)",
+        "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT&PL }; (Văn, Sử, Anh); (Văn, Địa, Anh)",
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Hóa, Anh);",
+        "(Toán, Anh, Giáo dục KT&PL); (Toán, Anh, Tin)",
+        "(Văn, Sử, Địa); (Văn, Toán, Giáo dục kinh tế và pháp luật);",
+        "(Văn, Sử, Giáo dục KT&PL); (Toán, Văn, Anh); (Văn, Sử, Anh);",
+        "(Toán, Anh, Giáo dục KT&PL)",
+        "(Toán, Lý, Hóa); (Văn, Sử, Địa); (Văn, Sử, Giáo dục KT&PL);",
+        "(Toán, Văn, Anh)",
+        "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT&PL); (Văn, Sử, Anh);",
+        "(Văn, Địa, Anh)",
+        "(Văn, Sử, Địa); (Văn, Sử, Giáo dục KT&PL);",
+        "(Toán, Văn, Anh); (Văn, Địa, Anh)",
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Văn, Toán, Giáo dục KT&PL},",
+        "",
+        "(Văn, Anh, Giáo dục kinh tế và pháp luật). (Toán, Anh, Tin)",
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Văn, Anh);",
+        "(Văn, Toán, Giáo dục KT và PL); (Toán, Giáo dục KT&PL, Anh)",
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh);",
+        "(Toán, Văn, Anh); (Toán, Hóa, Anh);",
+        "(Toán, Anh, Tin); (Toán, Anh, Giáo dục KT&PL)",
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Hóa, Anh);",
+        "(Toán, Anh, Giáo dục KT&PL); (Toán, Anh, Tin)",
+        "(Toán, Lý, Anh); (Văn, Sử, Địa); (Văn, Toán, Giáo dục KT&PL);",
+        "(Văn, Sử, Giáo dục KT&PL); (Toán, Văn, Anh);",
+        "(Văn, Sử, Anh); (Toán, Anh, Giáo dục KT&PL)",
+        "(Toán, Lý, Hóa); (Toán, Hóa, Sinh); (Toán, Hóa, Sử);",
+        "(Toán, Hóa, Địa); (Toán, Hóa, Giáo dục KT&PL); (Văn, Toán, Hóa);",
+        "",
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Văn, Anh);",
+        "(Toán, Hóa, Anh); (Toán, Anh, Tin)",
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh);",
+        "(Toán, Anh, Tin); (Toán, Văn, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn)",
+        "(Toán, Lý, Hóa); (Toán, Hóa, Sinh); (Toán, Lý, Anh); (Toán, Hóa, Sử);",
+        "(Toán, Hóa, Địa); (Toán, Hóa, Giáo dục KT&PL); (Văn, Toán, Hóa);",
+        "(Văn, Hóa, Sinh); (Văn, Toán, Anh); (Toán, Hóa, Anh); (Văn, Hóa, Anh)",
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Địa, Giáo dục KT&PL);",
+        "(Văn, Toán, Giáo dục KT&PL); (Văn, Toán, Anh); (Toán, Địa, Anh);",
+        "(Toán, Giáo dục KT&PL, Anh); (Toán, Anh, Tin).",
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh);",
+        "(Toán, Hóa, Anh); (Toán, Anh, Tin);",
+        "(Toán, Văn, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn)",
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Sinh); (Toán, Lý, Sử);",
+        "(Văn, Toán, Lý); (Toán, Hóa, Sinh); (Toán, Lý, Địa); (Văn, Lý, Hóa);",
+        "(Văn, Lý, Sinh); (Văn, Lý, Anh); (Toán, Lý, Giáo dục KT&PL).",
+        "(Toán, Lý, Hóa); (Toán, Lý, Sinh)",
+        "",
+        "(Toán, Sinh, Anh); (Văn, Toán, Hóa); (Văn, Lý, Hóa); (Văn, Hóa, Sinh);",
+        "(Văn, Toán, Tiếng Nhật); (Toán, Hóa, Anh); (Văn, Hóa, Anh)",
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Anh, Tin);",
+        "(Toán, Văn, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn)",
+        "(Toán, Hóa, Sinh); (Toán, Sử, Sinh); (Toán, Sinh, Văn);",
+        "(Toán, Sinh, Giáo dục KT&PL); (Toán, Sinh, Anh); (Toán, Lý, Sinh);",
+        "(Văn, Sinh, Anh); (Văn, Hóa, Sinh); (Văn, Sử, Sinh)",
+        "(Văn, Sử, Địa); (Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Sử, Giáo dục kinh tế và pháp luật)",
+        "(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Sử, Giáo dục KT&PL),",
+        "(Toán, Địa, Giáo dục KT&PL); (Toán, Sử, Anh); (Văn, Toán, Anh);",
+        "(Văn, Toán, Giáo dục KT&PL), (Văn, Toán, Tiếng Trung);",
+        "(Văn, Anh, Giáo dục KT&PL); (Toán, Anh, Giáo dục KT&PL)",
+        "(Toán, Vật lý, Hóa); (Toán, Lý, Sinh); (Toán, Lý, Sử); (Toán, Lý, Địa);",
+        "(Toán, Hóa, Sử); (Toán, Hóa, Địa); (Toán, Sử, Địa);",
+        "(Toán, Địa, Giáo dục KT&PL); (Toán, Hóa, Sinh); (Toán, Sinh, Địa);",
+        "(Văn, Toán, Địa); (Văn, Sinh, Địa); (Văn, Địa, Giáo dục KT&PL);",
+        "(Văn, Toán, Anh); (Toán, Địa, Anh); (Văn, Địa, Anh)",
+        "(Toán, Lý, Hóa); (Toán, Hóa, Sinh); (Toán, Lý, Anh); (Toán, Lý, Sinh);",
+        "(Toán, Lý, Sử); (Toán, Lý, Địa); (Toán, Hóa, Địa);",
+        "(Toán, Địa, Giáo dục KT&PL); (Toán, Địa lý, Anh);",
+        "(Toán, Hóa, Giáo dục KT&PL); (Toán, Hóa, Anh)"
+      ]
+    },
+    "unassigned": [],
+    "reference": null
+  },
+  "data-inventory/d1/inventory.json": {
+    "environment": {
+      "sources": {
+        "Đề Án Tuyển Sinh Đại Học Năm 2024 - Đại Học Quy Nhơn.pdf": "b51474f178580ce22fab093adf64cee5b47233a0ae67ac4b8268392059eb49e1",
+        "TB100 - Xét tuyển bổ sung đại học chính quy năm 2024.pdf": "2df8271851bf1cc822085d720b464ee61371b9d8b65f8bf2c62820bcc61ddc7d",
+        "TB71 - Thông tin tuyển sinh đại học chính quy năm 2025.pdf": "f427bb580ad0b2bea89b847a8ce31ffeb8611ea67fd1ba069fd7521ab7327b6b",
+        "TB112 - Chỉ tiêu các ngành đào tạo giáo viên năm 2025.pdf": "42df4ca8caa1607a91f0e09c99af7072129b2cb6df0a2fa349ce480265da27ce",
+        "TB124 - Ngưỡng bảo đảm chất lượng đầu vào năm 2025.pdf": "4d801b0c7f585cce0a75d64fd31dd72bc84a7e9212cdda9ca7835be9861ccdc6",
+        "TB129 - Quy đổi tương đương điểm giữa các phương thức năm 2025.pdf": "79b51d5831855e332850c72d09a745d6fe141df7a8b63cf2f732c81303279311",
+        "TB152 - Điểm chuẩn trúng tuyển đại học chính quy năm 2025.pdf": "04214debbb3a4d9bfb237632ad8e2d678eaf1c79784f24a11b9309a2e5e57be0",
+        "TB153 - Điểm chuẩn trúng tuyển năm 2025 theo phương thức.pdf": "945f5d77b6d314d7599d3a935da05ea13b12a04c924db2c195c98e5a7d94b089",
+        "TB165 - Xét tuyển bổ sung đại học chính quy năm 2025.pdf": "7b769ab00a7b68326e44dfe16519f402b97d595c1395c7520e95f8b7ae7edb08",
+        "TB175 - Điểm chuẩn trúng tuyển năm 2025 các ngành sư phạm đợt bổ sung.pdf": "a2b90e98eb70da53679bbd553799716e7c2fc41f8d6c0223f09644f37224716a",
+        "TB1897 - Báo cáo thực hiện chỉ tiêu tuyển sinh năm 2025.pdf": "c9fbd86b6fbdccc44ec0d284982c1f138c09f58cef796d842ede0cae33a67f0f",
+        "TB2551 - Học phí toàn khóa và học phí tín chỉ khóa 48 năm học 2025-2026.pdf": "2fe26a47585710b2075914a606dd10da8413d77ebe02968ce69678bb286d9450",
+        "TB1906 - Thông tin tuyển sinh đại học năm 2026.html": "d4b238f15f2b21367247100a145e073daefd1ba2b644da91976410989378906f",
+        "Ngưỡng bảo đảm chất lượng đầu vào tuyển sinh đại học chính quy năm 2026.docx": "05bb242930563ea9095225acba9ce32e21ec4bfb4566bebfb4db0ec09cff825d",
+        "TB141 - Điểm chuẩn trúng tuyển đại học chính quy năm 2026.pdf": "255535b730320efe5d718fb30f07aa3470ba8c200ed266ababbb3418e4d97b28",
+        "Diem chuan trung tuyen vao dai hoc chinh quy nam 2026.png": "808e12ca58787f27c29cb568b456219bb393416d1bf2af9b809dc33b2f9cfba6",
+        "TB141 - Bảng 2 điểm chuẩn điểm thi THPT năm 2026 (STT 29-56).png": "a191fd1aa0657982cec1bd88247be10840b14c7794855b8d8256df505ed7d2da",
+        "TB151 - Xét tuyển bổ sung đại học chính quy năm 2026.html": "d56f2204e870f5fbcb067177d85f8ed4d9d16666279061d0234fcf6d82f19ca9",
+        "TB158 - Điểm chuẩn trúng tuyển năm 2026 đợt bổ sung.html": "50e4c65407cc8a8edcbf4bcca6747896e2d461da99cbab33f044ef660d7f8052",
+        "TB1897 - Đăng ký chỉ tiêu tuyển sinh năm 2026.pdf": "1749016242fc010170f033740f2460441794627c6211a7c51ff448d18c5a5e2c",
+        "QĐ1401 - Quy chế tuyển sinh trình độ đại học năm 2026.pdf": "d35927951a319cceee284e98381e25ea72674e76b09291c6267c5465d99f0ada"
+      }
+    },
+    "checks": {
+      "diem_chuan|2025|dot1": {
+        "rows": 51,
+        "expected": 51,
+        "sum": null,
+        "ok": true
+      },
+      "diem_chuan|2025|bo_sung": {
+        "rows": 5,
+        "expected": 5,
+        "sum": null,
+        "ok": true
+      },
+      "diem_chuan|2026|dot1": {
+        "rows": 56,
+        "expected": 56,
+        "sum": null,
+        "ok": true
+      },
+      "diem_chuan|2026|bo_sung": {
+        "rows": 28,
+        "expected": 28,
+        "sum": null,
+        "ok": true
+      },
+      "chi_tieu|2025|chinh_thuc_su_pham": {
+        "rows": 15,
+        "expected": 15,
+        "sum": 1554,
+        "ok": true
+      },
+      "chi_tieu|2025|bao_cao": {
+        "rows": 51,
+        "expected": null,
+        "sum": 5286,
+        "ok": true
+      },
+      "chi_tieu|2026|dang_ky": {
+        "rows": 52,
+        "expected": null,
+        "sum": 5169,
+        "ok": true
+      }
+    },
+    "coverage": [
+      {
+        "doc": "Đề Án Tuyển Sinh Đại Học Năm 2024 - Đại Học Quy Nhơn.pdf",
+        "year": 2024,
+        "tables": "chi_tieu, to_hop, diem_chuan 2022–2023",
+        "sha256": "b51474f17858",
+        "kind": "pdf",
+        "chars": 0,
+        "codes": 0,
+        "status": "cần OCR"
+      },
+      {
+        "doc": "TB100 - Xét tuyển bổ sung đại học chính quy năm 2024.pdf",
+        "year": 2024,
+        "tables": "xet_bo_sung",
+        "sha256": "2df8271851bf",
+        "kind": "pdf",
+        "chars": 0,
+        "codes": 0,
+        "status": "cần OCR"
+      },
+      {
+        "doc": "TB71 - Thông tin tuyển sinh đại học chính quy năm 2025.pdf",
+        "year": 2025,
+        "tables": "chi_tieu, to_hop, diem_chuan 2023–2024, hoc_phi (khoảng)",
+        "sha256": "f427bb580ad0",
+        "kind": "pdf",
+        "chars": 21819,
+        "codes": 53,
+        "status": "đọc được"
+      },
+      {
+        "doc": "TB112 - Chỉ tiêu các ngành đào tạo giáo viên năm 2025.pdf",
+        "year": 2025,
+        "tables": "chi_tieu",
+        "sha256": "42df4ca8caa1",
+        "kind": "pdf",
+        "chars": 1365,
+        "codes": 15,
+        "status": "đọc được"
+      },
+      {
+        "doc": "TB124 - Ngưỡng bảo đảm chất lượng đầu vào năm 2025.pdf",
+        "year": 2025,
+        "tables": "nguong",
+        "sha256": "4d801b0c7f58",
+        "kind": "pdf",
+        "chars": 10900,
+        "codes": 51,
+        "status": "đọc được"
+      },
+      {
+        "doc": "TB129 - Quy đổi tương đương điểm giữa các phương thức năm 2025.pdf",
+        "year": 2025,
+        "tables": "quy_doi",
+        "sha256": "79b51d583185",
+        "kind": "pdf",
+        "chars": 7508,
+        "codes": 0,
+        "status": "đọc được"
+      },
+      {
+        "doc": "TB152 - Điểm chuẩn trúng tuyển đại học chính quy năm 2025.pdf",
+        "year": 2025,
+        "tables": "diem_chuan",
+        "sha256": "04214debbb3a",
+        "kind": "pdf",
+        "chars": 3420,
+        "codes": 52,
+        "status": "đọc được"
+      },
+      {
+        "doc": "TB153 - Điểm chuẩn trúng tuyển năm 2025 theo phương thức.pdf",
+        "year": 2025,
+        "tables": "diem_chuan theo phương thức",
+        "sha256": "945f5d77b6d3",
+        "kind": "pdf",
+        "chars": 11117,
+        "codes": 52,
+        "status": "đọc được"
+      },
+      {
+        "doc": "TB165 - Xét tuyển bổ sung đại học chính quy năm 2025.pdf",
+        "year": 2025,
+        "tables": "xet_bo_sung",
+        "sha256": "7b769ab00a7b",
+        "kind": "pdf",
+        "chars": 9479,
+        "codes": 26,
+        "status": "đọc được"
+      },
+      {
+        "doc": "TB175 - Điểm chuẩn trúng tuyển năm 2025 các ngành sư phạm đợt bổ sung.pdf",
+        "year": 2025,
+        "tables": "diem_chuan bổ sung",
+        "sha256": "a2b90e98eb70",
+        "kind": "pdf",
+        "chars": 1516,
+        "codes": 5,
+        "status": "đọc được"
+      },
+      {
+        "doc": "TB1897 - Báo cáo thực hiện chỉ tiêu tuyển sinh năm 2025.pdf",
+        "year": 2025,
+        "tables": "chi_tieu",
+        "sha256": "c9fbd86b6fbd",
+        "kind": "pdf",
+        "chars": 15615,
+        "codes": 51,
+        "status": "đọc được"
+      },
+      {
+        "doc": "TB2551 - Học phí toàn khóa và học phí tín chỉ khóa 48 năm học 2025-2026.pdf",
+        "year": 2025,
+        "tables": "hoc_phi",
+        "sha256": "2fe26a475857",
+        "kind": "pdf",
+        "chars": 0,
+        "codes": 0,
+        "status": "cần OCR"
+      },
+      {
+        "doc": "TB1906 - Thông tin tuyển sinh đại học năm 2026.html",
+        "year": 2026,
+        "tables": "chi_tieu, to_hop, hoc_phi (khoảng)",
+        "sha256": "d4b238f15f2b",
+        "kind": "html",
+        "chars": 18803,
+        "codes": 53,
+        "status": "đọc được"
+      },
+      {
+        "doc": "Ngưỡng bảo đảm chất lượng đầu vào tuyển sinh đại học chính quy năm 2026.docx",
+        "year": 2026,
+        "tables": "nguong",
+        "sha256": "05bb24293056",
+        "kind": "docx",
+        "chars": 13553,
+        "codes": 56,
+        "status": "đọc được"
+      },
+      {
+        "doc": "TB141 - Điểm chuẩn trúng tuyển đại học chính quy năm 2026.pdf",
+        "year": 2026,
+        "tables": "diem_chuan",
+        "sha256": "255535b73032",
+        "kind": "pdf",
+        "chars": 11017,
+        "codes": 56,
+        "status": "đọc được"
+      },
+      {
+        "doc": "Diem chuan trung tuyen vao dai hoc chinh quy nam 2026.png",
+        "year": 2026,
+        "tables": "diem_chuan THPT (ảnh, bảng 1)",
+        "sha256": "808e12ca5878",
+        "kind": "ảnh",
+        "codes": null,
+        "status": "cần OCR"
+      },
+      {
+        "doc": "TB141 - Bảng 2 điểm chuẩn điểm thi THPT năm 2026 (STT 29-56).png",
+        "year": 2026,
+        "tables": "diem_chuan THPT (ảnh, bảng 2)",
+        "sha256": "a191fd1aa065",
+        "kind": "ảnh",
+        "codes": null,
+        "status": "cần OCR"
+      },
+      {
+        "doc": "TB151 - Xét tuyển bổ sung đại học chính quy năm 2026.html",
+        "year": 2026,
+        "tables": "xet_bo_sung",
+        "sha256": "d56f2204e870",
+        "kind": "html",
+        "chars": 6344,
+        "codes": 28,
+        "status": "đọc được"
+      },
+      {
+        "doc": "TB158 - Điểm chuẩn trúng tuyển năm 2026 đợt bổ sung.html",
+        "year": 2026,
+        "tables": "diem_chuan bổ sung",
+        "sha256": "50e4c65407cc",
+        "kind": "html",
+        "chars": 1995,
+        "codes": 28,
+        "status": "đọc được"
+      },
+      {
+        "doc": "TB1897 - Đăng ký chỉ tiêu tuyển sinh năm 2026.pdf",
+        "year": 2026,
+        "tables": "chi_tieu",
+        "sha256": "1749016242fc",
+        "kind": "pdf",
+        "chars": 22887,
+        "codes": 52,
+        "status": "đọc được"
+      },
+      {
+        "doc": "QĐ1401 - Quy chế tuyển sinh trình độ đại học năm 2026.pdf",
+        "year": 2026,
+        "tables": "quy_che",
+        "sha256": "d35927951a31",
+        "kind": "pdf",
+        "chars": 57849,
+        "codes": 0,
+        "status": "đọc được"
+      }
+    ],
+    "multi": {
+      "diem_chuan": {
+        "2025|7140202": {
+          "dot1": "26.9",
+          "bo_sung": "27.47"
+        },
+        "2025|7140210": {
+          "dot1": "20.35",
+          "bo_sung": "25.05"
+        },
+        "2025|7140217": {
+          "dot1": "26.85",
+          "bo_sung": "27.82"
+        },
+        "2025|7140218": {
+          "dot1": "27.21",
+          "bo_sung": "27.66"
+        },
+        "2025|7140219": {
+          "dot1": "26.74",
+          "bo_sung": "27.47"
+        },
+        "2026|7140114": {
+          "dot1": "22.6",
+          "bo_sung": "23.22"
+        },
+        "2026|7220204": {
+          "dot1": "22.3",
+          "bo_sung": "23.09"
+        },
+        "2026|7229030": {
+          "dot1": "22.9",
+          "bo_sung": "23.23"
+        },
+        "2026|7310109": {
+          "dot1": "16",
+          "bo_sung": "20.51"
+        },
+        "2026|7310205": {
+          "dot1": "21.9",
+          "bo_sung": "22.1"
+        },
+        "2026|7310608": {
+          "dot1": "20.53",
+          "bo_sung": "20.47"
+        },
+        "2026|7310630": {
+          "dot1": "21.15",
+          "bo_sung": "21.08"
+        },
+        "2026|7340101": {
+          "dot1": "19.25",
+          "bo_sung": "19.36"
+        },
+        "2026|7340301": {
+          "dot1": "20.2",
+          "bo_sung": "20.51"
+        },
+        "2026|7340301AC": {
+          "dot1": "15",
+          "bo_sung": "19.28"
+        },
+        "2026|7380101": {
+          "dot1": "20.6",
+          "bo_sung": "21.31"
+        },
+        "2026|7440112": {
+          "dot1": "22.65",
+          "bo_sung": "22.99"
+        },
+        "2026|7460108": {
+          "dot1": "17.25",
+          "bo_sung": "19.21"
+        },
+        "2026|7480103": {
+          "dot1": "16",
+          "bo_sung": "20.53"
+        },
+        "2026|7480107": {
+          "dot1": "17.5",
+          "bo_sung": "17.68"
+        },
+        "2026|7480201": {
+          "dot1": "18.2",
+          "bo_sung": "18.44"
+        },
+        "2026|7510205": {
+          "dot1": "19.7",
+          "bo_sung": "20.25"
+        },
+        "2026|7520116": {
+          "dot1": "19.51",
+          "bo_sung": "19.86"
+        },
+        "2026|7520401": {
+          "dot1": "16",
+          "bo_sung": "18.25"
+        },
+        "2026|7540101": {
+          "dot1": "18.8",
+          "bo_sung": "20.85"
+        },
+        "2026|7580201": {
+          "dot1": "15.7",
+          "bo_sung": "19.22"
+        },
+        "2026|7620109": {
+          "dot1": "15.45",
+          "bo_sung": "17.07"
+        },
+        "2026|7810103": {
+          "dot1": "20.65",
+          "bo_sung": "20.41"
+        },
+        "2026|7810201": {
+          "dot1": "20.3",
+          "bo_sung": "20.23"
+        },
+        "2026|7850101": {
+          "dot1": "15",
+          "bo_sung": "15.6"
+        },
+        "2026|7850103": {
+          "dot1": "15.8",
+          "bo_sung": "18.71"
+        }
+      },
+      "chi_tieu": {
+        "2025|7140201": {
+          "du_kien": "158",
+          "chinh_thuc_su_pham": "180",
+          "bao_cao": "177"
+        },
+        "2025|7140202": {
+          "du_kien": "206",
+          "chinh_thuc_su_pham": "250",
+          "bao_cao": "240"
+        },
+        "2025|7140205": {
+          "du_kien": "43",
+          "chinh_thuc_su_pham": "20",
+          "bao_cao": "22"
+        },
+        "2025|7140206": {
+          "du_kien": "54",
+          "chinh_thuc_su_pham": "100",
+          "bao_cao": "99"
+        },
+        "2025|7140209": {
+          "du_kien": "70",
+          "chinh_thuc_su_pham": "100",
+          "bao_cao": "101"
+        },
+        "2025|7140210": {
+          "du_kien": "112",
+          "chinh_thuc_su_pham": "120",
+          "bao_cao": "112"
+        },
+        "2025|7140211": {
+          "du_kien": "74",
+          "chinh_thuc_su_pham": "80",
+          "bao_cao": "81"
+        },
+        "2025|7140212": {
+          "du_kien": "87",
+          "chinh_thuc_su_pham": "24",
+          "bao_cao": "25"
+        },
+        "2025|7140213": {
+          "du_kien": "45",
+          "chinh_thuc_su_pham": "30",
+          "bao_cao": "29"
+        },
+        "2025|7140217": {
+          "du_kien": "85",
+          "chinh_thuc_su_pham": "120",
+          "bao_cao": "119"
+        },
+        "2025|7140218": {
+          "du_kien": "39",
+          "chinh_thuc_su_pham": "50",
+          "bao_cao": "47"
+        },
+        "2025|7140219": {
+          "du_kien": "55",
+          "chinh_thuc_su_pham": "80",
+          "bao_cao": "70"
+        },
+        "2025|7140231": {
+          "du_kien": "130",
+          "chinh_thuc_su_pham": "200",
+          "bao_cao": "199"
+        },
+        "2025|7140247": {
+          "du_kien": "55",
+          "chinh_thuc_su_pham": "100",
+          "bao_cao": "99"
+        },
+        "2025|7140249": {
+          "du_kien": "59",
+          "chinh_thuc_su_pham": "100",
+          "bao_cao": "112"
+        },
+        "2025|7340301": {
+          "du_kien": "238",
+          "bao_cao": "268"
+        },
+        "2026|7340301": {
+          "thong_tin": "257",
+          "dang_ky": "287"
+        },
+        "2026|7440112": {
+          "thong_tin": "56",
+          "dang_ky": "55"
+        },
+        "2026|7580201": {
+          "thong_tin": "109",
+          "dang_ky": "106"
+        }
+      }
+    }
+  }
+}

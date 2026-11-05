@@ -1,0 +1,117 @@
+--- Trang 1 ---
+STT
+Mã xét tuyển
+Tên ngành/Chương trình
+Điểm chuẩn
+1
+7140114
+Quản lý Giáo dục
+22.6
+2
+7140201
+Giáo dục mầm non
+22.3
+3
+7140202
+Giáo dục Tiểu học
+20.55
+4
+7140205
+Giáo dục chính trị
+23.48
+5
+7140206
+Giáo dục thể chất
+21.8
+6
+7140209
+Sư phạm Toán học
+25.5
+7
+7140210
+Sư phạm Tin học
+22.75
+8
+7140211
+Sư phạm Vật lý
+25.3
+9
+7140212
+Sư phạm Hóa học
+25.5
+10
+7140213
+Sư phạm Sinh học
+23.3
+11
+7140217
+Sư phạm Ngữ văn
+25.15
+12
+7140218
+Sư phạm Lịch sử
+25.35
+13
+7140219
+Sư phạm Địa lý
+24.6
+14
+7140231
+Sư phạm Tiếng Anh
+25.1
+15
+7140247
+Sư phạm Khoa học tự nhiên
+24.5
+16
+7140249
+Sư phạm Lịch sử Địa lý
+24.8
+17
+7220201
+Ngôn ngữ Anh
+21.75
+18
+7220204
+Ngôn ngữ Trung Quốc
+22.3
+19
+7229030
+Văn học
+22.9
+20
+7310101
+Kinh tế
+19.9
+21
+7310109
+Kinh tế số
+16
+22
+7310205
+Quản lý nhà nước
+21.9
+23
+7310403
+Tâm lý học giáo dục
+22.2
+24
+7310608
+Đông phương học
+20.53
+25
+7310630
+Việt Nam học
+21.15
+26
+7340101
+Quản trị kinh doanh
+19.25
+27
+7340201
+Tài chính Ngân hàng
+20.5
+28
+7340201TA
+Tài chính ? Ngân hàng (giảng dạy bằng tiếng Anh)
+20.5

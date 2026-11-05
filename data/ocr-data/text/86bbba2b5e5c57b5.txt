@@ -1,0 +1,276 @@
+--- Trang 2 ---
+CÁC NGÀNH TUYỂN SINH 2025
+CÁC NGÀNH TUYỂN SINH 2025
+Mã trường: DQN
+Mã trường: DQN
+MÃ
+TỔ HỢP MÔN XÉT TUYỂN
+MÃ
+STT
+NGÀNH ĐÀO TẠO
+STT
+NGÀNH ĐÀO TẠO
+TỔ HỢP MÔN XÉT TUYỂN
+NGÀNH
+NGÀNH
+1
+7140209
+Sư phạm Toán học
+(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Anh, Tin)
+29
+7340302
+Kiểm toán
+(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Hóa, Anh);
+(Toán, Anh, Giáo dục KTấpl); (Toán, Anh, Tin)
+2
+Sư phạm Tin học
+(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh);
+7140210
+(Toán, Văn, Anh); (Toán, Văn,Tin)
+(Toán, Lý, Anh); (Văn, Sử, Địa); (Văn, Toán, Giáo dục KTấpL);
+30
+3
+7380101
+Luật
+Sư phạm Vật lý
+(Văn, Sử, Giáo dục KTấpl); (Toán, Văn, Anh);
+7140211
+(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Sinh); (Toán, Lý, Giáo Dục KTấPL)
+(Văn, Sử, Anh); (Toán, Anh, Giáo dục KTấpL)
+4
+7140212
+Sư phạm Hóa học
+(Toán, Lý, Hóa); (Toán, Hóa, Sinh); (Toán, Hóa, Anh); (Toán, Văn, Hóa)
+Hóa học
+(Toán, Lý, Hóa); (Toán, Hóa, Sinh); (Toán, Hóa, Sử);
+5
+7140213
+Sư phạm Sinh học
+(Toán, Hóa, Sinh); (Toán, Sinh, Anh); (Toán, Lý, Sinh)
+31
+7440112
+(Hóa dược, Hóa mỹ phẩm)
+(Toán, Hóa, Địa); (Toán, Hóa, Giáo dục KTấpl); (Văn, Toán, Hóa);
+6
+7140217
+Sư phạm Ngữ văn
+(Văn, Sử, Địa); (Văn, Sử, Anh); (Văn, Địa, Anh); (Văn, Toán, Anh)
+(Văn, Lý, Hóa); (Văn, Hóa, Sinh); (Toán, Hóa, Anh); (Văn, Hóa, Anh)
+32
+(Văn, Sử, Địa); (Văn, Sử, Giáo Dục KTấpL); (Văn, Sử, Anh); (Văn, Toán, Sử);
+7460112
+Toán ứng dụng
+7
+7140218
+Sư phạm Lịch sử
+(Toán, Sử, Giáo dục KTấpL); (Toán, Sử, Địa); (Toán, Sử, Anh)
+33
+7480109
+Khoa học dữ liệu
+(Văn, Sử, Địa); (Văn, Địa, Giáo dục KTấpl); (Văn, Toán, Địa); (Văn, Địa, Anh);
+34
+7480103
+Kỹ thuật phần mềm
+(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Văn, Anh);
+8
+7140219
+Sư phạm Địa lý
+(Toán, Hóa, Anh); (Toán, Anh, Tin)
+(Toán, Địa, Anh); (Toán, Sử, Địa); (Toán, Địa, Giáo dục KTấpL)
+35
+7480201
+Công nghệ thông tin
+9
+7140231
+Sư phạm Tiếng Anh
+(Toán, Văn, Anh)
+36
+7480207
+Trí tuệ nhân tạo
+Sư phạm Khoa học
+(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Sinh);
+37
+7510205
+Công nghệ kỹ thuật ô tô
+(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh);
+10
+7140247
+tự nhiên
+(Toán, Hóa, Sinh); (Toán, Sinh, Anh)
+(Toán, Anh, Tin); (Toán, Văn, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn)
+Công nghệ kỹ thuật
+(Toán, Lý, Hóa); (Toán, Hóa, Sinh); (Toán, Lý, Anh); (Toán, Hóa, Sử);
+11
+7140249
+Sư phạm Lịch sử - Địa lý
+(Toán, Sử, Địa); (Văn, Sử, Địa); (Văn, Sử, Giáo Dục KTấPL);
+38
+(Văn, Địa, Giáo dục KTấpL); (Vần, Sử, Anh); (Văn, Địa, Anh)
+7510401
+hóa học
+(Toán, Hóa, Địa); (Toán, Hóa, Giáo dục KTấpl); (Văn, Toán, Hóa);
+(Văn, Hóa, Sinh); (Văn, Toán, Anh); (Toán, Hóa, Anh); (Văn, Hóa, Anh)
+12
+7140201
+Giáo dục Mầm non
+(Toán, Văn, NK GDMN)
+Logistics và Quản lý
+(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Địa, Giáo dục KTấpL);
+13
+7140202
+Giáo dục Tiểu học
+(Toán, Lý, Hóa); (Văn, Sử, Địa); (Toán, Văn, Anh)
+39
+7510605
+chuỗi cung ứng
+(Văn, Toán, Giáo dục KTấpl); (Văn, Toán, Anh); (Toán, Địa, Anh);
+(Toán, Giáo dục KTấpl, Anh); (Toán, Anh, Tin)
+(Văn, Sử, Địa); (Văn, Sử, Giáo dục KTấPL);
+14
+7140205
+Giáo dục Chính trị
+40
+(Văn, Địa, Giáo dục KTấpl); (Toán, Văn, Anh); (Văn, Sử, Anh);
+7520116
+Kỹ thuật cơ khí động lực
+(Văn, Toán, Giáo dục KTấpl); (Toán, Anh, Giáo dục KTấpL)
+41
+7520201
+Kỹ thuật điện
+(Toán, Lý, Hóa); (Toán, Lý, Anh);
+(Toán, Sinh, NK TDTT); (Toán, Văn, NK TDTT); (Văn, Sinh, NK TDTT);
+42
+7520207
+Kỹ thuật điện tử - viễn thông
+(Toán, Hóa, Anh); (Toán, Anh, Tin);
+15
+7140206
+Giáo dục Thể chất
+(Thiết kế vi mạch)
+(Toán, Văn, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn)
+(Toán, Lý, NK TDTT); (Văn, Giáo dục KTấpL, NK TDTT)
+43
+7520216
+Kỹ thuật điều khiển và
+16
+7140114
+Quản lý Giáo dục
+(Toán, Lý, Hóa); (Toán, Lý, Anh); (Văn, Sử, Địa); (Toán, Văn, Anh)
+Tự động hóa
+17
+7220201
+Ngôn ngữ Anh
+(Toán, Lý, Anh); (Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Địa, Anh)
+Vật lý kỹ thuật
+(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Lý, Sinh); (Toán, Lý, Sử);
+44
+7520401
+(Chuyên ngành Bán dẫn)
+(Văn, Toán, Lý); (Toán, Hóa, Sinh); (Toán, Lý, Địa); (Văn, Lý, Hóa);
+18
+7220204
+Ngôn ngữ Trung Quốc
+(Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Văn, Tiếng Trung);
+(Văn, Lý, Sinh); (Văn, Lý, Anh); (Toàn, Lý, Giáo dục KTấpL)
+(Văn, Địa, Anh)
+(Toán, Lý, Hóa); (Toán, Lý, Sinh)
+19
+7229030
+Văn học
+(Văn, Sử, Địa); (Văn, Sử, Giáo Dục KTấpL); (Văn, Sử, Anh); (Văn, Địa, Anh)
+45
+7540101
+Công nghệ thực phẩm
+(Toán, Hóa, Địa), (Toán, Hóa, Giáo dục KTấpl); (Toán, Hóa, Sinh);
+(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Văn, Anh); (Toán, Hóa, Anh)
+(Toán, Sinh, Anh); (Văn, Toán, Hóa); (Văn, Lý, Hóa); (Văn, Hóa, Sinh);
+20
+7310101
+Kinh tế
+(Toán, Anh, Giáo dục KTấpl); (Toán, Anh, Tin)
+(Văn, Toán, Tiếng Nhật); (Toán, Hóa, Anh); (Văn, Hóa, Anh)
+(Văn, Sử, Địa); (Văn, Toán, Giáo dục KTấPL);
+46
+7580201
+Kỹ thuật xây dựng
+(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Toán, Anh, Tin);
+21
+7310205
+Quản lý nhà nước
+(Văn, Sử, Giáo dục KTấpl); (Toán, Văn, Anh); (Văn, Sử, Anh);
+(Toán, Văn, Anh); (Toán, Lý, Tin); (Toán, Lý, Văn)
+(Toán, Anh, Giáo dục KTấpL)
+(Toán, Hóa, Sinh); (Toán, Sử, Sinh); (Toán, Sinh, Văn);
+47
+7620109
+Nông học
+(Toán, Sinh, Giáo dục KTấpl); (Toán, Sinh, Anh); (Toán, Lý, Sinh);
+22
+7310403
+Tâm lý học giáo dục
+(Toán, Lý, Hóa); (Văn, Sử, Địa); (Văn, Sử, Giáo Dục KTấPL);
+(Văn, Sinh, Anh); (Văn, Hóa, Sinh); (Văn, Sử, Sinh)
+(Toán, Văn, Anh)
+48
+7760101
+(Văn, Sử, Địa); (Văn, Sử, Giáo dục KTấPL): (Văn, Sử, Anh);
+Công tác xã hội
+(Văn, Sử, Địa); (Toán, Văn, Anh); (Văn, Sử, Anh); (Văn, Sử, Giáo Dục KTấPL)
+23
+7310608
+Đông phương học
+(Văn, Địa, Anh)
+49
+7810103
+Quản trị dịch vụ
+(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Sử, Giáo dục KTấPL);
+du lịch và iữ hành
+(Toán, Địa, Giáo dục KTấpL); (Toán, Sử, Anh); (Văn, Toán, Anh);
+24
+Việt Nam học
+(Văn, Sử, Địa); (Văn, Sử, Giáo dục KTấpL);
+7310630
+50
+(Văn, Toán, Giáo dục KTấpl); (Văn, Toán, Tiếng Trung);
+(Toán, Văn, Anh); (Văn, Địa, Anh)
+7810201
+Quản trị khách sạn
+(Văn, Anh, Giáo dục KTấpl); (Toán, Anh, Giáo dục KTấpL)
+(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Hóa, Anh); (Văn, Toán, Giáo Dục KTấpL);
+25
+7340101
+Quản trị kinh doanh
+(Văn, Toán, Anh); (Văn, Toán, Tiềng Trung); (Toán, Anh, Giáo dục KTấpL);
+(Toán, Vật lý, Hóa); (Toán, Lý, Sinh); (Toán, Lý, Sử); (Toán, Lý, Địa);
+(Văn, Anh, Giáo dục KTấpL): (Toán, Anh, Tin)
+(Toán, Hóa, Sử), (Toán, Hóa, Địa), (Toán, Sử, Địa);
+51
+7850101
+Quản lý tài nguyên
+(Toán, Địa, Giáo dục KTấpl); (Toán, Hóa, Sinh); (Toán, Sinh, Địa);
+26
+7340201
+Tài chính - Ngân hàng
+(Toán, Lý, Hóa); (Toán, Lý, Anh); (Toán, Văn, Anh);
+và môi trường
+(Văn, Toán, Địa); (Văn, Sinh, Địa); (Văn, Địa, Giáo dục KTấpL);
+(Văn, Toán, Giáo dục KT và PL); (Toán, Giáo dục KT8PL, Anh)
+(Văn, Toán, Anh); (Toán, Địa, Anh); (Văn, Địa, Anh)
+27
+7340301
+Kế toán
+(Toán, Lý, Hóa); (Toán, Lý, Anh);
+(Toán, Lý, Hóa); (Toán, Hóa, Sinh); (Toán, Lý, Anh); (Toán, Lý, Sinh);
+(Toán, Văn, Anh); (Toán, Hóa, Anh);
+52
+Quản lý đất đai
+(Toán, Lý, Sử); (Toán, Lý, Địa); (Toán, Hóa, Địa);
+7340301
+Kế toán
+7850103
+28
+(Toán, Anh, Tin); (Toán, Anh, Giáo dục KTấpL)
+(Toán, Địa, Giáo dục KTấpl); (Toán, Địa lý, Anh);
+ACCA
+(Định hướng ACCA)
+(Toán, Hóa, Giáo dục KTấpl); (Toán, Hóa, Anh)
