@@ -1,0 +1,544 @@
+# Sổ đăng ký nguồn dữ liệu trong data/ (lập 02/10/2026).
+#
+# - Chưa nạp vào pipeline: chỉ ba file `status: corpus` đang dùng (project.md B2, cấu hình B3).
+# - `authority` là cấp dự kiến theo thứ bậc nguồn ở đề xuất v2 §2, gán theo NỘI DUNG (số hiệu, chữ ký,
+#   đơn vị ban hành) chứ không theo tên file; thứ bậc này còn chờ phía trường xác nhận (quyết định 7).
+# - `origin`: handed_over = trường/chủ dự án bàn giao; official_site = tải tay từ site của trường;
+#   third_party = trang khác đăng lại. File tải từ web được đưa vào theo quyết định của chủ dự án ngày
+#   02/10/2026, ngoại lệ với mặc định "không crawl web" (project.md B2.5). Quyền dùng: ĐÃ ĐƯỢC CẤP
+#   (phản hồi GVHD 03/10/2026, đề xuất v2 §9). Điểm chuẩn 2024 và xác nhận thứ bậc nguồn: thầy gửi sau.
+# - Từ 12/10/2026 phần quét web nằm ở data/web/manifest.jsonl (sổ máy, spec nguồn web và trích dẫn §6.3); sổ này vẫn là sổ tay.
+# - Từ 2025, Thông tư 06/2025/TT-BGDĐT đổi "Đề án tuyển sinh" thành "Thông tin tuyển sinh": văn bản
+#   ngang cấp Đề án năm 2025 là TB71, năm 2026 là TB1906.
+# - Đổi file thì sửa sha256 ở đây; file không khớp sha256 là file khác.
+# - Thư mục theo chủ đề câu hỏi (chia 08/10/2026), một tầng; năm nằm trong tên file và `admission_year`:
+#     tuyen-sinh-dai-hoc-chinh-quy/  văn bản tuyển sinh (kể cả TB71, TB1906 có nhắc học phí)
+#     hoc-phi/                       học phí theo khóa, học lại, thu học phí theo học kỳ
+#     ky-tuc-xa/                     mức thu tiền ở ký túc xá
+#     giao-duc-quoc-phong/           các mức thu tại Trung tâm GDQP-AN
+#   Chủ đề mới thì thêm thư mục cùng tầng. `file` là đường dẫn tính từ data/; code tra theo tên file
+#   (experiments/sources.py) nên tên file phải duy nhất giữa các thư mục.
+
+sources:
+  # --- Corpus đang dùng ---
+  - file: tuyen-sinh-dai-hoc-chinh-quy/Cẩm Nang Tuyển Sinh Đại Học Năm 2025.pdf
+    sha256: 86bbba2b5e5c57b59cc7c3ee82d72fab73c54dcd778c0fc5ab95b3c1436a87e7
+    bytes: 170295266
+    admission_year: 2025
+    kind: cam_nang
+    authority: cam_nang
+    origin: handed_over
+    status: corpus
+  - file: tuyen-sinh-dai-hoc-chinh-quy/HỆ THỐNG TIN NHẮN NHANH FANPAGE TUYỂN SINH.docx
+    sha256: 2fe274741e1609259d4cfbd3d13dbcefd83b5f910def5fc5d8dc38ca0e094e65
+    bytes: 17199
+    admission_year: null
+    kind: tin_nhan_fanpage
+    authority: fanpage
+    origin: handed_over
+    status: corpus
+  - file: tuyen-sinh-dai-hoc-chinh-quy/QNU.CHATBOT.xlsx
+    sha256: 636438af9cc3c0ecd29116ccdad34eb8d1a49b19737ce8c1bbd81f6b79a68832
+    bytes: 15608
+    admission_year: null
+    kind: faq_seed
+    authority: none  # seed cho benchmark, không phải nguồn trả lời (project.md B2.3)
+    origin: handed_over
+    status: corpus
+
+  # --- 2024 ---
+  - file: tuyen-sinh-dai-hoc-chinh-quy/Đề Án Tuyển Sinh Đại Học Năm 2024 - Đại Học Quy Nhơn.pdf
+    sha256: b51474f178580ce22fab093adf64cee5b47233a0ae67ac4b8268392059eb49e1
+    bytes: 12003940
+    admission_year: 2024
+    kind: de_an
+    number: 1864/ĐA-ĐHQN
+    issued: 2024-04-09
+    authority: de_an
+    origin: third_party  # Google Drive được tuyensinh247 dẫn; nội dung là văn bản có chữ ký, con dấu
+    url: https://drive.google.com/file/d/1VkWY0ntI8Q0FSm0LqyeTn8o3GfeRVOZU/view
+    linked_from: https://diemthi.tuyensinh247.com/de-an-tuyen-sinh/dai-hoc-quy-nhon-DQN.html
+    retrieved: 2026-10-02
+    notes: Bản scan, không có lớp text, trang xoay 270°; có điểm trúng tuyển 2022, 2023 (tr. 3–4).
+  - file: tuyen-sinh-dai-hoc-chinh-quy/TB100 - Xét tuyển bổ sung đại học chính quy năm 2024.pdf
+    sha256: 2df8271851bf1cc822085d720b464ee61371b9d8b65f8bf2c62820bcc61ddc7d
+    bytes: 821290
+    admission_year: 2024
+    kind: xet_tuyen_bo_sung
+    number: TB100
+    authority: thong_bao
+    origin: official_site
+    url: https://drive.google.com/file/d/1OLBMmjBWFuk-xOrXSrUyTcveoritVYRW/view
+    page: https://qnu.edu.vn/vi/dai-hoc-chinh-quy-1764/tb100-xet-tuyen-bo-sung-vao-dai-hoc-he-chinh-quy-nam-2024-theo-phuong-thuc-xet-diem-thi-tn-thpt-va-phuong-thuc-xet-ket-qua-hoc-tap-thpt
+    retrieved: 2026-10-07
+    notes: Bản scan 2 trang, không có lớp text, cần OCR. Xét bổ sung 2024 theo điểm thi TN THPT và học bạ.
+
+  # --- 2025 ---
+  - file: tuyen-sinh-dai-hoc-chinh-quy/TB71 - Thông tin tuyển sinh đại học chính quy năm 2025.pdf
+    sha256: f427bb580ad0b2bea89b847a8ce31ffeb8611ea67fd1ba069fd7521ab7327b6b
+    bytes: 665665
+    admission_year: 2025
+    kind: thong_tin_tuyen_sinh
+    number: TB71 (số trong PDF để trống "…/TB-HĐTS")
+    authority: thong_tin_tuyen_sinh  # thay Đề án từ 2025
+    origin: official_site
+    url: https://qnu.edu.vn/Resources/Docs/SubDomain/HomePage/2025/TB71%20-%20Tuyen%20sinh%20dai%20hoc%20chinh%20quy%20nam%202025.pdf
+    page: https://qnu.edu.vn/vi/dai-hoc-chinh-quy-1764/tb71-thong-tin-tuyen-sinh-dai-hoc-chinh-quy-nam-2025
+    retrieved: 2026-10-02
+    notes: 13 trang, có text, có học phí. Thay bản tóm tắt tuyensinh247 bên dưới.
+  - file: tuyen-sinh-dai-hoc-chinh-quy/Đề Án Tuyển Sinh Đại Học Năm 2025.pdf
+    sha256: ff2e5d320b71e0e18165946ab5a2d3ae334c1000b57dbae653b87ed8347f3951
+    bytes: 185825
+    admission_year: 2025
+    kind: tom_tat_thong_tin_tuyen_sinh
+    authority: third_party
+    origin: third_party
+    url: https://images.tuyensinh247.com/picture/2025/0421/dai-hoc-quy-nhon.pdf
+    retrieved: 2026-10-02
+    superseded_by: tuyen-sinh-dai-hoc-chinh-quy/TB71 - Thông tin tuyển sinh đại học chính quy năm 2025.pdf
+    notes: Tên file ghi "Đề án" nhưng là bản tóm tắt 8 trang (Word, tác giả "User", 21/04/2025), học phí "dự kiến".
+  - file: tuyen-sinh-dai-hoc-chinh-quy/TB124 - Ngưỡng bảo đảm chất lượng đầu vào năm 2025.pdf
+    sha256: 4d801b0c7f585cce0a75d64fd31dd72bc84a7e9212cdda9ca7835be9861ccdc6
+    bytes: 561330
+    admission_year: 2025
+    kind: nguong_dau_vao
+    authority: thong_bao
+    origin: official_site
+    url: https://drive.google.com/file/d/1-ca2JIpHohF8l8vzhvwRrtXn_eyYyyya/view
+    page: https://qnu.edu.vn/vi/dai-hoc-chinh-quy-1764/tb124-nguong-bao-dam-chat-luong-dau-vao-tuyen-sinh-dai-hoc-chinh-quy-nam-2025
+    retrieved: 2026-10-02
+  - file: tuyen-sinh-dai-hoc-chinh-quy/TB152 - Điểm chuẩn trúng tuyển đại học chính quy năm 2025.pdf
+    sha256: 04214debbb3a4d9bfb237632ad8e2d678eaf1c79784f24a11b9309a2e5e57be0
+    bytes: 525743
+    admission_year: 2025
+    kind: diem_chuan
+    authority: thong_bao
+    origin: official_site
+    url: https://drive.google.com/file/d/1nE7jNjte7FQeQm5dwQ5b4hr73m81hCav/view
+    page: https://qnu.edu.vn/vi/dai-hoc-chinh-quy-1764/tb152-diem-chuan-trung-tuyen-vao-dai-hoc-chinh-quy-nam-2025
+    retrieved: 2026-10-02
+    superseded_by: tuyen-sinh-dai-hoc-chinh-quy/TB153 - Điểm chuẩn trúng tuyển năm 2025 theo phương thức.pdf
+  - file: tuyen-sinh-dai-hoc-chinh-quy/TB153 - Điểm chuẩn trúng tuyển năm 2025 theo phương thức.pdf
+    sha256: 945f5d77b6d314d7599d3a935da05ea13b12a04c924db2c195c98e5a7d94b089
+    bytes: 1086279
+    admission_year: 2025
+    kind: diem_chuan
+    authority: thong_bao
+    origin: official_site
+    url: https://drive.google.com/file/d/1gjQzlNG3PyLudfv9ItUZnMd97vOH95Zh/view
+    page: https://qnu.edu.vn/vi/dai-hoc-chinh-quy-1764/tb153-diem-chuan-trung-tuyen-vao-dai-hoc-chinh-quy-nam-2025-cac-phuong-thuc
+    retrieved: 2026-10-02
+  - file: tuyen-sinh-dai-hoc-chinh-quy/TB112 - Chỉ tiêu các ngành đào tạo giáo viên năm 2025.pdf
+    sha256: 42df4ca8caa1607a91f0e09c99af7072129b2cb6df0a2fa349ce480265da27ce
+    bytes: 498659
+    admission_year: 2025
+    kind: chi_tieu
+    number: TB112 (số trong PDF để trống "…/TB-HĐTS")
+    authority: thong_bao
+    origin: official_site
+    url: https://upload.qnu.edu.vn/Tempnam2025/eoffice/thang07/ngay08/96108713-8b0e-42ec-9ac7-48bf73127fa6.pdf
+    page: https://qnu.edu.vn/vi/dai-hoc-chinh-quy-1764/tb112-chi-tieu-tuyen-sinh-dai-hoc-chinh-quy-cac-nganh-dao-tao-giao-vien-nam-2025
+    retrieved: 2026-10-07
+    notes: 1 trang, có text. Chỉ tiêu ngành sư phạm theo Công văn 3687/BGDĐT-GDĐH.
+  - file: tuyen-sinh-dai-hoc-chinh-quy/TB129 - Quy đổi tương đương điểm giữa các phương thức năm 2025.pdf
+    sha256: 79b51d5831855e332850c72d09a745d6fe141df7a8b63cf2f732c81303279311
+    bytes: 736068
+    admission_year: 2025
+    kind: quy_doi_diem
+    number: TB129 (số trong PDF để trống "…/TB-HĐTS")
+    authority: thong_bao
+    origin: official_site
+    url: https://upload.qnu.edu.vn/Tempnam2025/eoffice/thang07/ngay24/15632ded-c663-44bf-94b5-ca5910741761.pdf
+    page: https://qnu.edu.vn/vi/dai-hoc-chinh-quy-1764/tb129-ve-viec-quy-doi-tuong-duong-diem-giua-cac-phuong-thuc-tuyen-sinh-dai-hoc-chinh-quy-nam-2025
+    retrieved: 2026-10-07
+    notes: 5 trang, có text. Cách quy đổi học bạ, ĐGNL về thang điểm thi THPT — giải thích cột "điểm quy đổi" của TB152, TB141.
+  - file: tuyen-sinh-dai-hoc-chinh-quy/TB165 - Xét tuyển bổ sung đại học chính quy năm 2025.pdf
+    sha256: 7b769ab00a7b68326e44dfe16519f402b97d595c1395c7520e95f8b7ae7edb08
+    bytes: 2975041
+    admission_year: 2025
+    kind: xet_tuyen_bo_sung
+    number: TB165 (số trong PDF để trống "…/TB-HĐTS")
+    authority: thong_bao
+    origin: official_site
+    url: https://drive.google.com/file/d/1we1PDlzr_c3LABQFEdW9IOAFweIrb3JK/view
+    page: https://qnu.edu.vn/vi/dai-hoc-chinh-quy-1764/tb165-xet-tuyen-bo-sung-dai-hoc-chinh-quy-nam-2025
+    retrieved: 2026-10-07
+    notes: 7 trang, có text. Ngành, chỉ tiêu và điểm nhận hồ sơ đợt bổ sung 2025.
+  - file: tuyen-sinh-dai-hoc-chinh-quy/TB175 - Điểm chuẩn trúng tuyển năm 2025 các ngành sư phạm đợt bổ sung.pdf
+    sha256: a2b90e98eb70da53679bbd553799716e7c2fc41f8d6c0223f09644f37224716a
+    bytes: 2447780
+    admission_year: 2025
+    kind: diem_chuan
+    number: TB175 (số trong PDF để trống "…/TB-HĐTS")
+    authority: thong_bao
+    origin: official_site
+    url: https://upload.qnu.edu.vn/Tempnam2025/eoffice/thang09/ngay09/032c6da4-6b2a-4e1d-94cc-f6188c148cda.pdf
+    page: https://qnu.edu.vn/vi/dai-hoc-chinh-quy-1764/tb175-diem-chuan-trung-tuyen-vao-dai-hoc-chinh-quy-nam-2025-cac-nganh-su-pham-dot-bo-sung
+    retrieved: 2026-10-07
+    notes: 1 trang, có text. Điểm chuẩn đợt bổ sung, chỉ ngành sư phạm; khác điểm chuẩn đợt 1 (TB152).
+  - file: tuyen-sinh-dai-hoc-chinh-quy/TB1897 - Báo cáo thực hiện chỉ tiêu tuyển sinh năm 2025.pdf
+    sha256: c9fbd86b6fbdccc44ec0d284982c1f138c09f58cef796d842ede0cae33a67f0f
+    bytes: 356908
+    admission_year: 2025
+    kind: chi_tieu
+    number: 1897/TB-ĐHQN (phụ lục)
+    authority: thong_bao
+    origin: official_site
+    url: https://qnu.edu.vn/Resources/Docs/SubDomain/HomePage/2026/Thang%206/1897-B%C3%A1o%20c%C3%A1o%20th%E1%BB%B1c%20hi%E1%BB%87n%20ch%E1%BB%89%20ti%C3%AAu%20tuy%E1%BB%83n%20sinh%202025.pdf
+    page: https://qnu.edu.vn/vi/dai-hoc-chinh-quy-1764/tb1897-cong-khai-viec-thuc-hien-chi-tieu-tuyen-sinh-nam-2025-va-xac-dinh-so-luong-tuyen-sinh-nam-2026
+    retrieved: 2026-10-07
+    notes: 10 trang, có text. Chỉ tiêu và số thực hiện 2025 theo ngành, mọi trình độ.
+
+  # --- 2026 ---
+  - file: tuyen-sinh-dai-hoc-chinh-quy/TB1906 - Thông tin tuyển sinh đại học năm 2026.html
+    sha256: d4b238f15f2b21367247100a145e073daefd1ba2b644da91976410989378906f
+    bytes: 468512
+    admission_year: 2026
+    kind: thong_tin_tuyen_sinh
+    number: 1906/TB-ĐHQN
+    issued: 2026-05-31
+    authority: thong_tin_tuyen_sinh
+    origin: official_site
+    url: https://qnu.edu.vn/vi/dai-hoc-chinh-quy-1764/tb-1906-thong-tin-tuyen-sinh-dai-hoc-nam-2026-cap-nhat-hinh-thuc-dao-tao-chinh-quy
+    retrieved: 2026-10-02
+    notes: >-
+      Ảnh chụp nguyên trang HTML (nội dung ở div.chitietbaiviet, 3 bảng). Site không có PDF; bản PDF
+      21 trang trên tuyensinh247 (bên thứ ba) chưa lấy. Văn bản gốc có ký ở eoffice.qnu.edu.vn chưa xác định
+      xem công khai được.
+  - file: tuyen-sinh-dai-hoc-chinh-quy/Ngưỡng bảo đảm chất lượng đầu vào tuyển sinh đại học chính quy năm 2026.docx
+    sha256: 05bb242930563ea9095225acba9ce32e21ec4bfb4566bebfb4db0ec09cff825d
+    bytes: 42501
+    admission_year: 2026
+    kind: nguong_dau_vao
+    number: 121/TB-HĐTS
+    issued: 2026-07-09
+    authority: thong_bao
+    origin: official_site  # chép tay bảng HTML sang DOCX ngày 02/10/2026, không phải file gốc
+    page: https://qnu.edu.vn/vi/dai-hoc-chinh-quy-1764/tb121-nguong-bao-dam-chat-luong-dau-vao-tuyen-sinh-dai-hoc-chinh-quy-nam-2026
+    retrieved: 2026-10-02
+  - file: tuyen-sinh-dai-hoc-chinh-quy/TB141 - Điểm chuẩn trúng tuyển đại học chính quy năm 2026.pdf
+    sha256: 255535b730320efe5d718fb30f07aa3470ba8c200ed266ababbb3418e4d97b28
+    bytes: 649870
+    admission_year: 2026
+    kind: diem_chuan
+    number: 141/TB-HĐTS
+    authority: thong_bao
+    origin: official_site
+    url: https://qnu.edu.vn/Resources/Docs/SubDomain/HomePage/2026/Thang%208/Thong%20bao%20diem%20chuan%20tuyen%20sinh%20dai%20h%E1%BB%8Dc%20chinh%20quy%202026-signed-pages-2%20(1).pdf
+    page: https://qnu.edu.vn/vi/dai-hoc-chinh-quy-1764/tb141-diem-chuan-trung-tuyen-vao-dai-hoc-chinh-quy-nam-2026
+    retrieved: 2026-10-02
+    notes: >-
+      Bản có ký, đủ 56 mã ngành, nhưng chỉ có ba bảng ĐGNL SPHN, ĐGNL ĐHQG TP.HCM, học bạ (mỗi bảng
+      lặp cột "Điểm chuẩn quy đổi (Điểm THPT)"); link gốc là bản trích trang ("signed-pages-2"). Bảng
+      phương thức điểm thi THPT nằm ở hai ảnh trong bài (hai mục ngay dưới).
+  - file: tuyen-sinh-dai-hoc-chinh-quy/Diem chuan trung tuyen vao dai hoc chinh quy nam 2026.png
+    sha256: 808e12ca58787f27c29cb568b456219bb393416d1bf2af9b809dc33b2f9cfba6
+    bytes: 99070
+    admission_year: 2026
+    kind: diem_chuan
+    authority: thong_bao
+    origin: official_site  # xác định 07/10/2026: là "bang 1.png" nhúng trong bài TB141, trùng từng byte
+    url: https://qnu.edu.vn/Resources/Images/SubDomain/HomePage/2026/VAN%20BAN/TB141%20-%20diem%20chuan/bang%201.png
+    page: https://tuyensinh.qnu.edu.vn/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb141-diem-chuan-trung-tuyen-vao-dai-hoc-chinh-quy-nam-2026-17-58-42
+    retrieved: 2026-10-07
+    notes: >-
+      Bảng 1 (STT 1–28) của bảng điểm chuẩn phương thức điểm thi THPT trong bài TB141; bảng 2 là file kế
+      tiếp. PDF TB141 chỉ có ba bảng ĐGNL SPHN, ĐGNL ĐHQG TP.HCM, học bạ; bảng THPT chỉ có ở dạng ảnh này.
+  - file: tuyen-sinh-dai-hoc-chinh-quy/TB141 - Bảng 2 điểm chuẩn điểm thi THPT năm 2026 (STT 29-56).png
+    sha256: a191fd1aa0657982cec1bd88247be10840b14c7794855b8d8256df505ed7d2da
+    bytes: 101932
+    admission_year: 2026
+    kind: diem_chuan
+    number: 141/TB-HĐTS
+    authority: thong_bao
+    origin: official_site
+    url: https://qnu.edu.vn/Resources/Images/SubDomain/HomePage/2026/VAN%20BAN/TB141%20-%20diem%20chuan/bang%202.png
+    page: https://tuyensinh.qnu.edu.vn/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb141-diem-chuan-trung-tuyen-vao-dai-hoc-chinh-quy-nam-2026-17-58-42
+    retrieved: 2026-10-07
+    notes: >-
+      STT 29–56. Đọc bằng mắt 07/10/2026: 28/28 điểm khớp cột "Điểm chuẩn quy đổi (Điểm THPT)" của PDF
+      TB141, tức đáp án 2026 của M5/M7 trùng bảng điểm thi THPT chính thức.
+  - file: tuyen-sinh-dai-hoc-chinh-quy/TB1897 - Đăng ký chỉ tiêu tuyển sinh năm 2026.pdf
+    sha256: 1749016242fc010170f033740f2460441794627c6211a7c51ff448d18c5a5e2c
+    bytes: 382737
+    admission_year: 2026
+    kind: chi_tieu
+    number: 1897/TB-ĐHQN (phụ lục)
+    authority: thong_bao
+    origin: official_site
+    url: https://qnu.edu.vn/Resources/Docs/SubDomain/HomePage/2026/Thang%206/1897-%C4%90%C4%83ng%20k%C3%BD%20ch%E1%BB%89%20ti%C3%AAu%20tuy%E1%BB%83n%20sinh%20n%C4%83m%202026.pdf
+    page: https://qnu.edu.vn/vi/dai-hoc-chinh-quy-1764/tb1897-cong-khai-viec-thuc-hien-chi-tieu-tuyen-sinh-nam-2025-va-xac-dinh-so-luong-tuyen-sinh-nam-2026
+    retrieved: 2026-10-07
+    notes: 13 trang, có text. Chỉ tiêu đăng ký 2026 theo ngành, mọi trình độ.
+  - file: tuyen-sinh-dai-hoc-chinh-quy/QĐ1401 - Quy chế tuyển sinh trình độ đại học năm 2026.pdf
+    sha256: d35927951a319cceee284e98381e25ea72674e76b09291c6267c5465d99f0ada
+    bytes: 427012
+    admission_year: 2026
+    kind: quy_che
+    number: 1401/QĐ-ĐHQN
+    issued: 2026-05-18
+    authority: quy_che
+    origin: official_site
+    url: https://qnu.edu.vn/Resources/Docs/SubDomain/HomePage/2026/Thang%205/Quy%20ch%E1%BA%BF%20tuy%E1%BB%83n%20sinh%20Quy%20Nh%C6%A1n%202026_Completed-signed-trang-2.pdf
+    page: https://qnu.edu.vn/vi/dai-hoc-chinh-quy-1764/qd1401-ban-hanh-quy-che-tuyen-sinh-trinh-do-dai-hoc
+    retrieved: 2026-10-07
+    notes: 29 trang, có text. Quy chế của trường (ưu tiên, điểm cộng, quy đổi); thay QĐ 1455/QĐ-ĐHQN 2025.
+  - file: tuyen-sinh-dai-hoc-chinh-quy/TB151 - Xét tuyển bổ sung đại học chính quy năm 2026.html
+    sha256: d56f2204e870f5fbcb067177d85f8ed4d9d16666279061d0234fcf6d82f19ca9
+    bytes: 162255
+    admission_year: 2026
+    kind: xet_tuyen_bo_sung
+    number: 151/TB-HĐTS
+    issued: 2026-08-22
+    authority: thong_bao
+    origin: official_site
+    url: https://tuyensinh.qnu.edu.vn/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb151-xet-tuyen-bo-sung-vao-dai-hoc-chinh-quy-nam-2026
+    retrieved: 2026-10-07
+    notes: Ảnh chụp nguyên trang HTML cổng tuyển sinh, không có PDF. 28 ngành, 456 chỉ tiêu bổ sung.
+  - file: tuyen-sinh-dai-hoc-chinh-quy/TB158 - Điểm chuẩn trúng tuyển năm 2026 đợt bổ sung.html
+    sha256: 50e4c65407cc8a8edcbf4bcca6747896e2d461da99cbab33f044ef660d7f8052
+    bytes: 107428
+    admission_year: 2026
+    kind: diem_chuan
+    number: 158/TB-HĐTS
+    issued: 2026-08-25
+    authority: thong_bao
+    origin: official_site
+    url: https://tuyensinh.qnu.edu.vn/vi/tuyen-sinh-dai-hoc-chinh-quy-2027/tb-158-diem-chuan-trung-tuyen-vao-dai-hoc-chinh-quy-nam-2026-dot-bo-sung
+    retrieved: 2026-10-07
+    notes: Ảnh chụp nguyên trang HTML cổng tuyển sinh, không có PDF. Khác điểm chuẩn đợt 1 (TB141).
+
+  # === hoc-phi/, ky-tuc-xa/, giao-duc-quoc-phong/ ===
+  # Chuyên mục qnu.edu.vn/vi/hoc-phi-quy-dinh, quét 08/10/2026 (60 bài, 2017–2026). Lấy văn bản đại học
+  # chính quy từ năm học 2024-2025; xem danh sách không lấy ở cuối file. Mọi PDF dưới đây là bản scan
+  # không có lớp text, cần OCR. `admission_year` là năm nhập học của khóa (chỉ văn bản học phí theo khóa);
+  # văn bản theo năm học để null, năm học ghi trong tên file.
+  - file: hoc-phi/TB2516 - Học phí toàn khóa và học phí tín chỉ khóa 47 năm học 2024-2025.pdf
+    sha256: 6f4ec683b0579f4ceffb42e56fa09e6fcfb3ddb240f05278a43dca7b4494e147
+    bytes: 1351383
+    admission_year: 2024
+    kind: hoc_phi
+    number: 2516/TB-ĐHQN
+    issued: 2024-07-18
+    authority: thong_bao
+    origin: official_site
+    url: https://upload.qnu.edu.vn/Tempnam2024/eoffice/thang07/ngay24/549a4b30-9293-45b0-affd-6e73b0e00aea.pdf
+    page: https://www.qnu.edu.vn/vi/hoc-phi-quy-dinh
+    retrieved: 2026-10-08
+    notes: 2 trang. Khóa 47 (2024-2028), căn cứ Quy định 2333/QyĐ-ĐHQN ngày 18/7/2024 (chưa có file).
+  - file: hoc-phi/TB2551 - Học phí toàn khóa và học phí tín chỉ khóa 48 năm học 2025-2026.pdf
+    sha256: 2fe26a47585710b2075914a606dd10da8413d77ebe02968ce69678bb286d9450
+    bytes: 1603229
+    admission_year: 2025
+    kind: hoc_phi
+    authority: thong_bao
+    origin: official_site
+    url: https://upload.qnu.edu.vn/Tempnam2025/eoffice/thang08/ngay15/d5927229-1e26-48b8-ac63-8259443b0e1e.pdf
+    page: https://qnu.edu.vn/vi/dai-hoc-chinh-quy-1764/tb2551-thong-bao-muc-hoc-phi-tam-tinh-toan-khoa-muc-hoc-phi-tin-chi-hoc-phi-hoc-ky-i-nam-hoc-2025-2026-cho-khoa-48-2025-2029-he-dai-hoc-chinh-quy
+    retrieved: 2026-10-02
+    notes: Bản scan 3 trang, không có lớp text, cần OCR. Tải lại 08/10/2026 từ chuyên mục học phí, khớp sha256.
+  - file: hoc-phi/TB2404 - Học phí toàn khóa và học phí tín chỉ khóa 49 năm học 2026-2027.html
+    sha256: e133e5211949dcdb2f83b364456f0b371fde77fb2c0a7500139b50c0d302ac92
+    bytes: 93866
+    admission_year: 2026
+    kind: hoc_phi
+    number: 2404/TB-ĐHQN
+    issued: 2026-08-10
+    authority: thong_bao
+    origin: official_site
+    url: https://www.qnu.edu.vn/vi/hoc-phi-quy-dinh/tb2404-thong-bao-muc-hoc-phi-tam-tinh-toan-khoa-muc-hoc-phi-tin-chi-hoc-phi-hoc-ky-i-nam-hoc-2026-2027-cho-khoa-49-2026-2030-he-dai-hoc-chinh-quy
+    retrieved: 2026-10-08
+    notes: >-
+      Ảnh chụp nguyên trang HTML, không có PDF. Phần chữ (căn cứ NĐ 238/2025/NĐ-CP, Quy định 2160/QyĐ-ĐHQN
+      ngày 21/7/2026, ghi chú ngành sư phạm 2–16 không nhận hỗ trợ theo NĐ 116) nằm trong trang; bảng
+      56 ngành chỉ có ở bốn ảnh nhúng (bốn mục ngay dưới). Bản có ký ở eoffice.qnu.edu.vn, phải đăng nhập.
+  - file: hoc-phi/TB2404 - Bảng học phí khóa 49 (STT 1-16).png
+    sha256: fb93a47b99f971b4fa5c22cf1ebf136a379889f671345f41d1274aec446a5381
+    bytes: 105568
+    admission_year: 2026
+    kind: hoc_phi
+    number: 2404/TB-ĐHQN
+    authority: thong_bao
+    origin: official_site
+    url: https://www.qnu.edu.vn/Resources/Images/SubDomain/HomePage/2026/VAN%20BAN/TB2404/screenshot_1786418214.png
+    retrieved: 2026-10-08
+    notes: Nhóm ngành I (sư phạm, quản lý giáo dục).
+  - file: hoc-phi/TB2404 - Bảng học phí khóa 49 (STT 17-33).png
+    sha256: e8bb91f012836c41d0dec77094178658f1b45f5f5f10cb65f4ed0cb6bcc771ad
+    bytes: 102246
+    admission_year: 2026
+    kind: hoc_phi
+    number: 2404/TB-ĐHQN
+    authority: thong_bao
+    origin: official_site
+    url: https://www.qnu.edu.vn/Resources/Images/SubDomain/HomePage/2026/VAN%20BAN/TB2404/screenshot_1786418244.png
+    retrieved: 2026-10-08
+    notes: Nhóm ngành III, IV và một phần nhóm V.
+  - file: hoc-phi/TB2404 - Bảng học phí khóa 49 (STT 34-42).png
+    sha256: ecec39a6c759058c5351bdee518685befe9e1e48ee1bc4fbbe58ae86a8c8bf90
+    bytes: 70732
+    admission_year: 2026
+    kind: hoc_phi
+    number: 2404/TB-ĐHQN
+    authority: thong_bao
+    origin: official_site
+    url: https://www.qnu.edu.vn/Resources/Images/SubDomain/HomePage/2026/VAN%20BAN/TB2404/screenshot_1786418406.png
+    retrieved: 2026-10-08
+    notes: Nhóm ngành V (kỹ thuật, công nghệ).
+  - file: hoc-phi/TB2404 - Bảng học phí khóa 49 (STT 43-56).png
+    sha256: e1e839814dfe9baf115e2898d891d243c7ce6a2dff0063652b43b3d2b440ccc1
+    bytes: 75503
+    admission_year: 2026
+    kind: hoc_phi
+    number: 2404/TB-ĐHQN
+    authority: thong_bao
+    origin: official_site
+    url: https://www.qnu.edu.vn/Resources/Images/SubDomain/HomePage/2026/VAN%20BAN/TB2404/screenshot_1786418423.png
+    retrieved: 2026-10-08
+    notes: Nhóm ngành VII (ngôn ngữ, xã hội, du lịch, tài nguyên).
+  - file: hoc-phi/QĐ2305 - Học phí học lại năm học 2025-2026.pdf
+    sha256: aa2a82aa85baf719d186730e718c8f700a7bfeda54488d287c285663dca6fcc2
+    bytes: 1382058
+    admission_year: null
+    kind: hoc_phi_hoc_lai
+    number: 2305/QyĐ-ĐHQN
+    issued: 2025-08-15
+    authority: quy_che  # quy định của Hiệu trưởng; các thông báo thu học phí căn cứ văn bản này
+    origin: official_site
+    url: https://upload.qnu.edu.vn/Tempnam2025/eoffice/thang08/ngay15/e83b374a-70d7-425a-a559-1d8616c8d79e.pdf
+    page: https://www.qnu.edu.vn/vi/hoc-phi-quy-dinh/qd2305-ve-muc-thu-hoc-phi-hoc-lai-cho-nam-hoc-2025-2026-doi-voi-dao-tao-dai-hoc-he-chinh-quy-he-vua-lam-vua-hoc
+    retrieved: 2026-10-08
+    notes: 3 trang. Hệ chính quy và vừa làm vừa học.
+  - file: hoc-phi/TB4229 - Thu học phí đại học chính quy học kỳ I năm học 2024-2025.pdf
+    sha256: 340bbb96c923acdd2e68be7078c9c0c432e500889e3378da13918f6ee9a19fc9
+    bytes: 1390497
+    admission_year: null
+    kind: thu_hoc_phi
+    number: 4229/TB-ĐHQN
+    issued: 2024-10-30
+    authority: thong_bao
+    origin: official_site
+    url: https://upload.qnu.edu.vn/Tempnam2024/eoffice/thang11/ngay07/505d88dc-f9a8-46be-82ce-a82ccb0d0c0f.pdf
+    page: https://www.qnu.edu.vn/vi/hoc-phi-quy-dinh
+    retrieved: 2026-10-08
+    notes: 4 trang. Mức đóng theo từng khóa, hạn và cách nộp.
+  - file: hoc-phi/TB1687 - Thu học phí đại học chính quy học kỳ II năm học 2024-2025.pdf
+    sha256: eb269be3fe4aaff6051b56b7d53d49fdd79283fcc5f740d267ba9733426957f2
+    bytes: 1391276
+    admission_year: null
+    kind: thu_hoc_phi
+    number: 1687/TB-ĐHQN
+    issued: 2025-04-11
+    authority: thong_bao
+    origin: official_site
+    url: https://upload.qnu.edu.vn/Tempnam2025/eoffice/thang04/ngay14/9a92b0cd-56b3-4657-84aa-0c571212c4d8.pdf
+    page: https://www.qnu.edu.vn/vi/hoc-phi-quy-dinh
+    retrieved: 2026-10-08
+    notes: 4 trang.
+  - file: hoc-phi/TB2297 - Thu học phí đại học chính quy học kỳ phụ năm học 2024-2025.pdf
+    sha256: 10414f972bd00db2042cafbec235fbbc7d158ea3c1781d27592c7f403870cf56
+    bytes: 1390813
+    admission_year: null
+    kind: thu_hoc_phi
+    number: 2297/TB-ĐHQN
+    issued: 2025-07-05
+    authority: thong_bao
+    origin: official_site
+    url: https://upload.qnu.edu.vn/Tempnam2025/eoffice/thang07/ngay10/a8202529-3f3d-4271-ba99-319393c2d139.pdf
+    page: https://www.qnu.edu.vn/vi/hoc-phi-quy-dinh/tb2297-ve-viec-thu-tien-hoc-phi-sinh-vien-dai-hoc-chinh-quy-hoc-ky-phu-nam-hoc-2024-2025
+    retrieved: 2026-10-08
+    notes: 3 trang.
+  - file: hoc-phi/TB1661 - Thu học phí đại học chính quy học kỳ II năm học 2025-2026.html
+    sha256: 7881ef39dd1ed23ec0e220003b2d92645222f29651a60ce53b6da4d46d0a6f93
+    bytes: 96724
+    admission_year: null
+    kind: thu_hoc_phi
+    number: 1661/TB-ĐHQN
+    issued: 2026-04-21
+    authority: thong_bao
+    origin: official_site
+    url: https://www.qnu.edu.vn/vi/hoc-phi-quy-dinh/tb1661-ve-viec-thu-tien-hoc-phi-sinh-vien-dai-hoc-chinh-quy-hoc-ky-ii-nam-hoc-2025-2026
+    retrieved: 2026-10-08
+    notes: >-
+      Ảnh chụp nguyên trang HTML, có text, không có PDF. Liệt kê văn bản căn cứ mức học phí từng khóa:
+      QĐ 514/515/516 (khóa 44–46), Quy định 2333 (khóa 47), 2304 (khóa 48), 2305 (học lại). Khung trang có
+      captcha sinh ngẫu nhiên nên tải lại sẽ lệch vài byte.
+
+  # --- ky-tuc-xa/ ---
+  - file: ky-tuc-xa/TB2675 - Mức thu tiền ký túc xá năm học 2024-2025.pdf
+    sha256: 7edc1c670a1a34434ed95fe6c7d967ae9992560b9232eca10ce8fbfde8641eda
+    bytes: 598330
+    admission_year: null
+    kind: ky_tuc_xa
+    number: 2675/TB-ĐHQN
+    issued: 2024-08-14
+    authority: thong_bao
+    origin: official_site
+    url: https://drive.google.com/file/d/1VdxHb5K_vDRuE3BAmiuu6Ywnd5RI4x52/view
+    page: https://www.qnu.edu.vn/vi/hoc-phi-quy-dinh/tb2675-thong-bao-ve-muc-thu-tien-o-ky-tuc-xa-nam-hoc-2024-2025
+    retrieved: 2026-10-08
+    notes: 2 trang.
+  - file: ky-tuc-xa/QĐ2327 - Mức thu tiền ký túc xá năm học 2025-2026.pdf
+    sha256: 89e49d58fe8a737ec25019021041f68f991cf1362c7387afd61b48d8f2ed499c
+    bytes: 676991
+    admission_year: null
+    kind: ky_tuc_xa
+    number: 2327/QyĐ-ĐHQN
+    issued: 2025-08-18
+    authority: quy_che  # quy định của Hiệu trưởng; TB2569 căn cứ văn bản này
+    origin: official_site
+    url: https://upload.qnu.edu.vn/Tempnam2025/eoffice/thang08/ngay20/8decfc75-490c-4cf7-8569-7a8699776fcd.pdf
+    page: https://www.qnu.edu.vn/vi/hoc-phi-quy-dinh/qd2327-ve-muc-thu-tien-o-ky-tuc-xa-nam-hoc-2025-2026
+    retrieved: 2026-10-08
+    notes: 2 trang.
+  - file: ky-tuc-xa/TB2569 - Mức thu tiền ký túc xá năm học 2025-2026.pdf
+    sha256: e58ae59b3f7416f60cd775d7489c5474141e050625c90b0aec0ec422e4c27eca
+    bytes: 410384
+    admission_year: null
+    kind: ky_tuc_xa
+    number: 2569/TB-ĐHQN
+    issued: 2025-08-18
+    authority: thong_bao
+    origin: official_site
+    url: https://upload.qnu.edu.vn/Tempnam2025/eoffice/thang08/ngay20/60d305f4-324b-4ea9-98d5-9e1f58a01b6b.pdf
+    page: https://www.qnu.edu.vn/vi/hoc-phi-quy-dinh/tb2569-ve-muc-thu-tien-ky-tuc-xa-nam-hoc-2025-2026
+    retrieved: 2026-10-08
+    notes: 1 trang. Bảng mức lệ phí theo KTX và tầng.
+
+  # --- giao-duc-quoc-phong/ ---
+  - file: giao-duc-quoc-phong/QĐ2333 - Các mức thu tại Trung tâm Giáo dục Quốc phòng và An ninh năm học 2025-2026.pdf
+    sha256: aabe28da8f6406c3126aca7d67b79000f88131263b935ad0cec905207476b6a2
+    bytes: 931773
+    admission_year: null
+    kind: phi_gdqp
+    number: 2333/QyĐ-ĐHQN
+    issued: 2025-08-19
+    authority: quy_che  # quy định của Hiệu trưởng
+    origin: official_site
+    url: https://drive.google.com/file/d/1-ogJ6chR0wbd9v5neZ0DbKx7zpyoIL8V/view
+    page: https://www.qnu.edu.vn/vi/hoc-phi-quy-dinh/qd2333-ve-viec-cac-muc-thu-tai-trung-tam-giao-duc-quoc-phong-va-an-ninh-truong-dai-hoc-quy-nhon-nam-hoc-2025-2026
+    retrieved: 2026-10-08
+    notes: 2 trang. Trùng số với Quy định 2333 năm 2024 (học phí khóa 47) nhưng là văn bản khác năm.
+
+# Chưa có, đã tìm ngày 02/10/2026:
+#   - Đề án 2022, 2023: không có trên site trường; trang bên thứ ba chỉ có bài tóm tắt.
+#   - Điểm chuẩn 2024 (TB90): file Google Drive nhúng ở trang thông báo đã 404.
+#
+# Quét lại 07/10/2026 (26 bài ở qnu.edu.vn/vi/dai-hoc-chinh-quy-1764 và các chuyên mục tuyển sinh
+# đại học của tuyensinh.qnu.edu.vn). Tải lại mọi file có url ở trên: tất cả khớp sha256; TB1906 khác
+# vài byte ở khung trang nhưng nội dung bài giống hệt.
+#   - Điểm chuẩn 2024: TB90 vẫn 404; trang "điểm chuẩn các năm" 2022–2024 trên tuyensinh.qnu.edu.vn
+#     báo lỗi. Điểm 2024 chỉ còn ở TB71 tr. 11 và TB1906 (dẫn lại) và trang bên thứ ba.
+#   - Ngưỡng đầu vào 2024: không thấy bài. Học phí khóa 47 (2024) và khóa 49 (2026–2027) không có ở
+#     chuyên mục tuyển sinh nhưng có ở chuyên mục học phí — đã lấy 08/10/2026 (TB2516, TB2404).
+#
+# Quét chuyên mục qnu.edu.vn/vi/hoc-phi-quy-dinh 08/10/2026 (7 trang, 60 bài):
+#   - Không lấy: học phí, KTX, thu tiền trước năm học 2024-2025 (khóa 46 trở về trước, 2017–2024);
+#     cao học (TB1525, TB2414, TB2415 và cũ hơn); bồi dưỡng nghiệp vụ sư phạm (TB2492); KTX hè 2024
+#     (TB2280); TB442 (điều chỉnh học phí/tín chỉ khóa 42–46); QĐ315 (chuẩn đầu ra ngoại ngữ, xếp nhầm
+#     chuyên mục); QD1251 (quy định học phí 2018).
+#   - Chưa có file gốc: các Quy định mức học phí theo khóa — 2333/QyĐ-ĐHQN (khóa 47), 2304/QyĐ-ĐHQN
+#     (khóa 48), 2160/QyĐ-ĐHQN (khóa 49) — và Nghị quyết 63/NQ-HĐT (lộ trình tăng học phí): không đăng.
+#   - Bản gốc có ký của TB1906, TB121, TB263, TB1886 chỉ có ở eoffice.qnu.edu.vn, phải đăng nhập.
+#   - Không lấy: TB263 (thông báo tuyển sinh 2026, đã được TB1906 cập nhật), phụ lục BC02/BC03 của
+#     TB1897 (văn bản mở ngành, quy mô đào tạo), lịch thi năng khiếu, mẫu phiếu, bài nhập học.

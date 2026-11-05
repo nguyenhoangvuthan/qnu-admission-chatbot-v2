@@ -4,3 +4,16 @@
 HF_TOKEN
 __pycache__/
 *.py[cod]
+
+# Local indexes, environments and generated outputs
+.codegraph/
+graphify-out/
+.venv*/
+node_modules/
+dist/
+.pytest_cache/
+.ruff_cache/
+artifacts/
+
+# Kho web quét về và sổ nhãn ảnh người: ghi chú có tên người thật, repo này public
+data/web/*
