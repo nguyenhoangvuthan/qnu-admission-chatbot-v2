@@ -1036,7 +1036,7 @@ def test_seed_page_is_never_dropped_for_its_year(tmp_path):
     assert status(manifest, seed) == ("text", None)
 
 
-@pytest.mark.parametrize("reason", ["off_topic", "people_photo"])
+@pytest.mark.parametrize("reason", ["off_topic", "people_photo", "operator_removed"])
 def test_off_topic_items_are_not_refetched_on_recheck(tmp_path, reason):
     # Bộ lọc chủ đề (prune, spec knowledge base §5) hay lọc ảnh người (prune-people) đã rút: lần
     # kiểm lại không tải về lưu lại.

@@ -675,11 +675,12 @@ class Crawler:
     # ------------------------------------------------------------------ mốc năm
 
     def _off_topic(self, url: str) -> bool:
-        """Bộ lọc chủ đề (`prune`, spec knowledge base §5) hay lọc ảnh người (`prune-people`) đã rút
+        """Bộ lọc chủ đề, lọc ảnh người hay người vận hành (`apps.cli.ocr remove`) đã rút
         mục này: không tải lại để lưu lại rồi lại bị rút ở mỗi chu kỳ kiểm. Muốn đưa về kho thì sửa
         quyết định trong sổ tương ứng."""
         latest = self.manifest.latest(url)
-        return latest is not None and latest.reason in ("off_topic", "people_photo")
+        removed = ("off_topic", "people_photo", "operator_removed")
+        return latest is not None and latest.reason in removed
 
     def _too_old(
         self,

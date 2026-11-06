@@ -19,9 +19,18 @@ _REMOVES = frozenset({"skipped_pii", "auth_required"})
 # `failed` với lý do này rút tài liệu khỏi kho; lỗi vĩnh viễn khác giữ phiên bản dùng được trước đó.
 # `out_of_range`: trước `min_year`; `out_of_scope`: nay nằm ngoài phạm vi cấu hình (spec §6.5);
 # `off_topic`: bộ lọc chủ đề đã đo đạt gán `loai` (spec knowledge base §5.3);
-# `people_photo`: ảnh chờ OCR mà model nhận là ảnh chụp người, không mang chữ thông tin.
+# `people_photo`: ảnh chờ OCR mà model nhận là ảnh chụp người, không mang chữ thông tin;
+# `operator_removed`: người vận hành xoá tay bằng `apps.cli.ocr remove`.
 _REMOVING_REASONS = frozenset(
-    {"gone", "robots_disallowed", "out_of_range", "out_of_scope", "off_topic", "people_photo"}
+    {
+        "gone",
+        "robots_disallowed",
+        "out_of_range",
+        "out_of_scope",
+        "off_topic",
+        "people_photo",
+        "operator_removed",
+    }
 )
 
 

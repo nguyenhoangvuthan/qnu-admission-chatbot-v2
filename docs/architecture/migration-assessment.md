@@ -88,7 +88,7 @@ comment và dòng trống.
 | **Hoãn, lấy khi tới việc** | `segments_generator.py`, `segments_prompt.py` | 414 | Cờ `inline_citations` đang tắt, chờ đo |
 | **Lấy, giữ hành vi** (Kent đổi 06/11/2026, xem §10) | `ingest`, `apps/crawler` | 3.419 | Thay quyết định 05/11 "ở lại repo cũ": RUNBOOK v2 không còn chạy gì ở repo cũ |
 | **Hoãn, lấy khi tới việc** | `apps/knowledge_base` | 1.555 | Lọc chủ đề bằng model, ảnh người, dựng snapshot; RUNBOOK mục 5 và 11 |
-| **Hoãn, chỉ lấy một đường** | `experiments/ocr_selection/` | 4.097 | M8 đã chọn `cur_rotgate`; khi OCR kho web chỉ tách đường chạy cấu hình đó, 62 trang đã OCR dùng lại output |
+| **Đã lấy một đường** (06/11/2026, xem §11) | `experiments/ocr_selection/` | 4.097 | M8 đã chọn `cur_rotgate`; chỉ tách đường chạy cấu hình đó, phần chọn cấu hình ở lại repo cũ |
 | **Tham khảo khi làm SQL** | `experiments/bench_sql_vs_text.py` | 420 | Parser bảng điểm dùng cho V5a; không chép cả script |
 | **Bỏ** | `qnu_rag/arms.py`, các script pilot `run_pilot`, `report_pilot`, `preflight_pilot`, `pilot_readiness`, `probe_generator` | 1.116 | B0–B3 không có trong 17 arm; runner mới theo plan P1 |
 | **Bỏ** | `draft_gold_v2_core.py`, `draft_gold_v2_comparison.py` | 1.995 | RUNBOOK cấm chạy lại vì ghi đè file nháp đã sửa tay |
@@ -311,3 +311,18 @@ phải tag `v1-final`, vì `topic_gate` chưa commit ở repo cũ.
 15 file `ingest` và `configs/crawl/qnu.yaml` giữ nguyên từng byte so với bản 01:33 ngày 06/11/2026.
 Sau mốc đó sửa crawler ở v2, repo cũ không còn là nguồn. Thư viện thêm vào nhóm `ingest` giữ đúng phiên
 bản trong lockfile cũ.
+
+## 11. Chuyển OCR (06/11/2026)
+
+Kent yêu cầu chạy được OCR kho web từ v2. Chỉ tách đường `cur_rotgate`: `ingest/ocr/`, `apps/cli/ocr.py`, `environments/ocr`,
+`scripts/chay-ocr.sh`. Nguồn → đích ở [manifest](migration-manifest-ocr-2026-11-06.json). Không đổi thuật toán hay model: 88/88 trang
+chuẩn của `data/ocr-data/corpus.json` ra giống từng dòng và cùng góc xoay, gồm 24 trang đi qua cổng xoay.
+
+| Khác với repo cũ | Lý do |
+|---|---|
+| `environments/ocr` có lock, bỏ `.venv-ocr` | Repo cũ không lưu công thức dựng; phiên bản lấy từ `environment.json` của lần nghiệm thu |
+| `override-dependencies` bỏ bản `-cu12` của cuDNN, NCCL và hai bản OpenCV | Các gói ghi đè cùng đường dẫn file, cài song song ra hỗn hợp hai phiên bản, Paddle chết ở lần conv đầu. cuDNN nay là 9.24 |
+| Python 3.12.16, không phải 3.12.15 | Bản uv có sẵn; output vẫn giống từng dòng |
+| Worker gọi theo đường dẫn file, không cài `qnuchat` vào môi trường OCR | `qnuchat` kéo theo sentence-transformers; worker chỉ cần thư viện chuẩn ở cấp module |
+| `run` bị khoá tới khi `verify` đạt | Spec knowledge base §6: output khác thì không dùng worker mới |
+| `apply` tách khỏi `run` | RUNBOOK: Kent đồng ý rồi mới dọn `quarantine/`, và `apply` xoá file danh sách người |

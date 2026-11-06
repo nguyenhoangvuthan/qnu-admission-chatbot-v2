@@ -1,0 +1,15 @@
+# Trang không OCR và không đưa vào kho, theo sha256 của file. Bước dựng kho chữ phải đọc file này:
+# trang có lớp chữ như HD2611 trang 9 không đi qua OCR nên chỉ được loại ở bước đó.
+# Repo public: chỉ ghi lý do chung, không chép tên hay số của người trong trang.
+b48e8d8e5fc2c981b2277afd0df29767e6ae3d917a0396db73817a5ed91c67c2:
+  title: HD2659 - Nhập học đối với thí sinh trúng tuyển đại học chính quy năm 2025 (đợt bổ sung)
+  pages: [9, 10]
+  reason: phụ lục tra cứu mã BHXH, ngoài phạm vi tuyển sinh; ảnh kết quả có thông tin một người
+d7a9ec68784f2a79fdc881141b765c4f947ca9a7f401f7b9eec58424b6f8ef54:
+  title: HD2699 - Hướng dẫn nhập học đối với thí sinh trúng tuyển đại học chính quy năm 2024
+  pages: [8]
+  reason: phụ lục tra cứu mã BHXH, ngoài phạm vi tuyển sinh; ảnh kết quả có thông tin một người
+5613a97fada67e34839ebeabe6f6ce8ac5207196742d6dbd7813576bf82ba79f:
+  title: HD2611 - Hướng dẫn nhập học đối với thí sinh trúng tuyển đại học chính quy năm 2025
+  pages: [9]
+  reason: phụ lục tra cứu mã BHXH, ngoài phạm vi tuyển sinh

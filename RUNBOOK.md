@@ -43,7 +43,7 @@ Lệnh viết cho bash. File `.sh` gọi thẳng được từ fish; lệnh có 
 | 11.1 | Model hiểu câu | Chưa có code | Có | Không | Nhiều giờ |
 | 11.2 | Xoá ảnh người trong `quarantine/` | Chưa có code | Có | **Nhiều**, model đọc ảnh vài GB, chỉ lần đầu | Khoảng 0,8 giây/ảnh |
 | 11.3 | Lọc chủ đề kho web bằng model | Chưa có code | Có | Không | Nhiều giờ |
-| 11.4 | OCR ảnh web | Chưa có code | Có | **Nhiều**, môi trường OCR vài GB, chỉ lần đầu | Khoảng 2,2 giây/trang |
+| 11.4 | OCR ảnh web | Chạy được | Có | **Nhiều**, môi trường OCR 12 GB, chỉ lần đầu | Khoảng 2,2 giây/trang; kho hiện tại 5 phút |
 | 11.5 | Giao diện | Chưa có code | Không | Ít | — |
 | 12 | Mở cho người dùng thật | Chưa có code, chờ trường | Có | **Vừa**, quét định kỳ mỗi ngày | — |
 
@@ -65,9 +65,9 @@ Mục ghi Nhiều thì không nên chạy trên mạng di động.
 Giao diện không vướng logic (11.5) làm lúc nào cũng được.
 
 Tình trạng máy này khi kiểm 06/11/2026: có `.venv`, `environments/vllm/.venv`, `Qwen3-4B-AWQ` và `bge-m3`. Chưa có
-database, web app, giao diện, router SQL, công cụ chấm. Kho web chưa quét vào repo này: `data/web/` mới có `people.jsonl`
-(sổ nhãn ảnh người).
-Test đạt: 803 passed, 9 skipped; ruff sạch; 4/4 contract import giữ.
+database, web app, giao diện, router SQL, công cụ chấm. Kho web đã có ở `data/web/`, OCR xong
+(mục 11.4), `quarantine/` trống. `environments/ocr` đã dựng.
+Test đạt: 856 passed, 9 skipped; ruff sạch; 4/4 contract import giữ.
 
 **Luật GPU:** laptop chỉ có 6 GB, mỗi lúc một việc dùng GPU. vLLM chiếm GPU, nên embedding GPU và OCR phải chạy khi vLLM đã tắt.
 
@@ -499,14 +499,37 @@ từ xa, liên thông, văn bằng 2, khoá ngắn hạn, tin hoạt động, h�
 
 Không chạy bước 1, 4, 5, 7 khi kho đang quét.
 
-### 11.4. OCR ảnh web và phần còn lại của kho — chưa có code
+### 11.4. OCR ảnh web — chạy được
 
 Cấu hình `cur_rotgate`: PP-OCRv6 medium det, VietOCR `vgg_transformer`, `fix_combo_codes`, 300 dpi, cổng xoay trang. Đây là cấu
-hình đã thắng khi thí nghiệm chọn OCR. Worker đặt ở `src/qnuchat/ingest/ocr/`, chạy trong `environments/ocr`, phải cho output
-giống từng dòng với `data/ocr-data/` trên các trang đã có. Kiểm tương đương top-5 đạt thì `current` là kho đầy đủ. Khi OCR xong,
-Kent đồng ý rồi mới dọn `data/web/quarantine/`.
+hình đã thắng khi thí nghiệm chọn OCR. Worker ở `src/qnuchat/ingest/ocr/worker.py`, chạy trong `environments/ocr`. Chỉ chạy GPU,
+tắt vLLM trước.
 
-Lệnh dự kiến: `uv run python -m apps.cli.knowledge_base ocr`, rồi `classify --pass 2`.
+```bash
+./scripts/chay-ocr.sh setup     # lần đầu: môi trường 12 GB và trọng số, có kiểm hash
+./scripts/chay-ocr.sh verify    # OCR lại 88 trang chuẩn, phải giống data/ocr-data từng dòng; khoảng 4 phút
+./scripts/chay-ocr.sh           # OCR quarantine/; hoặc `start` để chạy nền, `log`, `stop`, `status`
+./scripts/chay-ocr.sh review    # file nào giữ, file nào là danh sách người; chưa đổi kho
+./scripts/chay-ocr.sh apply     # Kent xem review rồi mới chạy
+./scripts/chay-ocr.sh remove <sha256>...   # xoá hẳn file, lần quét sau không tải lại
+```
+
+`run` từ chối chạy khi `worker.py` hoặc `environments/ocr/uv.lock` đã đổi mà chưa `verify` lại. Trang lỗi là execution error, không
+thành trang rỗng; hết bộ nhớ GPU ở vài ảnh lớn thì `./scripts/chay-ocr.sh run --retry-errors`. Chỉ OCR trang PDF không có lớp chữ
+và ảnh đã có nhãn `co_chu` hoặc `khong_nguoi` trong `data/web/people.jsonl`; ảnh chưa có nhãn hiện ở `review`, chờ nhãn.
+
+`apply` chuyển file sạch từ `quarantine/` vào `blobs/`, ghi chữ ở `data/web/ocr/documents/`. File là danh sách người thì **xoá** cả bản
+gốc lẫn chữ đã OCR. File không có chữ, lỗi, thiếu trang ở lại `quarantine/`.
+
+**Giới hạn của lớp lọc người:** chỉ bắt danh sách (tiêu đề có từ hai cột như họ tên, ngày sinh, mã sinh viên, hoặc từ 5 hàng). OCR đọc sai
+tiêu đề thì chỉ còn luật theo hàng. Một người đơn lẻ không bị bắt, nên `review` không thay được việc đọc lại. Trang cần bỏ thì thêm vào
+`configs/ocr/excluded-pages.yaml` theo sha256 của file: trang đó không OCR, không vào kho; bản PDF gốc vẫn còn trang đó.
+
+**Kết quả 06/11/2026:** 69 file, 121 trang, 5 phút, 2 ảnh hết bộ nhớ GPU qua được khi chạy lại. `review`: giữ 67, danh sách người 0. Đối chứng bằng danh sách giả qua OCR thật: bắt được cả có và không có tiêu đề, bỏ sót danh sách 3 hàng không tiêu đề.
+Kent cho bỏ Phụ lục 3 tra cứu mã BHXH của ba bản hướng dẫn nhập học (HD2659 trang 9–10, HD2699 trang 8, HD2611 trang 9): ngoài phạm vi
+tuyển sinh và có ảnh kết quả của một người. Ghi ở `configs/ocr/excluded-pages.yaml`. HD2611 có lớp chữ nên không qua OCR: bước dựng kho
+chữ (mục 5) phải đọc file này. Hai ảnh ký túc xá không có chữ đã xoá bằng `remove`.
+Đã `apply`: 67 file, 125 trang vào kho, `quarantine/` trống. Lọc chủ đề lần hai trên chữ OCR chưa có code (11.3).
 
 ### 11.5. Giao diện
 

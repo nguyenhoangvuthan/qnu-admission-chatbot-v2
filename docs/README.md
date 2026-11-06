@@ -7,6 +7,7 @@
 | [Tech stack](architecture/tech-stack-audit.md) | Máy hiện tại, lockfile, bản phát hành upstream | Audit 05/11/2026; v2 đã có lockfile giữ nguyên phiên bản đã audit |
 | [Manifest chuyển code](architecture/migration-manifest-v1-final.json) | Nguồn → đích, SHA-256 tại `v1-final` | Provenance của đợt lõi |
 | [Manifest chuyển crawler](architecture/migration-manifest-crawler-2026-11-06.json) | Nguồn → đích, SHA-256 bản đã chép | Provenance của đợt quét web |
+| [Manifest chuyển OCR](architecture/migration-manifest-ocr-2026-11-06.json) | Nguồn → đích, SHA-256 tại `v1-final` | Provenance của đợt OCR |
 | [Tra cứu code](guides/code-navigation.md) | CodeGraph, Graphify, phạm vi chỉ mục | Hướng dẫn dùng công cụ đã khởi tạo |
 
 Mỗi quyết định có một tài liệu sở hữu. `../RUNBOOK.md` chỉ mô tả v2: mục "Chạy được" có code trong

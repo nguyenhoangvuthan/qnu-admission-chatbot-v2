@@ -41,7 +41,7 @@ qnu-admission-chatbot-v2/
 │   └── experiments/            # Ma trận arm và probe
 ├── environments/
 │   ├── vllm/                   # pyproject.toml + uv.lock độc lập
-│   └── ocr/                    # Môi trường riêng; có thể tách theo engine
+│   └── ocr/                    # pyproject.toml + uv.lock độc lập; Paddle + VietOCR
 ├── migrations/                 # Một lịch sử Alembic cho DB ứng dụng
 ├── infra/                      # Compose, cấu hình service/container
 ├── scripts/                    # Setup, migrate, serve; không giữ nghiệp vụ
@@ -117,6 +117,7 @@ Bảng này chỉ cho biết đích của từng phần. Phần nào được v�
 | `apps/web` | `apps/api` | Cập nhật imports, OpenAPI export, migration path, static mount |
 | `web-ui` | `apps/web` | Cập nhật đường dẫn generated API, build output và e2e |
 | `apps/crawler` | `apps/cli/crawl.py` + `ingest/crawl_job.py`, `crawl_log.py` | Đã chuyển 06/11/2026 |
+| `experiments/ocr_selection` (đường `cur_rotgate`) | `ingest/ocr/`, `apps/cli/ocr.py`, `environments/ocr` | Đã chuyển 06/11/2026; phần chọn cấu hình ở lại repo cũ |
 | `apps/knowledge_base` | `apps/cli` + library ingest | Hoãn; không trộn CLI và nghiệp vụ |
 | `data/ocr-data/*.py` | `scripts/data/*` hoặc library ingest | Sửa đường dẫn và kiểm export trước khi dời |
 

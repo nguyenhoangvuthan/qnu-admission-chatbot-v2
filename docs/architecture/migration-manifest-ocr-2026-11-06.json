@@ -1,0 +1,54 @@
+{
+  "source_repo": "qnu-admission-chatbot",
+  "tag": "v1-final",
+  "commit": "dc5c6fd7bc5836fca670f3adca02d211518907d9",
+  "note": "Chỉ tách đường chạy cấu hình cur_rotgate của M8; phần chọn cấu hình, chấm điểm và form duyệt ở lại repo cũ. Mã mới không có nguồn: job.py (trừ phần ghi ở trên), group_rows trong text.py, apps/cli/ocr.py.",
+  "files": [
+    {
+      "source": "experiments/ocr_selection/worker.py",
+      "source_sha256": "6fb323540f1b0594ed831fdedd1cd376a91ce99dc1f84aa3c8909de3bb22943c",
+      "committed": true,
+      "targets": [
+        "src/qnuchat/ingest/ocr/worker.py"
+      ],
+      "how": "tách đường cur_rotgate: bỏ engine paddle, paddle_vl, vlm_chat, fake, cổng orient; id ảnh đổi sang job.json; ghi thêm config và env_sha256 vào từng trang; thêm SIGHUP; kiểm hash trọng số"
+    },
+    {
+      "source": "experiments/ocr_selection/checkpoint.py",
+      "source_sha256": "91682ec051eaaa89cf095a959c786d7e56d9acc418af371d69bad874de0970b3",
+      "committed": true,
+      "targets": [
+        "src/qnuchat/ingest/ocr/worker.py"
+      ],
+      "how": "lấy atomic_write_json, clean_tmp, valid_output, env_sha256; bỏ State, RunLock, load_outputs"
+    },
+    {
+      "source": "experiments/bench_ocr.py",
+      "source_sha256": "8fc0c80a532c9784405731f10ac38ccedb78e3d14f538f74a7b6237279b9bc9d",
+      "committed": true,
+      "targets": [
+        "src/qnuchat/ingest/ocr/worker.py",
+        "src/qnuchat/ingest/ocr/text.py"
+      ],
+      "how": "lấy run_paddle_vietocr (đổi tên _read_upright), CROP_PAD, sha256_file, fix_combo_codes"
+    },
+    {
+      "source": "experiments/ocr_selection/dataset.py",
+      "source_sha256": "951ad4b40042630502f9de4cbb5ba6989a5c255a1f95198cc0256a47a482fede",
+      "committed": true,
+      "targets": [
+        "src/qnuchat/ingest/ocr/job.py"
+      ],
+      "how": "lấy _render (đổi tên render_page), _write_img"
+    },
+    {
+      "source": "scripts/run_ocr_selection.sh",
+      "source_sha256": "1e135d21c03a01f7d9d90cf69616a5e284a49b59a8e35637c232e564ae77f20a",
+      "committed": true,
+      "targets": [
+        "scripts/chay-ocr.sh"
+      ],
+      "how": "lấy cách chạy systemd-run KillMode=mixed"
+    }
+  ]
+}
