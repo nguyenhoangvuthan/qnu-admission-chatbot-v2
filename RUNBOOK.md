@@ -209,7 +209,8 @@ uv run python -m apps.cli.crawl undated     # ghi artifacts/knowledge_base/undat
 ```
 
 CSV có cột `url`, `title`, `exempt` (hạt giống, tầng A, hub: `prune` không bao giờ rút), `decision` (`keep`, `remove`,
-`review`), `year`, `evidence` (các cụm đã dùng để quyết). Luật chỉ áp cho trang không suy được năm:
+`review`), `year`, `evidence` (các cụm đã dùng để quyết). Trang được miễn vẫn mang `decision` của nó: miễn chỉ giữ trang
+trong kho để crawler đi tiếp tới bài mới, không cho trang vào snapshot (xem 4.3). Luật chỉ áp cho trang không suy được năm:
 
 1. Có ngày đăng, hoặc năm trong URL hay tiêu đề, thì quyết theo đó.
 2. Không suy được thì đọc phần nội dung chính, bỏ menu, cột bên, link, URL và giá trị mặc định của template. Thẻ
@@ -230,8 +231,9 @@ Cách code đọc dấu hiệu (`qnuchat.ingest.dating.date_from_body`):
 - Giới hạn đã thấy: "Đại học Limoges, Pháp – năm 2020" bị đọc là năm của trang (trang đó được miễn nên không bị rút).
 
 **Số đo 10/11/2026 trên kho 464 mục:** 101 trang không có ngày đăng; giữ 19, chỉ hiện hành trước 2024 có 11 (cả 11 được
-miễn nên `prune` không rút trang nào), cần duyệt 71, gồm cả 54 trang ngành tuyensinh: chữ trang ngành không có dấu hiệu
-thời điểm.
+miễn nên `prune` không rút trang nào, nhưng cả 11 không vào snapshot), cần duyệt 71, gồm cả 54 trang ngành tuyensinh: chữ
+trang ngành không có dấu hiệu thời điểm. Phần lớn 11 trang là chuyên mục tuyển sinh của khoa: chữ là danh sách tiêu đề bài
+cũ ("TUYỂN SINH ĐẠI HỌC QUY NHƠN NĂM 2021").
 
 ### 4.3. Kent duyệt danh sách trang của snapshot đề án
 
@@ -242,6 +244,11 @@ Làm sau 4.2, vì danh sách cần duyệt sinh ra từ luật đó: mở `artif
 | Trang ngành `tuyensinh.qnu.edu.vn/vi/tong-hop-nganh-dao-tao/` | Đưa vào nếu đạt luật 4.2; nguồn chính cho câu mô tả ngành |
 | Trang khoa giới thiệu ngành, chương trình đào tạo | Đưa vào, gắn năm đăng, chỉ từ 01/01/2024 |
 | PDF chương trình đào tạo, mọi tài liệu trước 01/01/2024 | Không đưa vào |
+| Trang được miễn (`exempt = yes`) có `decision = remove` | Giữ trong kho, không đưa vào snapshot (Kent chốt 10/11/2026) |
+| Trang được miễn có `decision = review` | Kent duyệt như trang thường; quyết định chỉ áp cho snapshot, `prune` vẫn không rút |
+
+Trang được miễn có hai vai: đường để crawler tìm bài mới, và nội dung để chatbot trích. Miễn `prune` chỉ giữ vai thứ nhất.
+Chữ của trang chuyên mục thường là tiêu đề bài cũ, nên cho vào snapshot thì chatbot có thể trả lời bằng tin năm 2021.
 
 ## 5. Bảng số và snapshot đề án — chưa có code
 
