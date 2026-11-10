@@ -7,7 +7,10 @@ giữ (trang giới thiệu, ngành đào tạo… thường không có ngày).
 """
 
 import re
+import unicodedata
+from dataclasses import dataclass
 from datetime import date
+from typing import Literal
 from urllib.parse import unquote, urlsplit
 
 MIN_PLAUSIBLE_YEAR = 2000
@@ -78,3 +81,78 @@ def infer_year(
 def is_before(year: int | None, floor: int | None) -> bool:
     """Chỉ loại khi biết chắc năm và có đặt mốc."""
     return year is not None and floor is not None and year < floor
+
+
+# --------------------------------------------- trang không có ngày đăng: đọc chữ (RUNBOOK 4.2)
+#
+# Chỉ tin năm đi kèm cụm chỉ thời điểm hiện hành. Năm đứng một mình trong chữ trang thường là nhiễu:
+# menu lọt vào nội dung ("KIỂM ĐỊNH CTĐT NGÀNH LUẬT 2025"), chân trang, ngày của template, câu kể
+# lịch sử ("Đến tháng 10 năm 2019").
+
+_RANGE = r"(20\d\d)(?:\s*[-–]\s*(20\d\d))?"
+_KHOA = r"kh(?:óa|oá)"
+# "Từ năm học X", "áp dụng từ…", "có hiệu lực từ…": hiện hành TỪ năm đó trở đi.
+_SINCE = re.compile(rf"\btừ\s+(?:năm học|năm|{_KHOA})\s*{_RANGE}", re.IGNORECASE)
+# Hiện hành TẠI năm đó.
+_POINT = (
+    re.compile(rf"năm học\s*{_RANGE}", re.IGNORECASE),
+    re.compile(r"năm tuyển sinh\s*(20\d\d)", re.IGNORECASE),
+    re.compile(rf"áp dụng (?:cho|đối với)[^.\n]{{0,20}}?{_KHOA}\s*(20\d\d)", re.IGNORECASE),
+    re.compile(
+        r"(?:tuyển sinh|xét tuyển|trúng tuyển|điểm chuẩn|chỉ tiêu|học phí|đại học|THPT)"
+        r"[^.\n\d]{0,40}?năm\s*(20\d\d)",
+        re.IGNORECASE,
+    ),
+)
+# Năm của văn bản được dẫn ("Quy chế … ban hành năm 2021") không phải năm hiện hành của trang.
+_CITED = re.compile(
+    r"ban hành|quyết định|thông tư|nghị định|công văn|căn cứ|số\s*\d", re.IGNORECASE
+)
+_CITE_WINDOW = 30
+
+
+@dataclass(frozen=True)
+class BodyDating:
+    """`keep`: hiện hành từ `floor` trở đi, `year` là năm hiện hành. `remove`: chỉ hiện hành trước
+    `floor`. `review`: không có dấu hiệu, hoặc chỉ biết "từ năm X" với X trước mốc (có thể vẫn hiệu
+    lực): Kent duyệt, không tự giữ hay tự xoá. `evidence` là các cụm đã dùng để quyết."""
+
+    decision: Literal["keep", "remove", "review"]
+    year: int | None
+    evidence: str
+
+
+def _signal_year(match: re.Match, text: str, today: date) -> int | None:
+    start = match.start(1)
+    if _CITED.search(text[max(0, start - _CITE_WINDOW) : start]):
+        return None
+    years = [int(g) for g in match.groups() if g]
+    year = max(years)
+    return year if _plausible(year, today) else None
+
+
+def date_from_body(text: str, *, floor: int, today: date) -> BodyDating:
+    text = unicodedata.normalize("NFC", text or "")
+    since: list[int] = []
+    point: list[int] = []
+    evidence: list[str] = []
+    taken: list[tuple[int, int]] = []
+    for pattern, bucket in [(_SINCE, since), *((p, point) for p in _POINT)]:
+        for match in pattern.finditer(text):
+            if any(match.start() < end and start < match.end() for start, end in taken):
+                continue  # "năm học X" nằm trong "từ năm học X": đã tính là "từ"
+            year = _signal_year(match, text, today)
+            if year is None:
+                continue
+            taken.append(match.span())
+            bucket.append(year)
+            snippet = " ".join(match.group(0).split())
+            if snippet not in evidence:
+                evidence.append(snippet)
+    found = " | ".join(evidence[:5])
+    current = [y for y in since + point if y >= floor]
+    if current:
+        return BodyDating("keep", max(current), found)
+    if point and not since:
+        return BodyDating("remove", max(point), found)
+    return BodyDating("review", None, found)

@@ -32,8 +32,8 @@ Lệnh viết cho bash. File `.sh` gọi thẳng được từ fish; lệnh có 
 | 2 | Dựng máy | Chạy được | Không | **Nhiều**, khoảng 15–20 GB, chỉ lần đầu | Phần lớn là tải model và thư viện |
 | 3 | Chạy thử pipeline với vLLM | Chạy được | Có | Không | Vài phút |
 | 4.1 | **Quét kho web, làm đầu tiên** | Chạy được | Không | **Vừa**, đo được khoảng 300 MB mỗi lần | Đo được khoảng 4 phút |
-| 4.2 | Xét trang không có ngày đăng | Chưa có code | Không | Không | Vài phút |
-| 4.3 | Kent duyệt danh sách trang của snapshot đề án | Chờ mục 4.2 | Không | Không | Việc người làm |
+| 4.2 | Xét trang không có ngày đăng | Chạy được | Không | Không | Vài giây |
+| 4.3 | Kent duyệt danh sách trang của snapshot đề án | Chờ Kent | Không | Không | Việc người làm, 71 trang |
 | 5 | Bảy bảng số, snapshot đề án | Chưa có code | Có (embedding) | Không | 10–30 phút |
 | 6 | Bộ câu hỏi chấm điểm phiên bản 2 | Công cụ chạy được, nội dung chưa sửa | Không | Không | Việc người làm |
 | 7 | Công cụ chấm | Chưa có code | Không | Không | — |
@@ -67,7 +67,7 @@ Giao diện không vướng logic (11.5) làm lúc nào cũng được.
 Tình trạng máy này khi kiểm 06/11/2026: có `.venv`, `environments/vllm/.venv`, `Qwen3-4B-AWQ` và `bge-m3`. Chưa có
 database, web app, giao diện, router SQL, công cụ chấm. Kho web đã có ở `data/web/`, OCR xong
 (mục 11.4), `quarantine/` trống. `environments/ocr` đã dựng.
-Test đạt: 934 passed, 9 skipped; ruff sạch; 4/4 contract import giữ.
+Test đạt: 948 passed, 7 skipped; ruff sạch trên `src tests experiments apps`; 4/4 contract import giữ.
 
 **Luật GPU:** laptop chỉ có 6 GB, mỗi lúc một việc dùng GPU. vLLM chiếm GPU, nên embedding GPU và OCR phải chạy khi vLLM đã tắt.
 
@@ -201,9 +201,15 @@ Không cần GPU, không cần database, nên chạy song song với việc khá
 - **Đổi `topic_gate` thì xoá `data/web/frontier.jsonl` và `data/web/last_checked.json` trước khi quét:** hàng đợi cũ đi vòng qua
   cổng mới.
 
-### 4.2. Xét trang không có ngày đăng — chưa có code
+### 4.2. Xét trang không có ngày đăng — chạy được
 
-Viết sau khi quét, khi đã xem được chữ thật. Luật chỉ áp cho trang không suy được năm:
+```bash
+uv run python -m apps.cli.crawl undated     # ghi artifacts/knowledge_base/undated.csv, không sửa kho
+./scripts/quet-web.sh prune                 # rút trang chỉ hiện hành trước mốc, trừ trang được miễn
+```
+
+CSV có cột `url`, `title`, `exempt` (hạt giống, tầng A, hub: `prune` không bao giờ rút), `decision` (`keep`, `remove`,
+`review`), `year`, `evidence` (các cụm đã dùng để quyết). Luật chỉ áp cho trang không suy được năm:
 
 1. Có ngày đăng, hoặc năm trong URL hay tiêu đề, thì quyết theo đó.
 2. Không suy được thì đọc phần nội dung chính, bỏ menu, cột bên, link, URL và giá trị mặc định của template. Thẻ
@@ -213,9 +219,23 @@ Viết sau khi quét, khi đã xem được chữ thật. Luật chỉ áp cho t
 4. Hiện hành từ 01/01/2024 thì giữ và ghi năm đó. Chỉ hiện hành trước mốc thì xoá.
 5. Không có dấu hiệu thì không tự giữ, không tự xoá: đưa vào danh sách Kent duyệt.
 
+Cách code đọc dấu hiệu (`qnuchat.ingest.dating.date_from_body`):
+
+- Chỉ tin năm đi kèm cụm chỉ thời điểm: "năm học", "năm tuyển sinh", "áp dụng cho khoá", "tuyển sinh / xét tuyển / điểm
+  chuẩn / chỉ tiêu / học phí / đại học / THPT … năm X". Năm đứng một mình là nhiễu: menu lọt vào nội dung ("KIỂM ĐỊNH CTĐT
+  NGÀNH LUẬT 2025" ở 5 trang khoa), chân trang, ngày của template, câu kể lịch sử.
+- "Từ năm học X", "áp dụng từ", "có hiệu lực từ" là hiện hành **từ** X trở đi. X trước mốc thì không tự xoá mà đưa vào
+  danh sách duyệt, vì quy định có thể vẫn hiệu lực (ký túc xá: "Từ năm học 2020-2021, nhà trường sẽ trang bị…").
+- Bỏ năm có "ban hành", "quyết định", "thông tư", "nghị định", "công văn", "căn cứ", "số …" ngay trước.
+- Giới hạn đã thấy: "Đại học Limoges, Pháp – năm 2020" bị đọc là năm của trang (trang đó được miễn nên không bị rút).
+
+**Số đo 10/11/2026 trên kho 464 mục:** 101 trang không có ngày đăng; giữ 19, chỉ hiện hành trước 2024 có 11 (cả 11 được
+miễn nên `prune` không rút trang nào), cần duyệt 71, gồm cả 54 trang ngành tuyensinh: chữ trang ngành không có dấu hiệu
+thời điểm.
+
 ### 4.3. Kent duyệt danh sách trang của snapshot đề án
 
-Làm sau 4.2, vì danh sách cần duyệt sinh ra từ luật đó.
+Làm sau 4.2, vì danh sách cần duyệt sinh ra từ luật đó: mở `artifacts/knowledge_base/undated.csv`, xem các dòng `review`.
 
 | Nhóm | Xử lý |
 |---|---|

@@ -4,6 +4,7 @@ uv run python -m apps.cli.crawl run --trigger cli   # quét một lần
 uv run python -m apps.cli.crawl status              # 10 lần quét gần nhất
 uv run python -m apps.cli.crawl restore             # tải lại blob còn thiếu theo manifest
 uv run python -m apps.cli.crawl prune               # rút mục trước min_year hoặc ngoài phạm vi
+uv run python -m apps.cli.crawl undated             # trang không có ngày đăng: danh sách Kent duyệt
 
 Dừng `run` bằng Ctrl-C hay SIGTERM (`systemctl stop`): state và hàng đợi được lưu
 (`last_checked.json`, `frontier.jsonl`), lần chạy sau tiếp tục, không quét lại từ đầu. Mã thoát 130.
@@ -20,13 +21,16 @@ from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from apps.cli.progress import Progress, say, setup_logging
+from qnuchat.ingest.blobs import BlobStore
 from qnuchat.ingest.config import load_crawl_config
 from qnuchat.ingest.crawl import CrawlProgress
-from qnuchat.ingest.crawl_job import FRONTIER_FILE, prune, restore, run_job
+from qnuchat.ingest.crawl_job import FRONTIER_FILE, prune, prune_exempt, restore, run_job
 from qnuchat.ingest.crawl_log import FileCrawlLog
 from qnuchat.ingest.fetch import Fetcher
-from qnuchat.ingest.manifest import load_sources_index
+from qnuchat.ingest.manifest import Manifest, load_sources_index
+from qnuchat.ingest.state import CheckState
 from qnuchat.ingest.topic_filter.ledger import load_topic_policy
+from qnuchat.ingest.undated import undated_pages, write_review
 
 EXIT_INTERRUPTED = 130
 
@@ -68,6 +72,8 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("status", help="các lần quét gần nhất")
     sub.add_parser("restore", help="tải lại blob còn thiếu theo manifest")
     sub.add_parser("prune", help="rút mục trước min_year hoặc ngoài phạm vi, xoá blob của chúng")
+    undated = sub.add_parser("undated", help="xét trang không có ngày đăng bằng chữ trong trang")
+    undated.add_argument("--out", type=Path, default=Path("artifacts/knowledge_base/undated.csv"))
     return parser
 
 
@@ -79,6 +85,24 @@ def _print_status(log: FileCrawlLog) -> None:
             f"lỗi {run['errors']}, tải {run['n_bytes'] / 1024 / 1024:.1f} MB "
             f"{run['note'] or ''}"
         )
+
+
+def _undated(out: Path, settings: CrawlerSettings, cfg, *, today) -> int:
+    if cfg.min_year is None:
+        print("Cấu hình quét chưa đặt min_year: không có mốc để xét.", file=sys.stderr)
+        return 2
+    data_dir = settings.crawl_data_dir
+    current = Manifest(data_dir / "manifest.jsonl", repair=False).current()
+    state = CheckState(data_dir / "last_checked.json")
+    exempt = prune_exempt(cfg)
+    rows = undated_pages(current, BlobStore(data_dir), floor=cfg.min_year, today=today)
+    counts = write_review(rows, out, exempt=lambda url: url in exempt or state.is_hub(url))
+    say(
+        f"{len(rows)} trang không có ngày đăng: giữ {counts['keep']}, chỉ hiện hành trước "
+        f"{cfg.min_year} {counts['remove']} (prune rút nếu không được miễn), cần duyệt "
+        f"{counts['review']} → {out}"
+    )
+    return 0
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -125,6 +149,9 @@ def main(argv: list[str] | None = None) -> int:
                 settings.crawl_data_dir / "topic.jsonl", settings.topic_filter_dir
             ),
         )
+
+    if args.command == "undated":
+        return _undated(args.out, settings, cfg, today=datetime.now(tz).date())
 
     log = FileCrawlLog(settings.crawl_data_dir)
     if args.command == "status":

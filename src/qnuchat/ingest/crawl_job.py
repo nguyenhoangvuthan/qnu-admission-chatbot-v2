@@ -19,7 +19,7 @@ from qnuchat.ingest.blobs import BlobStore
 from qnuchat.ingest.config import CrawlConfig
 from qnuchat.ingest.crawl import Crawler, CrawlProgress, CrawlStats
 from qnuchat.ingest.crawl_log import CrawlLog
-from qnuchat.ingest.dating import infer_year, is_before
+from qnuchat.ingest.dating import date_from_body, infer_year, is_before
 from qnuchat.ingest.drive import fetch_file
 from qnuchat.ingest.fetch import Fetcher, FetchError, FetchEvent
 from qnuchat.ingest.frontier import Frontier
@@ -27,6 +27,7 @@ from qnuchat.ingest.html_page import parse_page
 from qnuchat.ingest.manifest import Manifest, ManifestEntry
 from qnuchat.ingest.state import CheckState
 from qnuchat.ingest.topic_filter.ledger import TopicPolicy
+from qnuchat.ingest.undated import page_text
 from qnuchat.ingest.urls import canonicalize, drive_file_id, in_scope
 
 logger = logging.getLogger(__name__)
@@ -307,7 +308,15 @@ def prune(
                     and entry.page_url != url
                     and removed_for_age(entry.page_url)
                 )
-                if is_before(year, cfg.min_year) or follows_page:
+                # Trang không suy được năm: chữ trong trang chỉ hiện hành trước mốc (RUNBOOK 4.2).
+                stale_text = (
+                    entry.kind == "page"
+                    and year is None
+                    and date_from_body(page_text(entry, blobs), floor=cfg.min_year, today=today)
+                    .decision
+                    == "remove"
+                )
+                if is_before(year, cfg.min_year) or follows_page or stale_text:
                     withdraw(entry, "out_of_range")
         if topic is not None:
             for entry in topic_withdrawals(manifest.current(), topic, exempt=exempt, state=state):

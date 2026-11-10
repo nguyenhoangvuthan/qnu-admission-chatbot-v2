@@ -4,7 +4,13 @@ from datetime import date
 
 import pytest
 
-from qnuchat.ingest.dating import infer_year, is_before, year_from_text, year_from_url
+from qnuchat.ingest.dating import (
+    date_from_body,
+    infer_year,
+    is_before,
+    year_from_text,
+    year_from_url,
+)
 
 TODAY = date(2026, 10, 13)
 
@@ -112,3 +118,59 @@ def test_unknown_year_is_none_and_is_never_before_the_floor():
     assert is_before(2022, 2023)
     assert not is_before(2023, 2023)
     assert not is_before(2019, None)  # không đặt mốc: không lọc
+
+
+# ----------------------------------------------- trang không có ngày đăng (RUNBOOK 4.2)
+
+FLOOR = 2024
+
+
+@pytest.mark.parametrize(
+    ("text", "decision", "year"),
+    [
+        # Chữ thật từ trang www "Ngành tuyển sinh": năm tuyển sinh hiện hành.
+        (
+            (
+                "CÁC NGÀNH / CHƯƠNG TRÌNH ĐÀO TẠO ĐẠI HỌC NĂM 2025. Xét tuyển theo kết quả thi tốt "
+                "nghiệp THPT năm 2025."
+            ),
+            "keep",
+            2025,
+        ),
+        ("Năm học 2023-2024: lịch học kỳ I.", "keep", 2024),
+        ("Thông báo tuyển sinh đại học chính quy năm 2022.", "remove", 2022),
+        ("Kế hoạch năm học 2021–2022 của khoa.", "remove", 2022),
+        ("Học phí áp dụng cho khóa 2025 trở đi.", "keep", 2025),
+        ("Áp dụng từ năm học 2024-2025.", "keep", 2025),
+        # Ký túc xá: quy định có từ 2021 và vẫn hiệu lực, không phải "chỉ hiện hành trước mốc".
+        ("Từ năm học 2020-2021, nhà trường sẽ trang bị thêm camera.", "review", None),
+        # Năm của văn bản được dẫn không phải năm hiện hành của trang.
+        (
+            "Theo Quy chế tuyển sinh ban hành năm 2021, áp dụng cho năm tuyển sinh 2025.",
+            "keep",
+            2025,
+        ),
+        ("Căn cứ Thông tư số 08/2022/TT-BGDĐT năm 2022.", "review", None),
+        # Nhiễu thật: menu lọt vào, chân trang, ngày của template, câu lịch sử.
+        (
+            "KIỂM ĐỊNH CTĐT NGÀNH LUẬT 2025 03/14/2020 Copyright © 2017 Đại học Quy Nhơn",
+            "review",
+            None,
+        ),
+        ("Đến tháng 10 năm 2019, nhóm chuyên môn Tự động hóa được thành lập.", "review", None),
+        ("", "review", None),
+    ],
+)
+def test_body_dating(text, decision, year):
+    result = date_from_body(text, floor=FLOOR, today=TODAY)
+    assert (result.decision, result.year) == (decision, year)
+
+
+def test_body_dating_keeps_the_signals_as_evidence():
+    result = date_from_body("Điểm chuẩn trúng tuyển năm 2025.", floor=FLOOR, today=TODAY)
+    assert "năm 2025" in result.evidence
+
+
+def test_body_dating_ignores_implausible_years():
+    result = date_from_body("Tuyển sinh năm 2099.", floor=FLOOR, today=TODAY)
+    assert result.decision == "review"
