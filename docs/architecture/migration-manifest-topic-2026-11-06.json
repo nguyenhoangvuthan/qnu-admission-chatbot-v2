@@ -1,0 +1,179 @@
+{
+  "source_repo": "qnu-admission-chatbot",
+  "tag": "v1-final",
+  "commit": "dc5c6fd7bc5836fca670f3adca02d211518907d9",
+  "note": "Chỉ chuyển phần lọc chủ đề của apps/knowledge_base; people.py và dựng snapshot còn hoãn. Mục committed=false có thay đổi chưa commit ở repo nguồn.",
+  "files": [
+    {
+      "source": "apps/knowledge_base/ledger.py",
+      "source_sha256": "a24f52496e6ff5bf9ae4bcff00834302526f92e52be3b6f4f020ed241ccf0595",
+      "committed": true,
+      "targets": [
+        "src/qnuchat/ingest/topic_filter/ledger.py"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "apps/knowledge_base/topic_classifier.py",
+      "source_sha256": "a58de007815c72fba060bf06e9a077385f2875ad2fb90f226aaa3822d27219d7",
+      "committed": true,
+      "targets": [
+        "src/qnuchat/ingest/topic_filter/classifier.py"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "apps/knowledge_base/topic_input.py",
+      "source_sha256": "b4b221febafedd2fa44ddd2498ab68d6244a7c08e6753380510a1b09079c95d7",
+      "committed": true,
+      "targets": [
+        "src/qnuchat/ingest/topic_filter/inputs.py"
+      ],
+      "how": "thêm chữ OCR làm nội dung"
+    },
+    {
+      "source": "apps/knowledge_base/classify.py",
+      "source_sha256": "366f3acb92393e827cd9801c7a988aaad368ee1204e86cff439f538334d8ac5e",
+      "committed": true,
+      "targets": [
+        "src/qnuchat/ingest/topic_filter/classify.py"
+      ],
+      "how": "truyền ocr_documents; không ghi đè nhãn của Kent"
+    },
+    {
+      "source": "apps/knowledge_base/topic_sample.py",
+      "source_sha256": "2306339f20da87e75fbc65a44b61ae09fc72c36f3cbb6f6223572b567b6de0f2",
+      "committed": true,
+      "targets": [
+        "src/qnuchat/ingest/topic_filter/sample.py"
+      ],
+      "how": "truyền ocr_documents"
+    },
+    {
+      "source": "apps/knowledge_base/topic_score.py",
+      "source_sha256": "59406421393dbb44621cc8fa32d9ee32701d48f87f3587f76e43dcbefefdd8b5",
+      "committed": true,
+      "targets": [
+        "src/qnuchat/ingest/topic_filter/score.py"
+      ],
+      "how": "thêm kent_decisions"
+    },
+    {
+      "source": "apps/knowledge_base/__main__.py",
+      "source_sha256": "62cd46065afe2daaa44392e978f8b0e6fa81fa4a42a9caaf1042a5c41410b0e4",
+      "committed": true,
+      "targets": [
+        "apps/cli/knowledge_base.py"
+      ],
+      "how": "lấy lệnh lọc chủ đề; bỏ people-scan, cờ --pass; thêm topic-labels, topic-pending"
+    },
+    {
+      "source": "apps/knowledge_base/settings.py",
+      "source_sha256": "be3ef54bfae3a3a6a0f65461c2a0d353091ffb712ae8b79e405cb9b7e49b94d5",
+      "committed": true,
+      "targets": [
+        "apps/cli/knowledge_base.py"
+      ],
+      "how": "lấy phần lọc chủ đề; đổi topic_filter_dir sang artifacts"
+    },
+    {
+      "source": "apps/crawler/job.py",
+      "source_sha256": "0032961afa79f6c4c50adfa4636baef36129ee45f6247d9bbbac2a20c32d815d",
+      "committed": true,
+      "targets": [
+        "src/qnuchat/ingest/crawl_job.py"
+      ],
+      "how": "khôi phục nhánh off_topic của prune, tách topic_withdrawals; xoá thêm chữ OCR"
+    },
+    {
+      "source": "configs/knowledge_base/topic_filter.yaml",
+      "source_sha256": "5ba9dbdbe3c6dc86c2b8dc7182e0e515ab5f30dfa69236c02d626bace920be69",
+      "committed": true,
+      "targets": [
+        "configs/knowledge_base/topic_filter.yaml"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "configs/knowledge_base/topic_prompt.md",
+      "source_sha256": "01498e23ea92c23b2a943a1e0d912dcef183defd9d710c02d4d70d1eaf70d116",
+      "committed": true,
+      "targets": [
+        "configs/knowledge_base/topic_prompt.md"
+      ],
+      "how": "đổi một dòng về nội dung file và ảnh"
+    },
+    {
+      "source": "scripts/run_topic.sh",
+      "source_sha256": "82451c5a4e5738c61563de63b8ba77f80a57789002e9a96f86d457d1c2bb2c88",
+      "committed": true,
+      "targets": [
+        "scripts/run_topic.sh"
+      ],
+      "how": "đổi đường dẫn và lệnh sang v2; thêm labels, pending; prune in danh sách trước"
+    },
+    {
+      "source": "tests/support/webstore.py",
+      "source_sha256": "f6ecbcce17d8502c78b07162b9d5b2b7b29717396b563545173c1a71b779e594",
+      "committed": true,
+      "targets": [
+        "tests/support/webstore.py"
+      ],
+      "how": "giữ nguyên"
+    },
+    {
+      "source": "tests/apps/test_kb_classify.py",
+      "source_sha256": "125e26496e9ab90dbe4bfe2b3dfdde21d241385212641cb0d14cc7aad296dcfb",
+      "committed": true,
+      "targets": [
+        "tests/ingest/test_topic_filter_classify.py"
+      ],
+      "how": "đổi import; thêm ca mới"
+    },
+    {
+      "source": "tests/apps/test_kb_ledger.py",
+      "source_sha256": "96de91845d45a0d484f60823f30757a5c4774213447c5093c58ab4eb4fdf7358",
+      "committed": true,
+      "targets": [
+        "tests/ingest/test_topic_filter_ledger.py"
+      ],
+      "how": "đổi import; thêm ca mới"
+    },
+    {
+      "source": "tests/apps/test_kb_topic_classifier.py",
+      "source_sha256": "716b818f5ef5e7a681ddc022e9f2d02ec333807eccb82e7087a819fd0518b20d",
+      "committed": true,
+      "targets": [
+        "tests/ingest/test_topic_filter_classifier.py"
+      ],
+      "how": "đổi import; thêm ca mới"
+    },
+    {
+      "source": "tests/apps/test_kb_topic_input.py",
+      "source_sha256": "6777fe9b6b578361bd7b381e8f3ea36949fda8b0a559d85e48609387aee5cc54",
+      "committed": true,
+      "targets": [
+        "tests/ingest/test_topic_filter_inputs.py"
+      ],
+      "how": "đổi import; thêm ca mới"
+    },
+    {
+      "source": "tests/apps/test_kb_topic_sample.py",
+      "source_sha256": "c9e104cacd23088e1123fe6f0af4728c014a0037205f6c0b83a7298b85b29905",
+      "committed": true,
+      "targets": [
+        "tests/ingest/test_topic_filter_sample.py"
+      ],
+      "how": "đổi import; thêm ca mới"
+    },
+    {
+      "source": "tests/apps/test_kb_topic_score.py",
+      "source_sha256": "150bf24f2f01b00178c681d126bbca2449c2213d91f95fcdc87432c66e6f87cf",
+      "committed": true,
+      "targets": [
+        "tests/ingest/test_topic_filter_score.py"
+      ],
+      "how": "đổi import; thêm ca mới"
+    }
+  ]
+}

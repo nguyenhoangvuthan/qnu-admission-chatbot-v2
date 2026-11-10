@@ -87,7 +87,7 @@ comment và dòng trống.
 | **Hoãn, lấy khi tới việc** | `apps/web` và `web-ui` | 4.779 + UI | Sản phẩm đang chạy, không phải phần bỏ; lấy sau khi lõi xong. Gộp migration `0001`–`0007` thành một bản đầu |
 | **Hoãn, lấy khi tới việc** | `segments_generator.py`, `segments_prompt.py` | 414 | Cờ `inline_citations` đang tắt, chờ đo |
 | **Lấy, giữ hành vi** (Kent đổi 06/11/2026, xem §10) | `ingest`, `apps/crawler` | 3.419 | Thay quyết định 05/11 "ở lại repo cũ": RUNBOOK v2 không còn chạy gì ở repo cũ |
-| **Hoãn, lấy khi tới việc** | `apps/knowledge_base` | 1.555 | Lọc chủ đề bằng model, ảnh người, dựng snapshot; RUNBOOK mục 5 và 11 |
+| **Đã lấy phần lọc chủ đề** (06/11/2026, xem §12); phần còn lại hoãn | `apps/knowledge_base` | 1.555 | Ảnh người, dựng snapshot còn hoãn; RUNBOOK mục 5 và 11 |
 | **Đã lấy một đường** (06/11/2026, xem §11) | `experiments/ocr_selection/` | 4.097 | M8 đã chọn `cur_rotgate`; chỉ tách đường chạy cấu hình đó, phần chọn cấu hình ở lại repo cũ |
 | **Tham khảo khi làm SQL** | `experiments/bench_sql_vs_text.py` | 420 | Parser bảng điểm dùng cho V5a; không chép cả script |
 | **Bỏ** | `qnu_rag/arms.py`, các script pilot `run_pilot`, `report_pilot`, `preflight_pilot`, `pilot_readiness`, `probe_generator` | 1.116 | B0–B3 không có trong 17 arm; runner mới theo plan P1 |
@@ -326,3 +326,20 @@ chuẩn của `data/ocr-data/corpus.json` ra giống từng dòng và cùng góc
 | Worker gọi theo đường dẫn file, không cài `qnuchat` vào môi trường OCR | `qnuchat` kéo theo sentence-transformers; worker chỉ cần thư viện chuẩn ở cấp module |
 | `run` bị khoá tới khi `verify` đạt | Spec knowledge base §6: output khác thì không dùng worker mới |
 | `apply` tách khỏi `run` | RUNBOOK: Kent đồng ý rồi mới dọn `quarantine/`, và `apply` xoá file danh sách người |
+
+## 12. Chuyển lọc chủ đề (06/11/2026)
+
+Kent yêu cầu chạy được RUNBOOK mục 11.3 từ v2: `ingest/topic_filter/`, `apps/cli/knowledge_base.py`, `scripts/run_topic.sh`,
+`configs/knowledge_base/`. Nguồn → đích ở [manifest](migration-manifest-topic-2026-11-06.json). Spec viết cho kho 15.673 mục, chưa OCR;
+kho v2 có 95 mục cần lọc và đã OCR, nên có các khác biệt sau.
+
+| Khác với repo cũ | Lý do |
+|---|---|
+| File và ảnh dùng chữ OCR làm nội dung; một dòng prompt đổi theo | Kho đã OCR trước. Đây là đầu vào lần 2 của spec §5.2; không có chữ thì ảnh chỉ có tên file, `khong_chac` vượt 15% |
+| Bỏ cờ `--pass`, chỉ còn một lần lọc | OCR đã xong nên lần 2 không còn việc |
+| Thêm `topic-labels`: áp thẳng nhãn của Kent | Mẫu là cả kho nên `topup` hết mục; thiếu 73 mục `giu` thì cổng Wilson không bao giờ đạt. Sổ cũ đã có `decided_by: kent` nhưng chưa có lệnh ghi |
+| `classify` không ghi đè nhãn của Kent | Dòng mới nhất là quyết định hiện hành |
+| Thêm `topic-pending`, `prune` in danh sách trước khi hỏi | `prune` xoá blob vĩnh viễn; tách `topic_withdrawals` để xem trước và chạy thật cùng một luật |
+| `prune` xoá cả chữ OCR của mục đã rút | Chữ OCR nằm ngoài blob, không xoá thì còn sót |
+| Mẫu và điểm ở `artifacts/knowledge_base/` | Theo cây thư mục v2 |
+

@@ -8,6 +8,7 @@
 | [Manifest chuyển code](architecture/migration-manifest-v1-final.json) | Nguồn → đích, SHA-256 tại `v1-final` | Provenance của đợt lõi |
 | [Manifest chuyển crawler](architecture/migration-manifest-crawler-2026-11-06.json) | Nguồn → đích, SHA-256 bản đã chép | Provenance của đợt quét web |
 | [Manifest chuyển OCR](architecture/migration-manifest-ocr-2026-11-06.json) | Nguồn → đích, SHA-256 tại `v1-final` | Provenance của đợt OCR |
+| [Manifest chuyển lọc chủ đề](architecture/migration-manifest-topic-2026-11-06.json) | Nguồn → đích, SHA-256 tại `v1-final` | Provenance của đợt lọc chủ đề |
 | [Tra cứu code](guides/code-navigation.md) | CodeGraph, Graphify, phạm vi chỉ mục | Hướng dẫn dùng công cụ đã khởi tạo |
 
 Mỗi quyết định có một tài liệu sở hữu. `../RUNBOOK.md` chỉ mô tả v2: mục "Chạy được" có code trong

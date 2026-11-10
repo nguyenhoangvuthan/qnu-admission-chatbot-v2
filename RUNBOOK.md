@@ -42,7 +42,7 @@ Lệnh viết cho bash. File `.sh` gọi thẳng được từ fish; lệnh có 
 | 10 | Chuyển web app, bàn giao, nghiệm thu live | Chưa có code | Có | **Vừa**, thư viện giao diện, chỉ lần đầu | 1–2 giờ |
 | 11.1 | Model hiểu câu | Chưa có code | Có | Không | Nhiều giờ |
 | 11.2 | Xoá ảnh người trong `quarantine/` | Chưa có code | Có | **Nhiều**, model đọc ảnh vài GB, chỉ lần đầu | Khoảng 0,8 giây/ảnh |
-| 11.3 | Lọc chủ đề kho web bằng model | Chưa có code | Có | Không | Nhiều giờ |
+| 11.3 | Lọc chủ đề kho web bằng model | Chạy được | Có, nếu dùng model | Không | Khoảng 2 phút chạy model; Kent gán nhãn 95 mục |
 | 11.4 | OCR ảnh web | Chạy được | Có | **Nhiều**, môi trường OCR 12 GB, chỉ lần đầu | Khoảng 2,2 giây/trang; kho hiện tại 5 phút |
 | 11.5 | Giao diện | Chưa có code | Không | Ít | — |
 | 12 | Mở cho người dùng thật | Chưa có code, chờ trường | Có | **Vừa**, quét định kỳ mỗi ngày | — |
@@ -67,7 +67,7 @@ Giao diện không vướng logic (11.5) làm lúc nào cũng được.
 Tình trạng máy này khi kiểm 06/11/2026: có `.venv`, `environments/vllm/.venv`, `Qwen3-4B-AWQ` và `bge-m3`. Chưa có
 database, web app, giao diện, router SQL, công cụ chấm. Kho web đã có ở `data/web/`, OCR xong
 (mục 11.4), `quarantine/` trống. `environments/ocr` đã dựng.
-Test đạt: 856 passed, 9 skipped; ruff sạch; 4/4 contract import giữ.
+Test đạt: 934 passed, 9 skipped; ruff sạch; 4/4 contract import giữ.
 
 **Luật GPU:** laptop chỉ có 6 GB, mỗi lúc một việc dùng GPU. vLLM chiếm GPU, nên embedding GPU và OCR phải chạy khi vLLM đã tắt.
 
@@ -471,22 +471,25 @@ uv run python -m apps.cli.crawl prune-people --apply                # xoá thậ
 **Xem tay trang duyệt trước khi `--apply`.** Nhãn `anh_nguoi` gán cả poster tuyển sinh có người ở góc: ngày 06/11/2026 có 3 trên 4
 ảnh bị gán sai, gồm poster quy đổi điểm và poster ngành Quản lý đất đai.
 
-### 11.3. Lọc chủ đề kho web bằng model — chưa có code
+### 11.3. Lọc chủ đề kho web bằng model — chạy được
 
-Cần kho web. Lọc mịn hơn `topic_gate` của mục 4: model đọc từng mục rồi gán nhãn. Phải bốc mẫu bằng seed mới **trước** khi model
-chạy. Lệnh dự kiến:
+Lọc mịn hơn `topic_gate` của mục 4: model đọc từng mục rồi gán nhãn. Tầng A, hạt giống, trang hub và favicon không qua bộ lọc. Đầu vào
+gồm metadata và 1.500 ký tự đầu của chữ; file và ảnh đã OCR dùng chữ OCR. Phải bốc mẫu bằng seed mới **trước** khi model chạy.
+
+**Kho hiện nhỏ:** 95 mục cần lọc (60 trang, 31 ảnh, 4 file), nên mẫu chính là cả 95 mục, không phải 200. Có hai cách, đều bắt đầu bằng bước
+0–2. Cách A nhanh và chắc hơn ở quy mô này: nhãn của Kent phủ cả kho nên không còn gì để suy từ mẫu ra.
 
 | Bước | Lệnh | Ghi chú |
 |---|---|---|
 | 0 | `scripts/run_topic.sh status` | |
 | 1 | `scripts/run_topic.sh sample <seed mới>` rồi `check-sample` | Phải in "mẫu khớp kho" |
-| 2 | Mở `artifacts/knowledge_base/topic-filter/sample-<seed>/index.html`, gán nhãn 200 mục, xuất `labels.csv` | **Kent**, vài giờ. Làm song song với bước 3–5 được |
-| 3 | `scripts/run_topic.sh vllm` | GPU phải rảnh |
-| 4 | `scripts/run_topic.sh try` | 5 mục |
-| 5 | `scripts/run_topic.sh start` | Chạy nền nhiều giờ; `log`, `stop` |
-| 6 | `scripts/run_topic.sh score ~/Downloads/labels.csv` | In `ĐẠT` hoặc `KHÔNG ĐẠT: <lý do>` |
-| 7 | `scripts/run_topic.sh prune` | Chỉ khi `ĐẠT`; gõ xác nhận; **xoá blob vĩnh viễn** |
-| 8 | `scripts/run_topic.sh vllm-stop` | |
+| 2 | Mở `artifacts/knowledge_base/topic-filter/sample-<seed>/index.html`, gán nhãn, xuất `labels.csv` | **Kent** |
+| A3 | `scripts/run_topic.sh labels ~/Downloads/labels.csv` | Áp thẳng nhãn của Kent, không cần model hay GPU |
+| B3 | `scripts/run_topic.sh vllm`, rồi `try` (5 mục), rồi `start` | GPU phải rảnh; khoảng 2 phút; `log`, `stop` |
+| B4 | `scripts/run_topic.sh score ~/Downloads/labels.csv` | In `ĐẠT` hoặc `KHÔNG ĐẠT: <lý do>` |
+| 5 | `scripts/run_topic.sh pending` | Xem mục sẽ bị rút; chưa đổi gì |
+| 6 | `scripts/run_topic.sh prune` | In lại danh sách; gõ xác nhận; **xoá blob và chữ OCR vĩnh viễn** |
+| 7 | `scripts/run_topic.sh vllm-stop` | Nếu đã bật ở B3 |
 
 **Nhãn:** `giu` là cần cho tư vấn tuyển sinh đại học chính quy cho học sinh THPT. `loai` là sau đại học, vừa làm vừa học,
 từ xa, liên thông, văn bằng 2, khoá ngắn hạn, tin hoạt động, hội thảo, đoàn thể.
@@ -494,10 +497,14 @@ từ xa, liên thông, văn bằng 2, khoá ngắn hạn, tin hoạt động, h�
 | `score` báo | Làm gì |
 |---|---|
 | Mục chưa có nhãn model | `scripts/run_topic.sh start` rồi đo lại |
-| Cận Wilson vượt 5% với 0 mục loại nhầm | Thiếu mục `giu` (cần ít nhất 73): `scripts/run_topic.sh topup 50`, gán thêm, xuất lại, đo lại |
-| Model loại nhầm, hoặc `khong_chac` vượt 15% | Không xoá. Sửa `configs/knowledge_base/topic_prompt.md` một lần, bốc mẫu mới, gán lại, chạy lại. Vẫn không đạt thì dừng |
+| Cận Wilson vượt 5% với 0 mục loại nhầm | Thiếu mục `giu` (cần ít nhất 73). Mẫu đã là cả kho nên `topup` không còn mục để bốc: dùng cách A |
+| Model loại nhầm, hoặc `khong_chac` vượt 15% | Không xoá. Sửa `configs/knowledge_base/topic_prompt.md` một lần, bốc mẫu mới, gán lại, chạy lại. Vẫn không đạt thì dùng cách A |
 
-Không chạy bước 1, 4, 5, 7 khi kho đang quét.
+Chạy thử 12 mục ngày 06/11/2026 trên bản sao: 4 mục `loai` đều là thông báo ký túc xá, lý do `khoa_ngan_han`, trái prompt. Chưa đo, chưa sửa
+prompt; nhiều khả năng cách B không đạt ở lần đầu.
+
+Mục Kent gán nhãn thì model không ghi đè. `prune` chỉ áp nhãn của Kent, hoặc nhãn của phiên bản bộ lọc có `score.json` đạt. Không chạy
+bước 1, B3, 6 khi kho đang quét.
 
 ### 11.4. OCR ảnh web — chạy được
 
@@ -529,7 +536,7 @@ tiêu đề thì chỉ còn luật theo hàng. Một người đơn lẻ không 
 Kent cho bỏ Phụ lục 3 tra cứu mã BHXH của ba bản hướng dẫn nhập học (HD2659 trang 9–10, HD2699 trang 8, HD2611 trang 9): ngoài phạm vi
 tuyển sinh và có ảnh kết quả của một người. Ghi ở `configs/ocr/excluded-pages.yaml`. HD2611 có lớp chữ nên không qua OCR: bước dựng kho
 chữ (mục 5) phải đọc file này. Hai ảnh ký túc xá không có chữ đã xoá bằng `remove`.
-Đã `apply`: 67 file, 125 trang vào kho, `quarantine/` trống. Lọc chủ đề lần hai trên chữ OCR chưa có code (11.3).
+Đã `apply`: 67 file, 125 trang vào kho, `quarantine/` trống. Lọc chủ đề trên chữ OCR ở mục 11.3.
 
 ### 11.5. Giao diện
 

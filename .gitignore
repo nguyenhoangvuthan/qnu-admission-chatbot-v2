@@ -17,3 +17,6 @@ artifacts/
 
 # Kho web quét về và sổ nhãn ảnh người: ghi chú có tên người thật, repo này public
 data/web/*
+
+# Phiên công cụ agent, chỉ dùng cục bộ
+codex_session.txt

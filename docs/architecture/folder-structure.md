@@ -118,7 +118,8 @@ Bảng này chỉ cho biết đích của từng phần. Phần nào được v�
 | `web-ui` | `apps/web` | Cập nhật đường dẫn generated API, build output và e2e |
 | `apps/crawler` | `apps/cli/crawl.py` + `ingest/crawl_job.py`, `crawl_log.py` | Đã chuyển 06/11/2026 |
 | `experiments/ocr_selection` (đường `cur_rotgate`) | `ingest/ocr/`, `apps/cli/ocr.py`, `environments/ocr` | Đã chuyển 06/11/2026; phần chọn cấu hình ở lại repo cũ |
-| `apps/knowledge_base` | `apps/cli` + library ingest | Hoãn; không trộn CLI và nghiệp vụ |
+| `apps/knowledge_base` (lọc chủ đề) | `ingest/topic_filter/`, `apps/cli/knowledge_base.py` | Đã chuyển 06/11/2026 |
+| `apps/knowledge_base` (ảnh người, snapshot) | `apps/cli` + library ingest | Hoãn; không trộn CLI và nghiệp vụ |
 | `data/ocr-data/*.py` | `scripts/data/*` hoặc library ingest | Sửa đường dẫn và kiểm export trước khi dời |
 
 Đổi tên `apps/web`/`web-ui` là bước cuối riêng biệt khi chuyển ứng dụng, không bắt buộc để

@@ -26,6 +26,7 @@ from qnuchat.ingest.frontier import Frontier
 from qnuchat.ingest.html_page import parse_page
 from qnuchat.ingest.manifest import Manifest, ManifestEntry
 from qnuchat.ingest.state import CheckState
+from qnuchat.ingest.topic_filter.ledger import TopicPolicy
 from qnuchat.ingest.urls import canonicalize, drive_file_id, in_scope
 
 logger = logging.getLogger(__name__)
@@ -194,6 +195,39 @@ def _withdrawal(
     )
 
 
+def prune_exempt(cfg: CrawlConfig) -> set[str]:
+    """Hạt giống và tầng A: `prune` không rút theo năm hay chủ đề."""
+    aliases = cfg.host_aliases
+    return {u for u in (canonicalize(x, aliases=aliases) for x in [*cfg.seeds, *cfg.tier_a]) if u}
+
+
+def topic_withdrawals(
+    current: dict[str, ManifestEntry],
+    topic: TopicPolicy,
+    *,
+    exempt: set[str],
+    state: CheckState,
+) -> list[ManifestEntry]:
+    """Mục bộ lọc chủ đề rút: mục gán `loai` được áp, và ảnh đi theo trang bị rút trừ khi chính ảnh
+    được gán `giu`. Trang xét trước để ảnh biết trang chứa nó đã bị rút chưa."""
+    chosen: list[ManifestEntry] = []
+    off_pages: set[str] = set()
+    for url, entry in sorted(current.items(), key=lambda item: item[1].kind != "page"):
+        if entry.kind == "favicon" or entry.tier == "A" or url in exempt or state.is_hub(url):
+            continue
+        if topic.withdraws(url, entry.sha256):
+            chosen.append(entry)
+            if entry.kind == "page":
+                off_pages.add(url)
+        elif (
+            entry.kind == "image"
+            and entry.page_url in off_pages
+            and not topic.keeps(url, entry.sha256)
+        ):
+            chosen.append(entry)
+    return chosen
+
+
 def prune(
     *,
     data_dir: Path,
@@ -201,6 +235,7 @@ def prune(
     config_hash: str,
     today: date,
     now: Callable[[], datetime],
+    topic: TopicPolicy | None = None,
     out: Callable[[str], None] = print,
 ) -> int:
     """Áp phạm vi và mốc năm hiện hành lên kho đã có (spec §6.5):
@@ -208,8 +243,10 @@ def prune(
     1. Mục thuộc site trường nay ngoài phạm vi (blocklist) → rút, lý do `out_of_scope`.
     2. Mục biết chắc năm < `min_year` → rút, `out_of_range`. Hạt giống, tầng A và trang hub
        giữ. Ảnh/file không có năm riêng đi theo trang chứa nó khi trang đã bị rút vì năm.
-    3. Xoá blob của mục đã rút (mọi phiên bản), trừ blob còn được mục đang dùng tham chiếu.
-    4. Trang thường chưa suy được năm: bỏ lịch kiểm để lần quét sau tải lại, đọc ngày đăng.
+    3. Có `topic`: mục bộ lọc chủ đề gán `loai` (của Kent, hoặc của phiên bản đã đo đạt) → rút,
+       `off_topic`, xem `topic_withdrawals`.
+    4. Xoá blob và chữ OCR của mục đã rút (mọi phiên bản), trừ blob còn được mục đang dùng.
+    5. Trang thường chưa suy được năm: bỏ lịch kiểm để lần quét sau tải lại, đọc ngày đăng.
 
     Manifest chỉ ghi thêm: rút là thêm dòng `failed`, không xoá dòng cũ. Giữ `crawl.lock`.
     Chạy lại không đổi gì thêm. Mã thoát: 0 xong, 3 đang có lần quét khác."""
@@ -219,10 +256,7 @@ def prune(
             return 3
         manifest, blobs = Manifest(data_dir / "manifest.jsonl"), BlobStore(data_dir)
         state = CheckState(data_dir / "last_checked.json")
-        aliases = cfg.host_aliases
-        exempt = {
-            u for u in (canonicalize(x, aliases=aliases) for x in [*cfg.seeds, *cfg.tier_a]) if u
-        }
+        exempt = prune_exempt(cfg)
         bare = cfg.host_suffix.lstrip(".")
         counts: Counter[str] = Counter()
 
@@ -275,6 +309,9 @@ def prune(
                 )
                 if is_before(year, cfg.min_year) or follows_page:
                     withdraw(entry, "out_of_range")
+        if topic is not None:
+            for entry in topic_withdrawals(manifest.current(), topic, exempt=exempt, state=state):
+                withdraw(entry, "off_topic")
         keep = {entry.sha256 for entry in manifest.current().values()}
         deleted, freed = set(), 0
         for entry in manifest.entries():
@@ -282,12 +319,14 @@ def prune(
             latest = manifest.latest(entry.url)
             if not sha or sha in keep or sha in deleted or latest is None:
                 continue
-            if latest.reason not in ("out_of_range", "out_of_scope"):
+            if latest.reason not in ("out_of_range", "out_of_scope", "off_topic"):
                 continue
             path = blobs.path(sha)
             if path is not None:
                 freed += path.stat().st_size
                 blobs.delete(sha)
+            for ocr_file in (data_dir / "ocr").glob(f"*/{sha}*.json"):
+                ocr_file.unlink()
             deleted.add(sha)
         recheck = 0
         if cfg.min_year is not None:
@@ -307,7 +346,8 @@ def prune(
             state.save()
         out(
             f"prune: rút {counts['out_of_range']} mục trước năm {cfg.min_year} (out_of_range), "
-            f"{counts['out_of_scope']} mục ngoài phạm vi (out_of_scope); xoá {len(deleted)} blob "
+            f"{counts['out_of_scope']} mục ngoài phạm vi (out_of_scope), "
+            f"{counts['off_topic']} mục ngoài chủ đề (off_topic); xoá {len(deleted)} blob "
             f"({freed / 1024 / 1024:.1f} MB); {recheck} trang chưa rõ năm chờ lần quét sau."
         )
         return 0

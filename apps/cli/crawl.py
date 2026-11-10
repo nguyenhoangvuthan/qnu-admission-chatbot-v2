@@ -26,6 +26,7 @@ from qnuchat.ingest.crawl_job import FRONTIER_FILE, prune, restore, run_job
 from qnuchat.ingest.crawl_log import FileCrawlLog
 from qnuchat.ingest.fetch import Fetcher
 from qnuchat.ingest.manifest import load_sources_index
+from qnuchat.ingest.topic_filter.ledger import load_topic_policy
 
 EXIT_INTERRUPTED = 130
 
@@ -42,6 +43,7 @@ class CrawlerSettings(BaseSettings):
     crawl_config: Path = Path("configs/crawl/qnu.yaml")
     crawl_data_dir: Path = Path("data/web")
     sources_yaml: Path = Path("data/sources.yaml")
+    topic_filter_dir: Path = Path("artifacts/knowledge_base/topic-filter")
     timezone: str = "Asia/Ho_Chi_Minh"
 
 
@@ -119,6 +121,9 @@ def main(argv: list[str] | None = None) -> int:
             config_hash=config_hash,
             today=now.date(),
             now=lambda: datetime.now(tz),
+            topic=load_topic_policy(
+                settings.crawl_data_dir / "topic.jsonl", settings.topic_filter_dir
+            ),
         )
 
     log = FileCrawlLog(settings.crawl_data_dir)

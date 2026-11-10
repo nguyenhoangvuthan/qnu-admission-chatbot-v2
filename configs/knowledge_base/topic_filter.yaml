@@ -1,0 +1,11 @@
+# Cấu hình lọc chủ đề kho web (spec knowledge base §5). Đổi file này không đổi prompt_hash;
+# prompt nằm riêng ở topic_prompt.md.
+max_chars: 1500        # §5.2: 1.500 ký tự đầu của chữ trích
+max_tokens: 256        # đầu ra JSON ngắn: label, group, reason, note
+sample_size: 200       # §5.4
+sample_seed: 20261022
+# Nhóm host để phân tầng mẫu (§5.4). Tên host không đuôi .qnu.edu.vn; host khác → nhóm "khac".
+host_groups:
+  www: [www]
+  tuyensinh: [tuyensinh]
+  khoa: [kcntt, ksp, knn, kktcn, khxhnv, kgdthmn, kgdtcqp, kgdctqlnn, ktot, math, fea, fba]
