@@ -180,7 +180,8 @@ Cụm tô vàng là dấu hiệu năm code đã đọc. Trang "được miễn p
 Lựa chọn lưu tạm trong trình duyệt; bấm Xuất để lấy file.</p>
 <label>Người duyệt: <input id=reviewer></label>
 <label><input type=checkbox id=only checked> Chỉ hiện trang cần duyệt</label>
-<span id=count></span> <button id=export>Xuất undated-review.csv</button></header>
+<span id=count></span> <button id=export>Xuất undated-review.csv</button>
+<label>Nhập file đã xuất: <input type=file id=import accept=".csv,text/csv"></label></header>
 {items}
 <script>
 const HEADER = "{header}";
@@ -232,6 +233,42 @@ document.getElementById("export").addEventListener("click", () => {
   a.href = URL.createObjectURL(new Blob([lines.join("\\n") + "\\n"], {type: "text/csv"}));
   a.download = "undated-review.csv";
   a.click();
+});
+// Lựa chọn lưu theo từng trình duyệt: nhập lại file đã xuất để làm tiếp ở trình duyệt hay máy khác.
+function parseCsv(text) {
+  const rows = []; let row = [], field = "", quoted = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (quoted) {
+      if (c === '"' && text[i + 1] === '"') { field += '"'; i++; }
+      else if (c === '"') quoted = false;
+      else field += c;
+    } else if (c === '"') quoted = true;
+    else if (c === ",") { row.push(field); field = ""; }
+    else if (c === "\\n" || c === "\\r") {
+      if (c === "\\r" && text[i + 1] === "\\n") i++;
+      row.push(field); rows.push(row); row = []; field = "";
+    } else field += c;
+  }
+  if (field || row.length) { row.push(field); rows.push(row); }
+  return rows.filter((r) => r.some((v) => v !== ""));
+}
+document.getElementById("import").addEventListener("change", async (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const [head, ...rows] = parseCsv(await file.text());
+  const col = Object.fromEntries(head.map((name, i) => [name, i]));
+  if (!("url" in col) || !("label" in col)) { alert("File không phải undated-review.csv"); return; }
+  let n = 0;
+  for (const r of rows) {
+    if (!r[col.label]) continue;
+    saved[r[col.url]] = { label: r[col.label], note: r[col.note] || "" };
+    if (r[col.reviewer] && !reviewer.value) reviewer.value = saved.__reviewer = r[col.reviewer];
+    n++;
+  }
+  store(); refresh();
+  alert(`Đã nhập ${n} lựa chọn.`);
+  e.target.value = "";
 });
 refresh();
 </script></body></html>

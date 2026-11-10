@@ -145,3 +145,12 @@ def test_review_page_drops_template_junk_and_folds_menu_runs():
     assert "<details" in out and "10 dòng ngắn" in out and "Mục 9" in out
     body = out[out.index("</details>") :]
     assert "<mark>Năm học 2025-2026</mark> khoa tuyển 80 chỉ tiêu ngành." in body
+
+
+def test_review_page_can_import_a_previous_export(tmp_path):
+    # Lựa chọn lưu theo từng trình duyệt; nhập lại file đã xuất để chuyển trình duyệt hay máy.
+    web = make_store(tmp_path)
+    pages = undated_pages(web.current(), web.blobs, floor=2024, today=TODAY)
+    page = render_review(pages, web.blobs, exempt=lambda url: False)
+    assert '<input type=file id=import accept=".csv,text/csv">' in page
+    assert "function parseCsv(" in page
