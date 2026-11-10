@@ -204,7 +204,7 @@ Không cần GPU, không cần database, nên chạy song song với việc khá
 ### 4.2. Xét trang không có ngày đăng — chạy được
 
 ```bash
-uv run python -m apps.cli.crawl undated     # ghi artifacts/knowledge_base/undated.csv, không sửa kho
+uv run python -m apps.cli.crawl undated     # ghi undated.csv và undated.html ở artifacts/knowledge_base/, không sửa kho
 ./scripts/quet-web.sh prune                 # rút trang chỉ hiện hành trước mốc, trừ trang được miễn
 ```
 
@@ -237,7 +237,10 @@ cũ ("TUYỂN SINH ĐẠI HỌC QUY NHƠN NĂM 2021").
 
 ### 4.3. Kent duyệt danh sách trang của snapshot đề án
 
-Làm sau 4.2, vì danh sách cần duyệt sinh ra từ luật đó: mở `artifacts/knowledge_base/undated.csv`, xem các dòng `review`.
+Làm sau 4.2, vì danh sách cần duyệt sinh ra từ luật đó. Mở `artifacts/knowledge_base/undated.html` trong trình duyệt: mỗi
+trang có chữ đã bỏ rác template, menu gập lại, dấu hiệu năm tô vàng. Chọn **Đưa vào snapshot** hoặc **Không đưa vào** cho 71
+trang "cần duyệt", rồi bấm **Xuất undated-review.csv** (cột `url`, `sha256`, `exempt`, `auto_decision`, `label`, `note`,
+`reviewer`, `at`). Lựa chọn lưu trong trình duyệt nên đóng trang mở lại vẫn còn; chạy lại `undated` không xoá lựa chọn.
 
 | Nhóm | Xử lý |
 |---|---|

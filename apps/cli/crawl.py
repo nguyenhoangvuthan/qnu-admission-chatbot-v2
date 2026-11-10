@@ -4,7 +4,7 @@ uv run python -m apps.cli.crawl run --trigger cli   # quét một lần
 uv run python -m apps.cli.crawl status              # 10 lần quét gần nhất
 uv run python -m apps.cli.crawl restore             # tải lại blob còn thiếu theo manifest
 uv run python -m apps.cli.crawl prune               # rút mục trước min_year hoặc ngoài phạm vi
-uv run python -m apps.cli.crawl undated             # trang không có ngày đăng: danh sách Kent duyệt
+uv run python -m apps.cli.crawl undated             # trang không ngày đăng: CSV + HTML duyệt
 
 Dừng `run` bằng Ctrl-C hay SIGTERM (`systemctl stop`): state và hàng đợi được lưu
 (`last_checked.json`, `frontier.jsonl`), lần chạy sau tiếp tục, không quét lại từ đầu. Mã thoát 130.
@@ -30,7 +30,7 @@ from qnuchat.ingest.fetch import Fetcher
 from qnuchat.ingest.manifest import Manifest, load_sources_index
 from qnuchat.ingest.state import CheckState
 from qnuchat.ingest.topic_filter.ledger import load_topic_policy
-from qnuchat.ingest.undated import undated_pages, write_review
+from qnuchat.ingest.undated import render_review, undated_pages, write_review
 
 EXIT_INTERRUPTED = 130
 
@@ -96,11 +96,17 @@ def _undated(out: Path, settings: CrawlerSettings, cfg, *, today) -> int:
     state = CheckState(data_dir / "last_checked.json")
     exempt = prune_exempt(cfg)
     rows = undated_pages(current, BlobStore(data_dir), floor=cfg.min_year, today=today)
-    counts = write_review(rows, out, exempt=lambda url: url in exempt or state.is_hub(url))
+
+    def is_exempt(url: str) -> bool:
+        return url in exempt or state.is_hub(url)
+
+    counts = write_review(rows, out, exempt=is_exempt)
+    page = out.with_suffix(".html")
+    page.write_text(render_review(rows, BlobStore(data_dir), exempt=is_exempt), encoding="utf-8")
     say(
         f"{len(rows)} trang không có ngày đăng: giữ {counts['keep']}, chỉ hiện hành trước "
         f"{cfg.min_year} {counts['remove']} (prune rút nếu không được miễn), cần duyệt "
-        f"{counts['review']} → {out}"
+        f"{counts['review']} → {out}; duyệt bằng {page}"
     )
     return 0
 

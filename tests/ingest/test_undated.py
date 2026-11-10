@@ -7,7 +7,7 @@ from apps.cli.crawl import main
 from qnuchat.ingest import crawl_job as job
 from qnuchat.ingest.config import CrawlConfig, Limits
 from qnuchat.ingest.manifest import Manifest
-from qnuchat.ingest.undated import undated_pages
+from qnuchat.ingest.undated import render_review, undated_pages
 from tests.support.webstore import TS, W, WebStore, html_page, png_bytes
 
 SEED = f"{TS}/vi/tong-hop-nganh-dao-tao"
@@ -107,3 +107,41 @@ def test_cli_writes_the_review_list(tmp_path, monkeypatch):
     assert rows[MAJOR]["decision"] == "remove" and rows[MAJOR]["year"] == "2022"
     assert rows[DORM]["decision"] == "review" and "năm học 2020-2021" in rows[DORM]["evidence"]
     assert rows[CURRENT]["year"] == "2025"
+    page = out.with_suffix(".html").read_text(encoding="utf-8")
+    assert all(url in page for url in rows)
+
+
+def section(page, url):
+    start = page.index(f'data-url="{url}"')
+    return page[start : page.index("</section>", start)]
+
+
+def test_review_page_shows_each_page_text_evidence_and_both_choices(tmp_path):
+    web = make_store(tmp_path)
+    web.put(f"{W}/vi/the", title="<b>Thẻ</b>", data=html_page("Thẻ", "Chữ &lt;script&gt;x thường."))
+    pages = undated_pages(web.current(), web.blobs, floor=2024, today=TODAY)
+    page = render_review(pages, web.blobs, exempt=lambda url: url == SEED)
+
+    dorm = section(page, DORM)
+    assert 'data-decision="review"' in dorm and 'data-exempt="no"' in dorm
+    assert f'data-sha="{web.current()[DORM].sha256}"' in dorm
+    assert "<mark>Từ năm học 2020-2021</mark>, nhà trường trang bị camera." in dorm
+    assert 'value="vao"' in dorm and 'value="khong"' in dorm
+    assert 'data-exempt="yes"' in section(page, SEED)
+    # Chữ trang và tiêu đề là dữ liệu, không phải HTML.
+    other = section(page, f"{W}/vi/the")
+    assert "<script>x" not in other and "&lt;script&gt;x" in other
+    assert "&lt;b&gt;Thẻ&lt;/b&gt;" in other
+
+
+def test_review_page_drops_template_junk_and_folds_menu_runs():
+    from qnuchat.ingest.undated import display_text
+
+    menu = "\n".join(f"Mục {i}" for i in range(10))
+    junk = "{1}\n##LOC[OK]##\n##LOC[Cancel]##"
+    text = f"{junk}\n{menu}\n\nNăm học 2025-2026 khoa tuyển 80 chỉ tiêu ngành."
+    out = display_text(text, "năm học 2025-2026")
+    assert "{1}" not in out and "##LOC" not in out
+    assert "<details" in out and "10 dòng ngắn" in out and "Mục 9" in out
+    body = out[out.index("</details>") :]
+    assert "<mark>Năm học 2025-2026</mark> khoa tuyển 80 chỉ tiêu ngành." in body
