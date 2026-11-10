@@ -58,6 +58,10 @@ class CrawlConfig(_Strict):
     # Chỉ giữ trang/tài liệu từ năm này trở đi (spec §6.5); None = không lọc theo năm.
     min_year: int | None = Field(default=None, ge=2000)
     topic_gate: TopicGate | None = None  # None = đi theo mọi link trong phạm vi
+    # File trong phần nội dung chính của trang con thuộc các URL này luôn tải, không xét `min_year`,
+    # `blocklist_url_patterns` hay `topic_gate.exclude`; `prune` cũng không rút (PDF CTĐT trên trang
+    # ngành, Kent 10/11/2026). Robots, host, tiêu đề và nội dung có thông tin người vẫn chặn.
+    attachments_always_from: list[str] = Field(default_factory=list)
 
     @field_validator("blocklist_url_patterns", "pii_title_skip")
     @classmethod

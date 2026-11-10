@@ -28,6 +28,7 @@ from qnuchat.ingest.manifest import Manifest, ManifestEntry
 from qnuchat.ingest.state import CheckState
 from qnuchat.ingest.topic import TopicFilter
 from qnuchat.ingest.urls import (
+    attachments_always,
     canonicalize,
     classify_link,
     drive_canonical,
@@ -88,6 +89,8 @@ class _Asset:
     tier: str
     title: str | None
     published: date | None
+    # Đính kèm của trang thuộc `attachments_always_from`: không xét năm, mẫu URL chặn, cổng chủ đề.
+    always: bool = False
 
 
 def _item_to_row(item: _Page | _Asset) -> dict:
@@ -102,6 +105,7 @@ def _item_to_row(item: _Page | _Asset) -> dict:
         "tier": item.tier,
         "title": item.title,
         "published": published,
+        "always": item.always,
     }
 
 
@@ -118,6 +122,7 @@ def _item_from_row(row: dict) -> _Page | _Asset:
             str(row["tier"]),
             row.get("title"),
             published,
+            always=bool(row.get("always", False)),
         )
     raise ValueError(f"loại mục lạ: {row['type']!r}")
 
@@ -236,7 +241,8 @@ class Crawler:
                 logger.warning("frontier_line_dropped %r: %s", row, exc)
                 continue
             expected = "page" if isinstance(item, _Page) else item.kind
-            if classify_link(item.url, self.cfg) != expected:
+            always = isinstance(item, _Asset) and item.always
+            if classify_link(item.url, self.cfg, url_patterns=not always) != expected:
                 logger.warning("frontier_line_dropped %s: ngoài phạm vi cấu hình mới", item.url)
                 continue
             items.append(item)
@@ -463,6 +469,7 @@ class Crawler:
         # Thân bài đạt cổng: đính kèm và ảnh của nó thuộc chủ đề dù tên file chung chung. Trang
         # danh sách thì không: ảnh ở đó là thumbnail, file ở đó phải tự đạt cổng theo tiêu đề.
         article = wanted and not (hub and self._topic.active)
+        always_here = attachments_always(page_url, self.cfg)
         blocked: set[str] = set()
         for link in page.links:
             if classify_link(link.url, self.cfg) != "page" or not link.text:
@@ -479,6 +486,8 @@ class Crawler:
                     title=link.text,
                 )
         for link in page.links:
+            if always_here and link.in_main and self._enqueue_always(page_url, link, page_tier):
+                continue
             kind = classify_link(link.url, self.cfg)
             if kind == "page":
                 if link.url in blocked:  # `blocked` chỉ có URL loại "page" (vòng trên)
@@ -557,6 +566,17 @@ class Crawler:
 
     # ------------------------------------------------------------------ đính kèm
 
+    def _enqueue_always(self, page_url: str, link, page_tier: str) -> bool:
+        """File trong thân trang thuộc `attachments_always_from`: đưa vào hàng đợi, bỏ qua năm,
+        mẫu URL chặn và cổng chủ đề. Trả False nếu link không phải file (xét như link thường)."""
+        kind = classify_link(link.url, self.cfg, url_patterns=False)
+        if kind not in ("file", "drive_file"):
+            return False
+        url = drive_canonical(link.url) if kind == "drive_file" else link.url
+        tier = "A" if "A" in (page_tier, tier_for(url, self._tier_a)) else "B"
+        self._enqueue(_Asset(url, kind, page_url, tier, link.text or None, link.date, always=True))
+        return True
+
     def _crawl_asset(self, item: _Asset) -> None:
         if not self._robots_allow(item.url):
             self._robots_blocked(item.url)
@@ -566,7 +586,9 @@ class Crawler:
         if not self.state.due(item.url, self.today, self.cfg.limits.recheck_days):
             return
         # Mục từ hàng đợi đã lưu hay từ trang chưa có ngày: xét lại năm trước khi tải.
-        if self._too_old(item.url, item.title, item.published, parent_url=item.page_url):
+        if not item.always and self._too_old(
+            item.url, item.title, item.published, parent_url=item.page_url
+        ):
             self._out_of_range(item.url)
             return
         try:

@@ -78,14 +78,25 @@ def host_of(url: str) -> str:
     return (urlsplit(url).hostname or "").lower()
 
 
-def in_scope(url: str, cfg: CrawlConfig) -> bool:
+def in_scope(url: str, cfg: CrawlConfig, *, url_patterns: bool = True) -> bool:
+    """`url_patterns=False`: bỏ qua `blocklist_url_patterns`, vẫn xét host (file luôn tải)."""
     host = host_of(url)
     bare = cfg.host_suffix.lstrip(".")
     if not (host == bare or host.endswith(cfg.host_suffix)):
         return False
     if host in cfg.blocklist_hosts:
         return False
+    if not url_patterns:
+        return True
     return not any(re.search(pattern, url) for pattern in cfg.blocklist_url_patterns)
+
+
+def attachments_always(page_url: str | None, cfg: CrawlConfig) -> bool:
+    """Trang chứa là trang con của một URL trong `attachments_always_from`."""
+    if not page_url:
+        return False
+    parents = (canonicalize(p, aliases=cfg.host_aliases) for p in cfg.attachments_always_from)
+    return any(parent and is_child(page_url, parent) for parent in parents)
 
 
 def drive_file_id(url: str) -> str | None:
@@ -108,12 +119,12 @@ def drive_folder_id(url: str) -> str | None:
     return match.group(1) if match else None
 
 
-def classify_link(url: str, cfg: CrawlConfig) -> LinkKind | None:
+def classify_link(url: str, cfg: CrawlConfig, *, url_patterns: bool = True) -> LinkKind | None:
     if drive_folder_id(url):
         return "drive_folder"
     if drive_file_id(url):
         return "drive_file"
-    if not in_scope(url, cfg):
+    if not in_scope(url, cfg, url_patterns=url_patterns):
         return None
     ext = posixpath.splitext(unquote(urlsplit(url).path))[1].lower()
     if ext in DOC_EXTS:

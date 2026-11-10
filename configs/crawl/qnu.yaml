@@ -154,6 +154,11 @@ tier_a:
   - https://www.qnu.edu.vn/vi/dai-hoc-chinh-quy-1764
   - https://www.qnu.edu.vn/vi/tuyen-sinh-1763
   - https://www.qnu.edu.vn/vi/hoc-phi-quy-dinh
+# Kent 10/11/2026: trang ngành tuyensinh là nguồn ưu tiên cho thông tin và CTĐT các ngành. File trong thân trang ngành
+# (PDF CTĐT 2022–2023) luôn tải, không xét min_year, blocklist_url_patterns, topic_gate.exclude; prune không rút. Khi trả
+# lời phải ghi năm của CTĐT và dẫn URL. Robots, host, tiêu đề và nội dung có thông tin người vẫn chặn.
+attachments_always_from:
+  - https://tuyensinh.qnu.edu.vn/vi/tong-hop-nganh-dao-tao
 # Tiêu đề khớp → bỏ, không tải (spec §6.2 bước 4).
 pii_title_skip:
   - danh sách (sinh viên|thí sinh|học viên)

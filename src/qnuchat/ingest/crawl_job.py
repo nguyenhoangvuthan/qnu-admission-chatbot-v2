@@ -28,7 +28,7 @@ from qnuchat.ingest.manifest import Manifest, ManifestEntry
 from qnuchat.ingest.state import CheckState
 from qnuchat.ingest.topic_filter.ledger import TopicPolicy
 from qnuchat.ingest.undated import page_text
-from qnuchat.ingest.urls import canonicalize, drive_file_id, in_scope
+from qnuchat.ingest.urls import attachments_always, canonicalize, drive_file_id, in_scope
 
 logger = logging.getLogger(__name__)
 
@@ -269,10 +269,14 @@ def prune(
             latest = manifest.latest(url) if url else None
             return latest is not None and latest.reason == "out_of_range"
 
+        def always(entry: ManifestEntry) -> bool:
+            """Đính kèm của trang thuộc `attachments_always_from`: không rút theo mẫu URL, năm."""
+            return entry.kind == "file" and attachments_always(entry.page_url, cfg)
+
         current = manifest.current()
         for url, entry in current.items():
             if (entry.host == bare or entry.host.endswith(cfg.host_suffix)) and not in_scope(
-                url, cfg
+                url, cfg, url_patterns=not always(entry)
             ):
                 withdraw(entry, "out_of_scope")
         if cfg.min_year is not None:
@@ -280,7 +284,7 @@ def prune(
             # Trang trước, để ảnh/file biết trang chứa nó đã bị rút chưa.
             ordered = sorted(current.items(), key=lambda item: item[1].kind != "page")
             for url, entry in ordered:
-                if entry.kind == "favicon" or url in exempt or state.is_hub(url):
+                if entry.kind == "favicon" or url in exempt or state.is_hub(url) or always(entry):
                     continue
                 # Chỉ lấy năm theo trang chứa khi đó là bài: trang chủ/hub hay mang tiêu đề của
                 # bài nổi bật (cũ), ảnh trên đó không thuộc năm ấy.

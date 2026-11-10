@@ -240,15 +240,27 @@ cũ ("TUYỂN SINH ĐẠI HỌC QUY NHƠN NĂM 2021").
 Làm sau 4.2, vì danh sách cần duyệt sinh ra từ luật đó. Mở `artifacts/knowledge_base/undated.html` trong trình duyệt: mỗi
 trang có chữ đã bỏ rác template, menu gập lại, dấu hiệu năm tô vàng. Chọn **Đưa vào snapshot** hoặc **Không đưa vào** cho 71
 trang "cần duyệt", rồi bấm **Xuất undated-review.csv** (cột `url`, `sha256`, `exempt`, `auto_decision`, `label`, `note`,
-`reviewer`, `at`). Lựa chọn lưu trong trình duyệt nên đóng trang mở lại vẫn còn; chạy lại `undated` không xoá lựa chọn.
+`reviewer`, `at`). Lựa chọn lưu theo từng trình duyệt; sang trình duyệt hay máy khác thì bấm **Nhập file đã xuất** để làm tiếp.
+Không duyệt trong cửa sổ trình duyệt do Playwright điều khiển: file tải về rơi vào `.playwright-mcp/`, không vào `~/Downloads`.
+
+**Đã duyệt 10/11/2026:** `artifacts/knowledge_base/undated-review.csv`, 69 trang: 63 đưa vào, 6 không.
 
 | Nhóm | Xử lý |
 |---|---|
-| Trang ngành `tuyensinh.qnu.edu.vn/vi/tong-hop-nganh-dao-tao/` | Đưa vào nếu đạt luật 4.2; nguồn chính cho câu mô tả ngành |
+| Trang ngành `tuyensinh.qnu.edu.vn/vi/tong-hop-nganh-dao-tao/` | Đưa vào. **Nguồn ưu tiên đầu tiên** cho thông tin và chương trình đào tạo các ngành: có ở đây thì dùng trước trang khoa (Kent 10/11/2026). Trả lời kèm link trang |
+| PDF CTĐT link từ thân trang ngành tuyensinh (34 file, 2022–2023) | Đưa vào dù trước 2024 (`attachments_always_from`). Trả lời ghi năm của CTĐT và dẫn URL file (Kent 10/11/2026) |
 | Trang khoa giới thiệu ngành, chương trình đào tạo | Đưa vào, gắn năm đăng, chỉ từ 01/01/2024 |
-| PDF chương trình đào tạo, mọi tài liệu trước 01/01/2024 | Không đưa vào |
+| PDF CTĐT khác, mọi tài liệu trước 01/01/2024 | Không đưa vào |
 | Trang được miễn (`exempt = yes`) có `decision = remove` | Giữ trong kho, không đưa vào snapshot (Kent chốt 10/11/2026) |
 | Trang được miễn có `decision = review` | Kent duyệt như trang thường; quyết định chỉ áp cho snapshot, `prune` vẫn không rút |
+
+**Luật trả lời rút từ ghi chú duyệt** (cho mục 5 và 8, chưa có code):
+
+- Trang không có ngày đăng mà các trang con có ngày dưới tiêu đề (`pdt…/tuyen-sinh-*`, `ns…/nganh-dao-tao-1103`, trang ngành
+  kgdctqlnn): năm của trang lấy theo ngày dưới tiêu đề của trang con.
+- Trang đưa vào mà không có thời gian (`kktcn…/gioi-thieu-nganh-ky-thuat-dien-1`, `math…/nganh-su-pham-toan-hoc`): trả lời
+  kèm link trang và câu "Để có thêm thông tin chi tiết cho năm nay bạn hãy liên hệ với phòng đào tạo nhé".
+- Trang ngành tuyensinh và trang ký túc xá: trả lời kèm link trang.
 
 Trang được miễn có hai vai: đường để crawler tìm bài mới, và nội dung để chatbot trích. Miễn `prune` chỉ giữ vai thứ nhất.
 Chữ của trang chuyên mục thường là tiêu đề bài cũ, nên cho vào snapshot thì chatbot có thể trả lời bằng tin năm 2021.
