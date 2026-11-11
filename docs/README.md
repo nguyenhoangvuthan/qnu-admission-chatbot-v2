@@ -9,7 +9,7 @@
 | [Manifest chuyển crawler](architecture/migration-manifest-crawler-2026-11-06.json) | Nguồn → đích, SHA-256 bản đã chép | Provenance của đợt quét web |
 | [Manifest chuyển OCR](architecture/migration-manifest-ocr-2026-11-06.json) | Nguồn → đích, SHA-256 tại `v1-final` | Provenance của đợt OCR |
 | [Manifest chuyển lọc chủ đề](architecture/migration-manifest-topic-2026-11-06.json) | Nguồn → đích, SHA-256 tại `v1-final` | Provenance của đợt lọc chủ đề |
-| [Công cụ chấm, phần A](superpowers/specs/2026-11-10-eval-phan-a-design.md) | Runner, chấm, báo cáo Wilson cho một cấu hình (RUNBOOK mục 7) | Kent duyệt 11/11/2026; [plan](superpowers/plans/2026-11-11-eval-phan-a.md), chạy bằng `scripts/thuc-hien-plan-cham-a.sh`; chưa có code |
+| [Công cụ chấm, phần A](superpowers/specs/2026-11-10-eval-phan-a-design.md) | Runner, chấm, báo cáo Wilson cho một cấu hình (RUNBOOK mục 7) | Kent duyệt 11/11/2026; phần A có code, plan ở [`superpowers/plans/2026-11-11-eval-phan-a.md`](superpowers/plans/2026-11-11-eval-phan-a.md) |
 | [Tra cứu code](guides/code-navigation.md) | CodeGraph, Graphify, phạm vi chỉ mục | Hướng dẫn dùng công cụ đã khởi tạo |
 
 Mỗi quyết định có một tài liệu sở hữu. `../RUNBOOK.md` chỉ mô tả v2: mục "Chạy được" có code trong

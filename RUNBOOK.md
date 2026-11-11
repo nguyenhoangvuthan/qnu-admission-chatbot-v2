@@ -36,7 +36,7 @@ Lệnh viết cho bash. File `.sh` gọi thẳng được từ fish; lệnh có 
 | 4.3 | Kent duyệt danh sách trang của snapshot đề án | Chờ Kent | Không | Không | Việc người làm, 71 trang |
 | 5 | Bảy bảng số, snapshot đề án | Chưa có code | Có (embedding) | Không | 10–30 phút |
 | 6 | Bộ câu hỏi chấm điểm phiên bản 2 | Công cụ chạy được, nội dung chưa sửa | Không | Không | Việc người làm |
-| 7 | Công cụ chấm | Chưa có code | Không | Không | — |
+| 7 | Công cụ chấm | Phần A chạy được | Có, chế độ `full` | Không | `retrieval` vài phút; `full` 10–50 phút |
 | 8 | Router, SQL, cổng từ chối | Chưa có code | Không | Không | — |
 | 9 | Chạy 17 cấu hình thí nghiệm, chọn baseline | Chưa chạy được | Có | **Nhiều**, khoảng 3,4 GB model, chỉ lần đầu | 2–4 giờ |
 | 10 | Chuyển web app, bàn giao, nghiệm thu live | Chưa có code | Có | **Vừa**, thư viện giao diện, chỉ lần đầu | 1–2 giờ |
@@ -67,7 +67,7 @@ Giao diện không vướng logic (11.5) làm lúc nào cũng được.
 Tình trạng máy này khi kiểm 06/11/2026: có `.venv`, `environments/vllm/.venv`, `Qwen3-4B-AWQ` và `bge-m3`. Chưa có
 database, web app, giao diện, router SQL, công cụ chấm. Kho web đã có ở `data/web/`, OCR xong
 (mục 11.4), `quarantine/` trống. `environments/ocr` đã dựng.
-Test đạt: 948 passed, 7 skipped; ruff sạch trên `src tests experiments apps`; 4/4 contract import giữ.
+Test đạt (11/11/2026): 1055 passed, 7 skipped; ruff sạch trên `src tests experiments apps`; 4/4 contract import giữ.
 
 **Luật GPU:** laptop chỉ có 6 GB, mỗi lúc một việc dùng GPU. vLLM chiếm GPU, nên embedding GPU và OCR phải chạy khi vLLM đã tắt.
 
@@ -344,19 +344,41 @@ Sau khi đã có snapshot đề án thì rà lại nhãn trên snapshot đó, r�
 uv run python -m experiments.prepare_gold promote --profile v2     # ghi gold.jsonl, không cho ghi đè
 ```
 
-## 7. Công cụ chấm — chưa có code
+## 7. Công cụ chấm — phần A chạy được
 
-Đã có trong `src/qnuchat/eval/`: schema và đọc bộ câu hỏi, metric truy hồi, từ chối, so khớp giá trị, thống kê. Còn thiếu:
+Thiết kế: [spec phần A](docs/superpowers/specs/2026-11-10-eval-phan-a-design.md). Đã có trong `src/qnuchat/eval/`: schema
+và đọc bộ câu hỏi, chọn câu theo nguồn trong kho (`cases`), nhóm kết quả (`outcome`), runner chạy một cấu hình qua pipeline
+(`runner`), chấm và báo cáo có Wilson 95% (`score`), metric truy hồi theo cặp nguồn và trang, từ chối, so khớp giá trị,
+thống kê. Lệnh ở `apps/cli/evaluate.py`:
+
+```bash
+# Chỉ truy hồi, không cần vLLM
+uv run python -m apps.cli.evaluate run --mode retrieval --run-id dev-r3-retrieval
+# Cả pipeline; bật vLLM trước bằng ./scripts/serve-vllm.sh
+uv run python -m apps.cli.evaluate run --mode full --run-id dev-b3-full
+# Chấm lại kết quả đã ghi, không gọi model
+uv run python -m apps.cli.evaluate score dev-b3-full
+```
+
+Kết quả nằm ở `artifacts/runs/<run_id>/`: `manifest.json`, `records.jsonl`, `excluded.jsonl`, `report.json`, `report.md`.
+Mặc định chạy `configs/pipeline/b3-qwen3-4b-awq.yaml` trên `benchmarks/v2/core.draft.jsonl` và
+`comparison.draft.jsonl`; câu có dẫn chứng ngoài kho của cấu hình bị loại và ghi lý do vào `excluded.jsonl`. Mọi số là số
+phát triển, `report.md` ghi rõ ở dòng đầu.
+
+Ctrl-C thì câu đã xong giữ nguyên; chạy lại cùng `--run-id` để làm tiếp, `asked_at` lấy theo lượt cũ. `--retry-errors`
+chạy lại cả câu `execution_error`. Bộ câu hỏi, cấu hình hoặc kho đổi hash thì `run` từ chối chạy tiếp và `score` từ chối
+chấm. Mã thoát: 0 xong; 1 hash lệch hoặc lỗi chấm; 2 vLLM không chạy hoặc sai model; 130 Ctrl-C.
+
+Còn thiếu:
 
 - Cấu hình ba lớp và file cấu hình 17 cấu hình thí nghiệm ở `configs/experiments/`.
-- Runner chạy một cấu hình qua pipeline.
-- Thống kê Wilson, McNemar, Holm cho luật chọn ở mục 9.
+- Thống kê McNemar, Holm cho luật chọn ở mục 9.
 - Test phát lại: cùng câu hỏi qua đường chấm và đường API phải cho cùng kết quả.
 - CI ở `.github/workflows/`.
 - Đọc tập câu SQL và RAG; `OracleRetriever` cho cấu hình G5; embedder Qwen3 cho cấu hình R5q; runner hội thoại cho nhóm viết
-  lại câu; manifest và bộ đọc kết quả từ chối lần chạy lệch hash.
+  lại câu.
 
-Lệnh dự kiến:
+Lệnh dự kiến của phần B (cấu hình thí nghiệm, chưa có code):
 
 ```bash
 uv run python -m qnuchat.core matrix configs/experiments/baseline-gs.yaml
