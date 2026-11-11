@@ -153,7 +153,7 @@ Metric truy hồi hiện so theo số trang (`eval/metrics/retrieval.py`). Đổ
 |---|---|
 | vLLM không chạy hoặc sai model | `run` dừng trước câu đầu, mã thoát khác 0 |
 | `PipelineError` ở một câu | Ghi `execution_error` với `stage`, `cause`; chạy câu tiếp |
-| Lỗi khác ở một câu | Không bắt; `run` dừng, các câu đã xong vẫn còn trong `records.jsonl` |
+| Lỗi khác ở một câu | `run` dừng, mã thoát 1; các câu đã xong vẫn còn trong `records.jsonl`. Chế độ `full`: core bọc lỗi này thành `PipelineError(cause="error")`, câu được ghi `execution_error` rồi `run` dừng; sửa xong chạy lại với `--retry-errors`. Chế độ `retrieval`: lỗi ném thẳng ra |
 | Chạy tiếp mà bộ câu hỏi, cấu hình hoặc kho đổi hash | `run` từ chối, in hash cũ và mới |
 | `score` thấy hash bộ câu hỏi khác manifest | Từ chối chấm |
 | Câu có `forbidden_claims` khác rỗng | `score` báo lỗi; chưa có metric cho trường này (hiện 126/126 câu để rỗng) |

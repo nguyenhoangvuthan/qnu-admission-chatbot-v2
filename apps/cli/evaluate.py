@@ -139,6 +139,10 @@ def _write_excluded(run_dir: Path, excluded: Sequence[dict]) -> None:
     (run_dir / "excluded.jsonl").write_text(text, encoding="utf-8")
 
 
+class UnexpectedStageError(Exception):
+    """Stage ném lỗi ngoài dự kiến; core bọc nó thành `PipelineError(cause="error")`."""
+
+
 def _printer(total: int) -> Callable[[dict], None]:
     done = 0
 
@@ -147,6 +151,12 @@ def _printer(total: int) -> Callable[[dict], None]:
         done += 1
         seconds = record["elapsed_ms"] / 1000
         print(f"[{done}/{total}] {record['status']} {seconds:.1f}s {record['id']}", flush=True)
+        # Spec §5: lỗi ngoài dự kiến dừng lượt. Timeout, JSON hỏng… có cause riêng và chạy tiếp.
+        error = record.get("error")
+        if error is not None and error["cause"] == "error":
+            raise UnexpectedStageError(
+                f"câu {record['id']}, stage {error['stage']}: {error['message']}"
+            )
 
     return show
 
@@ -222,7 +232,15 @@ def _run(args: argparse.Namespace) -> int:
 
     todo = pending(cases, read_records(run_dir / RECORDS), retry_errors=args.retry_errors)
     print(f"Còn {len(todo)}/{len(cases)} câu phải chạy; asked_at {asked_at.isoformat()}.")
-    run_cases(todo, run_dir, answer, on_record=_printer(len(todo)))
+    try:
+        run_cases(todo, run_dir, answer, on_record=_printer(len(todo)))
+    except UnexpectedStageError as exc:
+        print(
+            f"Dừng vì lỗi ngoài dự kiến ({exc}). Sửa lỗi rồi chạy lại cùng --run-id với "
+            "--retry-errors.",
+            file=sys.stderr,
+        )
+        return EXIT_REFUSED
     print(f"Xong. Chấm bằng: uv run python -m apps.cli.evaluate score {run_id}")
     return EXIT_OK
 

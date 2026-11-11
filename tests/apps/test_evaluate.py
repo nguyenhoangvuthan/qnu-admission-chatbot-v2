@@ -171,6 +171,20 @@ def test_ctrl_c_exits_130_and_keeps_finished_cases(tmp_path, gold, monkeypatch, 
     assert (tmp_path / "t1/manifest.json").exists()
 
 
+def test_unexpected_error_wrapped_by_core_stops_the_run(tmp_path, gold, monkeypatch, capsys):
+    # Core bọc mọi Exception thành PipelineError(cause="error"); đó là bug, không phải lỗi tạm như
+    # timeout, nên lượt dừng ngay (spec §5) thay vì ghi execution_error cho mọi câu còn lại.
+    runtime = fake_runtime_for(generator=FakeGenerator(error=RuntimeError("bug trong stage")))
+    monkeypatch.setattr(evaluate, "make_runtime", lambda loaded, args: runtime)
+    monkeypatch.setattr(evaluate, "served_vllm_version", lambda runtime, loaded, url: "0.33.0-test")
+    assert main(run_args(gold, tmp_path)) == 1
+    assert len(runtime.generator.calls) == 1
+    records = (tmp_path / "t1/records.jsonl").read_text(encoding="utf-8").splitlines()
+    assert [json.loads(line)["error"]["cause"] for line in records] == ["error"]
+    err = capsys.readouterr().err
+    assert "bug trong stage" in err and "--retry-errors" in err
+
+
 def test_score_refuses_changed_gold(tmp_path, gold, fake_runtime):
     assert main(run_args(gold, tmp_path)) == 0
     gold.write_text(gold.read_text(encoding="utf-8") + "\n", encoding="utf-8")
