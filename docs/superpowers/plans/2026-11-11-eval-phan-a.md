@@ -210,7 +210,7 @@ Kết quả mong đợi: `67 56 59`.
 Thứ tự xét cho câu trả lời được: `abstained` → `critical_error` (có claim mà `contradicts(claim, item.expected_slots)`) →
 `correct` (mọi slot có claim `slot_matches`) → `incomplete`.
 
-Vì sao xét cả danh sách slot (sửa spec §4.1 ngày 11/11/2026): 5/56 câu trả lời được, như `V2-PIL-027` "Kinh tế có hai
+Vì sao xét cả danh sách slot (sửa spec §4.1, Kent đồng ý 11/11/2026): 5/56 câu trả lời được, như `V2-PIL-027` "Kinh tế có hai
 chuyên ngành nào?", có nhiều slot cùng `subject` và `predicate` nhưng khác `value`. Nếu so từng slot riêng, claim đúng
 "Kinh tế đầu tư" mâu thuẫn với slot "Kinh tế phát triển", nên câu trả lời hoàn hảo vẫn bị tính `critical_error`.
 

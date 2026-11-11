@@ -112,7 +112,7 @@ Mỗi câu thuộc đúng một nhóm.
 
 `critical_error` xét trước `incomplete`: câu vừa thiếu slot vừa sai một giá trị là `critical_error`.
 
-Sửa 11/11/2026: bản đầu so claim với từng slot riêng. 5/56 câu trả lời được (vd. `V2-PIL-027` "Kinh tế có hai chuyên ngành
+Sửa 11/11/2026, Kent đồng ý cùng ngày: bản đầu so claim với từng slot riêng. 5/56 câu trả lời được (vd. `V2-PIL-027` "Kinh tế có hai chuyên ngành
 nào?") có nhiều slot cùng `subject` và `predicate`, khác `value`; so riêng thì câu trả lời đúng đủ vẫn thành `critical_error`.
 Claim ghi giá trị của điều kiện khác (phương thức, đợt) vẫn là `critical_error`, vì `Claim` không có trường điều kiện để phân
 biệt; Task 8 của plan đọc tay các câu này.
