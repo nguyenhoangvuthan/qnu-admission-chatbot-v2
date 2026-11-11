@@ -103,7 +103,7 @@ Mỗi câu thuộc đúng một nhóm.
 | Câu | Nhóm | Điều kiện |
 |---|---|---|
 | Trả lời được | `correct` | Không từ chối; mọi slot kỳ vọng khớp (`key_fact_accuracy = 1`) |
-| | `critical_error` | Không từ chối; có claim khớp `subject` và `predicate` của một slot kỳ vọng (tính cả synonym) nhưng `value` khác, hoặc `admission_year` cả hai bên đều có mà khác nhau |
+| | `critical_error` | Không từ chối; có claim khớp `subject` và `predicate` của ít nhất một slot kỳ vọng (tính cả synonym), mà không slot nào trong các slot đó có cùng `value` và năm không lệch (năm lệch: cả hai bên đều có `admission_year` mà khác nhau) |
 | | `incomplete` | Không từ chối, không `critical_error`, thiếu ít nhất một slot |
 | | `abstained` | Từ chối |
 | Phải từ chối | `abstained_ok` | Từ chối |
@@ -111,6 +111,11 @@ Mỗi câu thuộc đúng một nhóm.
 | Mọi câu | `execution_error` | `status = execution_error`; không tính là từ chối, không vào mẫu số |
 
 `critical_error` xét trước `incomplete`: câu vừa thiếu slot vừa sai một giá trị là `critical_error`.
+
+Sửa 11/11/2026: bản đầu so claim với từng slot riêng. 5/56 câu trả lời được (vd. `V2-PIL-027` "Kinh tế có hai chuyên ngành
+nào?") có nhiều slot cùng `subject` và `predicate`, khác `value`; so riêng thì câu trả lời đúng đủ vẫn thành `critical_error`.
+Claim ghi giá trị của điều kiện khác (phương thức, đợt) vẫn là `critical_error`, vì `Claim` không có trường điều kiện để phân
+biệt; Task 8 của plan đọc tay các câu này.
 
 ### 4.2. Số trong báo cáo
 
