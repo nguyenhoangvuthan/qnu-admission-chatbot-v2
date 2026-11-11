@@ -1,6 +1,6 @@
 import pytest
 
-from qnuchat.eval.stats import paired_bootstrap_ci
+from qnuchat.eval.stats import paired_bootstrap_ci, wilson_interval
 
 
 def test_identical_scores_give_zero_difference():
@@ -65,3 +65,19 @@ def test_mismatched_lengths_raise():
 def test_empty_input_is_rejected():
     with pytest.raises(ValueError, match="ít nhất một item"):
         paired_bootstrap_ci([], [], [])
+
+
+def test_wilson_matches_precomputed_values():
+    assert wilson_interval(0, 10) == pytest.approx((0.0, 0.2775328), abs=1e-6)
+    assert wilson_interval(10, 10) == pytest.approx((0.7224672, 1.0), abs=1e-6)
+    assert wilson_interval(5, 10) == pytest.approx((0.2365931, 0.7634069), abs=1e-6)
+
+
+def test_wilson_refuses_empty_sample():
+    with pytest.raises(ValueError):
+        wilson_interval(0, 0)
+
+
+def test_wilson_refuses_successes_outside_sample():
+    with pytest.raises(ValueError):
+        wilson_interval(11, 10)
