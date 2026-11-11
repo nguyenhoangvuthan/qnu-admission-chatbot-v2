@@ -1,7 +1,7 @@
 """Nhóm kết quả của một câu (spec §4.1, plan Task 4)."""
 
 from qnuchat.core.contracts import Claim
-from qnuchat.eval.outcome import classify, contradicts
+from qnuchat.eval.outcome import classify, contradicts, critical_value_kind
 from qnuchat.eval.schema import ExpectedSlot, GoldItem, ScoredAnswer
 
 
@@ -129,6 +129,69 @@ def test_unit_is_not_considered_for_contradiction():
 
 def test_no_slot_with_same_subject_and_predicate_is_not_contradiction():
     assert not contradicts(claim_of(S2), [S])
+
+
+# --- chuẩn hoá thêm khi xét critical_error (sửa spec §4.1 lần hai) ------------
+
+CREDITS = ExpectedSlot(
+    subject="ngành CNTT", predicate="tổng số tín chỉ", value="138", unit="tín chỉ",
+    admission_year=2025, unit_synonyms=["TC"],
+)
+DEGREE = slot("Ngôn ngữ Anh", "văn bằng", "Cử nhân")
+
+
+def test_value_with_slot_unit_appended_is_not_critical_but_incomplete():
+    c = claim_of(CREDITS, value="138 tín chỉ")
+    assert not contradicts(c, [CREDITS])
+    assert classify(item([CREDITS]), answered(c)) == "incomplete"
+
+
+def test_value_with_unit_synonym_appended_is_not_critical():
+    assert not contradicts(claim_of(CREDITS, value="138 TC"), [CREDITS])
+
+
+def test_wrong_number_with_unit_appended_is_still_critical():
+    assert contradicts(claim_of(CREDITS, value="140 tín chỉ"), [CREDITS])
+
+
+def test_trailing_punctuation_is_not_critical():
+    assert not contradicts(claim_of(CREDITS, value="138."), [CREDITS])
+    assert not contradicts(claim_of(A, value="Kinh tế đầu tư."), [A, B])
+
+
+def test_major_prefix_on_value_is_not_critical():
+    assert not contradicts(claim_of(A, value="Chuyên ngành Kinh tế đầu tư"), [A, B])
+
+
+def test_short_wrong_text_value_is_still_critical():
+    assert contradicts(claim_of(DEGREE, value="Kỹ sư"), [DEGREE])
+
+
+def test_unit_is_only_cut_at_the_end_of_the_value():
+    assert contradicts(claim_of(CREDITS, value="tín chỉ 138"), [CREDITS])
+
+
+# --- loại giá trị của critical_error (spec §4.2) ------------------------------
+
+
+def test_critical_value_kind_is_none_when_not_critical():
+    assert critical_value_kind(item([S]), answered(claim_of(S))) is None
+    assert critical_value_kind(item([S]), None) is None
+    assert critical_value_kind(item([S]), abstained()) is None
+
+
+def test_critical_value_kind_number():
+    assert critical_value_kind(item([S]), answered(claim_of(S, value="16"))) == "number"
+
+
+def test_critical_value_kind_text():
+    wrong = claim_of(DEGREE, value="Kỹ sư")
+    assert critical_value_kind(item([DEGREE]), answered(wrong)) == "text"
+
+
+def test_critical_value_kind_number_wins_over_text():
+    claims = answered(claim_of(DEGREE, value="Kỹ sư"), claim_of(S, value="16"))
+    assert critical_value_kind(item([DEGREE, S]), claims) == "number"
 
 
 def test_abstain_on_answerable_is_abstained():

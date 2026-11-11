@@ -164,6 +164,25 @@ def test_report_counts_outcomes_and_rates(run_dir):
     assert report["execution_errors"] == {"timeout": 1}
 
 
+def _run_with_text_critical(tmp_path):
+    """Thêm Q5: slot chữ "Cử nhân", claim giả trả "15" → critical_error ở slot chữ."""
+    rows = [*default_rows(), gold_row("Q5", value="Cử nhân")]
+    return make_run(tmp_path, rows=rows, records=[*default_records(), ok("Q5", answer_json())])
+
+
+def test_critical_errors_split_by_value_kind(tmp_path):
+    report = score_run(_run_with_text_critical(tmp_path))
+    assert report["overall"]["critical_error_kinds"] == {"number": 1, "text": 1}
+    assert report["overall"]["critical_error_text_ids"] == ["Q5"]
+
+
+def test_markdown_lists_text_critical_errors_for_hand_reading(tmp_path):
+    markdown = render_markdown(score_run(_run_with_text_critical(tmp_path)))
+    assert "| Lỗi nghiêm trọng: slot số | 1 |" in markdown
+    assert "| Lỗi nghiêm trọng: chỉ slot chữ | 1 |" in markdown
+    assert "Q5" in markdown.split("## Lỗi nghiêm trọng ở slot chữ")[1]
+
+
 def test_report_header_fields(run_dir):
     report = score_run(run_dir)
     assert report["label"] == "phát triển"

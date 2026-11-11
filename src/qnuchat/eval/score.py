@@ -22,7 +22,7 @@ from qnuchat.eval.metrics.retrieval import (
     recall_at_k,
     reciprocal_rank,
 )
-from qnuchat.eval.outcome import Outcome, classify
+from qnuchat.eval.outcome import Outcome, classify, critical_value_kind
 from qnuchat.eval.runner import MANIFEST, RECORDS, read_records
 from qnuchat.eval.schema import ScoredAnswer
 from qnuchat.eval.stats import wilson_interval
@@ -107,6 +107,11 @@ def _section(done: Sequence[tuple[EvalCase, dict]], mode: str) -> dict:
         section["outcomes"] = {name: outcomes[name] for name in OUTCOMES}
         section["accuracy"] = rate(outcomes["correct"], n)
         section["critical_error_rate"] = rate(outcomes["critical_error"], n)
+        kinds = {c.item.id: critical_value_kind(c.item, scored.get(c.item.id)) for c, _ in done}
+        section["critical_error_kinds"] = {
+            kind: sum(k == kind for k in kinds.values()) for kind in ("number", "text")
+        }
+        section["critical_error_text_ids"] = sorted(i for i, k in kinds.items() if k == "text")
         section["coverage"] = rate(n - outcomes["abstained"], n)
         section["abstention"] = _abstention(ok, scored, outcomes["answered_wrongly"])
     section["retrieval"] = _retrieval(answerable)
@@ -190,6 +195,8 @@ _FULL_METRICS: list[tuple[str, Callable[[dict], str]]] = [
     ("N", lambda s: str(s["n"])),
     ("Tỷ lệ đúng", lambda s: _rate_text(s["accuracy"])),
     ("decision-critical error rate", lambda s: _rate_text(s["critical_error_rate"])),
+    ("Lỗi nghiêm trọng: slot số", lambda s: str(s["critical_error_kinds"]["number"])),
+    ("Lỗi nghiêm trọng: chỉ slot chữ", lambda s: str(s["critical_error_kinds"]["text"])),
     ("Coverage", lambda s: _rate_text(s["coverage"])),
     ("Từ chối: precision", _abstention_field("precision")),
     ("Từ chối: recall", _abstention_field("recall")),
@@ -243,6 +250,11 @@ def render_markdown(report: dict) -> str:
             ["Nhóm câu", *(_OUTCOME_LABELS[o] for o in OUTCOMES)],
             [[name, *(str(s["outcomes"][o]) for o in OUTCOMES)] for name, s in groups],
         )
+
+    if full:
+        lines += ["", "## Lỗi nghiêm trọng ở slot chữ (đọc tay)", ""]
+        text_ids = overall["critical_error_text_ids"]
+        lines.append(", ".join(f"`{i}`" for i in text_ids) if text_ids else "Không có.")
 
     lines += ["", "## Theo task_type", ""]
     lines += _table(

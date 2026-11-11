@@ -117,6 +117,14 @@ nào?") có nhiều slot cùng `subject` và `predicate`, khác `value`; so riê
 Claim ghi giá trị của điều kiện khác (phương thức, đợt) vẫn là `critical_error`, vì `Claim` không có trường điều kiện để phân
 biệt; Task 8 của plan đọc tay các câu này.
 
+Sửa lần hai 11/11/2026, Kent đồng ý cùng ngày (review sau Task 7): khi xét `critical_error`, giá trị của claim và slot
+được chuẩn hoá thêm trước khi so: bỏ dấu câu ở cuối, bỏ tiền tố "chuyên ngành", "ngành học", "ngành"; riêng claim
+còn bỏ đơn vị của slot (kể cả `unit_synonyms`) nếu nó đứng cuối `value`. Trước đó "138 tín chỉ", "138." và "Chuyên
+ngành Kinh tế đầu tư" đều thành `critical_error`, dù giá trị đúng; 80/118 slot có đơn vị, 37/118 slot là chữ. Chuẩn
+hoá này chỉ dùng để quyết định `critical_error`: `correct` vẫn so theo `slot_matches`, nên các claim trên thành
+`incomplete`. Không chọn cách bỏ hẳn slot chữ khỏi `critical_error`, vì 29/37 giá trị chữ ngắn (≤ 4 từ, vd. "Cử
+nhân", "Kỹ sư") và trả nhầm chúng là sai thật.
+
 ### 4.2. Số trong báo cáo
 
 Mẫu số N là số câu trả lời được có `status = ok`. Mọi tỷ lệ kèm Wilson 95%.
@@ -125,6 +133,7 @@ Mẫu số N là số câu trả lời được có `status = ok`. Mọi tỷ l�
 |---|---|
 | Tỷ lệ đúng | `correct` / N |
 | `decision-critical error rate` | `critical_error` / N |
+| Lỗi nghiêm trọng theo loại giá trị | Số câu `critical_error` có claim mâu thuẫn với slot số, và số câu chỉ mâu thuẫn với slot chữ, kèm danh sách ID câu chữ để đọc tay. Slot số: `value` sau chuẩn hoá chỉ gồm chữ số và dấu chấm |
 | Coverage | (N − `abstained`) / N |
 | Từ chối | precision, recall, F1 từ `abstention_scores`; số `answered_wrongly` |
 | Truy hồi | R@5, MRR, nDCG@10 trung bình; hit@5 kèm Wilson. So theo cặp `(source_id, page)` |
