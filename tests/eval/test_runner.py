@@ -128,6 +128,16 @@ def test_truncated_only_line_is_cut_to_empty_file(tmp_path):
 # --- read_records ----------------------------------------------------------
 
 
+def test_valid_json_last_line_without_newline_is_unfinished(tmp_path):  # Review Focus 3
+    # Ghi dở có thể dừng đúng trước "\n": dòng parse được nhưng chưa xong. `read_records` phải
+    # hiểu "dòng dở" giống `_cut_partial_tail`, nếu không Q2 bị cắt mà cũng không được chạy lại.
+    path = tmp_path / "records.jsonl"
+    path.write_text('{"id": "Q1", "status": "ok"}\n{"id": "Q2", "status": "ok"}', encoding="utf-8")
+    assert list(read_records(path)) == ["Q1"]
+    run_cases([c2], tmp_path, full_answer(make_pipeline()))
+    assert [r["id"] for r in lines(path)] == ["Q1", "Q2"]
+
+
 def test_missing_records_file_is_empty(tmp_path):
     assert read_records(tmp_path / "records.jsonl") == {}
 

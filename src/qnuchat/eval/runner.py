@@ -51,14 +51,15 @@ def open_run(run_dir: Path, manifest: dict) -> dict:
 def read_records(path: Path) -> dict[str, dict]:
     """Dòng mới nhất của mỗi `id`.
 
-    Dòng cuối thiếu `\\n` mà không parse được là dòng bị cắt dở (mất điện, kill -9): bỏ qua.
-    Dòng hỏng khác thì `ValueError` nêu số dòng (đếm từ 1).
+    Dòng cuối thiếu `\\n` là dòng ghi dở (mất điện, kill -9), kể cả khi nó parse được: bỏ qua,
+    giống `_cut_partial_tail` sẽ cắt nó trước khi ghi tiếp. Dòng hỏng khác thì `ValueError` nêu
+    số dòng (đếm từ 1).
     """
     path = Path(path)
     if not path.exists():
         return {}
     text = path.read_text(encoding="utf-8")
-    lines = text.split("\n")
+    lines = text.split("\n")[:-1]  # phần sau "\n" cuối cùng là dòng dở hoặc chuỗi rỗng
     records: dict[str, dict] = {}
     for number, line in enumerate(lines, start=1):
         if not line.strip():
@@ -66,8 +67,6 @@ def read_records(path: Path) -> dict[str, dict]:
         try:
             record = json.loads(line)
         except json.JSONDecodeError as exc:
-            if number == len(lines):  # chỉ dòng không có "\n" phía sau mới rơi vào đây
-                break
             raise ValueError(f"{path}: dòng {number} không phải JSON hợp lệ ({exc})") from exc
         records[record["id"]] = record
     return records
