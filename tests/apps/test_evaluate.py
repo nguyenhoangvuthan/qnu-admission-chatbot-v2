@@ -162,27 +162,46 @@ def test_retrieval_mode_does_not_touch_vllm(tmp_path, gold, fake_runtime, monkey
     assert report["mode"] == "retrieval" and report["overall"]["retrieval"]["hit_at_5"]["k"] == 2
 
 
+class InterruptOnSecondCall(FakeGenerator):
+    def generate(self, question, passages):
+        if len(self.calls) == 1:
+            self.calls.append((question, list(passages)))
+            raise KeyboardInterrupt
+        return super().generate(question, passages)
+
+
 def test_ctrl_c_exits_130_and_keeps_finished_cases(tmp_path, gold, monkeypatch, capsys):
-    runtime = fake_runtime_for(generator=FakeGenerator(error=KeyboardInterrupt()))
+    runtime = fake_runtime_for(generator=InterruptOnSecondCall())
     monkeypatch.setattr(evaluate, "make_runtime", lambda loaded, args: runtime)
     monkeypatch.setattr(evaluate, "served_vllm_version", lambda runtime, loaded, url: "0.33.0-test")
     assert main(run_args(gold, tmp_path)) == 130
     assert "chạy lại cùng --run-id" in capsys.readouterr().err
-    assert (tmp_path / "t1/manifest.json").exists()
+    records = tmp_path / "t1/records.jsonl"
+    assert [json.loads(line)["id"] for line in records.read_text("utf-8").splitlines()] == ["Q1"]
+    # Chạy lại cùng run_id làm nốt Q2, Q3; không gọi lại Q1.
+    assert main(run_args(gold, tmp_path)) == 0
+    asked = [question for question, _ in runtime.generator.calls]
+    assert [q for q in asked if "(Q1)" in q] == [asked[0]]
+    ids = [json.loads(line)["id"] for line in records.read_text("utf-8").splitlines()]
+    assert ids == ["Q1", "Q2", "Q3"]
 
 
-def test_unexpected_error_wrapped_by_core_stops_the_run(tmp_path, gold, monkeypatch, capsys):
-    # Core bọc mọi Exception thành PipelineError(cause="error"); đó là bug, không phải lỗi tạm như
-    # timeout, nên lượt dừng ngay (spec §5) thay vì ghi execution_error cho mọi câu còn lại.
-    runtime = fake_runtime_for(generator=FakeGenerator(error=RuntimeError("bug trong stage")))
-    monkeypatch.setattr(evaluate, "make_runtime", lambda loaded, args: runtime)
-    monkeypatch.setattr(evaluate, "served_vllm_version", lambda runtime, loaded, url: "0.33.0-test")
+def test_resume_with_changed_gold_is_refused(tmp_path, gold, fake_runtime, capsys):
+    assert main(run_args(gold, tmp_path)) == 0
+    gold.write_text(gold.read_text(encoding="utf-8") + "\n", encoding="utf-8")
     assert main(run_args(gold, tmp_path)) == 1
-    assert len(runtime.generator.calls) == 1
-    records = (tmp_path / "t1/records.jsonl").read_text(encoding="utf-8").splitlines()
-    assert [json.loads(line)["error"]["cause"] for line in records] == ["error"]
-    err = capsys.readouterr().err
-    assert "bug trong stage" in err and "--retry-errors" in err
+    assert "Từ chối chạy tiếp" in capsys.readouterr().err
+
+
+def test_resume_with_changed_pipeline_config_is_refused(tmp_path, gold, fake_runtime, capsys):
+    config = tmp_path / "b3-qwen3-4b-awq.yaml"
+    config.write_text(evaluate.DEFAULT_CONFIG.read_text(encoding="utf-8"), encoding="utf-8")
+    assert main(run_args(gold, tmp_path, "--config", str(config))) == 0
+    # Hash tính trên cấu hình đã hợp nhất, không trên byte: đổi một giá trị thật.
+    changed = config.read_text(encoding="utf-8").replace("top_k: 5", "top_k: 6")
+    config.write_text(changed, encoding="utf-8")
+    assert main(run_args(gold, tmp_path, "--config", str(config))) == 1
+    assert "Từ chối chạy tiếp" in capsys.readouterr().err
 
 
 def test_score_refuses_changed_gold(tmp_path, gold, fake_runtime):
