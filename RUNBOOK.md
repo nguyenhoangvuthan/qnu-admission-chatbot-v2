@@ -67,7 +67,7 @@ Giao diện không vướng logic (11.5) làm lúc nào cũng được.
 Tình trạng máy này khi kiểm 06/11/2026: có `.venv`, `environments/vllm/.venv`, `Qwen3-4B-AWQ` và `bge-m3`. Chưa có
 database, web app, giao diện, router SQL, công cụ chấm. Kho web đã có ở `data/web/`, OCR xong
 (mục 11.4), `quarantine/` trống. `environments/ocr` đã dựng.
-Test đạt (11/11/2026): 1055 passed, 7 skipped; ruff sạch trên `src tests experiments apps`; 4/4 contract import giữ.
+Test đạt (11/11/2026): 1080 passed, 7 skipped; ruff sạch trên `src tests experiments apps`; 4/4 contract import giữ.
 
 **Luật GPU:** laptop chỉ có 6 GB, mỗi lúc một việc dùng GPU. vLLM chiếm GPU, nên embedding GPU và OCR phải chạy khi vLLM đã tắt.
 

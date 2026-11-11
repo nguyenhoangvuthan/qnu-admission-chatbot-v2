@@ -188,3 +188,12 @@ Ràng buộc: `tests/core/test_pilot_parity.py` xanh; `lint-imports` giữ 4/4 c
 
 McNemar, Holm và file đăng ký trước (phần C); file cấu hình thí nghiệm và `matrix` (phần B); hội thoại nhiều lượt;
 faithfulness và completeness (chờ rubric); nạp html, docx vào runtime (mục 5); metric cho `forbidden_claims`.
+
+Hoãn từ review sau Task 7 (11/11/2026):
+
+- Câu hỏi lại (clarification): hiện câu trả lời được bị hỏi lại thành `incomplete` và vẫn tính vào Coverage; câu phải
+  từ chối bị hỏi lại thành `answered_wrongly`. Chế độ `retrieval` bỏ qua `query_rewrite`, nên với cấu hình bật rewrite
+  (`b3-chat.yaml`) số truy hồi của hai chế độ không so được. Cấu hình mặc định tắt rewrite. Cần luật riêng trước khi
+  chấm cấu hình có rewrite.
+- Chạy tiếp với phiên bản vLLM hoặc thiết bị embedding khác không bị từ chối (hai trường này không thuộc
+  `IDENTITY_KEYS`); manifest chỉ giữ giá trị của lần chạy đầu.
