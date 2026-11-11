@@ -195,6 +195,23 @@ def test_report_counts_incomplete_only_for_missing_year(tmp_path):
     assert "| Thiếu chỉ vì claim không ghi năm | 1 |" in render_markdown(score_run(run))
 
 
+def test_precision_and_f1_are_undefined_when_nothing_was_abstained(tmp_path):
+    rows = [gold_row("Q1"), gold_row("Q3", "future_year", must_abstain=True)]
+    correct = answer_json()
+    run = make_run(tmp_path, rows=rows, records=[ok("Q1", correct), ok("Q3", correct)])
+    abstention = score_run(run)["overall"]["abstention"]
+    assert abstention["n_abstained"] == 0
+    assert abstention["precision"] is None and abstention["f1"] is None
+    assert abstention["recall"] == 0.0
+    assert "| Từ chối: precision | — |" in render_markdown(score_run(run))
+
+
+def test_f1_is_undefined_when_group_has_no_must_abstain_case(tmp_path):
+    run = make_run(tmp_path, rows=[gold_row("Q1")], records=[ok("Q1", answer_json(**ABSTAIN))])
+    abstention = score_run(run)["overall"]["abstention"]
+    assert abstention["recall"] is None and abstention["f1"] is None
+
+
 def test_report_header_fields(run_dir):
     report = score_run(run_dir)
     assert report["label"] == "phát triển"

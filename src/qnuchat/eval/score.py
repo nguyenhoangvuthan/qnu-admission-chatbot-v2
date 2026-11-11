@@ -141,10 +141,14 @@ def _abstention(
     scores = abstention_scores(
         [scored[case.item.id] for case, _ in ok], [case.item for case, _ in ok]
     )
+    # Không câu nào từ chối thì precision không xác định; `abstention_scores` trả 0.0 cho trường
+    # hợp này, in ra "0,00" sẽ bị đọc thành "mọi lần từ chối đều sai".
+    precision = None if scores["n_abstained"] == 0 else scores["precision"]
+    recall = _finite(scores["recall"])  # nan khi nhóm không có câu phải từ chối
     return {
-        "precision": _finite(scores["precision"]),
-        "recall": _finite(scores["recall"]),  # nan khi nhóm không có câu phải từ chối
-        "f1": _finite(scores["f1"]),
+        "precision": precision,
+        "recall": recall,
+        "f1": None if precision is None or recall is None else scores["f1"],
         "n_abstained": scores["n_abstained"],
         "answered_wrongly": answered_wrongly,
     }
