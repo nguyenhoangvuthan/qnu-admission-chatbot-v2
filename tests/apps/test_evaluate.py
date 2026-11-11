@@ -192,6 +192,29 @@ def test_score_refuses_changed_gold(tmp_path, gold, fake_runtime):
     assert not (tmp_path / "t1/report.json").exists()
 
 
+def test_score_refuses_corrupt_records_without_traceback(tmp_path, gold, fake_runtime, capsys):
+    assert main(run_args(gold, tmp_path)) == 0
+    records = tmp_path / "t1/records.jsonl"
+    records.write_text("{hỏng\n" + records.read_text(encoding="utf-8"), encoding="utf-8")
+    assert main(["score", "t1", "--runs-dir", str(tmp_path)]) == 1
+    assert "Từ chối chấm" in capsys.readouterr().err
+
+
+def test_score_refuses_missing_gold_file_without_traceback(tmp_path, gold, fake_runtime, capsys):
+    assert main(run_args(gold, tmp_path)) == 0
+    gold.unlink()
+    assert main(["score", "t1", "--runs-dir", str(tmp_path)]) == 1
+    assert "Từ chối chấm" in capsys.readouterr().err
+
+
+def test_vllm_version_not_json_exits_2(tmp_path, gold, fake_runtime, monkeypatch):
+    def not_json(runtime, loaded, url):
+        raise json.JSONDecodeError("Expecting value", "<html>", 0)
+
+    monkeypatch.setattr(evaluate, "served_vllm_version", not_json)
+    assert main(run_args(gold, tmp_path)) == 2
+
+
 def test_default_run_id_names_config_and_mode(tmp_path, gold, fake_runtime):
     runs = tmp_path / "runs"
     assert main(["run", "--gold", str(gold), "--runs-dir", str(runs), "--mode", "retrieval"]) == 0

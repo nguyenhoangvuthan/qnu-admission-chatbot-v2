@@ -178,7 +178,8 @@ def _run(args: argparse.Namespace) -> int:
     if args.mode == "full":
         try:
             vllm_version = served_vllm_version(runtime, loaded, args.base_url)
-        except (VllmMismatch, openai.OpenAIError, httpx.HTTPError) as exc:
+        # ValueError: /version trả nội dung không phải JSON (vd. trang lỗi của proxy).
+        except (VllmMismatch, openai.OpenAIError, httpx.HTTPError, ValueError) as exc:
             print(f"vLLM chưa sẵn sàng ({args.base_url}): {exc}", file=sys.stderr)
             return EXIT_VLLM
 
@@ -252,7 +253,9 @@ def _score(args: argparse.Namespace) -> int:
         return EXIT_REFUSED
     try:
         report = score_run(run_dir)
-    except (StaleRunError, ScoreError) as exc:
+    # ValueError: records hỏng, trùng id trong bộ câu hỏi; OSError: file bộ câu hỏi không còn ở
+    # đường dẫn ghi trong manifest (đường dẫn tương đối: chạy score từ gốc repo).
+    except (StaleRunError, ScoreError, ValueError, OSError) as exc:
         print(f"Từ chối chấm: {exc}", file=sys.stderr)
         return EXIT_REFUSED
     write_report(run_dir, report)
