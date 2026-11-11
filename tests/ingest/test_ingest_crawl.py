@@ -927,13 +927,16 @@ def test_scheduler_rotates_hosts_and_serves_tier_a_first(tmp_path):
     cfg = config(
         seeds=seeds,
         tier_a=[seeds[-1]],  # zeta: cuối bảng chữ cái
-        limits=Limits(rps_per_host=1000, hosts_parallel=2, max_file_mb=5, timeout_s=5, retries=0),
+        # Một luồng: thứ tự request đúng bằng thứ tự bộ lập lịch chọn host. Với hai luồng, log
+        # request lệch khỏi thứ tự chọn một khoảng không chặn được khi máy bận (11/11/2026: hỏng
+        # khi chạy cả bộ test), dù bộ lập lịch chọn đúng. Song song đã có test riêng.
+        limits=Limits(rps_per_host=1000, hosts_parallel=1, max_file_mb=5, timeout_s=5, retries=0),
     )
     crawl(site, tmp_path, cfg=cfg)
     order = _page_hosts(site)
-    # (a) không host nào bị bỏ đói; chừa độ lệch ghi log của các luồng đang chạy dở
-    assert set(order[: len(names) + 2]) == set(names)
-    assert "zeta" in order[:2]  # (b) hạt giống tầng A có sớm nhất
+    # (b) hạt giống tầng A đi đầu; (a) rồi xoay vòng, không host nào phải chờ host khác hết bài
+    assert order[: len(names)] == ["zeta", *names[:-1]]
+    assert order[len(names)] == "zeta"  # vòng hai quay lại bài con của zeta
 
 
 # ---------------------------------------------------------------- mốc năm (min_year, 13/10/2026)
