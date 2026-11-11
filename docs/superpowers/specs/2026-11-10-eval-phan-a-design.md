@@ -134,6 +134,7 @@ Mẫu số N là số câu trả lời được có `status = ok`. Mọi tỷ l�
 | Tỷ lệ đúng | `correct` / N |
 | `decision-critical error rate` | `critical_error` / N |
 | Lỗi nghiêm trọng theo loại giá trị | Số câu `critical_error` có claim mâu thuẫn với slot số, và số câu chỉ mâu thuẫn với slot chữ, kèm danh sách ID câu chữ để đọc tay. Slot số: `value` sau chuẩn hoá chỉ gồm chữ số và dấu chấm |
+| Thiếu chỉ vì không ghi năm | Số câu `incomplete` sẽ thành `correct` nếu claim thiếu `admission_year` lấy năm của slot. Chỉ để đọc tỷ lệ đúng, không đổi nhóm |
 | Coverage | (N − `abstained`) / N |
 | Từ chối | precision, recall, F1 từ `abstention_scores`; số `answered_wrongly` |
 | Truy hồi | R@5, MRR, nDCG@10 trung bình; hit@5 kèm Wilson. So theo cặp `(source_id, page)` |

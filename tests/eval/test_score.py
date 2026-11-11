@@ -8,6 +8,7 @@ import json
 
 import pytest
 
+from qnuchat.core.contracts import Claim
 from qnuchat.eval.cases import StaleRunError, gold_digests
 from qnuchat.eval.schema import ExpectedSlot, GoldItem
 from qnuchat.eval.score import ScoreError, rate, render_markdown, score_run, write_report
@@ -181,6 +182,17 @@ def test_markdown_lists_text_critical_errors_for_hand_reading(tmp_path):
     assert "| Lỗi nghiêm trọng: slot số | 1 |" in markdown
     assert "| Lỗi nghiêm trọng: chỉ slot chữ | 1 |" in markdown
     assert "Q5" in markdown.split("## Lỗi nghiêm trọng ở slot chữ")[1]
+
+
+def test_report_counts_incomplete_only_for_missing_year(tmp_path):
+    rows = [*default_rows(), gold_row("Q5")]
+    claim = Claim(subject="ngành CNTT", predicate="học phí", value="15", unit="triệu đồng")
+    no_year = answer_json(claims=[claim])
+    run = make_run(tmp_path, rows=rows, records=[*default_records(), ok("Q5", no_year)])
+    overall = score_run(run)["overall"]
+    assert overall["outcomes"]["incomplete"] == 1
+    assert overall["incomplete_only_year"] == 1
+    assert "| Thiếu chỉ vì claim không ghi năm | 1 |" in render_markdown(score_run(run))
 
 
 def test_report_header_fields(run_dir):

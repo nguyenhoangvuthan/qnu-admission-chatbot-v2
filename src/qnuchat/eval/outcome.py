@@ -115,3 +115,25 @@ def classify(item: GoldItem, answer: ScoredAnswer | None) -> Outcome:
     if all(any(slot_matches(c, s) for c in answer.claims) for s in slots):
         return "correct"
     return "incomplete"
+
+
+def incomplete_only_for_year(item: GoldItem, answer: ScoredAnswer | None) -> bool:
+    """Câu `incomplete` mà sẽ `correct` nếu claim thiếu `admission_year` được lấy năm của slot.
+
+    `slot_matches` đòi năm bằng nhau, nên model hay bỏ trống năm làm tỷ lệ đúng tụt mà nhìn nhóm
+    kết quả không thấy lý do (spec §4.2). Chỉ để báo cáo, không đổi nhóm của câu.
+    """
+    if classify(item, answer) != "incomplete":
+        return False
+    assert answer is not None
+    return all(
+        any(
+            slot_matches(
+                c if c.admission_year is not None
+                else c.model_copy(update={"admission_year": s.admission_year}),
+                s,
+            )
+            for c in answer.claims
+        )
+        for s in item.expected_slots
+    )

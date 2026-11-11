@@ -22,7 +22,12 @@ from qnuchat.eval.metrics.retrieval import (
     recall_at_k,
     reciprocal_rank,
 )
-from qnuchat.eval.outcome import Outcome, classify, critical_value_kind
+from qnuchat.eval.outcome import (
+    Outcome,
+    classify,
+    critical_value_kind,
+    incomplete_only_for_year,
+)
 from qnuchat.eval.runner import MANIFEST, RECORDS, read_records
 from qnuchat.eval.schema import ScoredAnswer
 from qnuchat.eval.stats import wilson_interval
@@ -112,6 +117,9 @@ def _section(done: Sequence[tuple[EvalCase, dict]], mode: str) -> dict:
             kind: sum(k == kind for k in kinds.values()) for kind in ("number", "text")
         }
         section["critical_error_text_ids"] = sorted(i for i, k in kinds.items() if k == "text")
+        section["incomplete_only_year"] = sum(
+            incomplete_only_for_year(c.item, scored.get(c.item.id)) for c, _ in done
+        )
         section["coverage"] = rate(n - outcomes["abstained"], n)
         section["abstention"] = _abstention(ok, scored, outcomes["answered_wrongly"])
     section["retrieval"] = _retrieval(answerable)
@@ -197,6 +205,7 @@ _FULL_METRICS: list[tuple[str, Callable[[dict], str]]] = [
     ("decision-critical error rate", lambda s: _rate_text(s["critical_error_rate"])),
     ("Lỗi nghiêm trọng: slot số", lambda s: str(s["critical_error_kinds"]["number"])),
     ("Lỗi nghiêm trọng: chỉ slot chữ", lambda s: str(s["critical_error_kinds"]["text"])),
+    ("Thiếu chỉ vì claim không ghi năm", lambda s: str(s["incomplete_only_year"])),
     ("Coverage", lambda s: _rate_text(s["coverage"])),
     ("Từ chối: precision", _abstention_field("precision")),
     ("Từ chối: recall", _abstention_field("recall")),

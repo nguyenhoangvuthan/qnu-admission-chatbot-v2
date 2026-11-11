@@ -1,7 +1,12 @@
 """Nhóm kết quả của một câu (spec §4.1, plan Task 4)."""
 
 from qnuchat.core.contracts import Claim
-from qnuchat.eval.outcome import classify, contradicts, critical_value_kind
+from qnuchat.eval.outcome import (
+    classify,
+    contradicts,
+    critical_value_kind,
+    incomplete_only_for_year,
+)
 from qnuchat.eval.schema import ExpectedSlot, GoldItem, ScoredAnswer
 
 
@@ -192,6 +197,26 @@ def test_critical_value_kind_text():
 def test_critical_value_kind_number_wins_over_text():
     claims = answered(claim_of(DEGREE, value="Kỹ sư"), claim_of(S, value="16"))
     assert critical_value_kind(item([DEGREE, S]), claims) == "number"
+
+
+# --- incomplete chỉ vì thiếu năm (spec §4.2) ----------------------------------
+
+
+def test_incomplete_only_for_year_when_every_slot_lacks_only_the_year():
+    answer = answered(claim_of(S, admission_year=None), claim_of(S2, admission_year=None))
+    assert classify(item([S, S2]), answer) == "incomplete"
+    assert incomplete_only_for_year(item([S, S2]), answer)
+
+
+def test_incomplete_with_a_missing_slot_is_not_only_for_year():
+    answer = answered(claim_of(S, admission_year=None))
+    assert not incomplete_only_for_year(item([S, S2]), answer)
+
+
+def test_other_outcomes_are_not_incomplete_only_for_year():
+    assert not incomplete_only_for_year(item([S]), answered(claim_of(S)))
+    assert not incomplete_only_for_year(item([S]), answered(claim_of(S, value="16")))
+    assert not incomplete_only_for_year(item([S]), None)
 
 
 def test_abstain_on_answerable_is_abstained():
