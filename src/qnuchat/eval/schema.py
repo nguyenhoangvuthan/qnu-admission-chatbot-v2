@@ -53,6 +53,7 @@ class ScoredAnswer:
     abstain: bool
     claims: list[Claim]
     confidence: float
+    text: str = ""  # câu trả lời chữ; `correct` chấm trên nó (spec phần A §4.1)
 
 
 def load_gold(path: str | Path) -> list[GoldItem]:

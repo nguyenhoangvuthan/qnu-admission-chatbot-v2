@@ -5,7 +5,8 @@ from collections.abc import Sequence
 from typing import Literal
 
 from qnuchat.core.contracts import Claim
-from qnuchat.eval.metrics.slots import entity_matches, normalise_value, slot_matches
+from qnuchat.eval.metrics.answer_text import value_in_text
+from qnuchat.eval.metrics.slots import entity_matches, normalise_value
 from qnuchat.eval.schema import ExpectedSlot, GoldItem, ScoredAnswer
 
 ValueKind = Literal["number", "text"]
@@ -112,27 +113,31 @@ def classify(item: GoldItem, answer: ScoredAnswer | None) -> Outcome:
     slots = item.expected_slots
     if any(contradicts(c, slots) for c in answer.claims):
         return "critical_error"
-    if all(any(slot_matches(c, s) for c in answer.claims) for s in slots):
+    # `correct` chấm trên câu trả lời chữ (spec §4.1, sửa lần ba): claim của model 4B thường thiếu
+    # năm, đơn vị, đặt predicate khác gold; chấm trên claim đo cách điền JSON, không đo câu trả lời.
+    if all(value_in_text(answer.text, s) for s in slots):
         return "correct"
     return "incomplete"
 
 
-def incomplete_only_for_year(item: GoldItem, answer: ScoredAnswer | None) -> bool:
-    """Câu `incomplete` mà sẽ `correct` nếu claim thiếu `admission_year` được lấy năm của slot.
 
-    `slot_matches` đòi năm bằng nhau, nên model hay bỏ trống năm làm tỷ lệ đúng tụt mà nhìn nhóm
-    kết quả không thấy lý do (spec §4.2). Chỉ để báo cáo, không đổi nhóm của câu.
+def _unit_ok(claim: Claim, slot: ExpectedSlot) -> bool:
+    if not claim.unit:  # model hay ghi "" thay vì null
+        return True
+    return normalise_value(claim.unit) in {
+        normalise_value(u) for u in (slot.unit, *slot.unit_synonyms)
+    }
+
+
+def claims_match(item: GoldItem, answer: ScoredAnswer | None) -> bool:
+    """Mọi slot được một claim khớp (số "Claim khớp", spec §4.2): đo chất lượng claim, tách khỏi
+    tỷ lệ đúng. Khớp `subject`/`predicate`; giá trị, năm như `critical_error`; `unit` rỗng/khớp.
     """
-    if classify(item, answer) != "incomplete":
+    if answer is None or answer.abstain:
         return False
-    assert answer is not None
     return all(
         any(
-            slot_matches(
-                c if c.admission_year is not None
-                else c.model_copy(update={"admission_year": s.admission_year}),
-                s,
-            )
+            _same_subject_and_predicate(c, s) and _agrees(c, s) and _unit_ok(c, s)
             for c in answer.claims
         )
         for s in item.expected_slots

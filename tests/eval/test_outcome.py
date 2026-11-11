@@ -1,12 +1,7 @@
 """Nhóm kết quả của một câu (spec §4.1, plan Task 4)."""
 
 from qnuchat.core.contracts import Claim
-from qnuchat.eval.outcome import (
-    classify,
-    contradicts,
-    critical_value_kind,
-    incomplete_only_for_year,
-)
+from qnuchat.eval.outcome import claims_match, classify, contradicts, critical_value_kind
 from qnuchat.eval.schema import ExpectedSlot, GoldItem, ScoredAnswer
 
 
@@ -57,8 +52,11 @@ def item(slots: list[ExpectedSlot], must_abstain: bool = False) -> GoldItem:
     )
 
 
-def answered(*claims: Claim) -> ScoredAnswer:
-    return ScoredAnswer(abstain=False, claims=list(claims), confidence=0.9)
+def answered(*claims: Claim, text: str | None = None) -> ScoredAnswer:
+    """Mặc định câu trả lời chữ nêu đúng giá trị các claim, như model trả lời nhất quán."""
+    if text is None:
+        text = ". ".join(f"{c.subject} {c.predicate} {c.value} {c.unit or ''}" for c in claims)
+    return ScoredAnswer(abstain=False, claims=list(claims), confidence=0.9, text=text)
 
 
 def abstained() -> ScoredAnswer:
@@ -77,8 +75,24 @@ def test_wrong_year_is_critical():
     assert classify(item([S]), answered(claim_of(S, admission_year=2024))) == "critical_error"
 
 
-def test_missing_year_on_claim_is_not_critical_but_incomplete():
-    assert classify(item([S]), answered(claim_of(S, admission_year=None))) == "incomplete"
+def test_missing_year_on_claim_is_not_critical_and_text_decides():
+    assert classify(item([S]), answered(claim_of(S, admission_year=None))) == "correct"
+
+
+def test_correct_is_judged_on_answer_text_not_claim_fields():
+    paraphrased = Claim(subject="Ngành CNTT", predicate="mức học phí", value="15", unit="")
+    answer = answered(paraphrased, text="Học phí ngành CNTT là 15 triệu đồng.")
+    assert classify(item([S]), answer) == "correct"
+
+
+def test_value_missing_from_text_is_incomplete_even_if_claim_matches():
+    answer = answered(claim_of(S), text="Học phí ngành CNTT được công bố trong cẩm nang.")
+    assert classify(item([S]), answer) == "incomplete"
+
+
+def test_wrong_claim_is_critical_even_if_text_has_the_right_value():
+    answer = answered(claim_of(S, value="16"), text="Học phí 15 hoặc 16 triệu đồng.")
+    assert classify(item([S]), answer) == "critical_error"
 
 
 def test_missing_slot_is_incomplete():
@@ -145,10 +159,10 @@ CREDITS = ExpectedSlot(
 DEGREE = slot("Ngôn ngữ Anh", "văn bằng", "Cử nhân")
 
 
-def test_value_with_slot_unit_appended_is_not_critical_but_incomplete():
+def test_value_with_slot_unit_appended_is_not_critical():
     c = claim_of(CREDITS, value="138 tín chỉ")
     assert not contradicts(c, [CREDITS])
-    assert classify(item([CREDITS]), answered(c)) == "incomplete"
+    assert classify(item([CREDITS]), answered(c)) == "correct"
 
 
 def test_value_with_unit_synonym_appended_is_not_critical():
@@ -199,24 +213,32 @@ def test_critical_value_kind_number_wins_over_text():
     assert critical_value_kind(item([DEGREE, S]), claims) == "number"
 
 
-# --- incomplete chỉ vì thiếu năm (spec §4.2) ----------------------------------
+# --- claim khớp (spec §4.2) -------------------------------------------------
 
 
-def test_incomplete_only_for_year_when_every_slot_lacks_only_the_year():
-    answer = answered(claim_of(S, admission_year=None), claim_of(S2, admission_year=None))
-    assert classify(item([S, S2]), answer) == "incomplete"
-    assert incomplete_only_for_year(item([S, S2]), answer)
+def test_claims_match_tolerates_missing_year_empty_unit_and_unit_in_value():
+    loose = Claim(subject="ngành CNTT", predicate="tổng số tín chỉ", value="138 tín chỉ", unit="")
+    assert claims_match(item([CREDITS]), answered(loose))
 
 
-def test_incomplete_with_a_missing_slot_is_not_only_for_year():
-    answer = answered(claim_of(S, admission_year=None))
-    assert not incomplete_only_for_year(item([S, S2]), answer)
+def test_claims_match_needs_same_predicate():
+    other = Claim(subject="ngành CNTT", predicate="khối lượng kiến thức", value="138")
+    assert not claims_match(item([CREDITS]), answered(other))
 
 
-def test_other_outcomes_are_not_incomplete_only_for_year():
-    assert not incomplete_only_for_year(item([S]), answered(claim_of(S)))
-    assert not incomplete_only_for_year(item([S]), answered(claim_of(S, value="16")))
-    assert not incomplete_only_for_year(item([S]), None)
+def test_claims_match_rejects_other_unit_and_conflicting_year():
+    assert not claims_match(item([S]), answered(claim_of(S).model_copy(update={"unit": "đồng"})))
+    assert not claims_match(item([S]), answered(claim_of(S, admission_year=2024)))
+
+
+def test_claims_match_needs_every_slot():
+    assert claims_match(item([S, S2]), answered(claim_of(S), claim_of(S2)))
+    assert not claims_match(item([S, S2]), answered(claim_of(S)))
+
+
+def test_claims_match_is_false_without_answer_or_when_abstained():
+    assert not claims_match(item([S]), None)
+    assert not claims_match(item([S]), abstained())
 
 
 def test_abstain_on_answerable_is_abstained():

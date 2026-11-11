@@ -184,15 +184,16 @@ def test_markdown_lists_text_critical_errors_for_hand_reading(tmp_path):
     assert "Q5" in markdown.split("## Lỗi nghiêm trọng ở slot chữ")[1]
 
 
-def test_report_counts_incomplete_only_for_missing_year(tmp_path):
+def test_correct_is_scored_on_answer_text_and_claim_match_reported_separately(tmp_path):
+    # Q5: claim không ghi năm, unit rỗng, predicate khác gold; câu trả lời chữ vẫn nêu đúng 15.
     rows = [*default_rows(), gold_row("Q5")]
-    claim = Claim(subject="ngành CNTT", predicate="học phí", value="15", unit="triệu đồng")
-    no_year = answer_json(claims=[claim])
-    run = make_run(tmp_path, rows=rows, records=[*default_records(), ok("Q5", no_year)])
+    claim = Claim(subject="ngành CNTT", predicate="mức học phí", value="15", unit="")
+    loose = answer_json(claims=[claim])
+    run = make_run(tmp_path, rows=rows, records=[*default_records(), ok("Q5", loose)])
     overall = score_run(run)["overall"]
-    assert overall["outcomes"]["incomplete"] == 1
-    assert overall["incomplete_only_year"] == 1
-    assert "| Thiếu chỉ vì claim không ghi năm | 1 |" in render_markdown(score_run(run))
+    assert overall["outcomes"]["correct"] == 2  # Q1, Q5
+    assert (overall["claim_match"]["k"], overall["claim_match"]["n"]) == (1, 3)  # chỉ Q1
+    assert "| Claim khớp | 0,33 [" in render_markdown(score_run(run))
 
 
 def test_precision_and_f1_are_undefined_when_nothing_was_abstained(tmp_path):

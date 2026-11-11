@@ -102,9 +102,9 @@ Mỗi câu thuộc đúng một nhóm.
 
 | Câu | Nhóm | Điều kiện |
 |---|---|---|
-| Trả lời được | `correct` | Không từ chối; mọi slot kỳ vọng khớp (`key_fact_accuracy = 1`) |
+| Trả lời được | `correct` | Không từ chối; giá trị của mọi slot kỳ vọng (hoặc một `value_synonyms`) có trong câu trả lời chữ (`Answer.answer`), so theo token sau chuẩn hoá |
 | | `critical_error` | Không từ chối; có claim khớp `subject` và `predicate` của ít nhất một slot kỳ vọng (tính cả synonym), mà không slot nào trong các slot đó có cùng `value` và năm không lệch (năm lệch: cả hai bên đều có `admission_year` mà khác nhau) |
-| | `incomplete` | Không từ chối, không `critical_error`, thiếu ít nhất một slot |
+| | `incomplete` | Không từ chối, không `critical_error`, câu trả lời chữ thiếu giá trị của ít nhất một slot |
 | | `abstained` | Từ chối |
 | Phải từ chối | `abstained_ok` | Từ chối |
 | | `answered_wrongly` | Không từ chối |
@@ -125,6 +125,15 @@ hoá này chỉ dùng để quyết định `critical_error`: `correct` vẫn so
 `incomplete`. Không chọn cách bỏ hẳn slot chữ khỏi `critical_error`, vì 29/37 giá trị chữ ngắn (≤ 4 từ, vd. "Cử
 nhân", "Kỹ sư") và trả nhầm chúng là sai thật.
 
+Sửa lần ba 11/11/2026, Kent đồng ý cùng ngày (Task 8, lượt `dev-b3-full`): `correct` chấm trên câu trả lời chữ thay vì
+trên claim. Chấm trên claim cho 1/55 câu đúng, vì Qwen3-4B để trống `admission_year` ở 148/157 claim, ghi `unit = ""`
+ở 111/157 claim và đặt predicate khác gold ("tổng số tín chỉ" thay "khối lượng kiến thức"); giá trị gold có trong câu
+trả lời chữ ở 47/55 câu, 8 câu còn lại sai thật hoặc lạc đề khi đọc tay. Chấm trên chữ không biết giá trị gắn với
+đối tượng nào, nên `critical_error` vẫn chấm trên claim; nó là cận dưới, vì claim có predicate khác gold không được
+so. Chuẩn hoá chữ: chữ thường, số theo quy ước Việt Nam (`normalise_number`), tách token ở mọi ký tự không phải chữ/số
+(dấu chấm giữa hai chữ số giữ lại); giá trị khớp khi dãy token của nó nằm liền trong dãy token của câu trả lời, nên
+"4" không khớp "4,5". Giá trị số ngắn vẫn có thể trùng một số khác trong câu (vd. "15" trong "15/7").
+
 ### 4.2. Số trong báo cáo
 
 Mẫu số N là số câu trả lời được có `status = ok`. Mọi tỷ lệ kèm Wilson 95%.
@@ -134,7 +143,7 @@ Mẫu số N là số câu trả lời được có `status = ok`. Mọi tỷ l�
 | Tỷ lệ đúng | `correct` / N |
 | `decision-critical error rate` | `critical_error` / N |
 | Lỗi nghiêm trọng theo loại giá trị | Số câu `critical_error` có claim mâu thuẫn với slot số, và số câu chỉ mâu thuẫn với slot chữ, kèm danh sách ID câu chữ để đọc tay. Slot số: `value` sau chuẩn hoá chỉ gồm chữ số và dấu chấm |
-| Thiếu chỉ vì không ghi năm | Số câu `incomplete` sẽ thành `correct` nếu claim thiếu `admission_year` lấy năm của slot. Chỉ để đọc tỷ lệ đúng, không đổi nhóm |
+| Claim khớp | Số câu có mọi slot được một claim khớp / N. Claim khớp slot khi `subject`, `predicate` khớp (`entity_matches`), giá trị khớp theo chuẩn hoá của `critical_error`, `unit` của claim rỗng hoặc khớp, năm không lệch. Đo chất lượng claim, tách khỏi tỷ lệ đúng |
 | Coverage | (N − `abstained`) / N |
 | Từ chối | precision, recall, F1 từ `abstention_scores`; số `answered_wrongly` |
 | Truy hồi | R@5, MRR, nDCG@10 trung bình; hit@5 kèm Wilson. So theo cặp `(source_id, page)` |
